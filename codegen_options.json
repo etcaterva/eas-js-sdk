@@ -1,0 +1,5 @@
+{
+  "projectName": "echaloasuerte-js-sdk",
+  "usePromises": true,
+  "useES6": true
+}
