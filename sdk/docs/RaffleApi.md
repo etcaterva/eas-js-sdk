@@ -1,6 +1,6 @@
 # EchaloasuerteJsSdk.RaffleApi
 
-All URIs are relative to *http://127.0.0.1:8000/api*
+All URIs are relative to *http://localhost/should-be-overriden*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
