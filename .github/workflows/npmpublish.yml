@@ -31,4 +31,4 @@ jobs:
       - run: cd sdk && npm ci
       - run: cd sdk && npm publish
         env:
-          NODE_AUTH_TOKEN: "asdasda"
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
