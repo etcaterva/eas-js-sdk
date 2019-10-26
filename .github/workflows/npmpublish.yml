@@ -19,7 +19,7 @@ jobs:
 #       - run: cd sdk && npm test
 
   publish-gpr:
-    needs: build
+    # needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
-          scope: '@etcaterva' 
+          scope: '@etcaterva'
       - run: cd sdk && npm ci
       - run: cd sdk && npm publish
         env:
