@@ -1,4 +1,4 @@
-# EchaloasuerteJsSdk.Lottery
+# @EtcatervaEasJsSdk.Lottery
 
 ## Properties
 Name | Type | Description | Notes

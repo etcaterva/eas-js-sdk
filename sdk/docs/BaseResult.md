@@ -1,4 +1,4 @@
-# EchaloasuerteJsSdk.BaseResult
+# @EtcatervaEasJsSdk.BaseResult
 
 ## Properties
 Name | Type | Description | Notes

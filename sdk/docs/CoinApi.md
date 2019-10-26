@@ -1,6 +1,6 @@
-# EchaloasuerteJsSdk.CoinApi
+# @EtcatervaEasJsSdk.CoinApi
 
-All URIs are relative to *http://localhost/should-be-overriden*
+All URIs are relative to *https://raw.githubusercontent.com/should-be-overriden*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,10 +17,10 @@ Method | HTTP request | Description
 
 ### Example
 ```javascript
-import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
+import @EtcatervaEasJsSdk from '@etcaterva/eas-js-sdk';
 
-let apiInstance = new EchaloasuerteJsSdk.CoinApi();
-let coin = new EchaloasuerteJsSdk.Coin(); // Coin | 
+let apiInstance = new @EtcatervaEasJsSdk.CoinApi();
+let coin = new @EtcatervaEasJsSdk.Coin(); // Coin | 
 apiInstance.coinCreate(coin).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -56,9 +56,9 @@ No authorization required
 
 ### Example
 ```javascript
-import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
+import @EtcatervaEasJsSdk from '@etcaterva/eas-js-sdk';
 
-let apiInstance = new EchaloasuerteJsSdk.CoinApi();
+let apiInstance = new @EtcatervaEasJsSdk.CoinApi();
 let id = "id_example"; // String | 
 apiInstance.coinRead(id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -95,11 +95,11 @@ No authorization required
 
 ### Example
 ```javascript
-import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
+import @EtcatervaEasJsSdk from '@etcaterva/eas-js-sdk';
 
-let apiInstance = new EchaloasuerteJsSdk.CoinApi();
+let apiInstance = new @EtcatervaEasJsSdk.CoinApi();
 let id = "id_example"; // String | 
-let drawTossPayload = new EchaloasuerteJsSdk.DrawTossPayload(); // DrawTossPayload | 
+let drawTossPayload = new @EtcatervaEasJsSdk.DrawTossPayload(); // DrawTossPayload | 
 apiInstance.coinToss(id, drawTossPayload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {

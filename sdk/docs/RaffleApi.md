@@ -1,6 +1,6 @@
-# EchaloasuerteJsSdk.RaffleApi
+# @EtcatervaEasJsSdk.RaffleApi
 
-All URIs are relative to *http://localhost/should-be-overriden*
+All URIs are relative to *https://raw.githubusercontent.com/should-be-overriden*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,10 +18,10 @@ Method | HTTP request | Description
 
 ### Example
 ```javascript
-import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
+import @EtcatervaEasJsSdk from '@etcaterva/eas-js-sdk';
 
-let apiInstance = new EchaloasuerteJsSdk.RaffleApi();
-let raffle = new EchaloasuerteJsSdk.Raffle(); // Raffle | 
+let apiInstance = new @EtcatervaEasJsSdk.RaffleApi();
+let raffle = new @EtcatervaEasJsSdk.Raffle(); // Raffle | 
 apiInstance.raffleCreate(raffle).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -57,11 +57,11 @@ No authorization required
 
 ### Example
 ```javascript
-import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
+import @EtcatervaEasJsSdk from '@etcaterva/eas-js-sdk';
 
-let apiInstance = new EchaloasuerteJsSdk.RaffleApi();
+let apiInstance = new @EtcatervaEasJsSdk.RaffleApi();
 let id = "id_example"; // String | 
-let participant = new EchaloasuerteJsSdk.Participant(); // Participant | 
+let participant = new @EtcatervaEasJsSdk.Participant(); // Participant | 
 apiInstance.raffleParticipantsAdd(id, participant).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -98,9 +98,9 @@ No authorization required
 
 ### Example
 ```javascript
-import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
+import @EtcatervaEasJsSdk from '@etcaterva/eas-js-sdk';
 
-let apiInstance = new EchaloasuerteJsSdk.RaffleApi();
+let apiInstance = new @EtcatervaEasJsSdk.RaffleApi();
 let id = "id_example"; // String | 
 apiInstance.raffleRead(id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -137,11 +137,11 @@ No authorization required
 
 ### Example
 ```javascript
-import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
+import @EtcatervaEasJsSdk from '@etcaterva/eas-js-sdk';
 
-let apiInstance = new EchaloasuerteJsSdk.RaffleApi();
+let apiInstance = new @EtcatervaEasJsSdk.RaffleApi();
 let id = "id_example"; // String | 
-let drawTossPayload = new EchaloasuerteJsSdk.DrawTossPayload(); // DrawTossPayload | 
+let drawTossPayload = new @EtcatervaEasJsSdk.DrawTossPayload(); // DrawTossPayload | 
 apiInstance.raffleToss(id, drawTossPayload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {

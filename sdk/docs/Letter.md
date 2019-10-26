@@ -1,4 +1,4 @@
-# EchaloasuerteJsSdk.Letter
+# @EtcatervaEasJsSdk.Letter
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,5 +1,5 @@
 {
-  "projectName": "echaloasuerte-js-sdk",
+  "projectName": "@etcaterva/eas-js-sdk",
   "usePromises": true,
   "useES6": true
 }

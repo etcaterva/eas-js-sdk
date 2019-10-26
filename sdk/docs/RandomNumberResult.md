@@ -1,4 +1,4 @@
-# EchaloasuerteJsSdk.RandomNumberResult
+# @EtcatervaEasJsSdk.RandomNumberResult
 
 ## Properties
 Name | Type | Description | Notes

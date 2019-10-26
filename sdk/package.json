@@ -1,6 +1,6 @@
 {
-  "name": "echaloasuerte-js-sdk",
-  "version": "0.0.6",
+  "name": "@etcaterva/eas-js-sdk",
+  "version": "0.0.1",
   "description": "ERROR_UNKNOWN",
   "license": "Unlicense",
   "main": "src/index.js",

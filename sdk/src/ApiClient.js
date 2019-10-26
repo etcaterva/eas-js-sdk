@@ -32,9 +32,9 @@ class ApiClient {
         /**
          * The base URL against which to resolve every API call's (relative) path.
          * @type {String}
-         * @default http://localhost/should-be-overriden
+         * @default https://raw.githubusercontent.com/should-be-overriden
          */
-        this.basePath = 'http://localhost/should-be-overriden'.replace(/\/+$/, '');
+        this.basePath = 'https://raw.githubusercontent.com/should-be-overriden'.replace(/\/+$/, '');
 
         /**
          * The authentication methods to be included for all API calls.

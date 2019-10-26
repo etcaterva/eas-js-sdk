@@ -1,6 +1,6 @@
-# EchaloasuerteJsSdk.SpinnerApi
+# @EtcatervaEasJsSdk.SpinnerApi
 
-All URIs are relative to *http://localhost/should-be-overriden*
+All URIs are relative to *https://raw.githubusercontent.com/should-be-overriden*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,10 +17,10 @@ Method | HTTP request | Description
 
 ### Example
 ```javascript
-import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
+import @EtcatervaEasJsSdk from '@etcaterva/eas-js-sdk';
 
-let apiInstance = new EchaloasuerteJsSdk.SpinnerApi();
-let spinner = new EchaloasuerteJsSdk.Spinner(); // Spinner | 
+let apiInstance = new @EtcatervaEasJsSdk.SpinnerApi();
+let spinner = new @EtcatervaEasJsSdk.Spinner(); // Spinner | 
 apiInstance.spinnerCreate(spinner).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -56,9 +56,9 @@ No authorization required
 
 ### Example
 ```javascript
-import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
+import @EtcatervaEasJsSdk from '@etcaterva/eas-js-sdk';
 
-let apiInstance = new EchaloasuerteJsSdk.SpinnerApi();
+let apiInstance = new @EtcatervaEasJsSdk.SpinnerApi();
 let id = "id_example"; // String | 
 apiInstance.spinnerRead(id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -95,11 +95,11 @@ No authorization required
 
 ### Example
 ```javascript
-import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
+import @EtcatervaEasJsSdk from '@etcaterva/eas-js-sdk';
 
-let apiInstance = new EchaloasuerteJsSdk.SpinnerApi();
+let apiInstance = new @EtcatervaEasJsSdk.SpinnerApi();
 let id = "id_example"; // String | 
-let drawTossPayload = new EchaloasuerteJsSdk.DrawTossPayload(); // DrawTossPayload | 
+let drawTossPayload = new @EtcatervaEasJsSdk.DrawTossPayload(); // DrawTossPayload | 
 apiInstance.spinnerToss(id, drawTossPayload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {

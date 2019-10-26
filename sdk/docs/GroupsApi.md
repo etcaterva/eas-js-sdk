@@ -1,6 +1,6 @@
-# EchaloasuerteJsSdk.GroupsApi
+# @EtcatervaEasJsSdk.GroupsApi
 
-All URIs are relative to *http://localhost/should-be-overriden*
+All URIs are relative to *https://raw.githubusercontent.com/should-be-overriden*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,10 +18,10 @@ Method | HTTP request | Description
 
 ### Example
 ```javascript
-import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
+import @EtcatervaEasJsSdk from '@etcaterva/eas-js-sdk';
 
-let apiInstance = new EchaloasuerteJsSdk.GroupsApi();
-let groups = new EchaloasuerteJsSdk.Groups(); // Groups | 
+let apiInstance = new @EtcatervaEasJsSdk.GroupsApi();
+let groups = new @EtcatervaEasJsSdk.Groups(); // Groups | 
 apiInstance.groupsCreate(groups).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -57,11 +57,11 @@ No authorization required
 
 ### Example
 ```javascript
-import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
+import @EtcatervaEasJsSdk from '@etcaterva/eas-js-sdk';
 
-let apiInstance = new EchaloasuerteJsSdk.GroupsApi();
+let apiInstance = new @EtcatervaEasJsSdk.GroupsApi();
 let id = "id_example"; // String | 
-let participant = new EchaloasuerteJsSdk.Participant(); // Participant | 
+let participant = new @EtcatervaEasJsSdk.Participant(); // Participant | 
 apiInstance.groupsParticipantsAdd(id, participant).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -98,9 +98,9 @@ No authorization required
 
 ### Example
 ```javascript
-import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
+import @EtcatervaEasJsSdk from '@etcaterva/eas-js-sdk';
 
-let apiInstance = new EchaloasuerteJsSdk.GroupsApi();
+let apiInstance = new @EtcatervaEasJsSdk.GroupsApi();
 let id = "id_example"; // String | 
 apiInstance.groupsRead(id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -137,11 +137,11 @@ No authorization required
 
 ### Example
 ```javascript
-import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
+import @EtcatervaEasJsSdk from '@etcaterva/eas-js-sdk';
 
-let apiInstance = new EchaloasuerteJsSdk.GroupsApi();
+let apiInstance = new @EtcatervaEasJsSdk.GroupsApi();
 let id = "id_example"; // String | 
-let drawTossPayload = new EchaloasuerteJsSdk.DrawTossPayload(); // DrawTossPayload | 
+let drawTossPayload = new @EtcatervaEasJsSdk.DrawTossPayload(); // DrawTossPayload | 
 apiInstance.groupsToss(id, drawTossPayload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {

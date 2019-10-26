@@ -1,4 +1,4 @@
-# EchaloasuerteJsSdk.DrawMetadata
+# @EtcatervaEasJsSdk.DrawMetadata
 
 ## Properties
 Name | Type | Description | Notes
