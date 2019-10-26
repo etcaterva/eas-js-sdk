@@ -29,7 +29,7 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: '@etcaterva'
       - run: cd sdk && npm ci
-      - run: cd sdk && npm version $GITHUB_REF
+      - run: cd sdk && npm version ${GITHUB_REF}
       - run: cd sdk && npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
