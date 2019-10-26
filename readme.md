@@ -1,24 +1,21 @@
 This npm package is published here: [echaloasuerte-js-sdk](https://www.npmjs.com/package/echaloasuerte-js-sdk)
 
 ## To publish a new version
-Ideally, everytime there are changes in the API [the version in the swagger file](https://github.com/etcaterva/eas-backend/blob/5728459471f19f6285ab310c741df5371e2fc7dd/swagger.yaml#L4) should be bumped up. 
+We need to release a new version of the SDK everytime something changes in the backend API (i.e when something is changed in [the the swagger file](https://github.com/etcaterva/eas-backend/blob/5728459471f19f6285ab310c741df5371e2fc7dd/swagger.yaml#L4)). 
 
-Since we don't have that mechanism now, we need to follow the next steps:
-
+To publish a new version of the SDK, follow the steps above:
 1. Clone the repo
-2. Copy the [swagger.yml from master](https://github.com/etcaterva/eas-backend/blob/master/swagger.yaml) to the root of the repo
-3. Run the following commands
+2. Run the following commands
 ```
-make generate-sdk-local
+// Generate the SDK using the latest version of the swagger file
+make generate-sdk
 
 cd sdk
-npm login
-npm publish
-
-git add --all
+git add -A
 git commit -m "Update SDK"
 git push origin master
 ```
+3. [Publish a release](https://github.com/etcaterva/eas-js-sdk/releases) through the Github UI.
 
 ## To install the new version in the client
 From the client do:
