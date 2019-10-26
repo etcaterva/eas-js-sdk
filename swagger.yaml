@@ -1,0 +1,771 @@
+openapi: 3.0.0
+info:
+  title: EAS API
+  version: 0.0.10
+servers:
+  - url: '/should-be-overriden'
+paths:
+  /groups/:
+    post:
+      operationId: groups_create
+      responses:
+        '201':
+          description: Groups successfully created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Groups'
+      tags:
+        - groups
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Groups'
+        required: true
+    parameters: []
+  '/groups/{id}/':
+    get:
+      operationId: groups_read
+      responses:
+        '200':
+          description: The details of the requested groups
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Groups'
+      tags:
+        - groups
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  '/groups/{id}/toss/':
+    post:
+      operationId: groups_toss
+      responses:
+        '201':
+          description: A result of the groups
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupsResult'
+      tags:
+        - groups
+      requestBody:
+        $ref: '#/components/requestBodies/DrawTossPayload'
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  '/groups/{id}/participants/':
+    post:
+      operationId: groups_participants_add
+      responses:
+        '201':
+          description: Object created
+        '304':
+          description: Not Modified
+      tags:
+        - groups
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Participant'
+        required: true
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /lottery/:
+    post:
+      operationId: lottery_create
+      responses:
+        '201':
+          description: Lottery successfully created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Lottery'
+      tags:
+        - lottery
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Lottery'
+        required: true
+    parameters: []
+  '/lottery/{id}/':
+    get:
+      operationId: lottery_read
+      responses:
+        '200':
+          description: The details of the requested lottery
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Lottery'
+      tags:
+        - lottery
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  '/lottery/{id}/toss/':
+    post:
+      operationId: lottery_toss
+      responses:
+        '201':
+          description: A result of the lottery
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LotteryResult'
+      tags:
+        - lottery
+      requestBody:
+        $ref: '#/components/requestBodies/DrawTossPayload'
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  '/lottery/{id}/participants/':
+    post:
+      operationId: lottery_participants_add
+      responses:
+        '201':
+          description: Object created
+        '304':
+          description: Not Modified
+      tags:
+        - lottery
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Participant'
+        required: true
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /raffle/:
+    post:
+      operationId: raffle_create
+      responses:
+        '201':
+          description: Raffle successfully created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Raffle'
+      tags:
+        - raffle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Raffle'
+        required: true
+    parameters: []
+  '/raffle/{id}/':
+    get:
+      operationId: raffle_read
+      responses:
+        '200':
+          description: The details of the requested raffle
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Raffle'
+      tags:
+        - raffle
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  '/raffle/{id}/toss/':
+    post:
+      operationId: raffle_toss
+      responses:
+        '201':
+          description: A result of the draw
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RaffleResult'
+      tags:
+        - raffle
+      requestBody:
+        $ref: '#/components/requestBodies/DrawTossPayload'
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  '/raffle/{id}/participants/':
+    post:
+      operationId: raffle_participants_add
+      responses:
+        '201':
+          description: Object created
+        '304':
+          description: Not Modified
+      tags:
+        - raffle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Participant'
+        required: true
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /letter/:
+    post:
+      operationId: letter_create
+      responses:
+        '201':
+          description: The Letter draw was successfully created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Letter'
+      tags:
+        - letter
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Letter'
+        required: true
+    parameters: []
+  '/letter/{id}/':
+    get:
+      operationId: letter_read
+      responses:
+        '200':
+          description: The details of the requested draw
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Letter'
+      tags:
+        - letter
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  '/letter/{id}/toss/':
+    post:
+      operationId: letter_toss
+      responses:
+        '201':
+          description: A result of the draw
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LetterResult'
+      tags:
+        - letter
+      requestBody:
+        $ref: '#/components/requestBodies/DrawTossPayload'
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /random_number/:
+    post:
+      operationId: random_number_create
+      responses:
+        '201':
+          description: The RandomNumber draw was successfully created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RandomNumber'
+      tags:
+        - random_number
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RandomNumber'
+        required: true
+    parameters: []
+  '/random_number/{id}/':
+    get:
+      operationId: random_number_read
+      responses:
+        '200':
+          description: The details of the requested draw
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RandomNumber'
+      tags:
+        - random_number
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  '/random_number/{id}/toss/':
+    post:
+      operationId: random_number_toss
+      responses:
+        '201':
+          description: A result of the draw
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RandomNumberResult'
+      tags:
+        - random_number
+      requestBody:
+        $ref: '#/components/requestBodies/DrawTossPayload'
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /spinner/:
+    post:
+      operationId: spinner_create
+      responses:
+        '201':
+          description: The Spinner draw was successfully created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Spinner'
+      tags:
+        - spinner
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Spinner'
+        required: true
+    parameters: []
+  '/spinner/{id}/':
+    get:
+      operationId: spinner_read
+      responses:
+        '200':
+          description: The details of the requested draw
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Spinner'
+      tags:
+        - spinner
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  '/spinner/{id}/toss/':
+    post:
+      operationId: spinner_toss
+      responses:
+        '201':
+          description: A result of the draw
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpinnerResult'
+      tags:
+        - spinner
+      requestBody:
+        $ref: '#/components/requestBodies/DrawTossPayload'
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /coin/:
+    post:
+      operationId: coin_create
+      responses:
+        '201':
+          description: The Coin draw was successfully created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Coin'
+      tags:
+        - coin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Coin'
+        required: true
+    parameters: []
+  '/coin/{id}/':
+    get:
+      operationId: coin_read
+      responses:
+        '200':
+          description: The details of the requested draw
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Coin'
+      tags:
+        - coin
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  '/coin/{id}/toss/':
+    post:
+      operationId: coin_toss
+      responses:
+        '201':
+          description: A result of the draw
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CoinResult'
+      tags:
+        - coin
+      requestBody:
+        $ref: '#/components/requestBodies/DrawTossPayload'
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+components:
+  requestBodies:
+    DrawTossPayload:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/DrawTossPayload'
+      required: true
+  schemas:
+    DrawMetadata:
+      required:
+        - client
+        - key
+        - value
+      type: object
+      properties:
+        client:
+          type: string
+          maxLength: 100
+          minLength: 1
+        key:
+          type: string
+          maxLength: 100
+          minLength: 1
+        value:
+          type: string
+          minLength: 1
+    BaseObject:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+          minLength: 1
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+    Prize:
+      allOf:
+        - $ref: '#/components/schemas/BaseObject'
+        - type: object
+          required:
+            - name
+          properties:
+            name:
+              type: string
+              minLength: 1
+            url:
+              type: string
+              format: uri
+              maxLength: 200
+              minLength: 1
+    Participant:
+      allOf:
+        - $ref: '#/components/schemas/BaseObject'
+        - type: object
+          required:
+            - name
+          properties:
+            name:
+              type: string
+              minLength: 1
+            facebook_id:
+              type: string
+              maxLength: 100
+              minLength: 1
+    DrawTossPayload:
+      type: object
+      properties:
+        schedule_date:
+          type: string
+          format: date-time
+    BaseDraw:
+      allOf:
+        - $ref: '#/components/schemas/BaseObject'
+        - type: object
+          properties:
+            updated_at:
+              type: string
+              format: date-time
+              readOnly: true
+            title:
+              type: string
+              minLength: 1
+            description:
+              type: string
+              minLength: 1
+            private_id:
+              type: string
+              readOnly: true
+              minLength: 1
+            metadata:
+              type: array
+              items:
+                $ref: '#/components/schemas/DrawMetadata'
+    Raffle:
+      allOf:
+        - $ref: '#/components/schemas/BaseDraw'
+        - type: object
+          required:
+            - prizes
+            - participants
+          properties:
+            prizes:
+              type: array
+              items:
+                $ref: '#/components/schemas/Prize'
+            participants:
+              type: array
+              items:
+                $ref: '#/components/schemas/Participant'
+            results:
+              type: array
+              items:
+                $ref: '#/components/schemas/RaffleResult'
+              readOnly: true
+    Lottery:
+      allOf:
+        - $ref: '#/components/schemas/BaseDraw'
+        - type: object
+          required:
+            - participants
+          properties:
+            participants:
+              type: array
+              items:
+                $ref: '#/components/schemas/Participant'
+            results:
+              type: array
+              items:
+                $ref: '#/components/schemas/LotteryResult'
+              readOnly: true
+    Groups:
+      allOf:
+        - $ref: '#/components/schemas/BaseDraw'
+        - type: object
+          required:
+            - participants
+            - number_of_groups
+          properties:
+            participants:
+              type: array
+              items:
+                $ref: '#/components/schemas/Participant'
+            number_of_groups:
+              type: integer
+            results:
+              type: array
+              items:
+                $ref: '#/components/schemas/GroupsResult'
+              readOnly: true
+    RandomNumber:
+      allOf:
+        - $ref: '#/components/schemas/BaseDraw'
+        - type: object
+          required:
+            - range_min
+            - range_max
+          properties:
+            range_min:
+              type: integer
+            range_max:
+              type: integer
+            number_of_results:
+              type: integer
+              default: 1
+            allow_repeated_results:
+              type: boolean
+              default: true
+            results:
+              type: array
+              items:
+                $ref: '#/components/schemas/RandomNumberResult'
+              readOnly: true
+    Letter:
+      allOf:
+        - $ref: '#/components/schemas/BaseDraw'
+        - type: object
+          properties:
+            number_of_results:
+              type: integer
+              default: 1
+            allow_repeated_results:
+              type: boolean
+              default: true
+            results:
+              type: array
+              items:
+                $ref: '#/components/schemas/LetterResult'
+              readOnly: true
+    Coin:
+      allOf:
+        - $ref: '#/components/schemas/BaseDraw'
+        - type: object
+          properties:
+            results:
+              type: array
+              items:
+                $ref: '#/components/schemas/CoinResult'
+              readOnly: true
+    Spinner:
+      allOf:
+        - $ref: '#/components/schemas/BaseDraw'
+        - type: object
+          properties:
+            results:
+              type: array
+              items:
+                $ref: '#/components/schemas/SpinnerResult'
+              readOnly: true
+    BaseResult:
+      allOf:
+        - $ref: '#/components/schemas/BaseObject'
+        - type: object
+          properties:
+            schedule_date:
+              type: string
+              format: date-time
+    RaffleResult:
+      allOf:
+        - $ref: '#/components/schemas/BaseResult'
+        - type: object
+          properties:
+            value:
+              nullable: true
+              type: array
+              items:
+                type: object
+                properties:
+                  participant:
+                    $ref: '#/components/schemas/Participant'
+                  prize:
+                    $ref: '#/components/schemas/Prize'
+    LotteryResult:
+      allOf:
+        - $ref: '#/components/schemas/BaseResult'
+        - type: object
+          properties:
+            value:
+              nullable: true
+              type: array
+              items:
+                $ref: '#/components/schemas/Participant'
+    GroupsResult:
+      allOf:
+        - $ref: '#/components/schemas/BaseResult'
+        - type: object
+          properties:
+            value:
+              nullable: true
+              type: array
+              items:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Participant'
+    RandomNumberResult:
+      allOf:
+        - $ref: '#/components/schemas/BaseResult'
+        - type: object
+          properties:
+            value:
+              nullable: true
+              type: array
+              items:
+                type: integer
+    LetterResult:
+      allOf:
+        - $ref: '#/components/schemas/BaseResult'
+        - type: object
+          properties:
+            value:
+              nullable: true
+              type: array
+              items:
+                type: string
+    SpinnerResult:
+      allOf:
+        - $ref: '#/components/schemas/BaseResult'
+        - type: object
+          properties:
+            value:
+              nullable: true
+              type: integer
+    CoinResult:
+      allOf:
+        - $ref: '#/components/schemas/BaseResult'
+        - type: object
+          properties:
+            value:
+              nullable: true
+              type: array
+              items:
+                maxLength: 1
+                minLength: 1
+                type: string
+                enum:
+                  - HEAD
+                  - TAIL

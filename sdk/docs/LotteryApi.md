@@ -1,6 +1,6 @@
-# @EtcatervaEasJsSdk.LotteryApi
+# EchaloasuerteJsSdk.LotteryApi
 
-All URIs are relative to *https://raw.githubusercontent.com/should-be-overriden*
+All URIs are relative to *http://localhost/should-be-overriden*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,10 +18,10 @@ Method | HTTP request | Description
 
 ### Example
 ```javascript
-import @EtcatervaEasJsSdk from '@etcaterva/eas-js-sdk';
+import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
-let apiInstance = new @EtcatervaEasJsSdk.LotteryApi();
-let lottery = new @EtcatervaEasJsSdk.Lottery(); // Lottery | 
+let apiInstance = new EchaloasuerteJsSdk.LotteryApi();
+let lottery = new EchaloasuerteJsSdk.Lottery(); // Lottery | 
 apiInstance.lotteryCreate(lottery).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -57,11 +57,11 @@ No authorization required
 
 ### Example
 ```javascript
-import @EtcatervaEasJsSdk from '@etcaterva/eas-js-sdk';
+import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
-let apiInstance = new @EtcatervaEasJsSdk.LotteryApi();
+let apiInstance = new EchaloasuerteJsSdk.LotteryApi();
 let id = "id_example"; // String | 
-let participant = new @EtcatervaEasJsSdk.Participant(); // Participant | 
+let participant = new EchaloasuerteJsSdk.Participant(); // Participant | 
 apiInstance.lotteryParticipantsAdd(id, participant).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -98,9 +98,9 @@ No authorization required
 
 ### Example
 ```javascript
-import @EtcatervaEasJsSdk from '@etcaterva/eas-js-sdk';
+import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
-let apiInstance = new @EtcatervaEasJsSdk.LotteryApi();
+let apiInstance = new EchaloasuerteJsSdk.LotteryApi();
 let id = "id_example"; // String | 
 apiInstance.lotteryRead(id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -137,11 +137,11 @@ No authorization required
 
 ### Example
 ```javascript
-import @EtcatervaEasJsSdk from '@etcaterva/eas-js-sdk';
+import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
-let apiInstance = new @EtcatervaEasJsSdk.LotteryApi();
+let apiInstance = new EchaloasuerteJsSdk.LotteryApi();
 let id = "id_example"; // String | 
-let drawTossPayload = new @EtcatervaEasJsSdk.DrawTossPayload(); // DrawTossPayload | 
+let drawTossPayload = new EchaloasuerteJsSdk.DrawTossPayload(); // DrawTossPayload | 
 apiInstance.lotteryToss(id, drawTossPayload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {

@@ -1,4 +1,4 @@
-# @EtcatervaEasJsSdk.Groups
+# EchaloasuerteJsSdk.Groups
 
 ## Properties
 Name | Type | Description | Notes

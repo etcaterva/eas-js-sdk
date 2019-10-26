@@ -1,4 +1,4 @@
-# @EtcatervaEasJsSdk.DrawTossPayload
+# EchaloasuerteJsSdk.DrawTossPayload
 
 ## Properties
 Name | Type | Description | Notes

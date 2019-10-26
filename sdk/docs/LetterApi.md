@@ -1,6 +1,6 @@
-# @EtcatervaEasJsSdk.LetterApi
+# EchaloasuerteJsSdk.LetterApi
 
-All URIs are relative to *https://raw.githubusercontent.com/should-be-overriden*
+All URIs are relative to *http://localhost/should-be-overriden*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,10 +17,10 @@ Method | HTTP request | Description
 
 ### Example
 ```javascript
-import @EtcatervaEasJsSdk from '@etcaterva/eas-js-sdk';
+import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
-let apiInstance = new @EtcatervaEasJsSdk.LetterApi();
-let letter = new @EtcatervaEasJsSdk.Letter(); // Letter | 
+let apiInstance = new EchaloasuerteJsSdk.LetterApi();
+let letter = new EchaloasuerteJsSdk.Letter(); // Letter | 
 apiInstance.letterCreate(letter).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -56,9 +56,9 @@ No authorization required
 
 ### Example
 ```javascript
-import @EtcatervaEasJsSdk from '@etcaterva/eas-js-sdk';
+import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
-let apiInstance = new @EtcatervaEasJsSdk.LetterApi();
+let apiInstance = new EchaloasuerteJsSdk.LetterApi();
 let id = "id_example"; // String | 
 apiInstance.letterRead(id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -95,11 +95,11 @@ No authorization required
 
 ### Example
 ```javascript
-import @EtcatervaEasJsSdk from '@etcaterva/eas-js-sdk';
+import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
-let apiInstance = new @EtcatervaEasJsSdk.LetterApi();
+let apiInstance = new EchaloasuerteJsSdk.LetterApi();
 let id = "id_example"; // String | 
-let drawTossPayload = new @EtcatervaEasJsSdk.DrawTossPayload(); // DrawTossPayload | 
+let drawTossPayload = new EchaloasuerteJsSdk.DrawTossPayload(); // DrawTossPayload | 
 apiInstance.letterToss(id, drawTossPayload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {

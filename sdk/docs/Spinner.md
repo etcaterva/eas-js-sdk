@@ -1,4 +1,4 @@
-# @EtcatervaEasJsSdk.Spinner
+# EchaloasuerteJsSdk.Spinner
 
 ## Properties
 Name | Type | Description | Notes

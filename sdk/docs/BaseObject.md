@@ -1,4 +1,4 @@
-# @EtcatervaEasJsSdk.BaseObject
+# EchaloasuerteJsSdk.BaseObject
 
 ## Properties
 Name | Type | Description | Notes

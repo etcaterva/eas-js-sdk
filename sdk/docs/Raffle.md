@@ -1,4 +1,4 @@
-# @EtcatervaEasJsSdk.Raffle
+# EchaloasuerteJsSdk.Raffle
 
 ## Properties
 Name | Type | Description | Notes

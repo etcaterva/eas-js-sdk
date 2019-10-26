@@ -1,4 +1,4 @@
-# @EtcatervaEasJsSdk.Prize
+# EchaloasuerteJsSdk.Prize
 
 ## Properties
 Name | Type | Description | Notes

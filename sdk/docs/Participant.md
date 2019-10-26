@@ -1,4 +1,4 @@
-# @EtcatervaEasJsSdk.Participant
+# EchaloasuerteJsSdk.Participant
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# @EtcatervaEasJsSdk.BaseDraw
+# EchaloasuerteJsSdk.BaseDraw
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# @EtcatervaEasJsSdk.CoinResult
+# EchaloasuerteJsSdk.CoinResult
 
 ## Properties
 Name | Type | Description | Notes
