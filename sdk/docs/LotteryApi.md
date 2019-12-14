@@ -1,6 +1,6 @@
 # EchaloasuerteJsSdk.LotteryApi
 
-All URIs are relative to *http://localhost/should-be-overriden*
+All URIs are relative to *https://raw.githubusercontent.com/should-be-overriden*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,13 +18,13 @@ Method | HTTP request | Description
 
 ### Example
 ```javascript
-import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
+var EchaloasuerteJsSdk = require('echaloasuerte-js-sdk');
 
-let apiInstance = new EchaloasuerteJsSdk.LotteryApi();
-let lottery = new EchaloasuerteJsSdk.Lottery(); // Lottery | 
-apiInstance.lotteryCreate(lottery).then((data) => {
+var apiInstance = new EchaloasuerteJsSdk.LotteryApi();
+var lottery = new EchaloasuerteJsSdk.Lottery(); // Lottery | 
+apiInstance.lotteryCreate(lottery).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -57,14 +57,14 @@ No authorization required
 
 ### Example
 ```javascript
-import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
+var EchaloasuerteJsSdk = require('echaloasuerte-js-sdk');
 
-let apiInstance = new EchaloasuerteJsSdk.LotteryApi();
-let id = "id_example"; // String | 
-let participant = new EchaloasuerteJsSdk.Participant(); // Participant | 
-apiInstance.lotteryParticipantsAdd(id, participant).then(() => {
+var apiInstance = new EchaloasuerteJsSdk.LotteryApi();
+var id = "id_example"; // String | 
+var participant = new EchaloasuerteJsSdk.Participant(); // Participant | 
+apiInstance.lotteryParticipantsAdd(id, participant).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -98,13 +98,13 @@ No authorization required
 
 ### Example
 ```javascript
-import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
+var EchaloasuerteJsSdk = require('echaloasuerte-js-sdk');
 
-let apiInstance = new EchaloasuerteJsSdk.LotteryApi();
-let id = "id_example"; // String | 
-apiInstance.lotteryRead(id).then((data) => {
+var apiInstance = new EchaloasuerteJsSdk.LotteryApi();
+var id = "id_example"; // String | 
+apiInstance.lotteryRead(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -137,14 +137,14 @@ No authorization required
 
 ### Example
 ```javascript
-import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
+var EchaloasuerteJsSdk = require('echaloasuerte-js-sdk');
 
-let apiInstance = new EchaloasuerteJsSdk.LotteryApi();
-let id = "id_example"; // String | 
-let drawTossPayload = new EchaloasuerteJsSdk.DrawTossPayload(); // DrawTossPayload | 
-apiInstance.lotteryToss(id, drawTossPayload).then((data) => {
+var apiInstance = new EchaloasuerteJsSdk.LotteryApi();
+var id = "id_example"; // String | 
+var drawTossPayload = new EchaloasuerteJsSdk.DrawTossPayload(); // DrawTossPayload | 
+apiInstance.lotteryToss(id, drawTossPayload).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

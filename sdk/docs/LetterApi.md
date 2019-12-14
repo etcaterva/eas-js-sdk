@@ -1,6 +1,6 @@
 # EchaloasuerteJsSdk.LetterApi
 
-All URIs are relative to *http://localhost/should-be-overriden*
+All URIs are relative to *https://raw.githubusercontent.com/should-be-overriden*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,13 +17,13 @@ Method | HTTP request | Description
 
 ### Example
 ```javascript
-import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
+var EchaloasuerteJsSdk = require('echaloasuerte-js-sdk');
 
-let apiInstance = new EchaloasuerteJsSdk.LetterApi();
-let letter = new EchaloasuerteJsSdk.Letter(); // Letter | 
-apiInstance.letterCreate(letter).then((data) => {
+var apiInstance = new EchaloasuerteJsSdk.LetterApi();
+var letter = new EchaloasuerteJsSdk.Letter(); // Letter | 
+apiInstance.letterCreate(letter).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -56,13 +56,13 @@ No authorization required
 
 ### Example
 ```javascript
-import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
+var EchaloasuerteJsSdk = require('echaloasuerte-js-sdk');
 
-let apiInstance = new EchaloasuerteJsSdk.LetterApi();
-let id = "id_example"; // String | 
-apiInstance.letterRead(id).then((data) => {
+var apiInstance = new EchaloasuerteJsSdk.LetterApi();
+var id = "id_example"; // String | 
+apiInstance.letterRead(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -95,14 +95,14 @@ No authorization required
 
 ### Example
 ```javascript
-import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
+var EchaloasuerteJsSdk = require('echaloasuerte-js-sdk');
 
-let apiInstance = new EchaloasuerteJsSdk.LetterApi();
-let id = "id_example"; // String | 
-let drawTossPayload = new EchaloasuerteJsSdk.DrawTossPayload(); // DrawTossPayload | 
-apiInstance.letterToss(id, drawTossPayload).then((data) => {
+var apiInstance = new EchaloasuerteJsSdk.LetterApi();
+var id = "id_example"; // String | 
+var drawTossPayload = new EchaloasuerteJsSdk.DrawTossPayload(); // DrawTossPayload | 
+apiInstance.letterToss(id, drawTossPayload).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
