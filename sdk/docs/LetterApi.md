@@ -17,13 +17,13 @@ Method | HTTP request | Description
 
 ### Example
 ```javascript
-var EchaloasuerteJsSdk = require('echaloasuerte-js-sdk');
+import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
-var apiInstance = new EchaloasuerteJsSdk.LetterApi();
-var letter = new EchaloasuerteJsSdk.Letter(); // Letter | 
-apiInstance.letterCreate(letter).then(function(data) {
+let apiInstance = new EchaloasuerteJsSdk.LetterApi();
+let letter = new EchaloasuerteJsSdk.Letter(); // Letter | 
+apiInstance.letterCreate(letter).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -56,13 +56,13 @@ No authorization required
 
 ### Example
 ```javascript
-var EchaloasuerteJsSdk = require('echaloasuerte-js-sdk');
+import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
-var apiInstance = new EchaloasuerteJsSdk.LetterApi();
-var id = "id_example"; // String | 
-apiInstance.letterRead(id).then(function(data) {
+let apiInstance = new EchaloasuerteJsSdk.LetterApi();
+let id = "id_example"; // String | 
+apiInstance.letterRead(id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -95,14 +95,14 @@ No authorization required
 
 ### Example
 ```javascript
-var EchaloasuerteJsSdk = require('echaloasuerte-js-sdk');
+import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
-var apiInstance = new EchaloasuerteJsSdk.LetterApi();
-var id = "id_example"; // String | 
-var drawTossPayload = new EchaloasuerteJsSdk.DrawTossPayload(); // DrawTossPayload | 
-apiInstance.letterToss(id, drawTossPayload).then(function(data) {
+let apiInstance = new EchaloasuerteJsSdk.LetterApi();
+let id = "id_example"; // String | 
+let drawTossPayload = new EchaloasuerteJsSdk.DrawTossPayload(); // DrawTossPayload | 
+apiInstance.letterToss(id, drawTossPayload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 

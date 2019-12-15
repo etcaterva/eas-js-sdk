@@ -17,13 +17,13 @@ Method | HTTP request | Description
 
 ### Example
 ```javascript
-var EchaloasuerteJsSdk = require('echaloasuerte-js-sdk');
+import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
-var apiInstance = new EchaloasuerteJsSdk.RandomNumberApi();
-var randomNumber = new EchaloasuerteJsSdk.RandomNumber(); // RandomNumber | 
-apiInstance.randomNumberCreate(randomNumber).then(function(data) {
+let apiInstance = new EchaloasuerteJsSdk.RandomNumberApi();
+let randomNumber = new EchaloasuerteJsSdk.RandomNumber(); // RandomNumber | 
+apiInstance.randomNumberCreate(randomNumber).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -56,13 +56,13 @@ No authorization required
 
 ### Example
 ```javascript
-var EchaloasuerteJsSdk = require('echaloasuerte-js-sdk');
+import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
-var apiInstance = new EchaloasuerteJsSdk.RandomNumberApi();
-var id = "id_example"; // String | 
-apiInstance.randomNumberRead(id).then(function(data) {
+let apiInstance = new EchaloasuerteJsSdk.RandomNumberApi();
+let id = "id_example"; // String | 
+apiInstance.randomNumberRead(id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -95,14 +95,14 @@ No authorization required
 
 ### Example
 ```javascript
-var EchaloasuerteJsSdk = require('echaloasuerte-js-sdk');
+import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
-var apiInstance = new EchaloasuerteJsSdk.RandomNumberApi();
-var id = "id_example"; // String | 
-var drawTossPayload = new EchaloasuerteJsSdk.DrawTossPayload(); // DrawTossPayload | 
-apiInstance.randomNumberToss(id, drawTossPayload).then(function(data) {
+let apiInstance = new EchaloasuerteJsSdk.RandomNumberApi();
+let id = "id_example"; // String | 
+let drawTossPayload = new EchaloasuerteJsSdk.DrawTossPayload(); // DrawTossPayload | 
+apiInstance.randomNumberToss(id, drawTossPayload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 

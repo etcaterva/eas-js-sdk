@@ -18,13 +18,13 @@ Method | HTTP request | Description
 
 ### Example
 ```javascript
-var EchaloasuerteJsSdk = require('echaloasuerte-js-sdk');
+import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
-var apiInstance = new EchaloasuerteJsSdk.LotteryApi();
-var lottery = new EchaloasuerteJsSdk.Lottery(); // Lottery | 
-apiInstance.lotteryCreate(lottery).then(function(data) {
+let apiInstance = new EchaloasuerteJsSdk.LotteryApi();
+let lottery = new EchaloasuerteJsSdk.Lottery(); // Lottery | 
+apiInstance.lotteryCreate(lottery).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -57,14 +57,14 @@ No authorization required
 
 ### Example
 ```javascript
-var EchaloasuerteJsSdk = require('echaloasuerte-js-sdk');
+import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
-var apiInstance = new EchaloasuerteJsSdk.LotteryApi();
-var id = "id_example"; // String | 
-var participant = new EchaloasuerteJsSdk.Participant(); // Participant | 
-apiInstance.lotteryParticipantsAdd(id, participant).then(function() {
+let apiInstance = new EchaloasuerteJsSdk.LotteryApi();
+let id = "id_example"; // String | 
+let participant = new EchaloasuerteJsSdk.Participant(); // Participant | 
+apiInstance.lotteryParticipantsAdd(id, participant).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -98,13 +98,13 @@ No authorization required
 
 ### Example
 ```javascript
-var EchaloasuerteJsSdk = require('echaloasuerte-js-sdk');
+import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
-var apiInstance = new EchaloasuerteJsSdk.LotteryApi();
-var id = "id_example"; // String | 
-apiInstance.lotteryRead(id).then(function(data) {
+let apiInstance = new EchaloasuerteJsSdk.LotteryApi();
+let id = "id_example"; // String | 
+apiInstance.lotteryRead(id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -137,14 +137,14 @@ No authorization required
 
 ### Example
 ```javascript
-var EchaloasuerteJsSdk = require('echaloasuerte-js-sdk');
+import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
-var apiInstance = new EchaloasuerteJsSdk.LotteryApi();
-var id = "id_example"; // String | 
-var drawTossPayload = new EchaloasuerteJsSdk.DrawTossPayload(); // DrawTossPayload | 
-apiInstance.lotteryToss(id, drawTossPayload).then(function(data) {
+let apiInstance = new EchaloasuerteJsSdk.LotteryApi();
+let id = "id_example"; // String | 
+let drawTossPayload = new EchaloasuerteJsSdk.DrawTossPayload(); // DrawTossPayload | 
+apiInstance.lotteryToss(id, drawTossPayload).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
