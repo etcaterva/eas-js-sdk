@@ -1,8 +1,16 @@
 # EchaloasuerteJsSdk.Spinner
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**results** | [**[SpinnerResult]**](SpinnerResult.md) |  | [optional] 
+**id** | **String** |  | [optional] [readonly] 
+**createdAt** | **Date** |  | [optional] [readonly] 
+**updatedAt** | **Date** |  | [optional] [readonly] 
+**title** | **String** |  | [optional] 
+**description** | **String** |  | [optional] 
+**privateId** | **String** |  | [optional] [readonly] 
+**metadata** | [**[DrawMetadata]**](DrawMetadata.md) |  | [optional] 
+**results** | [**[SpinnerResult]**](SpinnerResult.md) |  | [optional] [readonly] 
 
 

@@ -1,12 +1,16 @@
 # EchaloasuerteJsSdk.CoinResult
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **String** |  | [optional] [readonly] 
+**createdAt** | **Date** |  | [optional] [readonly] 
+**scheduleDate** | **Date** |  | [optional] 
 **value** | **[String]** |  | [optional] 
 
 
-<a name="[ValueEnum]"></a>
+
 ## Enum: [ValueEnum]
 
 

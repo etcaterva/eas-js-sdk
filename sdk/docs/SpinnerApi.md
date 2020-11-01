@@ -9,13 +9,15 @@ Method | HTTP request | Description
 [**spinnerToss**](SpinnerApi.md#spinnerToss) | **POST** /spinner/{id}/toss/ | 
 
 
-<a name="spinnerCreate"></a>
-# **spinnerCreate**
+
+## spinnerCreate
+
 > Spinner spinnerCreate(spinner)
 
 
 
 ### Example
+
 ```javascript
 import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
@@ -31,6 +33,7 @@ apiInstance.spinnerCreate(spinner).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **spinner** | [**Spinner**](Spinner.md)|  | 
@@ -45,16 +48,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="spinnerRead"></a>
-# **spinnerRead**
+
+## spinnerRead
+
 > Spinner spinnerRead(id)
 
 
 
 ### Example
+
 ```javascript
 import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
@@ -70,6 +75,7 @@ apiInstance.spinnerRead(id).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
@@ -84,16 +90,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="spinnerToss"></a>
-# **spinnerToss**
+
+## spinnerToss
+
 > SpinnerResult spinnerToss(id, drawTossPayload)
 
 
 
 ### Example
+
 ```javascript
 import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
@@ -110,6 +118,7 @@ apiInstance.spinnerToss(id, drawTossPayload).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
@@ -125,6 +134,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 

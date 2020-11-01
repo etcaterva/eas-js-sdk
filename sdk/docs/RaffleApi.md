@@ -10,13 +10,15 @@ Method | HTTP request | Description
 [**raffleToss**](RaffleApi.md#raffleToss) | **POST** /raffle/{id}/toss/ | 
 
 
-<a name="raffleCreate"></a>
-# **raffleCreate**
+
+## raffleCreate
+
 > Raffle raffleCreate(raffle)
 
 
 
 ### Example
+
 ```javascript
 import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
@@ -32,6 +34,7 @@ apiInstance.raffleCreate(raffle).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **raffle** | [**Raffle**](Raffle.md)|  | 
@@ -46,16 +49,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="raffleParticipantsAdd"></a>
-# **raffleParticipantsAdd**
+
+## raffleParticipantsAdd
+
 > raffleParticipantsAdd(id, participant)
 
 
 
 ### Example
+
 ```javascript
 import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
@@ -72,6 +77,7 @@ apiInstance.raffleParticipantsAdd(id, participant).then(() => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
@@ -87,16 +93,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: Not defined
+- **Content-Type**: application/json
+- **Accept**: Not defined
 
-<a name="raffleRead"></a>
-# **raffleRead**
+
+## raffleRead
+
 > Raffle raffleRead(id)
 
 
 
 ### Example
+
 ```javascript
 import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
@@ -112,6 +120,7 @@ apiInstance.raffleRead(id).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
@@ -126,16 +135,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="raffleToss"></a>
-# **raffleToss**
+
+## raffleToss
+
 > RaffleResult raffleToss(id, drawTossPayload)
 
 
 
 ### Example
+
 ```javascript
 import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
@@ -152,6 +163,7 @@ apiInstance.raffleToss(id, drawTossPayload).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
@@ -167,6 +179,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 

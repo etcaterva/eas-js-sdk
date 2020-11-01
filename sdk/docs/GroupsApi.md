@@ -10,13 +10,15 @@ Method | HTTP request | Description
 [**groupsToss**](GroupsApi.md#groupsToss) | **POST** /groups/{id}/toss/ | 
 
 
-<a name="groupsCreate"></a>
-# **groupsCreate**
+
+## groupsCreate
+
 > Groups groupsCreate(groups)
 
 
 
 ### Example
+
 ```javascript
 import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
@@ -32,6 +34,7 @@ apiInstance.groupsCreate(groups).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **groups** | [**Groups**](Groups.md)|  | 
@@ -46,16 +49,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="groupsParticipantsAdd"></a>
-# **groupsParticipantsAdd**
+
+## groupsParticipantsAdd
+
 > groupsParticipantsAdd(id, participant)
 
 
 
 ### Example
+
 ```javascript
 import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
@@ -72,6 +77,7 @@ apiInstance.groupsParticipantsAdd(id, participant).then(() => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
@@ -87,16 +93,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: Not defined
+- **Content-Type**: application/json
+- **Accept**: Not defined
 
-<a name="groupsRead"></a>
-# **groupsRead**
+
+## groupsRead
+
 > Groups groupsRead(id)
 
 
 
 ### Example
+
 ```javascript
 import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
@@ -112,6 +120,7 @@ apiInstance.groupsRead(id).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
@@ -126,16 +135,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="groupsToss"></a>
-# **groupsToss**
+
+## groupsToss
+
 > GroupsResult groupsToss(id, drawTossPayload)
 
 
 
 ### Example
+
 ```javascript
 import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
@@ -152,6 +163,7 @@ apiInstance.groupsToss(id, drawTossPayload).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
@@ -167,6 +179,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 

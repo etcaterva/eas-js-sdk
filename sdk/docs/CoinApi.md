@@ -9,13 +9,15 @@ Method | HTTP request | Description
 [**coinToss**](CoinApi.md#coinToss) | **POST** /coin/{id}/toss/ | 
 
 
-<a name="coinCreate"></a>
-# **coinCreate**
+
+## coinCreate
+
 > Coin coinCreate(coin)
 
 
 
 ### Example
+
 ```javascript
 import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
@@ -31,6 +33,7 @@ apiInstance.coinCreate(coin).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **coin** | [**Coin**](Coin.md)|  | 
@@ -45,16 +48,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="coinRead"></a>
-# **coinRead**
+
+## coinRead
+
 > Coin coinRead(id)
 
 
 
 ### Example
+
 ```javascript
 import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
@@ -70,6 +75,7 @@ apiInstance.coinRead(id).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
@@ -84,16 +90,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="coinToss"></a>
-# **coinToss**
+
+## coinToss
+
 > CoinResult coinToss(id, drawTossPayload)
 
 
 
 ### Example
+
 ```javascript
 import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
@@ -110,6 +118,7 @@ apiInstance.coinToss(id, drawTossPayload).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
@@ -125,6 +134,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 

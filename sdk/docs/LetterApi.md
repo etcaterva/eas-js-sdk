@@ -9,13 +9,15 @@ Method | HTTP request | Description
 [**letterToss**](LetterApi.md#letterToss) | **POST** /letter/{id}/toss/ | 
 
 
-<a name="letterCreate"></a>
-# **letterCreate**
+
+## letterCreate
+
 > Letter letterCreate(letter)
 
 
 
 ### Example
+
 ```javascript
 import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
@@ -31,6 +33,7 @@ apiInstance.letterCreate(letter).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **letter** | [**Letter**](Letter.md)|  | 
@@ -45,16 +48,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="letterRead"></a>
-# **letterRead**
+
+## letterRead
+
 > Letter letterRead(id)
 
 
 
 ### Example
+
 ```javascript
 import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
@@ -70,6 +75,7 @@ apiInstance.letterRead(id).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
@@ -84,16 +90,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="letterToss"></a>
-# **letterToss**
+
+## letterToss
+
 > LetterResult letterToss(id, drawTossPayload)
 
 
 
 ### Example
+
 ```javascript
 import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
@@ -110,6 +118,7 @@ apiInstance.letterToss(id, drawTossPayload).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
@@ -125,6 +134,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 

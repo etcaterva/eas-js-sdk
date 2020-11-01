@@ -10,13 +10,15 @@ Method | HTTP request | Description
 [**lotteryToss**](LotteryApi.md#lotteryToss) | **POST** /lottery/{id}/toss/ | 
 
 
-<a name="lotteryCreate"></a>
-# **lotteryCreate**
+
+## lotteryCreate
+
 > Lottery lotteryCreate(lottery)
 
 
 
 ### Example
+
 ```javascript
 import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
@@ -32,6 +34,7 @@ apiInstance.lotteryCreate(lottery).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **lottery** | [**Lottery**](Lottery.md)|  | 
@@ -46,16 +49,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="lotteryParticipantsAdd"></a>
-# **lotteryParticipantsAdd**
+
+## lotteryParticipantsAdd
+
 > lotteryParticipantsAdd(id, participant)
 
 
 
 ### Example
+
 ```javascript
 import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
@@ -72,6 +77,7 @@ apiInstance.lotteryParticipantsAdd(id, participant).then(() => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
@@ -87,16 +93,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: Not defined
+- **Content-Type**: application/json
+- **Accept**: Not defined
 
-<a name="lotteryRead"></a>
-# **lotteryRead**
+
+## lotteryRead
+
 > Lottery lotteryRead(id)
 
 
 
 ### Example
+
 ```javascript
 import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
@@ -112,6 +120,7 @@ apiInstance.lotteryRead(id).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
@@ -126,16 +135,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="lotteryToss"></a>
-# **lotteryToss**
+
+## lotteryToss
+
 > LotteryResult lotteryToss(id, drawTossPayload)
 
 
 
 ### Example
+
 ```javascript
 import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
@@ -152,6 +163,7 @@ apiInstance.lotteryToss(id, drawTossPayload).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
@@ -167,6 +179,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 

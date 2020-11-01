@@ -9,13 +9,15 @@ Method | HTTP request | Description
 [**randomNumberToss**](RandomNumberApi.md#randomNumberToss) | **POST** /random_number/{id}/toss/ | 
 
 
-<a name="randomNumberCreate"></a>
-# **randomNumberCreate**
+
+## randomNumberCreate
+
 > RandomNumber randomNumberCreate(randomNumber)
 
 
 
 ### Example
+
 ```javascript
 import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
@@ -31,6 +33,7 @@ apiInstance.randomNumberCreate(randomNumber).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **randomNumber** | [**RandomNumber**](RandomNumber.md)|  | 
@@ -45,16 +48,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="randomNumberRead"></a>
-# **randomNumberRead**
+
+## randomNumberRead
+
 > RandomNumber randomNumberRead(id)
 
 
 
 ### Example
+
 ```javascript
 import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
@@ -70,6 +75,7 @@ apiInstance.randomNumberRead(id).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
@@ -84,16 +90,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="randomNumberToss"></a>
-# **randomNumberToss**
+
+## randomNumberToss
+
 > RandomNumberResult randomNumberToss(id, drawTossPayload)
 
 
 
 ### Example
+
 ```javascript
 import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
@@ -110,6 +118,7 @@ apiInstance.randomNumberToss(id, drawTossPayload).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
@@ -125,6 +134,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 

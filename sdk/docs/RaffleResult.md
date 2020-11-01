@@ -1,8 +1,12 @@
 # EchaloasuerteJsSdk.RaffleResult
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | [**[RaffleResultValue]**](RaffleResultValue.md) |  | [optional] 
+**id** | **String** |  | [optional] [readonly] 
+**createdAt** | **Date** |  | [optional] [readonly] 
+**scheduleDate** | **Date** |  | [optional] 
+**value** | [**[RaffleResultAllOfValue]**](RaffleResultAllOfValue.md) |  | [optional] 
 
 
