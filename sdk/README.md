@@ -128,6 +128,9 @@ Class | Method | HTTP request | Description
 *EchaloasuerteJsSdk.LetterApi* | [**letterCreate**](docs/LetterApi.md#letterCreate) | **POST** /letter/ | 
 *EchaloasuerteJsSdk.LetterApi* | [**letterRead**](docs/LetterApi.md#letterRead) | **GET** /letter/{id}/ | 
 *EchaloasuerteJsSdk.LetterApi* | [**letterToss**](docs/LetterApi.md#letterToss) | **POST** /letter/{id}/toss/ | 
+*EchaloasuerteJsSdk.LinkApi* | [**linkCreate**](docs/LinkApi.md#linkCreate) | **POST** /link/ | 
+*EchaloasuerteJsSdk.LinkApi* | [**linkRead**](docs/LinkApi.md#linkRead) | **GET** /link/{id}/ | 
+*EchaloasuerteJsSdk.LinkApi* | [**linkToss**](docs/LinkApi.md#linkToss) | **POST** /link/{id}/toss/ | 
 *EchaloasuerteJsSdk.LotteryApi* | [**lotteryCreate**](docs/LotteryApi.md#lotteryCreate) | **POST** /lottery/ | 
 *EchaloasuerteJsSdk.LotteryApi* | [**lotteryParticipantsAdd**](docs/LotteryApi.md#lotteryParticipantsAdd) | **POST** /lottery/{id}/participants/ | 
 *EchaloasuerteJsSdk.LotteryApi* | [**lotteryRead**](docs/LotteryApi.md#lotteryRead) | **GET** /lottery/{id}/ | 
@@ -165,6 +168,11 @@ Class | Method | HTTP request | Description
  - [EchaloasuerteJsSdk.LetterAllOf](docs/LetterAllOf.md)
  - [EchaloasuerteJsSdk.LetterResult](docs/LetterResult.md)
  - [EchaloasuerteJsSdk.LetterResultAllOf](docs/LetterResultAllOf.md)
+ - [EchaloasuerteJsSdk.Link](docs/Link.md)
+ - [EchaloasuerteJsSdk.LinkAllOf](docs/LinkAllOf.md)
+ - [EchaloasuerteJsSdk.LinkResult](docs/LinkResult.md)
+ - [EchaloasuerteJsSdk.LinkResultAllOf](docs/LinkResultAllOf.md)
+ - [EchaloasuerteJsSdk.LinkResultAllOfValue](docs/LinkResultAllOfValue.md)
  - [EchaloasuerteJsSdk.Lottery](docs/Lottery.md)
  - [EchaloasuerteJsSdk.LotteryAllOf](docs/LotteryAllOf.md)
  - [EchaloasuerteJsSdk.LotteryResult](docs/LotteryResult.md)

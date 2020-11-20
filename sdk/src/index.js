@@ -32,6 +32,11 @@ import Letter from './model/Letter';
 import LetterAllOf from './model/LetterAllOf';
 import LetterResult from './model/LetterResult';
 import LetterResultAllOf from './model/LetterResultAllOf';
+import Link from './model/Link';
+import LinkAllOf from './model/LinkAllOf';
+import LinkResult from './model/LinkResult';
+import LinkResultAllOf from './model/LinkResultAllOf';
+import LinkResultAllOfValue from './model/LinkResultAllOfValue';
 import Lottery from './model/Lottery';
 import LotteryAllOf from './model/LotteryAllOf';
 import LotteryResult from './model/LotteryResult';
@@ -56,6 +61,7 @@ import SpinnerResultAllOf from './model/SpinnerResultAllOf';
 import CoinApi from './api/CoinApi';
 import GroupsApi from './api/GroupsApi';
 import LetterApi from './api/LetterApi';
+import LinkApi from './api/LinkApi';
 import LotteryApi from './api/LotteryApi';
 import RaffleApi from './api/RaffleApi';
 import RandomNumberApi from './api/RandomNumberApi';
@@ -215,6 +221,36 @@ export {
     LetterResultAllOf,
 
     /**
+     * The Link model constructor.
+     * @property {module:model/Link}
+     */
+    Link,
+
+    /**
+     * The LinkAllOf model constructor.
+     * @property {module:model/LinkAllOf}
+     */
+    LinkAllOf,
+
+    /**
+     * The LinkResult model constructor.
+     * @property {module:model/LinkResult}
+     */
+    LinkResult,
+
+    /**
+     * The LinkResultAllOf model constructor.
+     * @property {module:model/LinkResultAllOf}
+     */
+    LinkResultAllOf,
+
+    /**
+     * The LinkResultAllOfValue model constructor.
+     * @property {module:model/LinkResultAllOfValue}
+     */
+    LinkResultAllOfValue,
+
+    /**
      * The Lottery model constructor.
      * @property {module:model/Lottery}
      */
@@ -357,6 +393,12 @@ export {
     * @property {module:api/LetterApi}
     */
     LetterApi,
+
+    /**
+    * The LinkApi service constructor.
+    * @property {module:api/LinkApi}
+    */
+    LinkApi,
 
     /**
     * The LotteryApi service constructor.
