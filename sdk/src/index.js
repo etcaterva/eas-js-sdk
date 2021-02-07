@@ -54,6 +54,9 @@ import RandomNumber from './model/RandomNumber';
 import RandomNumberAllOf from './model/RandomNumberAllOf';
 import RandomNumberResult from './model/RandomNumberResult';
 import RandomNumberResultAllOf from './model/RandomNumberResultAllOf';
+import SecretSanta from './model/SecretSanta';
+import SecretSantaParticipants from './model/SecretSantaParticipants';
+import SecretSantaResult from './model/SecretSantaResult';
 import Spinner from './model/Spinner';
 import SpinnerAllOf from './model/SpinnerAllOf';
 import SpinnerResult from './model/SpinnerResult';
@@ -65,6 +68,7 @@ import LinkApi from './api/LinkApi';
 import LotteryApi from './api/LotteryApi';
 import RaffleApi from './api/RaffleApi';
 import RandomNumberApi from './api/RandomNumberApi';
+import SecretSantaApi from './api/SecretSantaApi';
 import SpinnerApi from './api/SpinnerApi';
 
 
@@ -353,6 +357,24 @@ export {
     RandomNumberResultAllOf,
 
     /**
+     * The SecretSanta model constructor.
+     * @property {module:model/SecretSanta}
+     */
+    SecretSanta,
+
+    /**
+     * The SecretSantaParticipants model constructor.
+     * @property {module:model/SecretSantaParticipants}
+     */
+    SecretSantaParticipants,
+
+    /**
+     * The SecretSantaResult model constructor.
+     * @property {module:model/SecretSantaResult}
+     */
+    SecretSantaResult,
+
+    /**
      * The Spinner model constructor.
      * @property {module:model/Spinner}
      */
@@ -417,6 +439,12 @@ export {
     * @property {module:api/RandomNumberApi}
     */
     RandomNumberApi,
+
+    /**
+    * The SecretSantaApi service constructor.
+    * @property {module:api/SecretSantaApi}
+    */
+    SecretSantaApi,
 
     /**
     * The SpinnerApi service constructor.

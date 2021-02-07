@@ -142,6 +142,8 @@ Class | Method | HTTP request | Description
 *EchaloasuerteJsSdk.RandomNumberApi* | [**randomNumberCreate**](docs/RandomNumberApi.md#randomNumberCreate) | **POST** /random_number/ | 
 *EchaloasuerteJsSdk.RandomNumberApi* | [**randomNumberRead**](docs/RandomNumberApi.md#randomNumberRead) | **GET** /random_number/{id}/ | 
 *EchaloasuerteJsSdk.RandomNumberApi* | [**randomNumberToss**](docs/RandomNumberApi.md#randomNumberToss) | **POST** /random_number/{id}/toss/ | 
+*EchaloasuerteJsSdk.SecretSantaApi* | [**secretSantaCreate**](docs/SecretSantaApi.md#secretSantaCreate) | **POST** /secret-santa/ | 
+*EchaloasuerteJsSdk.SecretSantaApi* | [**secretSantaResultGet**](docs/SecretSantaApi.md#secretSantaResultGet) | **GET** /secret-santa/{id}/ | 
 *EchaloasuerteJsSdk.SpinnerApi* | [**spinnerCreate**](docs/SpinnerApi.md#spinnerCreate) | **POST** /spinner/ | 
 *EchaloasuerteJsSdk.SpinnerApi* | [**spinnerRead**](docs/SpinnerApi.md#spinnerRead) | **GET** /spinner/{id}/ | 
 *EchaloasuerteJsSdk.SpinnerApi* | [**spinnerToss**](docs/SpinnerApi.md#spinnerToss) | **POST** /spinner/{id}/toss/ | 
@@ -190,6 +192,9 @@ Class | Method | HTTP request | Description
  - [EchaloasuerteJsSdk.RandomNumberAllOf](docs/RandomNumberAllOf.md)
  - [EchaloasuerteJsSdk.RandomNumberResult](docs/RandomNumberResult.md)
  - [EchaloasuerteJsSdk.RandomNumberResultAllOf](docs/RandomNumberResultAllOf.md)
+ - [EchaloasuerteJsSdk.SecretSanta](docs/SecretSanta.md)
+ - [EchaloasuerteJsSdk.SecretSantaParticipants](docs/SecretSantaParticipants.md)
+ - [EchaloasuerteJsSdk.SecretSantaResult](docs/SecretSantaResult.md)
  - [EchaloasuerteJsSdk.Spinner](docs/Spinner.md)
  - [EchaloasuerteJsSdk.SpinnerAllOf](docs/SpinnerAllOf.md)
  - [EchaloasuerteJsSdk.SpinnerResult](docs/SpinnerResult.md)
