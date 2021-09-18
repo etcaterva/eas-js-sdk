@@ -27,7 +27,6 @@ import DrawTossPayload from './model/DrawTossPayload';
 import Groups from './model/Groups';
 import GroupsAllOf from './model/GroupsAllOf';
 import GroupsResult from './model/GroupsResult';
-import GroupsResultAllOf from './model/GroupsResultAllOf';
 import Letter from './model/Letter';
 import LetterAllOf from './model/LetterAllOf';
 import LetterResult from './model/LetterResult';
@@ -43,6 +42,7 @@ import LotteryResult from './model/LotteryResult';
 import LotteryResultAllOf from './model/LotteryResultAllOf';
 import Participant from './model/Participant';
 import ParticipantAllOf from './model/ParticipantAllOf';
+import PayPalCreate from './model/PayPalCreate';
 import Prize from './model/Prize';
 import PrizeAllOf from './model/PrizeAllOf';
 import Raffle from './model/Raffle';
@@ -61,15 +61,21 @@ import Spinner from './model/Spinner';
 import SpinnerAllOf from './model/SpinnerAllOf';
 import SpinnerResult from './model/SpinnerResult';
 import SpinnerResultAllOf from './model/SpinnerResultAllOf';
+import Tournament from './model/Tournament';
+import TournamentAllOf from './model/TournamentAllOf';
+import TournamentResult from './model/TournamentResult';
+import TournamentResultAllOf from './model/TournamentResultAllOf';
 import CoinApi from './api/CoinApi';
 import GroupsApi from './api/GroupsApi';
 import LetterApi from './api/LetterApi';
 import LinkApi from './api/LinkApi';
 import LotteryApi from './api/LotteryApi';
+import PaypalApi from './api/PaypalApi';
 import RaffleApi from './api/RaffleApi';
 import RandomNumberApi from './api/RandomNumberApi';
 import SecretSantaApi from './api/SecretSantaApi';
 import SpinnerApi from './api/SpinnerApi';
+import TournamentApi from './api/TournamentApi';
 
 
 /**
@@ -195,12 +201,6 @@ export {
     GroupsResult,
 
     /**
-     * The GroupsResultAllOf model constructor.
-     * @property {module:model/GroupsResultAllOf}
-     */
-    GroupsResultAllOf,
-
-    /**
      * The Letter model constructor.
      * @property {module:model/Letter}
      */
@@ -289,6 +289,12 @@ export {
      * @property {module:model/ParticipantAllOf}
      */
     ParticipantAllOf,
+
+    /**
+     * The PayPalCreate model constructor.
+     * @property {module:model/PayPalCreate}
+     */
+    PayPalCreate,
 
     /**
      * The Prize model constructor.
@@ -399,6 +405,30 @@ export {
     SpinnerResultAllOf,
 
     /**
+     * The Tournament model constructor.
+     * @property {module:model/Tournament}
+     */
+    Tournament,
+
+    /**
+     * The TournamentAllOf model constructor.
+     * @property {module:model/TournamentAllOf}
+     */
+    TournamentAllOf,
+
+    /**
+     * The TournamentResult model constructor.
+     * @property {module:model/TournamentResult}
+     */
+    TournamentResult,
+
+    /**
+     * The TournamentResultAllOf model constructor.
+     * @property {module:model/TournamentResultAllOf}
+     */
+    TournamentResultAllOf,
+
+    /**
     * The CoinApi service constructor.
     * @property {module:api/CoinApi}
     */
@@ -429,6 +459,12 @@ export {
     LotteryApi,
 
     /**
+    * The PaypalApi service constructor.
+    * @property {module:api/PaypalApi}
+    */
+    PaypalApi,
+
+    /**
     * The RaffleApi service constructor.
     * @property {module:api/RaffleApi}
     */
@@ -450,5 +486,11 @@ export {
     * The SpinnerApi service constructor.
     * @property {module:api/SpinnerApi}
     */
-    SpinnerApi
+    SpinnerApi,
+
+    /**
+    * The TournamentApi service constructor.
+    * @property {module:api/TournamentApi}
+    */
+    TournamentApi
 };

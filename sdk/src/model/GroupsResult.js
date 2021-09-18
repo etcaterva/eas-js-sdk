@@ -13,8 +13,8 @@
 
 import ApiClient from '../ApiClient';
 import BaseResult from './BaseResult';
-import GroupsResultAllOf from './GroupsResultAllOf';
 import Participant from './Participant';
+import TournamentResultAllOf from './TournamentResultAllOf';
 
 /**
  * The GroupsResult model module.
@@ -26,10 +26,10 @@ class GroupsResult {
      * Constructs a new <code>GroupsResult</code>.
      * @alias module:model/GroupsResult
      * @implements module:model/BaseResult
-     * @implements module:model/GroupsResultAllOf
+     * @implements module:model/TournamentResultAllOf
      */
     constructor() { 
-        BaseResult.initialize(this);GroupsResultAllOf.initialize(this);
+        BaseResult.initialize(this);TournamentResultAllOf.initialize(this);
         GroupsResult.initialize(this);
     }
 
@@ -52,7 +52,7 @@ class GroupsResult {
         if (data) {
             obj = obj || new GroupsResult();
             BaseResult.constructFromObject(data, obj);
-            GroupsResultAllOf.constructFromObject(data, obj);
+            TournamentResultAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -107,11 +107,11 @@ BaseResult.prototype['created_at'] = undefined;
  * @member {Date} schedule_date
  */
 BaseResult.prototype['schedule_date'] = undefined;
-// Implement GroupsResultAllOf interface:
+// Implement TournamentResultAllOf interface:
 /**
  * @member {Array.<Array.<module:model/Participant>>} value
  */
-GroupsResultAllOf.prototype['value'] = undefined;
+TournamentResultAllOf.prototype['value'] = undefined;
 
 
 

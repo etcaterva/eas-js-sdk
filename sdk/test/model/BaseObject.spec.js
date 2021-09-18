@@ -56,13 +56,13 @@
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new EchaloasuerteJsSdk.BaseObject();
+      //var instance = new EchaloasuerteJsSdk.BaseObject();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new EchaloasuerteJsSdk.BaseObject();
+      //var instance = new EchaloasuerteJsSdk.BaseObject();
       //expect(instance).to.be();
     });
 

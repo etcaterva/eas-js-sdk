@@ -56,25 +56,25 @@
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new EchaloasuerteJsSdk.CoinResult();
+      //var instance = new EchaloasuerteJsSdk.CoinResult();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new EchaloasuerteJsSdk.CoinResult();
+      //var instance = new EchaloasuerteJsSdk.CoinResult();
       //expect(instance).to.be();
     });
 
     it('should have the property scheduleDate (base name: "schedule_date")', function() {
       // uncomment below and update the code to test the property scheduleDate
-      //var instane = new EchaloasuerteJsSdk.CoinResult();
+      //var instance = new EchaloasuerteJsSdk.CoinResult();
       //expect(instance).to.be();
     });
 
     it('should have the property value (base name: "value")', function() {
       // uncomment below and update the code to test the property value
-      //var instane = new EchaloasuerteJsSdk.CoinResult();
+      //var instance = new EchaloasuerteJsSdk.CoinResult();
       //expect(instance).to.be();
     });
 

@@ -56,13 +56,13 @@
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new EchaloasuerteJsSdk.PrizeAllOf();
+      //var instance = new EchaloasuerteJsSdk.PrizeAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instane = new EchaloasuerteJsSdk.PrizeAllOf();
+      //var instance = new EchaloasuerteJsSdk.PrizeAllOf();
       //expect(instance).to.be();
     });
 

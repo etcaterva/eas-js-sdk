@@ -56,31 +56,31 @@
 
     it('should have the property rangeMin (base name: "range_min")', function() {
       // uncomment below and update the code to test the property rangeMin
-      //var instane = new EchaloasuerteJsSdk.RandomNumberAllOf();
+      //var instance = new EchaloasuerteJsSdk.RandomNumberAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property rangeMax (base name: "range_max")', function() {
       // uncomment below and update the code to test the property rangeMax
-      //var instane = new EchaloasuerteJsSdk.RandomNumberAllOf();
+      //var instance = new EchaloasuerteJsSdk.RandomNumberAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property numberOfResults (base name: "number_of_results")', function() {
       // uncomment below and update the code to test the property numberOfResults
-      //var instane = new EchaloasuerteJsSdk.RandomNumberAllOf();
+      //var instance = new EchaloasuerteJsSdk.RandomNumberAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property allowRepeatedResults (base name: "allow_repeated_results")', function() {
       // uncomment below and update the code to test the property allowRepeatedResults
-      //var instane = new EchaloasuerteJsSdk.RandomNumberAllOf();
+      //var instance = new EchaloasuerteJsSdk.RandomNumberAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property results (base name: "results")', function() {
       // uncomment below and update the code to test the property results
-      //var instane = new EchaloasuerteJsSdk.RandomNumberAllOf();
+      //var instance = new EchaloasuerteJsSdk.RandomNumberAllOf();
       //expect(instance).to.be();
     });
 

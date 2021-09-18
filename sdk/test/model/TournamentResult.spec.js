@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EchaloasuerteJsSdk.GroupsResultAllOf();
+    instance = new EchaloasuerteJsSdk.TournamentResult();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,16 +47,34 @@
       object[property] = value;
   }
 
-  describe('GroupsResultAllOf', function() {
-    it('should create an instance of GroupsResultAllOf', function() {
-      // uncomment below and update the code to test GroupsResultAllOf
-      //var instane = new EchaloasuerteJsSdk.GroupsResultAllOf();
-      //expect(instance).to.be.a(EchaloasuerteJsSdk.GroupsResultAllOf);
+  describe('TournamentResult', function() {
+    it('should create an instance of TournamentResult', function() {
+      // uncomment below and update the code to test TournamentResult
+      //var instane = new EchaloasuerteJsSdk.TournamentResult();
+      //expect(instance).to.be.a(EchaloasuerteJsSdk.TournamentResult);
+    });
+
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instance = new EchaloasuerteJsSdk.TournamentResult();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property createdAt (base name: "created_at")', function() {
+      // uncomment below and update the code to test the property createdAt
+      //var instance = new EchaloasuerteJsSdk.TournamentResult();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property scheduleDate (base name: "schedule_date")', function() {
+      // uncomment below and update the code to test the property scheduleDate
+      //var instance = new EchaloasuerteJsSdk.TournamentResult();
+      //expect(instance).to.be();
     });
 
     it('should have the property value (base name: "value")', function() {
       // uncomment below and update the code to test the property value
-      //var instane = new EchaloasuerteJsSdk.GroupsResultAllOf();
+      //var instance = new EchaloasuerteJsSdk.TournamentResult();
       //expect(instance).to.be();
     });
 

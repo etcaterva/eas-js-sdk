@@ -1,4 +1,4 @@
-# EchaloasuerteJsSdk.GroupsResultAllOf
+# EchaloasuerteJsSdk.TournamentResultAllOf
 
 ## Properties
 

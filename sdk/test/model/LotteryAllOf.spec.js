@@ -56,19 +56,19 @@
 
     it('should have the property numberOfResults (base name: "number_of_results")', function() {
       // uncomment below and update the code to test the property numberOfResults
-      //var instane = new EchaloasuerteJsSdk.LotteryAllOf();
+      //var instance = new EchaloasuerteJsSdk.LotteryAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property participants (base name: "participants")', function() {
       // uncomment below and update the code to test the property participants
-      //var instane = new EchaloasuerteJsSdk.LotteryAllOf();
+      //var instance = new EchaloasuerteJsSdk.LotteryAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property results (base name: "results")', function() {
       // uncomment below and update the code to test the property results
-      //var instane = new EchaloasuerteJsSdk.LotteryAllOf();
+      //var instance = new EchaloasuerteJsSdk.LotteryAllOf();
       //expect(instance).to.be();
     });
 

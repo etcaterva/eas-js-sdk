@@ -15,18 +15,18 @@ import ApiClient from '../ApiClient';
 import Participant from './Participant';
 
 /**
- * The GroupsResultAllOf model module.
- * @module model/GroupsResultAllOf
+ * The TournamentResultAllOf model module.
+ * @module model/TournamentResultAllOf
  * @version 0.0.1
  */
-class GroupsResultAllOf {
+class TournamentResultAllOf {
     /**
-     * Constructs a new <code>GroupsResultAllOf</code>.
-     * @alias module:model/GroupsResultAllOf
+     * Constructs a new <code>TournamentResultAllOf</code>.
+     * @alias module:model/TournamentResultAllOf
      */
     constructor() { 
         
-        GroupsResultAllOf.initialize(this);
+        TournamentResultAllOf.initialize(this);
     }
 
     /**
@@ -38,15 +38,15 @@ class GroupsResultAllOf {
     }
 
     /**
-     * Constructs a <code>GroupsResultAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>TournamentResultAllOf</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/GroupsResultAllOf} obj Optional instance to populate.
-     * @return {module:model/GroupsResultAllOf} The populated <code>GroupsResultAllOf</code> instance.
+     * @param {module:model/TournamentResultAllOf} obj Optional instance to populate.
+     * @return {module:model/TournamentResultAllOf} The populated <code>TournamentResultAllOf</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new GroupsResultAllOf();
+            obj = obj || new TournamentResultAllOf();
 
             if (data.hasOwnProperty('value')) {
                 obj['value'] = ApiClient.convertToType(data['value'], [[Participant]]);
@@ -61,12 +61,12 @@ class GroupsResultAllOf {
 /**
  * @member {Array.<Array.<module:model/Participant>>} value
  */
-GroupsResultAllOf.prototype['value'] = undefined;
+TournamentResultAllOf.prototype['value'] = undefined;
 
 
 
 
 
 
-export default GroupsResultAllOf;
+export default TournamentResultAllOf;
 

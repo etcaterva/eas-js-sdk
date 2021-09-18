@@ -56,19 +56,19 @@
 
     it('should have the property numberOfResults (base name: "number_of_results")', function() {
       // uncomment below and update the code to test the property numberOfResults
-      //var instane = new EchaloasuerteJsSdk.LetterAllOf();
+      //var instance = new EchaloasuerteJsSdk.LetterAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property allowRepeatedResults (base name: "allow_repeated_results")', function() {
       // uncomment below and update the code to test the property allowRepeatedResults
-      //var instane = new EchaloasuerteJsSdk.LetterAllOf();
+      //var instance = new EchaloasuerteJsSdk.LetterAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property results (base name: "results")', function() {
       // uncomment below and update the code to test the property results
-      //var instane = new EchaloasuerteJsSdk.LetterAllOf();
+      //var instance = new EchaloasuerteJsSdk.LetterAllOf();
       //expect(instance).to.be();
     });
 

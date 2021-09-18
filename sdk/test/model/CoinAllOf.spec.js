@@ -56,7 +56,7 @@
 
     it('should have the property results (base name: "results")', function() {
       // uncomment below and update the code to test the property results
-      //var instane = new EchaloasuerteJsSdk.CoinAllOf();
+      //var instance = new EchaloasuerteJsSdk.CoinAllOf();
       //expect(instance).to.be();
     });
 

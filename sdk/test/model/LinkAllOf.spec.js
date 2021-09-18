@@ -56,19 +56,19 @@
 
     it('should have the property itemsSet1 (base name: "items_set1")', function() {
       // uncomment below and update the code to test the property itemsSet1
-      //var instane = new EchaloasuerteJsSdk.LinkAllOf();
+      //var instance = new EchaloasuerteJsSdk.LinkAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property itemsSet2 (base name: "items_set2")', function() {
       // uncomment below and update the code to test the property itemsSet2
-      //var instane = new EchaloasuerteJsSdk.LinkAllOf();
+      //var instance = new EchaloasuerteJsSdk.LinkAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property results (base name: "results")', function() {
       // uncomment below and update the code to test the property results
-      //var instane = new EchaloasuerteJsSdk.LinkAllOf();
+      //var instance = new EchaloasuerteJsSdk.LinkAllOf();
       //expect(instance).to.be();
     });
 

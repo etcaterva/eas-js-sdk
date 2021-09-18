@@ -56,19 +56,19 @@
 
     it('should have the property participants (base name: "participants")', function() {
       // uncomment below and update the code to test the property participants
-      //var instane = new EchaloasuerteJsSdk.GroupsAllOf();
+      //var instance = new EchaloasuerteJsSdk.GroupsAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property numberOfGroups (base name: "number_of_groups")', function() {
       // uncomment below and update the code to test the property numberOfGroups
-      //var instane = new EchaloasuerteJsSdk.GroupsAllOf();
+      //var instance = new EchaloasuerteJsSdk.GroupsAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property results (base name: "results")', function() {
       // uncomment below and update the code to test the property results
-      //var instane = new EchaloasuerteJsSdk.GroupsAllOf();
+      //var instance = new EchaloasuerteJsSdk.GroupsAllOf();
       //expect(instance).to.be();
     });
 
