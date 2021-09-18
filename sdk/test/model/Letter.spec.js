@@ -56,61 +56,61 @@
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new EchaloasuerteJsSdk.Letter();
+      //var instance = new EchaloasuerteJsSdk.Letter();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new EchaloasuerteJsSdk.Letter();
+      //var instance = new EchaloasuerteJsSdk.Letter();
       //expect(instance).to.be();
     });
 
     it('should have the property updatedAt (base name: "updated_at")', function() {
       // uncomment below and update the code to test the property updatedAt
-      //var instane = new EchaloasuerteJsSdk.Letter();
+      //var instance = new EchaloasuerteJsSdk.Letter();
       //expect(instance).to.be();
     });
 
     it('should have the property title (base name: "title")', function() {
       // uncomment below and update the code to test the property title
-      //var instane = new EchaloasuerteJsSdk.Letter();
+      //var instance = new EchaloasuerteJsSdk.Letter();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new EchaloasuerteJsSdk.Letter();
+      //var instance = new EchaloasuerteJsSdk.Letter();
       //expect(instance).to.be();
     });
 
     it('should have the property privateId (base name: "private_id")', function() {
       // uncomment below and update the code to test the property privateId
-      //var instane = new EchaloasuerteJsSdk.Letter();
+      //var instance = new EchaloasuerteJsSdk.Letter();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new EchaloasuerteJsSdk.Letter();
+      //var instance = new EchaloasuerteJsSdk.Letter();
       //expect(instance).to.be();
     });
 
     it('should have the property numberOfResults (base name: "number_of_results")', function() {
       // uncomment below and update the code to test the property numberOfResults
-      //var instane = new EchaloasuerteJsSdk.Letter();
+      //var instance = new EchaloasuerteJsSdk.Letter();
       //expect(instance).to.be();
     });
 
     it('should have the property allowRepeatedResults (base name: "allow_repeated_results")', function() {
       // uncomment below and update the code to test the property allowRepeatedResults
-      //var instane = new EchaloasuerteJsSdk.Letter();
+      //var instance = new EchaloasuerteJsSdk.Letter();
       //expect(instance).to.be();
     });
 
     it('should have the property results (base name: "results")', function() {
       // uncomment below and update the code to test the property results
-      //var instane = new EchaloasuerteJsSdk.Letter();
+      //var instance = new EchaloasuerteJsSdk.Letter();
       //expect(instance).to.be();
     });
 

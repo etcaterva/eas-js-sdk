@@ -56,13 +56,13 @@
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new EchaloasuerteJsSdk.ParticipantAllOf();
+      //var instance = new EchaloasuerteJsSdk.ParticipantAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property facebookId (base name: "facebook_id")', function() {
       // uncomment below and update the code to test the property facebookId
-      //var instane = new EchaloasuerteJsSdk.ParticipantAllOf();
+      //var instance = new EchaloasuerteJsSdk.ParticipantAllOf();
       //expect(instance).to.be();
     });
 

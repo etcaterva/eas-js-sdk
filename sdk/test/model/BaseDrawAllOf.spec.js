@@ -56,31 +56,31 @@
 
     it('should have the property updatedAt (base name: "updated_at")', function() {
       // uncomment below and update the code to test the property updatedAt
-      //var instane = new EchaloasuerteJsSdk.BaseDrawAllOf();
+      //var instance = new EchaloasuerteJsSdk.BaseDrawAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property title (base name: "title")', function() {
       // uncomment below and update the code to test the property title
-      //var instane = new EchaloasuerteJsSdk.BaseDrawAllOf();
+      //var instance = new EchaloasuerteJsSdk.BaseDrawAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new EchaloasuerteJsSdk.BaseDrawAllOf();
+      //var instance = new EchaloasuerteJsSdk.BaseDrawAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property privateId (base name: "private_id")', function() {
       // uncomment below and update the code to test the property privateId
-      //var instane = new EchaloasuerteJsSdk.BaseDrawAllOf();
+      //var instance = new EchaloasuerteJsSdk.BaseDrawAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new EchaloasuerteJsSdk.BaseDrawAllOf();
+      //var instance = new EchaloasuerteJsSdk.BaseDrawAllOf();
       //expect(instance).to.be();
     });
 

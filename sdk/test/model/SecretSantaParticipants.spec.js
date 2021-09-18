@@ -56,19 +56,19 @@
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new EchaloasuerteJsSdk.SecretSantaParticipants();
+      //var instance = new EchaloasuerteJsSdk.SecretSantaParticipants();
       //expect(instance).to.be();
     });
 
     it('should have the property email (base name: "email")', function() {
       // uncomment below and update the code to test the property email
-      //var instane = new EchaloasuerteJsSdk.SecretSantaParticipants();
+      //var instance = new EchaloasuerteJsSdk.SecretSantaParticipants();
       //expect(instance).to.be();
     });
 
     it('should have the property exclusions (base name: "exclusions")', function() {
       // uncomment below and update the code to test the property exclusions
-      //var instane = new EchaloasuerteJsSdk.SecretSantaParticipants();
+      //var instance = new EchaloasuerteJsSdk.SecretSantaParticipants();
       //expect(instance).to.be();
     });
 

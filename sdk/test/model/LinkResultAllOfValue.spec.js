@@ -56,13 +56,13 @@
 
     it('should have the property element1 (base name: "element1")', function() {
       // uncomment below and update the code to test the property element1
-      //var instane = new EchaloasuerteJsSdk.LinkResultAllOfValue();
+      //var instance = new EchaloasuerteJsSdk.LinkResultAllOfValue();
       //expect(instance).to.be();
     });
 
     it('should have the property element2 (base name: "element2")', function() {
       // uncomment below and update the code to test the property element2
-      //var instane = new EchaloasuerteJsSdk.LinkResultAllOfValue();
+      //var instance = new EchaloasuerteJsSdk.LinkResultAllOfValue();
       //expect(instance).to.be();
     });
 

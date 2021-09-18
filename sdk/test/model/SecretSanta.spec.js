@@ -54,15 +54,15 @@
       //expect(instance).to.be.a(EchaloasuerteJsSdk.SecretSanta);
     });
 
-    it('should have the property langauge (base name: "langauge")', function() {
-      // uncomment below and update the code to test the property langauge
-      //var instane = new EchaloasuerteJsSdk.SecretSanta();
+    it('should have the property language (base name: "language")', function() {
+      // uncomment below and update the code to test the property language
+      //var instance = new EchaloasuerteJsSdk.SecretSanta();
       //expect(instance).to.be();
     });
 
     it('should have the property participants (base name: "participants")', function() {
       // uncomment below and update the code to test the property participants
-      //var instane = new EchaloasuerteJsSdk.SecretSanta();
+      //var instance = new EchaloasuerteJsSdk.SecretSanta();
       //expect(instance).to.be();
     });
 

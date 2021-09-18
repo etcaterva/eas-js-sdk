@@ -56,7 +56,7 @@
 
     it('should have the property value (base name: "value")', function() {
       // uncomment below and update the code to test the property value
-      //var instane = new EchaloasuerteJsSdk.SpinnerResultAllOf();
+      //var instance = new EchaloasuerteJsSdk.SpinnerResultAllOf();
       //expect(instance).to.be();
     });
 

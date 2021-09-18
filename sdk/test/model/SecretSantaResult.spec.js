@@ -56,13 +56,13 @@
 
     it('should have the property source (base name: "source")', function() {
       // uncomment below and update the code to test the property source
-      //var instane = new EchaloasuerteJsSdk.SecretSantaResult();
+      //var instance = new EchaloasuerteJsSdk.SecretSantaResult();
       //expect(instance).to.be();
     });
 
     it('should have the property target (base name: "target")', function() {
       // uncomment below and update the code to test the property target
-      //var instane = new EchaloasuerteJsSdk.SecretSantaResult();
+      //var instance = new EchaloasuerteJsSdk.SecretSantaResult();
       //expect(instance).to.be();
     });
 

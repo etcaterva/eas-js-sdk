@@ -56,7 +56,7 @@
 
     it('should have the property scheduleDate (base name: "schedule_date")', function() {
       // uncomment below and update the code to test the property scheduleDate
-      //var instane = new EchaloasuerteJsSdk.DrawTossPayload();
+      //var instance = new EchaloasuerteJsSdk.DrawTossPayload();
       //expect(instance).to.be();
     });
 

@@ -56,7 +56,7 @@
 
     it('should have the property value (base name: "value")', function() {
       // uncomment below and update the code to test the property value
-      //var instane = new EchaloasuerteJsSdk.CoinResultAllOf();
+      //var instance = new EchaloasuerteJsSdk.CoinResultAllOf();
       //expect(instance).to.be();
     });
 

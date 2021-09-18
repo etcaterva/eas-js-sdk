@@ -56,19 +56,19 @@
 
     it('should have the property client (base name: "client")', function() {
       // uncomment below and update the code to test the property client
-      //var instane = new EchaloasuerteJsSdk.DrawMetadata();
+      //var instance = new EchaloasuerteJsSdk.DrawMetadata();
       //expect(instance).to.be();
     });
 
     it('should have the property key (base name: "key")', function() {
       // uncomment below and update the code to test the property key
-      //var instane = new EchaloasuerteJsSdk.DrawMetadata();
+      //var instance = new EchaloasuerteJsSdk.DrawMetadata();
       //expect(instance).to.be();
     });
 
     it('should have the property value (base name: "value")', function() {
       // uncomment below and update the code to test the property value
-      //var instane = new EchaloasuerteJsSdk.DrawMetadata();
+      //var instance = new EchaloasuerteJsSdk.DrawMetadata();
       //expect(instance).to.be();
     });
 

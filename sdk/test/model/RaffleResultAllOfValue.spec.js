@@ -56,13 +56,13 @@
 
     it('should have the property participant (base name: "participant")', function() {
       // uncomment below and update the code to test the property participant
-      //var instane = new EchaloasuerteJsSdk.RaffleResultAllOfValue();
+      //var instance = new EchaloasuerteJsSdk.RaffleResultAllOfValue();
       //expect(instance).to.be();
     });
 
     it('should have the property prize (base name: "prize")', function() {
       // uncomment below and update the code to test the property prize
-      //var instane = new EchaloasuerteJsSdk.RaffleResultAllOfValue();
+      //var instance = new EchaloasuerteJsSdk.RaffleResultAllOfValue();
       //expect(instance).to.be();
     });
 
