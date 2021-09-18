@@ -17,20 +17,20 @@ import Participant from './Participant';
 import TournamentResultAllOf from './TournamentResultAllOf';
 
 /**
- * The GroupsResult model module.
- * @module model/GroupsResult
+ * The TournamentResult model module.
+ * @module model/TournamentResult
  * @version 0.0.1
  */
-class GroupsResult {
+class TournamentResult {
     /**
-     * Constructs a new <code>GroupsResult</code>.
-     * @alias module:model/GroupsResult
+     * Constructs a new <code>TournamentResult</code>.
+     * @alias module:model/TournamentResult
      * @implements module:model/BaseResult
      * @implements module:model/TournamentResultAllOf
      */
     constructor() { 
         BaseResult.initialize(this);TournamentResultAllOf.initialize(this);
-        GroupsResult.initialize(this);
+        TournamentResult.initialize(this);
     }
 
     /**
@@ -42,15 +42,15 @@ class GroupsResult {
     }
 
     /**
-     * Constructs a <code>GroupsResult</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>TournamentResult</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/GroupsResult} obj Optional instance to populate.
-     * @return {module:model/GroupsResult} The populated <code>GroupsResult</code> instance.
+     * @param {module:model/TournamentResult} obj Optional instance to populate.
+     * @return {module:model/TournamentResult} The populated <code>TournamentResult</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new GroupsResult();
+            obj = obj || new TournamentResult();
             BaseResult.constructFromObject(data, obj);
             TournamentResultAllOf.constructFromObject(data, obj);
 
@@ -76,22 +76,22 @@ class GroupsResult {
 /**
  * @member {String} id
  */
-GroupsResult.prototype['id'] = undefined;
+TournamentResult.prototype['id'] = undefined;
 
 /**
  * @member {Date} created_at
  */
-GroupsResult.prototype['created_at'] = undefined;
+TournamentResult.prototype['created_at'] = undefined;
 
 /**
  * @member {Date} schedule_date
  */
-GroupsResult.prototype['schedule_date'] = undefined;
+TournamentResult.prototype['schedule_date'] = undefined;
 
 /**
  * @member {Array.<Array.<module:model/Participant>>} value
  */
-GroupsResult.prototype['value'] = undefined;
+TournamentResult.prototype['value'] = undefined;
 
 
 // Implement BaseResult interface:
@@ -116,5 +116,5 @@ TournamentResultAllOf.prototype['value'] = undefined;
 
 
 
-export default GroupsResult;
+export default TournamentResult;
 

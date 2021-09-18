@@ -135,6 +135,7 @@ Class | Method | HTTP request | Description
 *EchaloasuerteJsSdk.LotteryApi* | [**lotteryParticipantsAdd**](docs/LotteryApi.md#lotteryParticipantsAdd) | **POST** /lottery/{id}/participants/ | 
 *EchaloasuerteJsSdk.LotteryApi* | [**lotteryRead**](docs/LotteryApi.md#lotteryRead) | **GET** /lottery/{id}/ | 
 *EchaloasuerteJsSdk.LotteryApi* | [**lotteryToss**](docs/LotteryApi.md#lotteryToss) | **POST** /lottery/{id}/toss/ | 
+*EchaloasuerteJsSdk.PaypalApi* | [**paypalCreate**](docs/PaypalApi.md#paypalCreate) | **POST** /payment/create/ | 
 *EchaloasuerteJsSdk.RaffleApi* | [**raffleCreate**](docs/RaffleApi.md#raffleCreate) | **POST** /raffle/ | 
 *EchaloasuerteJsSdk.RaffleApi* | [**raffleParticipantsAdd**](docs/RaffleApi.md#raffleParticipantsAdd) | **POST** /raffle/{id}/participants/ | 
 *EchaloasuerteJsSdk.RaffleApi* | [**raffleRead**](docs/RaffleApi.md#raffleRead) | **GET** /raffle/{id}/ | 
@@ -147,6 +148,10 @@ Class | Method | HTTP request | Description
 *EchaloasuerteJsSdk.SpinnerApi* | [**spinnerCreate**](docs/SpinnerApi.md#spinnerCreate) | **POST** /spinner/ | 
 *EchaloasuerteJsSdk.SpinnerApi* | [**spinnerRead**](docs/SpinnerApi.md#spinnerRead) | **GET** /spinner/{id}/ | 
 *EchaloasuerteJsSdk.SpinnerApi* | [**spinnerToss**](docs/SpinnerApi.md#spinnerToss) | **POST** /spinner/{id}/toss/ | 
+*EchaloasuerteJsSdk.TournamentApi* | [**tournamentCreate**](docs/TournamentApi.md#tournamentCreate) | **POST** /tournament/ | 
+*EchaloasuerteJsSdk.TournamentApi* | [**tournamentParticipantsAdd**](docs/TournamentApi.md#tournamentParticipantsAdd) | **POST** /tournament/{id}/participants/ | 
+*EchaloasuerteJsSdk.TournamentApi* | [**tournamentRead**](docs/TournamentApi.md#tournamentRead) | **GET** /tournament/{id}/ | 
+*EchaloasuerteJsSdk.TournamentApi* | [**tournamentToss**](docs/TournamentApi.md#tournamentToss) | **POST** /tournament/{id}/toss/ | 
 
 
 ## Documentation for Models
@@ -165,7 +170,6 @@ Class | Method | HTTP request | Description
  - [EchaloasuerteJsSdk.Groups](docs/Groups.md)
  - [EchaloasuerteJsSdk.GroupsAllOf](docs/GroupsAllOf.md)
  - [EchaloasuerteJsSdk.GroupsResult](docs/GroupsResult.md)
- - [EchaloasuerteJsSdk.GroupsResultAllOf](docs/GroupsResultAllOf.md)
  - [EchaloasuerteJsSdk.Letter](docs/Letter.md)
  - [EchaloasuerteJsSdk.LetterAllOf](docs/LetterAllOf.md)
  - [EchaloasuerteJsSdk.LetterResult](docs/LetterResult.md)
@@ -181,6 +185,7 @@ Class | Method | HTTP request | Description
  - [EchaloasuerteJsSdk.LotteryResultAllOf](docs/LotteryResultAllOf.md)
  - [EchaloasuerteJsSdk.Participant](docs/Participant.md)
  - [EchaloasuerteJsSdk.ParticipantAllOf](docs/ParticipantAllOf.md)
+ - [EchaloasuerteJsSdk.PayPalCreate](docs/PayPalCreate.md)
  - [EchaloasuerteJsSdk.Prize](docs/Prize.md)
  - [EchaloasuerteJsSdk.PrizeAllOf](docs/PrizeAllOf.md)
  - [EchaloasuerteJsSdk.Raffle](docs/Raffle.md)
@@ -199,6 +204,10 @@ Class | Method | HTTP request | Description
  - [EchaloasuerteJsSdk.SpinnerAllOf](docs/SpinnerAllOf.md)
  - [EchaloasuerteJsSdk.SpinnerResult](docs/SpinnerResult.md)
  - [EchaloasuerteJsSdk.SpinnerResultAllOf](docs/SpinnerResultAllOf.md)
+ - [EchaloasuerteJsSdk.Tournament](docs/Tournament.md)
+ - [EchaloasuerteJsSdk.TournamentAllOf](docs/TournamentAllOf.md)
+ - [EchaloasuerteJsSdk.TournamentResult](docs/TournamentResult.md)
+ - [EchaloasuerteJsSdk.TournamentResultAllOf](docs/TournamentResultAllOf.md)
 
 
 ## Documentation for Authorization
