@@ -79,9 +79,6 @@ class Tournament {
             if (data.hasOwnProperty('metadata')) {
                 obj['metadata'] = ApiClient.convertToType(data['metadata'], [DrawMetadata]);
             }
-            if (data.hasOwnProperty('payments')) {
-                obj['payments'] = ApiClient.convertToType(data['payments'], ['String']);
-            }
             if (data.hasOwnProperty('participants')) {
                 obj['participants'] = ApiClient.convertToType(data['participants'], [Participant]);
             }
@@ -131,11 +128,6 @@ Tournament.prototype['private_id'] = undefined;
 Tournament.prototype['metadata'] = undefined;
 
 /**
- * @member {Array.<module:model/Tournament.PaymentsEnum>} payments
- */
-Tournament.prototype['payments'] = undefined;
-
-/**
  * @member {Array.<module:model/Participant>} participants
  */
 Tournament.prototype['participants'] = undefined;
@@ -175,10 +167,6 @@ BaseDraw.prototype['private_id'] = undefined;
  * @member {Array.<module:model/DrawMetadata>} metadata
  */
 BaseDraw.prototype['metadata'] = undefined;
-/**
- * @member {Array.<module:model/BaseDraw.PaymentsEnum>} payments
- */
-BaseDraw.prototype['payments'] = undefined;
 // Implement TournamentAllOf interface:
 /**
  * @member {Array.<module:model/Participant>} participants
@@ -189,33 +177,6 @@ TournamentAllOf.prototype['participants'] = undefined;
  */
 TournamentAllOf.prototype['results'] = undefined;
 
-
-
-/**
- * Allowed values for the <code>payments</code> property.
- * @enum {String}
- * @readonly
- */
-Tournament['PaymentsEnum'] = {
-
-    /**
-     * value: "CERTIFIED"
-     * @const
-     */
-    "CERTIFIED": "CERTIFIED",
-
-    /**
-     * value: "ADFREE"
-     * @const
-     */
-    "ADFREE": "ADFREE",
-
-    /**
-     * value: "SUPPORT"
-     * @const
-     */
-    "SUPPORT": "SUPPORT"
-};
 
 
 

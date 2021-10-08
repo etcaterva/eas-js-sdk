@@ -13,8 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import PaypalCreatePayload from '../model/PaypalCreatePayload';
-import PaypalResponse from '../model/PaypalResponse';
+import PayPalCreate from '../model/PayPalCreate';
 
 /**
 * Paypal service.
@@ -37,15 +36,10 @@ export default class PaypalApi {
 
 
     /**
-     * @param {module:model/PaypalCreatePayload} paypalCreatePayload 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaypalResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PayPalCreate} and HTTP response
      */
-    paypalCreateWithHttpInfo(paypalCreatePayload) {
-      let postBody = paypalCreatePayload;
-      // verify the required parameter 'paypalCreatePayload' is set
-      if (paypalCreatePayload === undefined || paypalCreatePayload === null) {
-        throw new Error("Missing the required parameter 'paypalCreatePayload' when calling paypalCreate");
-      }
+    paypalCreateWithHttpInfo() {
+      let postBody = null;
 
       let pathParams = {
       };
@@ -57,22 +51,21 @@ export default class PaypalApi {
       };
 
       let authNames = [];
-      let contentTypes = ['application/json'];
+      let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = PaypalResponse;
+      let returnType = PayPalCreate;
       return this.apiClient.callApi(
-        '/paypal/create/', 'POST',
+        '/payment/create/', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * @param {module:model/PaypalCreatePayload} paypalCreatePayload 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaypalResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PayPalCreate}
      */
-    paypalCreate(paypalCreatePayload) {
-      return this.paypalCreateWithHttpInfo(paypalCreatePayload)
+    paypalCreate() {
+      return this.paypalCreateWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });

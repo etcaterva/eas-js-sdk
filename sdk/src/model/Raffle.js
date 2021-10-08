@@ -82,9 +82,6 @@ class Raffle {
             if (data.hasOwnProperty('metadata')) {
                 obj['metadata'] = ApiClient.convertToType(data['metadata'], [DrawMetadata]);
             }
-            if (data.hasOwnProperty('payments')) {
-                obj['payments'] = ApiClient.convertToType(data['payments'], ['String']);
-            }
             if (data.hasOwnProperty('prizes')) {
                 obj['prizes'] = ApiClient.convertToType(data['prizes'], [Prize]);
             }
@@ -137,11 +134,6 @@ Raffle.prototype['private_id'] = undefined;
 Raffle.prototype['metadata'] = undefined;
 
 /**
- * @member {Array.<module:model/Raffle.PaymentsEnum>} payments
- */
-Raffle.prototype['payments'] = undefined;
-
-/**
  * @member {Array.<module:model/Prize>} prizes
  */
 Raffle.prototype['prizes'] = undefined;
@@ -186,10 +178,6 @@ BaseDraw.prototype['private_id'] = undefined;
  * @member {Array.<module:model/DrawMetadata>} metadata
  */
 BaseDraw.prototype['metadata'] = undefined;
-/**
- * @member {Array.<module:model/BaseDraw.PaymentsEnum>} payments
- */
-BaseDraw.prototype['payments'] = undefined;
 // Implement RaffleAllOf interface:
 /**
  * @member {Array.<module:model/Prize>} prizes
@@ -204,33 +192,6 @@ RaffleAllOf.prototype['participants'] = undefined;
  */
 RaffleAllOf.prototype['results'] = undefined;
 
-
-
-/**
- * Allowed values for the <code>payments</code> property.
- * @enum {String}
- * @readonly
- */
-Raffle['PaymentsEnum'] = {
-
-    /**
-     * value: "CERTIFIED"
-     * @const
-     */
-    "CERTIFIED": "CERTIFIED",
-
-    /**
-     * value: "ADFREE"
-     * @const
-     */
-    "ADFREE": "ADFREE",
-
-    /**
-     * value: "SUPPORT"
-     * @const
-     */
-    "SUPPORT": "SUPPORT"
-};
 
 
 

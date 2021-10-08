@@ -100,10 +100,6 @@ var Spinner = /*#__PURE__*/function () {
           obj['metadata'] = _ApiClient["default"].convertToType(data['metadata'], [_DrawMetadata["default"]]);
         }
 
-        if (data.hasOwnProperty('payments')) {
-          obj['payments'] = _ApiClient["default"].convertToType(data['payments'], ['String']);
-        }
-
         if (data.hasOwnProperty('results')) {
           obj['results'] = _ApiClient["default"].convertToType(data['results'], [_SpinnerResult["default"]]);
         }
@@ -152,11 +148,6 @@ Spinner.prototype['private_id'] = undefined;
 
 Spinner.prototype['metadata'] = undefined;
 /**
- * @member {Array.<module:model/Spinner.PaymentsEnum>} payments
- */
-
-Spinner.prototype['payments'] = undefined;
-/**
  * @member {Array.<module:model/SpinnerResult>} results
  */
 
@@ -196,42 +187,12 @@ _BaseDraw["default"].prototype['private_id'] = undefined;
  * @member {Array.<module:model/DrawMetadata>} metadata
  */
 
-_BaseDraw["default"].prototype['metadata'] = undefined;
-/**
- * @member {Array.<module:model/BaseDraw.PaymentsEnum>} payments
- */
-
-_BaseDraw["default"].prototype['payments'] = undefined; // Implement SpinnerAllOf interface:
+_BaseDraw["default"].prototype['metadata'] = undefined; // Implement SpinnerAllOf interface:
 
 /**
  * @member {Array.<module:model/SpinnerResult>} results
  */
 
 _SpinnerAllOf["default"].prototype['results'] = undefined;
-/**
- * Allowed values for the <code>payments</code> property.
- * @enum {String}
- * @readonly
- */
-
-Spinner['PaymentsEnum'] = {
-  /**
-   * value: "CERTIFIED"
-   * @const
-   */
-  "CERTIFIED": "CERTIFIED",
-
-  /**
-   * value: "ADFREE"
-   * @const
-   */
-  "ADFREE": "ADFREE",
-
-  /**
-   * value: "SUPPORT"
-   * @const
-   */
-  "SUPPORT": "SUPPORT"
-};
 var _default = Spinner;
 exports["default"] = _default;

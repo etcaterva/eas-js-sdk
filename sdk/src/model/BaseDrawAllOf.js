@@ -63,9 +63,6 @@ class BaseDrawAllOf {
             if (data.hasOwnProperty('metadata')) {
                 obj['metadata'] = ApiClient.convertToType(data['metadata'], [DrawMetadata]);
             }
-            if (data.hasOwnProperty('payments')) {
-                obj['payments'] = ApiClient.convertToType(data['payments'], ['String']);
-            }
         }
         return obj;
     }
@@ -98,40 +95,8 @@ BaseDrawAllOf.prototype['private_id'] = undefined;
  */
 BaseDrawAllOf.prototype['metadata'] = undefined;
 
-/**
- * @member {Array.<module:model/BaseDrawAllOf.PaymentsEnum>} payments
- */
-BaseDrawAllOf.prototype['payments'] = undefined;
 
 
-
-
-
-/**
- * Allowed values for the <code>payments</code> property.
- * @enum {String}
- * @readonly
- */
-BaseDrawAllOf['PaymentsEnum'] = {
-
-    /**
-     * value: "CERTIFIED"
-     * @const
-     */
-    "CERTIFIED": "CERTIFIED",
-
-    /**
-     * value: "ADFREE"
-     * @const
-     */
-    "ADFREE": "ADFREE",
-
-    /**
-     * value: "SUPPORT"
-     * @const
-     */
-    "SUPPORT": "SUPPORT"
-};
 
 
 

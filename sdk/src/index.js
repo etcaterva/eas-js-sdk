@@ -42,8 +42,7 @@ import LotteryResult from './model/LotteryResult';
 import LotteryResultAllOf from './model/LotteryResultAllOf';
 import Participant from './model/Participant';
 import ParticipantAllOf from './model/ParticipantAllOf';
-import PaypalCreatePayload from './model/PaypalCreatePayload';
-import PaypalResponse from './model/PaypalResponse';
+import PayPalCreate from './model/PayPalCreate';
 import Prize from './model/Prize';
 import PrizeAllOf from './model/PrizeAllOf';
 import Raffle from './model/Raffle';
@@ -292,16 +291,10 @@ export {
     ParticipantAllOf,
 
     /**
-     * The PaypalCreatePayload model constructor.
-     * @property {module:model/PaypalCreatePayload}
+     * The PayPalCreate model constructor.
+     * @property {module:model/PayPalCreate}
      */
-    PaypalCreatePayload,
-
-    /**
-     * The PaypalResponse model constructor.
-     * @property {module:model/PaypalResponse}
-     */
-    PaypalResponse,
+    PayPalCreate,
 
     /**
      * The Prize model constructor.

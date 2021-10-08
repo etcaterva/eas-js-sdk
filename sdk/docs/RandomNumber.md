@@ -11,24 +11,10 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] 
 **privateId** | **String** |  | [optional] [readonly] 
 **metadata** | [**[DrawMetadata]**](DrawMetadata.md) |  | [optional] 
-**payments** | **[String]** |  | [optional] 
 **rangeMin** | **Number** |  | 
 **rangeMax** | **Number** |  | 
 **numberOfResults** | **Number** |  | [optional] [default to 1]
 **allowRepeatedResults** | **Boolean** |  | [optional] [default to true]
 **results** | [**[RandomNumberResult]**](RandomNumberResult.md) |  | [optional] [readonly] 
-
-
-
-## Enum: [PaymentsEnum]
-
-
-* `CERTIFIED` (value: `"CERTIFIED"`)
-
-* `ADFREE` (value: `"ADFREE"`)
-
-* `SUPPORT` (value: `"SUPPORT"`)
-
-
 
 

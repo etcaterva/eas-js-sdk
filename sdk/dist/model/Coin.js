@@ -100,10 +100,6 @@ var Coin = /*#__PURE__*/function () {
           obj['metadata'] = _ApiClient["default"].convertToType(data['metadata'], [_DrawMetadata["default"]]);
         }
 
-        if (data.hasOwnProperty('payments')) {
-          obj['payments'] = _ApiClient["default"].convertToType(data['payments'], ['String']);
-        }
-
         if (data.hasOwnProperty('results')) {
           obj['results'] = _ApiClient["default"].convertToType(data['results'], [_CoinResult["default"]]);
         }
@@ -152,11 +148,6 @@ Coin.prototype['private_id'] = undefined;
 
 Coin.prototype['metadata'] = undefined;
 /**
- * @member {Array.<module:model/Coin.PaymentsEnum>} payments
- */
-
-Coin.prototype['payments'] = undefined;
-/**
  * @member {Array.<module:model/CoinResult>} results
  */
 
@@ -196,42 +187,12 @@ _BaseDraw["default"].prototype['private_id'] = undefined;
  * @member {Array.<module:model/DrawMetadata>} metadata
  */
 
-_BaseDraw["default"].prototype['metadata'] = undefined;
-/**
- * @member {Array.<module:model/BaseDraw.PaymentsEnum>} payments
- */
-
-_BaseDraw["default"].prototype['payments'] = undefined; // Implement CoinAllOf interface:
+_BaseDraw["default"].prototype['metadata'] = undefined; // Implement CoinAllOf interface:
 
 /**
  * @member {Array.<module:model/CoinResult>} results
  */
 
 _CoinAllOf["default"].prototype['results'] = undefined;
-/**
- * Allowed values for the <code>payments</code> property.
- * @enum {String}
- * @readonly
- */
-
-Coin['PaymentsEnum'] = {
-  /**
-   * value: "CERTIFIED"
-   * @const
-   */
-  "CERTIFIED": "CERTIFIED",
-
-  /**
-   * value: "ADFREE"
-   * @const
-   */
-  "ADFREE": "ADFREE",
-
-  /**
-   * value: "SUPPORT"
-   * @const
-   */
-  "SUPPORT": "SUPPORT"
-};
 var _default = Coin;
 exports["default"] = _default;

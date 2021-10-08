@@ -11,20 +11,6 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] 
 **privateId** | **String** |  | [optional] [readonly] 
 **metadata** | [**[DrawMetadata]**](DrawMetadata.md) |  | [optional] 
-**payments** | **[String]** |  | [optional] 
 **results** | [**[CoinResult]**](CoinResult.md) |  | [optional] [readonly] 
-
-
-
-## Enum: [PaymentsEnum]
-
-
-* `CERTIFIED` (value: `"CERTIFIED"`)
-
-* `ADFREE` (value: `"ADFREE"`)
-
-* `SUPPORT` (value: `"SUPPORT"`)
-
-
 
 

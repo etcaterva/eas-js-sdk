@@ -76,9 +76,6 @@ class Coin {
             if (data.hasOwnProperty('metadata')) {
                 obj['metadata'] = ApiClient.convertToType(data['metadata'], [DrawMetadata]);
             }
-            if (data.hasOwnProperty('payments')) {
-                obj['payments'] = ApiClient.convertToType(data['payments'], ['String']);
-            }
             if (data.hasOwnProperty('results')) {
                 obj['results'] = ApiClient.convertToType(data['results'], [CoinResult]);
             }
@@ -125,11 +122,6 @@ Coin.prototype['private_id'] = undefined;
 Coin.prototype['metadata'] = undefined;
 
 /**
- * @member {Array.<module:model/Coin.PaymentsEnum>} payments
- */
-Coin.prototype['payments'] = undefined;
-
-/**
  * @member {Array.<module:model/CoinResult>} results
  */
 Coin.prototype['results'] = undefined;
@@ -164,43 +156,12 @@ BaseDraw.prototype['private_id'] = undefined;
  * @member {Array.<module:model/DrawMetadata>} metadata
  */
 BaseDraw.prototype['metadata'] = undefined;
-/**
- * @member {Array.<module:model/BaseDraw.PaymentsEnum>} payments
- */
-BaseDraw.prototype['payments'] = undefined;
 // Implement CoinAllOf interface:
 /**
  * @member {Array.<module:model/CoinResult>} results
  */
 CoinAllOf.prototype['results'] = undefined;
 
-
-
-/**
- * Allowed values for the <code>payments</code> property.
- * @enum {String}
- * @readonly
- */
-Coin['PaymentsEnum'] = {
-
-    /**
-     * value: "CERTIFIED"
-     * @const
-     */
-    "CERTIFIED": "CERTIFIED",
-
-    /**
-     * value: "ADFREE"
-     * @const
-     */
-    "ADFREE": "ADFREE",
-
-    /**
-     * value: "SUPPORT"
-     * @const
-     */
-    "SUPPORT": "SUPPORT"
-};
 
 
 

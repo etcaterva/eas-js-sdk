@@ -97,10 +97,6 @@ var BaseDraw = /*#__PURE__*/function () {
         if (data.hasOwnProperty('metadata')) {
           obj['metadata'] = _ApiClient["default"].convertToType(data['metadata'], [_DrawMetadata["default"]]);
         }
-
-        if (data.hasOwnProperty('payments')) {
-          obj['payments'] = _ApiClient["default"].convertToType(data['payments'], ['String']);
-        }
       }
 
       return obj;
@@ -144,12 +140,7 @@ BaseDraw.prototype['private_id'] = undefined;
  * @member {Array.<module:model/DrawMetadata>} metadata
  */
 
-BaseDraw.prototype['metadata'] = undefined;
-/**
- * @member {Array.<module:model/BaseDraw.PaymentsEnum>} payments
- */
-
-BaseDraw.prototype['payments'] = undefined; // Implement BaseObject interface:
+BaseDraw.prototype['metadata'] = undefined; // Implement BaseObject interface:
 
 /**
  * @member {String} id
@@ -187,35 +178,5 @@ _BaseDrawAllOf["default"].prototype['private_id'] = undefined;
  */
 
 _BaseDrawAllOf["default"].prototype['metadata'] = undefined;
-/**
- * @member {Array.<module:model/BaseDrawAllOf.PaymentsEnum>} payments
- */
-
-_BaseDrawAllOf["default"].prototype['payments'] = undefined;
-/**
- * Allowed values for the <code>payments</code> property.
- * @enum {String}
- * @readonly
- */
-
-BaseDraw['PaymentsEnum'] = {
-  /**
-   * value: "CERTIFIED"
-   * @const
-   */
-  "CERTIFIED": "CERTIFIED",
-
-  /**
-   * value: "ADFREE"
-   * @const
-   */
-  "ADFREE": "ADFREE",
-
-  /**
-   * value: "SUPPORT"
-   * @const
-   */
-  "SUPPORT": "SUPPORT"
-};
 var _default = BaseDraw;
 exports["default"] = _default;

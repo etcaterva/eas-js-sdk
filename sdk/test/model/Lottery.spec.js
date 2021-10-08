@@ -96,12 +96,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property payments (base name: "payments")', function() {
-      // uncomment below and update the code to test the property payments
-      //var instance = new EchaloasuerteJsSdk.Lottery();
-      //expect(instance).to.be();
-    });
-
     it('should have the property numberOfResults (base name: "number_of_results")', function() {
       // uncomment below and update the code to test the property numberOfResults
       //var instance = new EchaloasuerteJsSdk.Lottery();

@@ -76,9 +76,6 @@ class Letter {
             if (data.hasOwnProperty('metadata')) {
                 obj['metadata'] = ApiClient.convertToType(data['metadata'], [DrawMetadata]);
             }
-            if (data.hasOwnProperty('payments')) {
-                obj['payments'] = ApiClient.convertToType(data['payments'], ['String']);
-            }
             if (data.hasOwnProperty('number_of_results')) {
                 obj['number_of_results'] = ApiClient.convertToType(data['number_of_results'], 'Number');
             }
@@ -131,11 +128,6 @@ Letter.prototype['private_id'] = undefined;
 Letter.prototype['metadata'] = undefined;
 
 /**
- * @member {Array.<module:model/Letter.PaymentsEnum>} payments
- */
-Letter.prototype['payments'] = undefined;
-
-/**
  * @member {Number} number_of_results
  * @default 1
  */
@@ -182,10 +174,6 @@ BaseDraw.prototype['private_id'] = undefined;
  * @member {Array.<module:model/DrawMetadata>} metadata
  */
 BaseDraw.prototype['metadata'] = undefined;
-/**
- * @member {Array.<module:model/BaseDraw.PaymentsEnum>} payments
- */
-BaseDraw.prototype['payments'] = undefined;
 // Implement LetterAllOf interface:
 /**
  * @member {Number} number_of_results
@@ -202,33 +190,6 @@ LetterAllOf.prototype['allow_repeated_results'] = true;
  */
 LetterAllOf.prototype['results'] = undefined;
 
-
-
-/**
- * Allowed values for the <code>payments</code> property.
- * @enum {String}
- * @readonly
- */
-Letter['PaymentsEnum'] = {
-
-    /**
-     * value: "CERTIFIED"
-     * @const
-     */
-    "CERTIFIED": "CERTIFIED",
-
-    /**
-     * value: "ADFREE"
-     * @const
-     */
-    "ADFREE": "ADFREE",
-
-    /**
-     * value: "SUPPORT"
-     * @const
-     */
-    "SUPPORT": "SUPPORT"
-};
 
 
 

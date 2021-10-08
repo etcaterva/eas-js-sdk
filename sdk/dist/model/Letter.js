@@ -100,10 +100,6 @@ var Letter = /*#__PURE__*/function () {
           obj['metadata'] = _ApiClient["default"].convertToType(data['metadata'], [_DrawMetadata["default"]]);
         }
 
-        if (data.hasOwnProperty('payments')) {
-          obj['payments'] = _ApiClient["default"].convertToType(data['payments'], ['String']);
-        }
-
         if (data.hasOwnProperty('number_of_results')) {
           obj['number_of_results'] = _ApiClient["default"].convertToType(data['number_of_results'], 'Number');
         }
@@ -160,11 +156,6 @@ Letter.prototype['private_id'] = undefined;
 
 Letter.prototype['metadata'] = undefined;
 /**
- * @member {Array.<module:model/Letter.PaymentsEnum>} payments
- */
-
-Letter.prototype['payments'] = undefined;
-/**
  * @member {Number} number_of_results
  * @default 1
  */
@@ -216,12 +207,7 @@ _BaseDraw["default"].prototype['private_id'] = undefined;
  * @member {Array.<module:model/DrawMetadata>} metadata
  */
 
-_BaseDraw["default"].prototype['metadata'] = undefined;
-/**
- * @member {Array.<module:model/BaseDraw.PaymentsEnum>} payments
- */
-
-_BaseDraw["default"].prototype['payments'] = undefined; // Implement LetterAllOf interface:
+_BaseDraw["default"].prototype['metadata'] = undefined; // Implement LetterAllOf interface:
 
 /**
  * @member {Number} number_of_results
@@ -240,30 +226,5 @@ _LetterAllOf["default"].prototype['allow_repeated_results'] = true;
  */
 
 _LetterAllOf["default"].prototype['results'] = undefined;
-/**
- * Allowed values for the <code>payments</code> property.
- * @enum {String}
- * @readonly
- */
-
-Letter['PaymentsEnum'] = {
-  /**
-   * value: "CERTIFIED"
-   * @const
-   */
-  "CERTIFIED": "CERTIFIED",
-
-  /**
-   * value: "ADFREE"
-   * @const
-   */
-  "ADFREE": "ADFREE",
-
-  /**
-   * value: "SUPPORT"
-   * @const
-   */
-  "SUPPORT": "SUPPORT"
-};
 var _default = Letter;
 exports["default"] = _default;

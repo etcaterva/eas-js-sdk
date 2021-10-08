@@ -4,13 +4,13 @@ All URIs are relative to *https://raw.githubusercontent.com/should-be-overriden*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**paypalCreate**](PaypalApi.md#paypalCreate) | **POST** /paypal/create/ | 
+[**paypalCreate**](PaypalApi.md#paypalCreate) | **POST** /payment/create/ | 
 
 
 
 ## paypalCreate
 
-> PaypalResponse paypalCreate(paypalCreatePayload)
+> PayPalCreate paypalCreate()
 
 
 
@@ -20,8 +20,7 @@ Method | HTTP request | Description
 import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 
 let apiInstance = new EchaloasuerteJsSdk.PaypalApi();
-let paypalCreatePayload = new EchaloasuerteJsSdk.PaypalCreatePayload(); // PaypalCreatePayload | 
-apiInstance.paypalCreate(paypalCreatePayload).then((data) => {
+apiInstance.paypalCreate().then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -31,14 +30,11 @@ apiInstance.paypalCreate(paypalCreatePayload).then((data) => {
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **paypalCreatePayload** | [**PaypalCreatePayload**](PaypalCreatePayload.md)|  | 
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**PaypalResponse**](PaypalResponse.md)
+[**PayPalCreate**](PayPalCreate.md)
 
 ### Authorization
 
@@ -46,6 +42,6 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 

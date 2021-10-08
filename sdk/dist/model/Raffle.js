@@ -109,10 +109,6 @@ var Raffle = /*#__PURE__*/function () {
           obj['metadata'] = _ApiClient["default"].convertToType(data['metadata'], [_DrawMetadata["default"]]);
         }
 
-        if (data.hasOwnProperty('payments')) {
-          obj['payments'] = _ApiClient["default"].convertToType(data['payments'], ['String']);
-        }
-
         if (data.hasOwnProperty('prizes')) {
           obj['prizes'] = _ApiClient["default"].convertToType(data['prizes'], [_Prize["default"]]);
         }
@@ -169,11 +165,6 @@ Raffle.prototype['private_id'] = undefined;
 
 Raffle.prototype['metadata'] = undefined;
 /**
- * @member {Array.<module:model/Raffle.PaymentsEnum>} payments
- */
-
-Raffle.prototype['payments'] = undefined;
-/**
  * @member {Array.<module:model/Prize>} prizes
  */
 
@@ -223,12 +214,7 @@ _BaseDraw["default"].prototype['private_id'] = undefined;
  * @member {Array.<module:model/DrawMetadata>} metadata
  */
 
-_BaseDraw["default"].prototype['metadata'] = undefined;
-/**
- * @member {Array.<module:model/BaseDraw.PaymentsEnum>} payments
- */
-
-_BaseDraw["default"].prototype['payments'] = undefined; // Implement RaffleAllOf interface:
+_BaseDraw["default"].prototype['metadata'] = undefined; // Implement RaffleAllOf interface:
 
 /**
  * @member {Array.<module:model/Prize>} prizes
@@ -245,30 +231,5 @@ _RaffleAllOf["default"].prototype['participants'] = undefined;
  */
 
 _RaffleAllOf["default"].prototype['results'] = undefined;
-/**
- * Allowed values for the <code>payments</code> property.
- * @enum {String}
- * @readonly
- */
-
-Raffle['PaymentsEnum'] = {
-  /**
-   * value: "CERTIFIED"
-   * @const
-   */
-  "CERTIFIED": "CERTIFIED",
-
-  /**
-   * value: "ADFREE"
-   * @const
-   */
-  "ADFREE": "ADFREE",
-
-  /**
-   * value: "SUPPORT"
-   * @const
-   */
-  "SUPPORT": "SUPPORT"
-};
 var _default = Raffle;
 exports["default"] = _default;

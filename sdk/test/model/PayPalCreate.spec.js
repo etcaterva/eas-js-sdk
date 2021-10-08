@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EchaloasuerteJsSdk.PaypalResponse();
+    instance = new EchaloasuerteJsSdk.PayPalCreate();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,16 +47,28 @@
       object[property] = value;
   }
 
-  describe('PaypalResponse', function() {
-    it('should create an instance of PaypalResponse', function() {
-      // uncomment below and update the code to test PaypalResponse
-      //var instane = new EchaloasuerteJsSdk.PaypalResponse();
-      //expect(instance).to.be.a(EchaloasuerteJsSdk.PaypalResponse);
+  describe('PayPalCreate', function() {
+    it('should create an instance of PayPalCreate', function() {
+      // uncomment below and update the code to test PayPalCreate
+      //var instane = new EchaloasuerteJsSdk.PayPalCreate();
+      //expect(instance).to.be.a(EchaloasuerteJsSdk.PayPalCreate);
     });
 
-    it('should have the property redirectUrl (base name: "redirect_url")', function() {
-      // uncomment below and update the code to test the property redirectUrl
-      //var instance = new EchaloasuerteJsSdk.PaypalResponse();
+    it('should have the property options (base name: "options")', function() {
+      // uncomment below and update the code to test the property options
+      //var instance = new EchaloasuerteJsSdk.PayPalCreate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property drawUrl (base name: "draw_url")', function() {
+      // uncomment below and update the code to test the property drawUrl
+      //var instance = new EchaloasuerteJsSdk.PayPalCreate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property drawId (base name: "draw_id")', function() {
+      // uncomment below and update the code to test the property drawId
+      //var instance = new EchaloasuerteJsSdk.PayPalCreate();
       //expect(instance).to.be();
     });
 

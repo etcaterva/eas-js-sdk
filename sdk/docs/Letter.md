@@ -11,22 +11,8 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] 
 **privateId** | **String** |  | [optional] [readonly] 
 **metadata** | [**[DrawMetadata]**](DrawMetadata.md) |  | [optional] 
-**payments** | **[String]** |  | [optional] 
 **numberOfResults** | **Number** |  | [optional] [default to 1]
 **allowRepeatedResults** | **Boolean** |  | [optional] [default to true]
 **results** | [**[LetterResult]**](LetterResult.md) |  | [optional] [readonly] 
-
-
-
-## Enum: [PaymentsEnum]
-
-
-* `CERTIFIED` (value: `"CERTIFIED"`)
-
-* `ADFREE` (value: `"ADFREE"`)
-
-* `SUPPORT` (value: `"SUPPORT"`)
-
-
 
 

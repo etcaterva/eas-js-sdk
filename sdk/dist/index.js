@@ -213,22 +213,16 @@ Object.defineProperty(exports, "ParticipantAllOf", {
     return _ParticipantAllOf["default"];
   }
 });
+Object.defineProperty(exports, "PayPalCreate", {
+  enumerable: true,
+  get: function get() {
+    return _PayPalCreate["default"];
+  }
+});
 Object.defineProperty(exports, "PaypalApi", {
   enumerable: true,
   get: function get() {
     return _PaypalApi["default"];
-  }
-});
-Object.defineProperty(exports, "PaypalCreatePayload", {
-  enumerable: true,
-  get: function get() {
-    return _PaypalCreatePayload["default"];
-  }
-});
-Object.defineProperty(exports, "PaypalResponse", {
-  enumerable: true,
-  get: function get() {
-    return _PaypalResponse["default"];
   }
 });
 Object.defineProperty(exports, "Prize", {
@@ -454,9 +448,7 @@ var _Participant = _interopRequireDefault(require("./model/Participant"));
 
 var _ParticipantAllOf = _interopRequireDefault(require("./model/ParticipantAllOf"));
 
-var _PaypalCreatePayload = _interopRequireDefault(require("./model/PaypalCreatePayload"));
-
-var _PaypalResponse = _interopRequireDefault(require("./model/PaypalResponse"));
+var _PayPalCreate = _interopRequireDefault(require("./model/PayPalCreate"));
 
 var _Prize = _interopRequireDefault(require("./model/Prize"));
 

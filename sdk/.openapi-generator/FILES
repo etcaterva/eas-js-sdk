@@ -37,9 +37,8 @@ docs/LotteryResult.md
 docs/LotteryResultAllOf.md
 docs/Participant.md
 docs/ParticipantAllOf.md
+docs/PayPalCreate.md
 docs/PaypalApi.md
-docs/PaypalCreatePayload.md
-docs/PaypalResponse.md
 docs/Prize.md
 docs/PrizeAllOf.md
 docs/Raffle.md
@@ -112,8 +111,7 @@ src/model/LotteryResult.js
 src/model/LotteryResultAllOf.js
 src/model/Participant.js
 src/model/ParticipantAllOf.js
-src/model/PaypalCreatePayload.js
-src/model/PaypalResponse.js
+src/model/PayPalCreate.js
 src/model/Prize.js
 src/model/PrizeAllOf.js
 src/model/Raffle.js
@@ -176,8 +174,7 @@ test/model/LotteryResult.spec.js
 test/model/LotteryResultAllOf.spec.js
 test/model/Participant.spec.js
 test/model/ParticipantAllOf.spec.js
-test/model/PaypalCreatePayload.spec.js
-test/model/PaypalResponse.spec.js
+test/model/PayPalCreate.spec.js
 test/model/Prize.spec.js
 test/model/PrizeAllOf.spec.js
 test/model/Raffle.spec.js
