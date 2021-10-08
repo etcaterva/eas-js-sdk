@@ -96,6 +96,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property payments (base name: "payments")', function() {
+      // uncomment below and update the code to test the property payments
+      //var instance = new EchaloasuerteJsSdk.RandomNumber();
+      //expect(instance).to.be();
+    });
+
     it('should have the property rangeMin (base name: "range_min")', function() {
       // uncomment below and update the code to test the property rangeMin
       //var instance = new EchaloasuerteJsSdk.RandomNumber();

@@ -84,6 +84,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property payments (base name: "payments")', function() {
+      // uncomment below and update the code to test the property payments
+      //var instance = new EchaloasuerteJsSdk.BaseDrawAllOf();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EchaloasuerteJsSdk.PayPalResponse();
+    instance = new EchaloasuerteJsSdk.PaypalResponse();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,16 +47,16 @@
       object[property] = value;
   }
 
-  describe('PayPalResponse', function() {
-    it('should create an instance of PayPalResponse', function() {
-      // uncomment below and update the code to test PayPalResponse
-      //var instane = new EchaloasuerteJsSdk.PayPalResponse();
-      //expect(instance).to.be.a(EchaloasuerteJsSdk.PayPalResponse);
+  describe('PaypalResponse', function() {
+    it('should create an instance of PaypalResponse', function() {
+      // uncomment below and update the code to test PaypalResponse
+      //var instane = new EchaloasuerteJsSdk.PaypalResponse();
+      //expect(instance).to.be.a(EchaloasuerteJsSdk.PaypalResponse);
     });
 
     it('should have the property redirectUrl (base name: "redirect_url")', function() {
       // uncomment below and update the code to test the property redirectUrl
-      //var instance = new EchaloasuerteJsSdk.PayPalResponse();
+      //var instance = new EchaloasuerteJsSdk.PaypalResponse();
       //expect(instance).to.be();
     });
 
