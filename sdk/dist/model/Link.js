@@ -100,6 +100,10 @@ var Link = /*#__PURE__*/function () {
           obj['metadata'] = _ApiClient["default"].convertToType(data['metadata'], [_DrawMetadata["default"]]);
         }
 
+        if (data.hasOwnProperty('payments')) {
+          obj['payments'] = _ApiClient["default"].convertToType(data['payments'], ['String']);
+        }
+
         if (data.hasOwnProperty('items_set1')) {
           obj['items_set1'] = _ApiClient["default"].convertToType(data['items_set1'], ['String']);
         }
@@ -156,6 +160,11 @@ Link.prototype['private_id'] = undefined;
 
 Link.prototype['metadata'] = undefined;
 /**
+ * @member {Array.<module:model/Link.PaymentsEnum>} payments
+ */
+
+Link.prototype['payments'] = undefined;
+/**
  * @member {Array.<String>} items_set1
  */
 
@@ -205,7 +214,12 @@ _BaseDraw["default"].prototype['private_id'] = undefined;
  * @member {Array.<module:model/DrawMetadata>} metadata
  */
 
-_BaseDraw["default"].prototype['metadata'] = undefined; // Implement LinkAllOf interface:
+_BaseDraw["default"].prototype['metadata'] = undefined;
+/**
+ * @member {Array.<module:model/BaseDraw.PaymentsEnum>} payments
+ */
+
+_BaseDraw["default"].prototype['payments'] = undefined; // Implement LinkAllOf interface:
 
 /**
  * @member {Array.<String>} items_set1
@@ -222,5 +236,30 @@ _LinkAllOf["default"].prototype['items_set2'] = undefined;
  */
 
 _LinkAllOf["default"].prototype['results'] = undefined;
+/**
+ * Allowed values for the <code>payments</code> property.
+ * @enum {String}
+ * @readonly
+ */
+
+Link['PaymentsEnum'] = {
+  /**
+   * value: "CERTIFIED"
+   * @const
+   */
+  "CERTIFIED": "CERTIFIED",
+
+  /**
+   * value: "ADFREE"
+   * @const
+   */
+  "ADFREE": "ADFREE",
+
+  /**
+   * value: "SUPPORT"
+   * @const
+   */
+  "SUPPORT": "SUPPORT"
+};
 var _default = Link;
 exports["default"] = _default;

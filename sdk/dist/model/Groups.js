@@ -107,6 +107,10 @@ var Groups = /*#__PURE__*/function () {
           obj['metadata'] = _ApiClient["default"].convertToType(data['metadata'], [_DrawMetadata["default"]]);
         }
 
+        if (data.hasOwnProperty('payments')) {
+          obj['payments'] = _ApiClient["default"].convertToType(data['payments'], ['String']);
+        }
+
         if (data.hasOwnProperty('participants')) {
           obj['participants'] = _ApiClient["default"].convertToType(data['participants'], [_Participant["default"]]);
         }
@@ -163,6 +167,11 @@ Groups.prototype['private_id'] = undefined;
 
 Groups.prototype['metadata'] = undefined;
 /**
+ * @member {Array.<module:model/Groups.PaymentsEnum>} payments
+ */
+
+Groups.prototype['payments'] = undefined;
+/**
  * @member {Array.<module:model/Participant>} participants
  */
 
@@ -212,7 +221,12 @@ _BaseDraw["default"].prototype['private_id'] = undefined;
  * @member {Array.<module:model/DrawMetadata>} metadata
  */
 
-_BaseDraw["default"].prototype['metadata'] = undefined; // Implement GroupsAllOf interface:
+_BaseDraw["default"].prototype['metadata'] = undefined;
+/**
+ * @member {Array.<module:model/BaseDraw.PaymentsEnum>} payments
+ */
+
+_BaseDraw["default"].prototype['payments'] = undefined; // Implement GroupsAllOf interface:
 
 /**
  * @member {Array.<module:model/Participant>} participants
@@ -229,5 +243,30 @@ _GroupsAllOf["default"].prototype['number_of_groups'] = undefined;
  */
 
 _GroupsAllOf["default"].prototype['results'] = undefined;
+/**
+ * Allowed values for the <code>payments</code> property.
+ * @enum {String}
+ * @readonly
+ */
+
+Groups['PaymentsEnum'] = {
+  /**
+   * value: "CERTIFIED"
+   * @const
+   */
+  "CERTIFIED": "CERTIFIED",
+
+  /**
+   * value: "ADFREE"
+   * @const
+   */
+  "ADFREE": "ADFREE",
+
+  /**
+   * value: "SUPPORT"
+   * @const
+   */
+  "SUPPORT": "SUPPORT"
+};
 var _default = Groups;
 exports["default"] = _default;

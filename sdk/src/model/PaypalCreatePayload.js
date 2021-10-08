@@ -14,18 +14,21 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The PayPalCreate model module.
- * @module model/PayPalCreate
+ * The PaypalCreatePayload model module.
+ * @module model/PaypalCreatePayload
  * @version 0.0.1
  */
-class PayPalCreate {
+class PaypalCreatePayload {
     /**
-     * Constructs a new <code>PayPalCreate</code>.
-     * @alias module:model/PayPalCreate
+     * Constructs a new <code>PaypalCreatePayload</code>.
+     * @alias module:model/PaypalCreatePayload
+     * @param options {Array.<module:model/PaypalCreatePayload.OptionsEnum>} 
+     * @param drawUrl {String} 
+     * @param drawId {String} 
      */
-    constructor() { 
+    constructor(options, drawUrl, drawId) { 
         
-        PayPalCreate.initialize(this);
+        PaypalCreatePayload.initialize(this, options, drawUrl, drawId);
     }
 
     /**
@@ -33,19 +36,22 @@ class PayPalCreate {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, options, drawUrl, drawId) { 
+        obj['options'] = options;
+        obj['draw_url'] = drawUrl;
+        obj['draw_id'] = drawId;
     }
 
     /**
-     * Constructs a <code>PayPalCreate</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>PaypalCreatePayload</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PayPalCreate} obj Optional instance to populate.
-     * @return {module:model/PayPalCreate} The populated <code>PayPalCreate</code> instance.
+     * @param {module:model/PaypalCreatePayload} obj Optional instance to populate.
+     * @return {module:model/PaypalCreatePayload} The populated <code>PaypalCreatePayload</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new PayPalCreate();
+            obj = obj || new PaypalCreatePayload();
 
             if (data.hasOwnProperty('options')) {
                 obj['options'] = ApiClient.convertToType(data['options'], ['String']);
@@ -64,19 +70,19 @@ class PayPalCreate {
 }
 
 /**
- * @member {Array.<module:model/PayPalCreate.OptionsEnum>} options
+ * @member {Array.<module:model/PaypalCreatePayload.OptionsEnum>} options
  */
-PayPalCreate.prototype['options'] = undefined;
+PaypalCreatePayload.prototype['options'] = undefined;
 
 /**
  * @member {String} draw_url
  */
-PayPalCreate.prototype['draw_url'] = undefined;
+PaypalCreatePayload.prototype['draw_url'] = undefined;
 
 /**
  * @member {String} draw_id
  */
-PayPalCreate.prototype['draw_id'] = undefined;
+PaypalCreatePayload.prototype['draw_id'] = undefined;
 
 
 
@@ -87,7 +93,7 @@ PayPalCreate.prototype['draw_id'] = undefined;
  * @enum {String}
  * @readonly
  */
-PayPalCreate['OptionsEnum'] = {
+PaypalCreatePayload['OptionsEnum'] = {
 
     /**
      * value: "CERTIFIED"
@@ -110,5 +116,5 @@ PayPalCreate['OptionsEnum'] = {
 
 
 
-export default PayPalCreate;
+export default PaypalCreatePayload;
 

@@ -16,19 +16,22 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 /**
- * The PayPalCreate model module.
- * @module model/PayPalCreate
+ * The PaypalCreatePayload model module.
+ * @module model/PaypalCreatePayload
  * @version 0.0.1
  */
-var PayPalCreate = /*#__PURE__*/function () {
+var PaypalCreatePayload = /*#__PURE__*/function () {
   /**
-   * Constructs a new <code>PayPalCreate</code>.
-   * @alias module:model/PayPalCreate
+   * Constructs a new <code>PaypalCreatePayload</code>.
+   * @alias module:model/PaypalCreatePayload
+   * @param options {Array.<module:model/PaypalCreatePayload.OptionsEnum>} 
+   * @param drawUrl {String} 
+   * @param drawId {String} 
    */
-  function PayPalCreate() {
-    _classCallCheck(this, PayPalCreate);
+  function PaypalCreatePayload(options, drawUrl, drawId) {
+    _classCallCheck(this, PaypalCreatePayload);
 
-    PayPalCreate.initialize(this);
+    PaypalCreatePayload.initialize(this, options, drawUrl, drawId);
   }
   /**
    * Initializes the fields of this object.
@@ -37,22 +40,26 @@ var PayPalCreate = /*#__PURE__*/function () {
    */
 
 
-  _createClass(PayPalCreate, null, [{
+  _createClass(PaypalCreatePayload, null, [{
     key: "initialize",
-    value: function initialize(obj) {}
+    value: function initialize(obj, options, drawUrl, drawId) {
+      obj['options'] = options;
+      obj['draw_url'] = drawUrl;
+      obj['draw_id'] = drawId;
+    }
     /**
-     * Constructs a <code>PayPalCreate</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>PaypalCreatePayload</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PayPalCreate} obj Optional instance to populate.
-     * @return {module:model/PayPalCreate} The populated <code>PayPalCreate</code> instance.
+     * @param {module:model/PaypalCreatePayload} obj Optional instance to populate.
+     * @return {module:model/PaypalCreatePayload} The populated <code>PaypalCreatePayload</code> instance.
      */
 
   }, {
     key: "constructFromObject",
     value: function constructFromObject(data, obj) {
       if (data) {
-        obj = obj || new PayPalCreate();
+        obj = obj || new PaypalCreatePayload();
 
         if (data.hasOwnProperty('options')) {
           obj['options'] = _ApiClient["default"].convertToType(data['options'], ['String']);
@@ -71,31 +78,31 @@ var PayPalCreate = /*#__PURE__*/function () {
     }
   }]);
 
-  return PayPalCreate;
+  return PaypalCreatePayload;
 }();
 /**
- * @member {Array.<module:model/PayPalCreate.OptionsEnum>} options
+ * @member {Array.<module:model/PaypalCreatePayload.OptionsEnum>} options
  */
 
 
-PayPalCreate.prototype['options'] = undefined;
+PaypalCreatePayload.prototype['options'] = undefined;
 /**
  * @member {String} draw_url
  */
 
-PayPalCreate.prototype['draw_url'] = undefined;
+PaypalCreatePayload.prototype['draw_url'] = undefined;
 /**
  * @member {String} draw_id
  */
 
-PayPalCreate.prototype['draw_id'] = undefined;
+PaypalCreatePayload.prototype['draw_id'] = undefined;
 /**
  * Allowed values for the <code>options</code> property.
  * @enum {String}
  * @readonly
  */
 
-PayPalCreate['OptionsEnum'] = {
+PaypalCreatePayload['OptionsEnum'] = {
   /**
    * value: "CERTIFIED"
    * @const
@@ -114,5 +121,5 @@ PayPalCreate['OptionsEnum'] = {
    */
   "SUPPORT": "SUPPORT"
 };
-var _default = PayPalCreate;
+var _default = PaypalCreatePayload;
 exports["default"] = _default;

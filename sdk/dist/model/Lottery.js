@@ -105,6 +105,10 @@ var Lottery = /*#__PURE__*/function () {
           obj['metadata'] = _ApiClient["default"].convertToType(data['metadata'], [_DrawMetadata["default"]]);
         }
 
+        if (data.hasOwnProperty('payments')) {
+          obj['payments'] = _ApiClient["default"].convertToType(data['payments'], ['String']);
+        }
+
         if (data.hasOwnProperty('number_of_results')) {
           obj['number_of_results'] = _ApiClient["default"].convertToType(data['number_of_results'], 'Number');
         }
@@ -161,6 +165,11 @@ Lottery.prototype['private_id'] = undefined;
 
 Lottery.prototype['metadata'] = undefined;
 /**
+ * @member {Array.<module:model/Lottery.PaymentsEnum>} payments
+ */
+
+Lottery.prototype['payments'] = undefined;
+/**
  * @member {Number} number_of_results
  * @default 1
  */
@@ -211,7 +220,12 @@ _BaseDraw["default"].prototype['private_id'] = undefined;
  * @member {Array.<module:model/DrawMetadata>} metadata
  */
 
-_BaseDraw["default"].prototype['metadata'] = undefined; // Implement LotteryAllOf interface:
+_BaseDraw["default"].prototype['metadata'] = undefined;
+/**
+ * @member {Array.<module:model/BaseDraw.PaymentsEnum>} payments
+ */
+
+_BaseDraw["default"].prototype['payments'] = undefined; // Implement LotteryAllOf interface:
 
 /**
  * @member {Number} number_of_results
@@ -229,5 +243,30 @@ _LotteryAllOf["default"].prototype['participants'] = undefined;
  */
 
 _LotteryAllOf["default"].prototype['results'] = undefined;
+/**
+ * Allowed values for the <code>payments</code> property.
+ * @enum {String}
+ * @readonly
+ */
+
+Lottery['PaymentsEnum'] = {
+  /**
+   * value: "CERTIFIED"
+   * @const
+   */
+  "CERTIFIED": "CERTIFIED",
+
+  /**
+   * value: "ADFREE"
+   * @const
+   */
+  "ADFREE": "ADFREE",
+
+  /**
+   * value: "SUPPORT"
+   * @const
+   */
+  "SUPPORT": "SUPPORT"
+};
 var _default = Lottery;
 exports["default"] = _default;

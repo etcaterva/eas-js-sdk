@@ -96,6 +96,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property payments (base name: "payments")', function() {
+      // uncomment below and update the code to test the property payments
+      //var instance = new EchaloasuerteJsSdk.Raffle();
+      //expect(instance).to.be();
+    });
+
     it('should have the property prizes (base name: "prizes")', function() {
       // uncomment below and update the code to test the property prizes
       //var instance = new EchaloasuerteJsSdk.Raffle();

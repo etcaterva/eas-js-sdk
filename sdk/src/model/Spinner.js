@@ -76,6 +76,9 @@ class Spinner {
             if (data.hasOwnProperty('metadata')) {
                 obj['metadata'] = ApiClient.convertToType(data['metadata'], [DrawMetadata]);
             }
+            if (data.hasOwnProperty('payments')) {
+                obj['payments'] = ApiClient.convertToType(data['payments'], ['String']);
+            }
             if (data.hasOwnProperty('results')) {
                 obj['results'] = ApiClient.convertToType(data['results'], [SpinnerResult]);
             }
@@ -122,6 +125,11 @@ Spinner.prototype['private_id'] = undefined;
 Spinner.prototype['metadata'] = undefined;
 
 /**
+ * @member {Array.<module:model/Spinner.PaymentsEnum>} payments
+ */
+Spinner.prototype['payments'] = undefined;
+
+/**
  * @member {Array.<module:model/SpinnerResult>} results
  */
 Spinner.prototype['results'] = undefined;
@@ -156,12 +164,43 @@ BaseDraw.prototype['private_id'] = undefined;
  * @member {Array.<module:model/DrawMetadata>} metadata
  */
 BaseDraw.prototype['metadata'] = undefined;
+/**
+ * @member {Array.<module:model/BaseDraw.PaymentsEnum>} payments
+ */
+BaseDraw.prototype['payments'] = undefined;
 // Implement SpinnerAllOf interface:
 /**
  * @member {Array.<module:model/SpinnerResult>} results
  */
 SpinnerAllOf.prototype['results'] = undefined;
 
+
+
+/**
+ * Allowed values for the <code>payments</code> property.
+ * @enum {String}
+ * @readonly
+ */
+Spinner['PaymentsEnum'] = {
+
+    /**
+     * value: "CERTIFIED"
+     * @const
+     */
+    "CERTIFIED": "CERTIFIED",
+
+    /**
+     * value: "ADFREE"
+     * @const
+     */
+    "ADFREE": "ADFREE",
+
+    /**
+     * value: "SUPPORT"
+     * @const
+     */
+    "SUPPORT": "SUPPORT"
+};
 
 
 

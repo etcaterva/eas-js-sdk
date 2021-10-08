@@ -81,6 +81,9 @@ class Groups {
             if (data.hasOwnProperty('metadata')) {
                 obj['metadata'] = ApiClient.convertToType(data['metadata'], [DrawMetadata]);
             }
+            if (data.hasOwnProperty('payments')) {
+                obj['payments'] = ApiClient.convertToType(data['payments'], ['String']);
+            }
             if (data.hasOwnProperty('participants')) {
                 obj['participants'] = ApiClient.convertToType(data['participants'], [Participant]);
             }
@@ -133,6 +136,11 @@ Groups.prototype['private_id'] = undefined;
 Groups.prototype['metadata'] = undefined;
 
 /**
+ * @member {Array.<module:model/Groups.PaymentsEnum>} payments
+ */
+Groups.prototype['payments'] = undefined;
+
+/**
  * @member {Array.<module:model/Participant>} participants
  */
 Groups.prototype['participants'] = undefined;
@@ -177,6 +185,10 @@ BaseDraw.prototype['private_id'] = undefined;
  * @member {Array.<module:model/DrawMetadata>} metadata
  */
 BaseDraw.prototype['metadata'] = undefined;
+/**
+ * @member {Array.<module:model/BaseDraw.PaymentsEnum>} payments
+ */
+BaseDraw.prototype['payments'] = undefined;
 // Implement GroupsAllOf interface:
 /**
  * @member {Array.<module:model/Participant>} participants
@@ -191,6 +203,33 @@ GroupsAllOf.prototype['number_of_groups'] = undefined;
  */
 GroupsAllOf.prototype['results'] = undefined;
 
+
+
+/**
+ * Allowed values for the <code>payments</code> property.
+ * @enum {String}
+ * @readonly
+ */
+Groups['PaymentsEnum'] = {
+
+    /**
+     * value: "CERTIFIED"
+     * @const
+     */
+    "CERTIFIED": "CERTIFIED",
+
+    /**
+     * value: "ADFREE"
+     * @const
+     */
+    "ADFREE": "ADFREE",
+
+    /**
+     * value: "SUPPORT"
+     * @const
+     */
+    "SUPPORT": "SUPPORT"
+};
 
 
 

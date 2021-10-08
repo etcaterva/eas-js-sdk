@@ -96,6 +96,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property payments (base name: "payments")', function() {
+      // uncomment below and update the code to test the property payments
+      //var instance = new EchaloasuerteJsSdk.Tournament();
+      //expect(instance).to.be();
+    });
+
     it('should have the property participants (base name: "participants")', function() {
       // uncomment below and update the code to test the property participants
       //var instance = new EchaloasuerteJsSdk.Tournament();

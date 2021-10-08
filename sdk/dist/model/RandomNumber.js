@@ -105,6 +105,10 @@ var RandomNumber = /*#__PURE__*/function () {
           obj['metadata'] = _ApiClient["default"].convertToType(data['metadata'], [_DrawMetadata["default"]]);
         }
 
+        if (data.hasOwnProperty('payments')) {
+          obj['payments'] = _ApiClient["default"].convertToType(data['payments'], ['String']);
+        }
+
         if (data.hasOwnProperty('range_min')) {
           obj['range_min'] = _ApiClient["default"].convertToType(data['range_min'], 'Number');
         }
@@ -169,6 +173,11 @@ RandomNumber.prototype['private_id'] = undefined;
 
 RandomNumber.prototype['metadata'] = undefined;
 /**
+ * @member {Array.<module:model/RandomNumber.PaymentsEnum>} payments
+ */
+
+RandomNumber.prototype['payments'] = undefined;
+/**
  * @member {Number} range_min
  */
 
@@ -230,7 +239,12 @@ _BaseDraw["default"].prototype['private_id'] = undefined;
  * @member {Array.<module:model/DrawMetadata>} metadata
  */
 
-_BaseDraw["default"].prototype['metadata'] = undefined; // Implement RandomNumberAllOf interface:
+_BaseDraw["default"].prototype['metadata'] = undefined;
+/**
+ * @member {Array.<module:model/BaseDraw.PaymentsEnum>} payments
+ */
+
+_BaseDraw["default"].prototype['payments'] = undefined; // Implement RandomNumberAllOf interface:
 
 /**
  * @member {Number} range_min
@@ -259,5 +273,30 @@ _RandomNumberAllOf["default"].prototype['allow_repeated_results'] = true;
  */
 
 _RandomNumberAllOf["default"].prototype['results'] = undefined;
+/**
+ * Allowed values for the <code>payments</code> property.
+ * @enum {String}
+ * @readonly
+ */
+
+RandomNumber['PaymentsEnum'] = {
+  /**
+   * value: "CERTIFIED"
+   * @const
+   */
+  "CERTIFIED": "CERTIFIED",
+
+  /**
+   * value: "ADFREE"
+   * @const
+   */
+  "ADFREE": "ADFREE",
+
+  /**
+   * value: "SUPPORT"
+   * @const
+   */
+  "SUPPORT": "SUPPORT"
+};
 var _default = RandomNumber;
 exports["default"] = _default;

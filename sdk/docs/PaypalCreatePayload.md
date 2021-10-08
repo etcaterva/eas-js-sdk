@@ -1,12 +1,12 @@
-# EchaloasuerteJsSdk.PayPalCreate
+# EchaloasuerteJsSdk.PaypalCreatePayload
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**options** | **[String]** |  | [optional] 
-**drawUrl** | **String** |  | [optional] 
-**drawId** | **String** |  | [optional] 
+**options** | **[String]** |  | 
+**drawUrl** | **String** |  | 
+**drawId** | **String** |  | 
 
 
 

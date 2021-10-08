@@ -75,6 +75,9 @@ class BaseDraw {
             if (data.hasOwnProperty('metadata')) {
                 obj['metadata'] = ApiClient.convertToType(data['metadata'], [DrawMetadata]);
             }
+            if (data.hasOwnProperty('payments')) {
+                obj['payments'] = ApiClient.convertToType(data['payments'], ['String']);
+            }
         }
         return obj;
     }
@@ -117,6 +120,11 @@ BaseDraw.prototype['private_id'] = undefined;
  */
 BaseDraw.prototype['metadata'] = undefined;
 
+/**
+ * @member {Array.<module:model/BaseDraw.PaymentsEnum>} payments
+ */
+BaseDraw.prototype['payments'] = undefined;
+
 
 // Implement BaseObject interface:
 /**
@@ -148,7 +156,38 @@ BaseDrawAllOf.prototype['private_id'] = undefined;
  * @member {Array.<module:model/DrawMetadata>} metadata
  */
 BaseDrawAllOf.prototype['metadata'] = undefined;
+/**
+ * @member {Array.<module:model/BaseDrawAllOf.PaymentsEnum>} payments
+ */
+BaseDrawAllOf.prototype['payments'] = undefined;
 
+
+
+/**
+ * Allowed values for the <code>payments</code> property.
+ * @enum {String}
+ * @readonly
+ */
+BaseDraw['PaymentsEnum'] = {
+
+    /**
+     * value: "CERTIFIED"
+     * @const
+     */
+    "CERTIFIED": "CERTIFIED",
+
+    /**
+     * value: "ADFREE"
+     * @const
+     */
+    "ADFREE": "ADFREE",
+
+    /**
+     * value: "SUPPORT"
+     * @const
+     */
+    "SUPPORT": "SUPPORT"
+};
 
 
 

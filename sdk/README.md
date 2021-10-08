@@ -135,7 +135,7 @@ Class | Method | HTTP request | Description
 *EchaloasuerteJsSdk.LotteryApi* | [**lotteryParticipantsAdd**](docs/LotteryApi.md#lotteryParticipantsAdd) | **POST** /lottery/{id}/participants/ | 
 *EchaloasuerteJsSdk.LotteryApi* | [**lotteryRead**](docs/LotteryApi.md#lotteryRead) | **GET** /lottery/{id}/ | 
 *EchaloasuerteJsSdk.LotteryApi* | [**lotteryToss**](docs/LotteryApi.md#lotteryToss) | **POST** /lottery/{id}/toss/ | 
-*EchaloasuerteJsSdk.PaypalApi* | [**paypalCreate**](docs/PaypalApi.md#paypalCreate) | **POST** /payment/create/ | 
+*EchaloasuerteJsSdk.PaypalApi* | [**paypalCreate**](docs/PaypalApi.md#paypalCreate) | **POST** /paypal/create/ | 
 *EchaloasuerteJsSdk.RaffleApi* | [**raffleCreate**](docs/RaffleApi.md#raffleCreate) | **POST** /raffle/ | 
 *EchaloasuerteJsSdk.RaffleApi* | [**raffleParticipantsAdd**](docs/RaffleApi.md#raffleParticipantsAdd) | **POST** /raffle/{id}/participants/ | 
 *EchaloasuerteJsSdk.RaffleApi* | [**raffleRead**](docs/RaffleApi.md#raffleRead) | **GET** /raffle/{id}/ | 
@@ -185,7 +185,8 @@ Class | Method | HTTP request | Description
  - [EchaloasuerteJsSdk.LotteryResultAllOf](docs/LotteryResultAllOf.md)
  - [EchaloasuerteJsSdk.Participant](docs/Participant.md)
  - [EchaloasuerteJsSdk.ParticipantAllOf](docs/ParticipantAllOf.md)
- - [EchaloasuerteJsSdk.PayPalCreate](docs/PayPalCreate.md)
+ - [EchaloasuerteJsSdk.PaypalCreatePayload](docs/PaypalCreatePayload.md)
+ - [EchaloasuerteJsSdk.PaypalResponse](docs/PaypalResponse.md)
  - [EchaloasuerteJsSdk.Prize](docs/Prize.md)
  - [EchaloasuerteJsSdk.PrizeAllOf](docs/PrizeAllOf.md)
  - [EchaloasuerteJsSdk.Raffle](docs/Raffle.md)
