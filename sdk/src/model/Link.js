@@ -76,6 +76,9 @@ class Link {
             if (data.hasOwnProperty('metadata')) {
                 obj['metadata'] = ApiClient.convertToType(data['metadata'], [DrawMetadata]);
             }
+            if (data.hasOwnProperty('payments')) {
+                obj['payments'] = ApiClient.convertToType(data['payments'], ['String']);
+            }
             if (data.hasOwnProperty('items_set1')) {
                 obj['items_set1'] = ApiClient.convertToType(data['items_set1'], ['String']);
             }
@@ -128,6 +131,11 @@ Link.prototype['private_id'] = undefined;
 Link.prototype['metadata'] = undefined;
 
 /**
+ * @member {Array.<module:model/Link.PaymentsEnum>} payments
+ */
+Link.prototype['payments'] = undefined;
+
+/**
  * @member {Array.<String>} items_set1
  */
 Link.prototype['items_set1'] = undefined;
@@ -172,6 +180,10 @@ BaseDraw.prototype['private_id'] = undefined;
  * @member {Array.<module:model/DrawMetadata>} metadata
  */
 BaseDraw.prototype['metadata'] = undefined;
+/**
+ * @member {Array.<module:model/BaseDraw.PaymentsEnum>} payments
+ */
+BaseDraw.prototype['payments'] = undefined;
 // Implement LinkAllOf interface:
 /**
  * @member {Array.<String>} items_set1
@@ -186,6 +198,33 @@ LinkAllOf.prototype['items_set2'] = undefined;
  */
 LinkAllOf.prototype['results'] = undefined;
 
+
+
+/**
+ * Allowed values for the <code>payments</code> property.
+ * @enum {String}
+ * @readonly
+ */
+Link['PaymentsEnum'] = {
+
+    /**
+     * value: "CERTIFIED"
+     * @const
+     */
+    "CERTIFIED": "CERTIFIED",
+
+    /**
+     * value: "ADFREE"
+     * @const
+     */
+    "ADFREE": "ADFREE",
+
+    /**
+     * value: "SUPPORT"
+     * @const
+     */
+    "SUPPORT": "SUPPORT"
+};
 
 
 
