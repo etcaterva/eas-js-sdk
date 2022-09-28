@@ -50,7 +50,7 @@
   describe('PaypalCreatePayload', function() {
     it('should create an instance of PaypalCreatePayload', function() {
       // uncomment below and update the code to test PaypalCreatePayload
-      //var instane = new EchaloasuerteJsSdk.PaypalCreatePayload();
+      //var instance = new EchaloasuerteJsSdk.PaypalCreatePayload();
       //expect(instance).to.be.a(EchaloasuerteJsSdk.PaypalCreatePayload);
     });
 

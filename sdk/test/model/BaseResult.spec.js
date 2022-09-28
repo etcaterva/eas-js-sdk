@@ -50,7 +50,7 @@
   describe('BaseResult', function() {
     it('should create an instance of BaseResult', function() {
       // uncomment below and update the code to test BaseResult
-      //var instane = new EchaloasuerteJsSdk.BaseResult();
+      //var instance = new EchaloasuerteJsSdk.BaseResult();
       //expect(instance).to.be.a(EchaloasuerteJsSdk.BaseResult);
     });
 

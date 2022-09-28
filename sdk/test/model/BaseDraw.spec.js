@@ -50,7 +50,7 @@
   describe('BaseDraw', function() {
     it('should create an instance of BaseDraw', function() {
       // uncomment below and update the code to test BaseDraw
-      //var instane = new EchaloasuerteJsSdk.BaseDraw();
+      //var instance = new EchaloasuerteJsSdk.BaseDraw();
       //expect(instance).to.be.a(EchaloasuerteJsSdk.BaseDraw);
     });
 

@@ -50,7 +50,7 @@
   describe('TournamentResult', function() {
     it('should create an instance of TournamentResult', function() {
       // uncomment below and update the code to test TournamentResult
-      //var instane = new EchaloasuerteJsSdk.TournamentResult();
+      //var instance = new EchaloasuerteJsSdk.TournamentResult();
       //expect(instance).to.be.a(EchaloasuerteJsSdk.TournamentResult);
     });
 

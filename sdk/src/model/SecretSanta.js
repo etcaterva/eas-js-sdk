@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import SecretSantaParticipants from './SecretSantaParticipants';
+import SecretSantaParticipantsInner from './SecretSantaParticipantsInner';
 
 /**
  * The SecretSanta model module.
@@ -52,7 +52,7 @@ class SecretSanta {
                 obj['language'] = ApiClient.convertToType(data['language'], 'String');
             }
             if (data.hasOwnProperty('participants')) {
-                obj['participants'] = ApiClient.convertToType(data['participants'], [SecretSantaParticipants]);
+                obj['participants'] = ApiClient.convertToType(data['participants'], [SecretSantaParticipantsInner]);
             }
         }
         return obj;
@@ -67,7 +67,7 @@ class SecretSanta {
 SecretSanta.prototype['language'] = undefined;
 
 /**
- * @member {Array.<module:model/SecretSantaParticipants>} participants
+ * @member {Array.<module:model/SecretSantaParticipantsInner>} participants
  */
 SecretSanta.prototype['participants'] = undefined;
 

@@ -50,7 +50,7 @@
   describe('LetterResult', function() {
     it('should create an instance of LetterResult', function() {
       // uncomment below and update the code to test LetterResult
-      //var instane = new EchaloasuerteJsSdk.LetterResult();
+      //var instance = new EchaloasuerteJsSdk.LetterResult();
       //expect(instance).to.be.a(EchaloasuerteJsSdk.LetterResult);
     });
 

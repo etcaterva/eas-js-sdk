@@ -50,7 +50,7 @@
   describe('RandomNumber', function() {
     it('should create an instance of RandomNumber', function() {
       // uncomment below and update the code to test RandomNumber
-      //var instane = new EchaloasuerteJsSdk.RandomNumber();
+      //var instance = new EchaloasuerteJsSdk.RandomNumber();
       //expect(instance).to.be.a(EchaloasuerteJsSdk.RandomNumber);
     });
 

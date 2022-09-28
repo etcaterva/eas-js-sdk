@@ -50,7 +50,7 @@
   describe('TournamentResultAllOf', function() {
     it('should create an instance of TournamentResultAllOf', function() {
       // uncomment below and update the code to test TournamentResultAllOf
-      //var instane = new EchaloasuerteJsSdk.TournamentResultAllOf();
+      //var instance = new EchaloasuerteJsSdk.TournamentResultAllOf();
       //expect(instance).to.be.a(EchaloasuerteJsSdk.TournamentResultAllOf);
     });
 

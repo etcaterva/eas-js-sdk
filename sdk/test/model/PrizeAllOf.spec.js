@@ -50,7 +50,7 @@
   describe('PrizeAllOf', function() {
     it('should create an instance of PrizeAllOf', function() {
       // uncomment below and update the code to test PrizeAllOf
-      //var instane = new EchaloasuerteJsSdk.PrizeAllOf();
+      //var instance = new EchaloasuerteJsSdk.PrizeAllOf();
       //expect(instance).to.be.a(EchaloasuerteJsSdk.PrizeAllOf);
     });
 

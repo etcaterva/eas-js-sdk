@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EchaloasuerteJsSdk.BaseDrawAllOf();
+    instance = new EchaloasuerteJsSdk.Instagram();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,46 +47,88 @@
       object[property] = value;
   }
 
-  describe('BaseDrawAllOf', function() {
-    it('should create an instance of BaseDrawAllOf', function() {
-      // uncomment below and update the code to test BaseDrawAllOf
-      //var instance = new EchaloasuerteJsSdk.BaseDrawAllOf();
-      //expect(instance).to.be.a(EchaloasuerteJsSdk.BaseDrawAllOf);
+  describe('Instagram', function() {
+    it('should create an instance of Instagram', function() {
+      // uncomment below and update the code to test Instagram
+      //var instance = new EchaloasuerteJsSdk.Instagram();
+      //expect(instance).to.be.a(EchaloasuerteJsSdk.Instagram);
+    });
+
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instance = new EchaloasuerteJsSdk.Instagram();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property createdAt (base name: "created_at")', function() {
+      // uncomment below and update the code to test the property createdAt
+      //var instance = new EchaloasuerteJsSdk.Instagram();
+      //expect(instance).to.be();
     });
 
     it('should have the property updatedAt (base name: "updated_at")', function() {
       // uncomment below and update the code to test the property updatedAt
-      //var instance = new EchaloasuerteJsSdk.BaseDrawAllOf();
+      //var instance = new EchaloasuerteJsSdk.Instagram();
       //expect(instance).to.be();
     });
 
     it('should have the property title (base name: "title")', function() {
       // uncomment below and update the code to test the property title
-      //var instance = new EchaloasuerteJsSdk.BaseDrawAllOf();
+      //var instance = new EchaloasuerteJsSdk.Instagram();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instance = new EchaloasuerteJsSdk.BaseDrawAllOf();
+      //var instance = new EchaloasuerteJsSdk.Instagram();
       //expect(instance).to.be();
     });
 
     it('should have the property privateId (base name: "private_id")', function() {
       // uncomment below and update the code to test the property privateId
-      //var instance = new EchaloasuerteJsSdk.BaseDrawAllOf();
+      //var instance = new EchaloasuerteJsSdk.Instagram();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instance = new EchaloasuerteJsSdk.BaseDrawAllOf();
+      //var instance = new EchaloasuerteJsSdk.Instagram();
       //expect(instance).to.be();
     });
 
     it('should have the property payments (base name: "payments")', function() {
       // uncomment below and update the code to test the property payments
-      //var instance = new EchaloasuerteJsSdk.BaseDrawAllOf();
+      //var instance = new EchaloasuerteJsSdk.Instagram();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property prizes (base name: "prizes")', function() {
+      // uncomment below and update the code to test the property prizes
+      //var instance = new EchaloasuerteJsSdk.Instagram();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property useLikes (base name: "use_likes")', function() {
+      // uncomment below and update the code to test the property useLikes
+      //var instance = new EchaloasuerteJsSdk.Instagram();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property useComments (base name: "use_comments")', function() {
+      // uncomment below and update the code to test the property useComments
+      //var instance = new EchaloasuerteJsSdk.Instagram();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property postUrl (base name: "post_url")', function() {
+      // uncomment below and update the code to test the property postUrl
+      //var instance = new EchaloasuerteJsSdk.Instagram();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property results (base name: "results")', function() {
+      // uncomment below and update the code to test the property results
+      //var instance = new EchaloasuerteJsSdk.Instagram();
       //expect(instance).to.be();
     });
 

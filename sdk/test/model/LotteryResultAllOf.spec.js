@@ -50,7 +50,7 @@
   describe('LotteryResultAllOf', function() {
     it('should create an instance of LotteryResultAllOf', function() {
       // uncomment below and update the code to test LotteryResultAllOf
-      //var instane = new EchaloasuerteJsSdk.LotteryResultAllOf();
+      //var instance = new EchaloasuerteJsSdk.LotteryResultAllOf();
       //expect(instance).to.be.a(EchaloasuerteJsSdk.LotteryResultAllOf);
     });
 

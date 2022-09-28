@@ -50,7 +50,7 @@
   describe('DrawTossPayload', function() {
     it('should create an instance of DrawTossPayload', function() {
       // uncomment below and update the code to test DrawTossPayload
-      //var instane = new EchaloasuerteJsSdk.DrawTossPayload();
+      //var instance = new EchaloasuerteJsSdk.DrawTossPayload();
       //expect(instance).to.be.a(EchaloasuerteJsSdk.DrawTossPayload);
     });
 

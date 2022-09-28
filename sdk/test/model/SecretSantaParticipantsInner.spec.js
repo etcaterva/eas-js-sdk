@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EchaloasuerteJsSdk.SpinnerAllOf();
+    instance = new EchaloasuerteJsSdk.SecretSantaParticipantsInner();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,16 +47,28 @@
       object[property] = value;
   }
 
-  describe('SpinnerAllOf', function() {
-    it('should create an instance of SpinnerAllOf', function() {
-      // uncomment below and update the code to test SpinnerAllOf
-      //var instance = new EchaloasuerteJsSdk.SpinnerAllOf();
-      //expect(instance).to.be.a(EchaloasuerteJsSdk.SpinnerAllOf);
+  describe('SecretSantaParticipantsInner', function() {
+    it('should create an instance of SecretSantaParticipantsInner', function() {
+      // uncomment below and update the code to test SecretSantaParticipantsInner
+      //var instance = new EchaloasuerteJsSdk.SecretSantaParticipantsInner();
+      //expect(instance).to.be.a(EchaloasuerteJsSdk.SecretSantaParticipantsInner);
     });
 
-    it('should have the property results (base name: "results")', function() {
-      // uncomment below and update the code to test the property results
-      //var instance = new EchaloasuerteJsSdk.SpinnerAllOf();
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instance = new EchaloasuerteJsSdk.SecretSantaParticipantsInner();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property email (base name: "email")', function() {
+      // uncomment below and update the code to test the property email
+      //var instance = new EchaloasuerteJsSdk.SecretSantaParticipantsInner();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property exclusions (base name: "exclusions")', function() {
+      // uncomment below and update the code to test the property exclusions
+      //var instance = new EchaloasuerteJsSdk.SecretSantaParticipantsInner();
       //expect(instance).to.be();
     });
 

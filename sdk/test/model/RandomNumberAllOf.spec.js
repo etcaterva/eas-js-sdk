@@ -50,7 +50,7 @@
   describe('RandomNumberAllOf', function() {
     it('should create an instance of RandomNumberAllOf', function() {
       // uncomment below and update the code to test RandomNumberAllOf
-      //var instane = new EchaloasuerteJsSdk.RandomNumberAllOf();
+      //var instance = new EchaloasuerteJsSdk.RandomNumberAllOf();
       //expect(instance).to.be.a(EchaloasuerteJsSdk.RandomNumberAllOf);
     });
 

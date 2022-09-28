@@ -50,7 +50,7 @@
   describe('Spinner', function() {
     it('should create an instance of Spinner', function() {
       // uncomment below and update the code to test Spinner
-      //var instane = new EchaloasuerteJsSdk.Spinner();
+      //var instance = new EchaloasuerteJsSdk.Spinner();
       //expect(instance).to.be.a(EchaloasuerteJsSdk.Spinner);
     });
 

@@ -50,7 +50,7 @@
   describe('CoinResult', function() {
     it('should create an instance of CoinResult', function() {
       // uncomment below and update the code to test CoinResult
-      //var instane = new EchaloasuerteJsSdk.CoinResult();
+      //var instance = new EchaloasuerteJsSdk.CoinResult();
       //expect(instance).to.be.a(EchaloasuerteJsSdk.CoinResult);
     });
 

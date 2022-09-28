@@ -50,7 +50,7 @@
   describe('LinkAllOf', function() {
     it('should create an instance of LinkAllOf', function() {
       // uncomment below and update the code to test LinkAllOf
-      //var instane = new EchaloasuerteJsSdk.LinkAllOf();
+      //var instance = new EchaloasuerteJsSdk.LinkAllOf();
       //expect(instance).to.be.a(EchaloasuerteJsSdk.LinkAllOf);
     });
 

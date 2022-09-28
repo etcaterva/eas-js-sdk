@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The SecretSantaParticipants model module.
- * @module model/SecretSantaParticipants
+ * The SecretSantaParticipantsInner model module.
+ * @module model/SecretSantaParticipantsInner
  * @version 0.0.1
  */
-class SecretSantaParticipants {
+class SecretSantaParticipantsInner {
     /**
-     * Constructs a new <code>SecretSantaParticipants</code>.
-     * @alias module:model/SecretSantaParticipants
+     * Constructs a new <code>SecretSantaParticipantsInner</code>.
+     * @alias module:model/SecretSantaParticipantsInner
      */
     constructor() { 
         
-        SecretSantaParticipants.initialize(this);
+        SecretSantaParticipantsInner.initialize(this);
     }
 
     /**
@@ -37,15 +37,15 @@ class SecretSantaParticipants {
     }
 
     /**
-     * Constructs a <code>SecretSantaParticipants</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>SecretSantaParticipantsInner</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SecretSantaParticipants} obj Optional instance to populate.
-     * @return {module:model/SecretSantaParticipants} The populated <code>SecretSantaParticipants</code> instance.
+     * @param {module:model/SecretSantaParticipantsInner} obj Optional instance to populate.
+     * @return {module:model/SecretSantaParticipantsInner} The populated <code>SecretSantaParticipantsInner</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new SecretSantaParticipants();
+            obj = obj || new SecretSantaParticipantsInner();
 
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -66,22 +66,22 @@ class SecretSantaParticipants {
 /**
  * @member {String} name
  */
-SecretSantaParticipants.prototype['name'] = undefined;
+SecretSantaParticipantsInner.prototype['name'] = undefined;
 
 /**
  * @member {String} email
  */
-SecretSantaParticipants.prototype['email'] = undefined;
+SecretSantaParticipantsInner.prototype['email'] = undefined;
 
 /**
  * @member {Array.<String>} exclusions
  */
-SecretSantaParticipants.prototype['exclusions'] = undefined;
+SecretSantaParticipantsInner.prototype['exclusions'] = undefined;
 
 
 
 
 
 
-export default SecretSantaParticipants;
+export default SecretSantaParticipantsInner;
 

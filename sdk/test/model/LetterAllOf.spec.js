@@ -50,7 +50,7 @@
   describe('LetterAllOf', function() {
     it('should create an instance of LetterAllOf', function() {
       // uncomment below and update the code to test LetterAllOf
-      //var instane = new EchaloasuerteJsSdk.LetterAllOf();
+      //var instance = new EchaloasuerteJsSdk.LetterAllOf();
       //expect(instance).to.be.a(EchaloasuerteJsSdk.LetterAllOf);
     });
 

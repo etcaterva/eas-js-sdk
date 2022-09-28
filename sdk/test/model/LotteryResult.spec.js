@@ -50,7 +50,7 @@
   describe('LotteryResult', function() {
     it('should create an instance of LotteryResult', function() {
       // uncomment below and update the code to test LotteryResult
-      //var instane = new EchaloasuerteJsSdk.LotteryResult();
+      //var instance = new EchaloasuerteJsSdk.LotteryResult();
       //expect(instance).to.be.a(EchaloasuerteJsSdk.LotteryResult);
     });
 

@@ -50,7 +50,7 @@
   describe('PaypalResponse', function() {
     it('should create an instance of PaypalResponse', function() {
       // uncomment below and update the code to test PaypalResponse
-      //var instane = new EchaloasuerteJsSdk.PaypalResponse();
+      //var instance = new EchaloasuerteJsSdk.PaypalResponse();
       //expect(instance).to.be.a(EchaloasuerteJsSdk.PaypalResponse);
     });
 

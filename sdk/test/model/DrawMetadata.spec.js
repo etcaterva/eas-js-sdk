@@ -50,7 +50,7 @@
   describe('DrawMetadata', function() {
     it('should create an instance of DrawMetadata', function() {
       // uncomment below and update the code to test DrawMetadata
-      //var instane = new EchaloasuerteJsSdk.DrawMetadata();
+      //var instance = new EchaloasuerteJsSdk.DrawMetadata();
       //expect(instance).to.be.a(EchaloasuerteJsSdk.DrawMetadata);
     });
 

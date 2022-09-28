@@ -50,7 +50,7 @@
   describe('Groups', function() {
     it('should create an instance of Groups', function() {
       // uncomment below and update the code to test Groups
-      //var instane = new EchaloasuerteJsSdk.Groups();
+      //var instance = new EchaloasuerteJsSdk.Groups();
       //expect(instance).to.be.a(EchaloasuerteJsSdk.Groups);
     });
 

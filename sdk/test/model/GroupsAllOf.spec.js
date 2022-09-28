@@ -50,7 +50,7 @@
   describe('GroupsAllOf', function() {
     it('should create an instance of GroupsAllOf', function() {
       // uncomment below and update the code to test GroupsAllOf
-      //var instane = new EchaloasuerteJsSdk.GroupsAllOf();
+      //var instance = new EchaloasuerteJsSdk.GroupsAllOf();
       //expect(instance).to.be.a(EchaloasuerteJsSdk.GroupsAllOf);
     });
 

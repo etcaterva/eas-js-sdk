@@ -50,7 +50,7 @@
   describe('LinkResult', function() {
     it('should create an instance of LinkResult', function() {
       // uncomment below and update the code to test LinkResult
-      //var instane = new EchaloasuerteJsSdk.LinkResult();
+      //var instance = new EchaloasuerteJsSdk.LinkResult();
       //expect(instance).to.be.a(EchaloasuerteJsSdk.LinkResult);
     });
 

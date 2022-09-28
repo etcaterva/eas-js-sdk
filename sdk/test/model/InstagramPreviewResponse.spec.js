@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EchaloasuerteJsSdk.SpinnerAllOf();
+    instance = new EchaloasuerteJsSdk.InstagramPreviewResponse();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,16 +47,28 @@
       object[property] = value;
   }
 
-  describe('SpinnerAllOf', function() {
-    it('should create an instance of SpinnerAllOf', function() {
-      // uncomment below and update the code to test SpinnerAllOf
-      //var instance = new EchaloasuerteJsSdk.SpinnerAllOf();
-      //expect(instance).to.be.a(EchaloasuerteJsSdk.SpinnerAllOf);
+  describe('InstagramPreviewResponse', function() {
+    it('should create an instance of InstagramPreviewResponse', function() {
+      // uncomment below and update the code to test InstagramPreviewResponse
+      //var instance = new EchaloasuerteJsSdk.InstagramPreviewResponse();
+      //expect(instance).to.be.a(EchaloasuerteJsSdk.InstagramPreviewResponse);
     });
 
-    it('should have the property results (base name: "results")', function() {
-      // uncomment below and update the code to test the property results
-      //var instance = new EchaloasuerteJsSdk.SpinnerAllOf();
+    it('should have the property thumbnail (base name: "thumbnail")', function() {
+      // uncomment below and update the code to test the property thumbnail
+      //var instance = new EchaloasuerteJsSdk.InstagramPreviewResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property likes (base name: "likes")', function() {
+      // uncomment below and update the code to test the property likes
+      //var instance = new EchaloasuerteJsSdk.InstagramPreviewResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property comments (base name: "comments")', function() {
+      // uncomment below and update the code to test the property comments
+      //var instance = new EchaloasuerteJsSdk.InstagramPreviewResponse();
       //expect(instance).to.be();
     });
 

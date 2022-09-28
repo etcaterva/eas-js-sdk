@@ -50,7 +50,7 @@
   describe('LinkResultAllOf', function() {
     it('should create an instance of LinkResultAllOf', function() {
       // uncomment below and update the code to test LinkResultAllOf
-      //var instane = new EchaloasuerteJsSdk.LinkResultAllOf();
+      //var instance = new EchaloasuerteJsSdk.LinkResultAllOf();
       //expect(instance).to.be.a(EchaloasuerteJsSdk.LinkResultAllOf);
     });
 

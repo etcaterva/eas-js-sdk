@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EchaloasuerteJsSdk.SecretSantaParticipants();
+    instance = new EchaloasuerteJsSdk.InstagramApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,31 +47,47 @@
       object[property] = value;
   }
 
-  describe('SecretSantaParticipants', function() {
-    it('should create an instance of SecretSantaParticipants', function() {
-      // uncomment below and update the code to test SecretSantaParticipants
-      //var instane = new EchaloasuerteJsSdk.SecretSantaParticipants();
-      //expect(instance).to.be.a(EchaloasuerteJsSdk.SecretSantaParticipants);
+  describe('InstagramApi', function() {
+    describe('instagramCreate', function() {
+      it('should call instagramCreate successfully', function(done) {
+        //uncomment below and update the code to test instagramCreate
+        //instance.instagramCreate(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
     });
-
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instance = new EchaloasuerteJsSdk.SecretSantaParticipants();
-      //expect(instance).to.be();
+    describe('instagramPreview', function() {
+      it('should call instagramPreview successfully', function(done) {
+        //uncomment below and update the code to test instagramPreview
+        //instance.instagramPreview(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
     });
-
-    it('should have the property email (base name: "email")', function() {
-      // uncomment below and update the code to test the property email
-      //var instance = new EchaloasuerteJsSdk.SecretSantaParticipants();
-      //expect(instance).to.be();
+    describe('instagramRead', function() {
+      it('should call instagramRead successfully', function(done) {
+        //uncomment below and update the code to test instagramRead
+        //instance.instagramRead(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
     });
-
-    it('should have the property exclusions (base name: "exclusions")', function() {
-      // uncomment below and update the code to test the property exclusions
-      //var instance = new EchaloasuerteJsSdk.SecretSantaParticipants();
-      //expect(instance).to.be();
+    describe('instagramToss', function() {
+      it('should call instagramToss successfully', function(done) {
+        //uncomment below and update the code to test instagramToss
+        //instance.instagramToss(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
     });
-
   });
 
 }));

@@ -50,7 +50,7 @@
   describe('BaseResultAllOf', function() {
     it('should create an instance of BaseResultAllOf', function() {
       // uncomment below and update the code to test BaseResultAllOf
-      //var instane = new EchaloasuerteJsSdk.BaseResultAllOf();
+      //var instance = new EchaloasuerteJsSdk.BaseResultAllOf();
       //expect(instance).to.be.a(EchaloasuerteJsSdk.BaseResultAllOf);
     });
 

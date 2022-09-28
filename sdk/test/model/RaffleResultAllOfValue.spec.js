@@ -50,7 +50,7 @@
   describe('RaffleResultAllOfValue', function() {
     it('should create an instance of RaffleResultAllOfValue', function() {
       // uncomment below and update the code to test RaffleResultAllOfValue
-      //var instane = new EchaloasuerteJsSdk.RaffleResultAllOfValue();
+      //var instance = new EchaloasuerteJsSdk.RaffleResultAllOfValue();
       //expect(instance).to.be.a(EchaloasuerteJsSdk.RaffleResultAllOfValue);
     });
 

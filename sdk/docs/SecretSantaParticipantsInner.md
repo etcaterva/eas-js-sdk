@@ -1,4 +1,4 @@
-# EchaloasuerteJsSdk.SecretSantaParticipants
+# EchaloasuerteJsSdk.SecretSantaParticipantsInner
 
 ## Properties
 

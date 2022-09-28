@@ -50,7 +50,7 @@
   describe('ParticipantAllOf', function() {
     it('should create an instance of ParticipantAllOf', function() {
       // uncomment below and update the code to test ParticipantAllOf
-      //var instane = new EchaloasuerteJsSdk.ParticipantAllOf();
+      //var instance = new EchaloasuerteJsSdk.ParticipantAllOf();
       //expect(instance).to.be.a(EchaloasuerteJsSdk.ParticipantAllOf);
     });
 

@@ -27,6 +27,10 @@ import DrawTossPayload from './model/DrawTossPayload';
 import Groups from './model/Groups';
 import GroupsAllOf from './model/GroupsAllOf';
 import GroupsResult from './model/GroupsResult';
+import Instagram from './model/Instagram';
+import InstagramAllOf from './model/InstagramAllOf';
+import InstagramPreviewResponse from './model/InstagramPreviewResponse';
+import InstagramResult from './model/InstagramResult';
 import Letter from './model/Letter';
 import LetterAllOf from './model/LetterAllOf';
 import LetterResult from './model/LetterResult';
@@ -56,7 +60,7 @@ import RandomNumberAllOf from './model/RandomNumberAllOf';
 import RandomNumberResult from './model/RandomNumberResult';
 import RandomNumberResultAllOf from './model/RandomNumberResultAllOf';
 import SecretSanta from './model/SecretSanta';
-import SecretSantaParticipants from './model/SecretSantaParticipants';
+import SecretSantaParticipantsInner from './model/SecretSantaParticipantsInner';
 import SecretSantaResult from './model/SecretSantaResult';
 import Spinner from './model/Spinner';
 import SpinnerAllOf from './model/SpinnerAllOf';
@@ -68,6 +72,7 @@ import TournamentResult from './model/TournamentResult';
 import TournamentResultAllOf from './model/TournamentResultAllOf';
 import CoinApi from './api/CoinApi';
 import GroupsApi from './api/GroupsApi';
+import InstagramApi from './api/InstagramApi';
 import LetterApi from './api/LetterApi';
 import LinkApi from './api/LinkApi';
 import LotteryApi from './api/LotteryApi';
@@ -200,6 +205,30 @@ export {
      * @property {module:model/GroupsResult}
      */
     GroupsResult,
+
+    /**
+     * The Instagram model constructor.
+     * @property {module:model/Instagram}
+     */
+    Instagram,
+
+    /**
+     * The InstagramAllOf model constructor.
+     * @property {module:model/InstagramAllOf}
+     */
+    InstagramAllOf,
+
+    /**
+     * The InstagramPreviewResponse model constructor.
+     * @property {module:model/InstagramPreviewResponse}
+     */
+    InstagramPreviewResponse,
+
+    /**
+     * The InstagramResult model constructor.
+     * @property {module:model/InstagramResult}
+     */
+    InstagramResult,
 
     /**
      * The Letter model constructor.
@@ -376,10 +405,10 @@ export {
     SecretSanta,
 
     /**
-     * The SecretSantaParticipants model constructor.
-     * @property {module:model/SecretSantaParticipants}
+     * The SecretSantaParticipantsInner model constructor.
+     * @property {module:model/SecretSantaParticipantsInner}
      */
-    SecretSantaParticipants,
+    SecretSantaParticipantsInner,
 
     /**
      * The SecretSantaResult model constructor.
@@ -446,6 +475,12 @@ export {
     * @property {module:api/GroupsApi}
     */
     GroupsApi,
+
+    /**
+    * The InstagramApi service constructor.
+    * @property {module:api/InstagramApi}
+    */
+    InstagramApi,
 
     /**
     * The LetterApi service constructor.

@@ -50,7 +50,7 @@
   describe('Prize', function() {
     it('should create an instance of Prize', function() {
       // uncomment below and update the code to test Prize
-      //var instane = new EchaloasuerteJsSdk.Prize();
+      //var instance = new EchaloasuerteJsSdk.Prize();
       //expect(instance).to.be.a(EchaloasuerteJsSdk.Prize);
     });
 

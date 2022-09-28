@@ -50,7 +50,7 @@
   describe('SpinnerResultAllOf', function() {
     it('should create an instance of SpinnerResultAllOf', function() {
       // uncomment below and update the code to test SpinnerResultAllOf
-      //var instane = new EchaloasuerteJsSdk.SpinnerResultAllOf();
+      //var instance = new EchaloasuerteJsSdk.SpinnerResultAllOf();
       //expect(instance).to.be.a(EchaloasuerteJsSdk.SpinnerResultAllOf);
     });
 

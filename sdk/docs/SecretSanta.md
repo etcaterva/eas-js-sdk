@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **language** | **String** |  | [optional] 
-**participants** | [**[SecretSantaParticipants]**](SecretSantaParticipants.md) |  | [optional] 
+**participants** | [**[SecretSantaParticipantsInner]**](SecretSantaParticipantsInner.md) |  | [optional] 
 
 
 

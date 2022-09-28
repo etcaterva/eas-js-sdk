@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EchaloasuerteJsSdk.SpinnerAllOf();
+    instance = new EchaloasuerteJsSdk.InstagramResult();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,16 +47,34 @@
       object[property] = value;
   }
 
-  describe('SpinnerAllOf', function() {
-    it('should create an instance of SpinnerAllOf', function() {
-      // uncomment below and update the code to test SpinnerAllOf
-      //var instance = new EchaloasuerteJsSdk.SpinnerAllOf();
-      //expect(instance).to.be.a(EchaloasuerteJsSdk.SpinnerAllOf);
+  describe('InstagramResult', function() {
+    it('should create an instance of InstagramResult', function() {
+      // uncomment below and update the code to test InstagramResult
+      //var instance = new EchaloasuerteJsSdk.InstagramResult();
+      //expect(instance).to.be.a(EchaloasuerteJsSdk.InstagramResult);
     });
 
-    it('should have the property results (base name: "results")', function() {
-      // uncomment below and update the code to test the property results
-      //var instance = new EchaloasuerteJsSdk.SpinnerAllOf();
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instance = new EchaloasuerteJsSdk.InstagramResult();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property createdAt (base name: "created_at")', function() {
+      // uncomment below and update the code to test the property createdAt
+      //var instance = new EchaloasuerteJsSdk.InstagramResult();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property scheduleDate (base name: "schedule_date")', function() {
+      // uncomment below and update the code to test the property scheduleDate
+      //var instance = new EchaloasuerteJsSdk.InstagramResult();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property value (base name: "value")', function() {
+      // uncomment below and update the code to test the property value
+      //var instance = new EchaloasuerteJsSdk.InstagramResult();
       //expect(instance).to.be();
     });
 

@@ -125,6 +125,10 @@ Class | Method | HTTP request | Description
 *EchaloasuerteJsSdk.GroupsApi* | [**groupsParticipantsAdd**](docs/GroupsApi.md#groupsParticipantsAdd) | **POST** /groups/{id}/participants/ | 
 *EchaloasuerteJsSdk.GroupsApi* | [**groupsRead**](docs/GroupsApi.md#groupsRead) | **GET** /groups/{id}/ | 
 *EchaloasuerteJsSdk.GroupsApi* | [**groupsToss**](docs/GroupsApi.md#groupsToss) | **POST** /groups/{id}/toss/ | 
+*EchaloasuerteJsSdk.InstagramApi* | [**instagramCreate**](docs/InstagramApi.md#instagramCreate) | **POST** /instagram/ | 
+*EchaloasuerteJsSdk.InstagramApi* | [**instagramPreview**](docs/InstagramApi.md#instagramPreview) | **POST** /instagram-preview/ | 
+*EchaloasuerteJsSdk.InstagramApi* | [**instagramRead**](docs/InstagramApi.md#instagramRead) | **GET** /instagram/{id}/ | 
+*EchaloasuerteJsSdk.InstagramApi* | [**instagramToss**](docs/InstagramApi.md#instagramToss) | **POST** /instagram/{id}/toss/ | 
 *EchaloasuerteJsSdk.LetterApi* | [**letterCreate**](docs/LetterApi.md#letterCreate) | **POST** /letter/ | 
 *EchaloasuerteJsSdk.LetterApi* | [**letterRead**](docs/LetterApi.md#letterRead) | **GET** /letter/{id}/ | 
 *EchaloasuerteJsSdk.LetterApi* | [**letterToss**](docs/LetterApi.md#letterToss) | **POST** /letter/{id}/toss/ | 
@@ -170,6 +174,10 @@ Class | Method | HTTP request | Description
  - [EchaloasuerteJsSdk.Groups](docs/Groups.md)
  - [EchaloasuerteJsSdk.GroupsAllOf](docs/GroupsAllOf.md)
  - [EchaloasuerteJsSdk.GroupsResult](docs/GroupsResult.md)
+ - [EchaloasuerteJsSdk.Instagram](docs/Instagram.md)
+ - [EchaloasuerteJsSdk.InstagramAllOf](docs/InstagramAllOf.md)
+ - [EchaloasuerteJsSdk.InstagramPreviewResponse](docs/InstagramPreviewResponse.md)
+ - [EchaloasuerteJsSdk.InstagramResult](docs/InstagramResult.md)
  - [EchaloasuerteJsSdk.Letter](docs/Letter.md)
  - [EchaloasuerteJsSdk.LetterAllOf](docs/LetterAllOf.md)
  - [EchaloasuerteJsSdk.LetterResult](docs/LetterResult.md)
@@ -199,7 +207,7 @@ Class | Method | HTTP request | Description
  - [EchaloasuerteJsSdk.RandomNumberResult](docs/RandomNumberResult.md)
  - [EchaloasuerteJsSdk.RandomNumberResultAllOf](docs/RandomNumberResultAllOf.md)
  - [EchaloasuerteJsSdk.SecretSanta](docs/SecretSanta.md)
- - [EchaloasuerteJsSdk.SecretSantaParticipants](docs/SecretSantaParticipants.md)
+ - [EchaloasuerteJsSdk.SecretSantaParticipantsInner](docs/SecretSantaParticipantsInner.md)
  - [EchaloasuerteJsSdk.SecretSantaResult](docs/SecretSantaResult.md)
  - [EchaloasuerteJsSdk.Spinner](docs/Spinner.md)
  - [EchaloasuerteJsSdk.SpinnerAllOf](docs/SpinnerAllOf.md)

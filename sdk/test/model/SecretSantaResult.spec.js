@@ -50,7 +50,7 @@
   describe('SecretSantaResult', function() {
     it('should create an instance of SecretSantaResult', function() {
       // uncomment below and update the code to test SecretSantaResult
-      //var instane = new EchaloasuerteJsSdk.SecretSantaResult();
+      //var instance = new EchaloasuerteJsSdk.SecretSantaResult();
       //expect(instance).to.be.a(EchaloasuerteJsSdk.SecretSantaResult);
     });
 

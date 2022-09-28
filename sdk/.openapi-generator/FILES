@@ -19,6 +19,11 @@ docs/Groups.md
 docs/GroupsAllOf.md
 docs/GroupsApi.md
 docs/GroupsResult.md
+docs/Instagram.md
+docs/InstagramAllOf.md
+docs/InstagramApi.md
+docs/InstagramPreviewResponse.md
+docs/InstagramResult.md
 docs/Letter.md
 docs/LetterAllOf.md
 docs/LetterApi.md
@@ -55,7 +60,7 @@ docs/RandomNumberResult.md
 docs/RandomNumberResultAllOf.md
 docs/SecretSanta.md
 docs/SecretSantaApi.md
-docs/SecretSantaParticipants.md
+docs/SecretSantaParticipantsInner.md
 docs/SecretSantaResult.md
 docs/Spinner.md
 docs/SpinnerAllOf.md
@@ -73,6 +78,7 @@ package.json
 src/ApiClient.js
 src/api/CoinApi.js
 src/api/GroupsApi.js
+src/api/InstagramApi.js
 src/api/LetterApi.js
 src/api/LinkApi.js
 src/api/LotteryApi.js
@@ -97,6 +103,10 @@ src/model/DrawTossPayload.js
 src/model/Groups.js
 src/model/GroupsAllOf.js
 src/model/GroupsResult.js
+src/model/Instagram.js
+src/model/InstagramAllOf.js
+src/model/InstagramPreviewResponse.js
+src/model/InstagramResult.js
 src/model/Letter.js
 src/model/LetterAllOf.js
 src/model/LetterResult.js
@@ -126,7 +136,7 @@ src/model/RandomNumberAllOf.js
 src/model/RandomNumberResult.js
 src/model/RandomNumberResultAllOf.js
 src/model/SecretSanta.js
-src/model/SecretSantaParticipants.js
+src/model/SecretSantaParticipantsInner.js
 src/model/SecretSantaResult.js
 src/model/Spinner.js
 src/model/SpinnerAllOf.js
@@ -138,6 +148,7 @@ src/model/TournamentResult.js
 src/model/TournamentResultAllOf.js
 test/api/CoinApi.spec.js
 test/api/GroupsApi.spec.js
+test/api/InstagramApi.spec.js
 test/api/LetterApi.spec.js
 test/api/LinkApi.spec.js
 test/api/LotteryApi.spec.js
@@ -161,6 +172,10 @@ test/model/DrawTossPayload.spec.js
 test/model/Groups.spec.js
 test/model/GroupsAllOf.spec.js
 test/model/GroupsResult.spec.js
+test/model/Instagram.spec.js
+test/model/InstagramAllOf.spec.js
+test/model/InstagramPreviewResponse.spec.js
+test/model/InstagramResult.spec.js
 test/model/Letter.spec.js
 test/model/LetterAllOf.spec.js
 test/model/LetterResult.spec.js
@@ -190,7 +205,7 @@ test/model/RandomNumberAllOf.spec.js
 test/model/RandomNumberResult.spec.js
 test/model/RandomNumberResultAllOf.spec.js
 test/model/SecretSanta.spec.js
-test/model/SecretSantaParticipants.spec.js
+test/model/SecretSantaParticipantsInner.spec.js
 test/model/SecretSantaResult.spec.js
 test/model/Spinner.spec.js
 test/model/SpinnerAllOf.spec.js
