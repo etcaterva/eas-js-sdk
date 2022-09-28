@@ -5,7 +5,7 @@ All URIs are relative to *https://raw.githubusercontent.com/should-be-overriden*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**instagramCreate**](InstagramApi.md#instagramCreate) | **POST** /instagram/ | 
-[**instagramPreview**](InstagramApi.md#instagramPreview) | **POST** /instagram-preview/ | 
+[**instagramPreview**](InstagramApi.md#instagramPreview) | **GET** /instagram-preview/ | 
 [**instagramRead**](InstagramApi.md#instagramRead) | **GET** /instagram/{id}/ | 
 [**instagramToss**](InstagramApi.md#instagramToss) | **POST** /instagram/{id}/toss/ | 
 

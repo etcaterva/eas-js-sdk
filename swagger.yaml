@@ -1202,13 +1202,6 @@ components:
       properties:
         redirect_url:
           type: string
-    InstagramPreviewPayload:
-      type: object
-      required:
-        - post_url
-      properties:
-        post_url:
-          type: string
     InstagramPreviewResponse:
       type: object
       properties:

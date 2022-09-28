@@ -107,7 +107,7 @@ export default class InstagramApi {
       let accepts = ['application/json'];
       let returnType = InstagramPreviewResponse;
       return this.apiClient.callApi(
-        '/instagram-preview/', 'POST',
+        '/instagram-preview/', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
