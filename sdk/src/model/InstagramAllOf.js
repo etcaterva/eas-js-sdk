@@ -27,11 +27,12 @@ class InstagramAllOf {
      * @param prizes {Array.<module:model/Prize>} 
      * @param useLikes {Boolean} 
      * @param useComments {Boolean} 
+     * @param minMentions {Number} 
      * @param postUrl {String} 
      */
-    constructor(prizes, useLikes, useComments, postUrl) { 
+    constructor(prizes, useLikes, useComments, minMentions, postUrl) { 
         
-        InstagramAllOf.initialize(this, prizes, useLikes, useComments, postUrl);
+        InstagramAllOf.initialize(this, prizes, useLikes, useComments, minMentions, postUrl);
     }
 
     /**
@@ -39,10 +40,11 @@ class InstagramAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, prizes, useLikes, useComments, postUrl) { 
+    static initialize(obj, prizes, useLikes, useComments, minMentions, postUrl) { 
         obj['prizes'] = prizes;
         obj['use_likes'] = useLikes || false;
         obj['use_comments'] = useComments || false;
+        obj['min_mentions'] = minMentions;
         obj['post_url'] = postUrl;
     }
 
@@ -65,6 +67,9 @@ class InstagramAllOf {
             }
             if (data.hasOwnProperty('use_comments')) {
                 obj['use_comments'] = ApiClient.convertToType(data['use_comments'], 'Boolean');
+            }
+            if (data.hasOwnProperty('min_mentions')) {
+                obj['min_mentions'] = ApiClient.convertToType(data['min_mentions'], 'Number');
             }
             if (data.hasOwnProperty('post_url')) {
                 obj['post_url'] = ApiClient.convertToType(data['post_url'], 'String');
@@ -95,6 +100,11 @@ InstagramAllOf.prototype['use_likes'] = false;
  * @default false
  */
 InstagramAllOf.prototype['use_comments'] = false;
+
+/**
+ * @member {Number} min_mentions
+ */
+InstagramAllOf.prototype['min_mentions'] = undefined;
 
 /**
  * @member {String} post_url

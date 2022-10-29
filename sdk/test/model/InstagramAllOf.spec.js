@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property minMentions (base name: "min_mentions")', function() {
+      // uncomment below and update the code to test the property minMentions
+      //var instance = new EchaloasuerteJsSdk.InstagramAllOf();
+      //expect(instance).to.be();
+    });
+
     it('should have the property postUrl (base name: "post_url")', function() {
       // uncomment below and update the code to test the property postUrl
       //var instance = new EchaloasuerteJsSdk.InstagramAllOf();
