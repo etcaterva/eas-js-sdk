@@ -31,6 +31,9 @@ import Instagram from './model/Instagram';
 import InstagramAllOf from './model/InstagramAllOf';
 import InstagramPreviewResponse from './model/InstagramPreviewResponse';
 import InstagramResult from './model/InstagramResult';
+import InstagramResultAllOf from './model/InstagramResultAllOf';
+import InstagramResultAllOfComment from './model/InstagramResultAllOfComment';
+import InstagramResultAllOfValue from './model/InstagramResultAllOfValue';
 import Letter from './model/Letter';
 import LetterAllOf from './model/LetterAllOf';
 import LetterResult from './model/LetterResult';
@@ -229,6 +232,24 @@ export {
      * @property {module:model/InstagramResult}
      */
     InstagramResult,
+
+    /**
+     * The InstagramResultAllOf model constructor.
+     * @property {module:model/InstagramResultAllOf}
+     */
+    InstagramResultAllOf,
+
+    /**
+     * The InstagramResultAllOfComment model constructor.
+     * @property {module:model/InstagramResultAllOfComment}
+     */
+    InstagramResultAllOfComment,
+
+    /**
+     * The InstagramResultAllOfValue model constructor.
+     * @property {module:model/InstagramResultAllOfValue}
+     */
+    InstagramResultAllOfValue,
 
     /**
      * The Letter model constructor.

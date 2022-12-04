@@ -66,12 +66,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property useComments (base name: "use_comments")', function() {
-      // uncomment below and update the code to test the property useComments
-      //var instance = new EchaloasuerteJsSdk.InstagramAllOf();
-      //expect(instance).to.be();
-    });
-
     it('should have the property minMentions (base name: "min_mentions")', function() {
       // uncomment below and update the code to test the property minMentions
       //var instance = new EchaloasuerteJsSdk.InstagramAllOf();

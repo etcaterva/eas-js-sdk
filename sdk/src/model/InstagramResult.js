@@ -13,8 +13,8 @@
 
 import ApiClient from '../ApiClient';
 import BaseResult from './BaseResult';
-import RaffleResultAllOf from './RaffleResultAllOf';
-import RaffleResultAllOfValue from './RaffleResultAllOfValue';
+import InstagramResultAllOf from './InstagramResultAllOf';
+import InstagramResultAllOfValue from './InstagramResultAllOfValue';
 
 /**
  * The InstagramResult model module.
@@ -26,10 +26,10 @@ class InstagramResult {
      * Constructs a new <code>InstagramResult</code>.
      * @alias module:model/InstagramResult
      * @implements module:model/BaseResult
-     * @implements module:model/RaffleResultAllOf
+     * @implements module:model/InstagramResultAllOf
      */
     constructor() { 
-        BaseResult.initialize(this);RaffleResultAllOf.initialize(this);
+        BaseResult.initialize(this);InstagramResultAllOf.initialize(this);
         InstagramResult.initialize(this);
     }
 
@@ -52,7 +52,7 @@ class InstagramResult {
         if (data) {
             obj = obj || new InstagramResult();
             BaseResult.constructFromObject(data, obj);
-            RaffleResultAllOf.constructFromObject(data, obj);
+            InstagramResultAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -64,7 +64,7 @@ class InstagramResult {
                 obj['schedule_date'] = ApiClient.convertToType(data['schedule_date'], 'Date');
             }
             if (data.hasOwnProperty('value')) {
-                obj['value'] = ApiClient.convertToType(data['value'], [RaffleResultAllOfValue]);
+                obj['value'] = ApiClient.convertToType(data['value'], [InstagramResultAllOfValue]);
             }
         }
         return obj;
@@ -89,7 +89,7 @@ InstagramResult.prototype['created_at'] = undefined;
 InstagramResult.prototype['schedule_date'] = undefined;
 
 /**
- * @member {Array.<module:model/RaffleResultAllOfValue>} value
+ * @member {Array.<module:model/InstagramResultAllOfValue>} value
  */
 InstagramResult.prototype['value'] = undefined;
 
@@ -107,11 +107,11 @@ BaseResult.prototype['created_at'] = undefined;
  * @member {Date} schedule_date
  */
 BaseResult.prototype['schedule_date'] = undefined;
-// Implement RaffleResultAllOf interface:
+// Implement InstagramResultAllOf interface:
 /**
- * @member {Array.<module:model/RaffleResultAllOfValue>} value
+ * @member {Array.<module:model/InstagramResultAllOfValue>} value
  */
-RaffleResultAllOf.prototype['value'] = undefined;
+InstagramResultAllOf.prototype['value'] = undefined;
 
 
 

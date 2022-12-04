@@ -26,13 +26,12 @@ class InstagramAllOf {
      * @alias module:model/InstagramAllOf
      * @param prizes {Array.<module:model/Prize>} 
      * @param useLikes {Boolean} 
-     * @param useComments {Boolean} 
      * @param minMentions {Number} 
      * @param postUrl {String} 
      */
-    constructor(prizes, useLikes, useComments, minMentions, postUrl) { 
+    constructor(prizes, useLikes, minMentions, postUrl) { 
         
-        InstagramAllOf.initialize(this, prizes, useLikes, useComments, minMentions, postUrl);
+        InstagramAllOf.initialize(this, prizes, useLikes, minMentions, postUrl);
     }
 
     /**
@@ -40,11 +39,10 @@ class InstagramAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, prizes, useLikes, useComments, minMentions, postUrl) { 
+    static initialize(obj, prizes, useLikes, minMentions, postUrl) { 
         obj['prizes'] = prizes;
         obj['use_likes'] = useLikes || false;
-        obj['use_comments'] = useComments || false;
-        obj['min_mentions'] = minMentions;
+        obj['min_mentions'] = minMentions || 0;
         obj['post_url'] = postUrl;
     }
 
@@ -64,9 +62,6 @@ class InstagramAllOf {
             }
             if (data.hasOwnProperty('use_likes')) {
                 obj['use_likes'] = ApiClient.convertToType(data['use_likes'], 'Boolean');
-            }
-            if (data.hasOwnProperty('use_comments')) {
-                obj['use_comments'] = ApiClient.convertToType(data['use_comments'], 'Boolean');
             }
             if (data.hasOwnProperty('min_mentions')) {
                 obj['min_mentions'] = ApiClient.convertToType(data['min_mentions'], 'Number');
@@ -96,15 +91,10 @@ InstagramAllOf.prototype['prizes'] = undefined;
 InstagramAllOf.prototype['use_likes'] = false;
 
 /**
- * @member {Boolean} use_comments
- * @default false
- */
-InstagramAllOf.prototype['use_comments'] = false;
-
-/**
  * @member {Number} min_mentions
+ * @default 0
  */
-InstagramAllOf.prototype['min_mentions'] = undefined;
+InstagramAllOf.prototype['min_mentions'] = 0;
 
 /**
  * @member {String} post_url

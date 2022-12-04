@@ -24,6 +24,9 @@ docs/InstagramAllOf.md
 docs/InstagramApi.md
 docs/InstagramPreviewResponse.md
 docs/InstagramResult.md
+docs/InstagramResultAllOf.md
+docs/InstagramResultAllOfComment.md
+docs/InstagramResultAllOfValue.md
 docs/Letter.md
 docs/LetterAllOf.md
 docs/LetterApi.md
@@ -107,6 +110,9 @@ src/model/Instagram.js
 src/model/InstagramAllOf.js
 src/model/InstagramPreviewResponse.js
 src/model/InstagramResult.js
+src/model/InstagramResultAllOf.js
+src/model/InstagramResultAllOfComment.js
+src/model/InstagramResultAllOfValue.js
 src/model/Letter.js
 src/model/LetterAllOf.js
 src/model/LetterResult.js
@@ -176,6 +182,9 @@ test/model/Instagram.spec.js
 test/model/InstagramAllOf.spec.js
 test/model/InstagramPreviewResponse.spec.js
 test/model/InstagramResult.spec.js
+test/model/InstagramResultAllOf.spec.js
+test/model/InstagramResultAllOfComment.spec.js
+test/model/InstagramResultAllOfValue.spec.js
 test/model/Letter.spec.js
 test/model/LetterAllOf.spec.js
 test/model/LetterResult.spec.js
