@@ -58,16 +58,6 @@
         done();
       });
     });
-    describe('instagramPreview', function() {
-      it('should call instagramPreview successfully', function(done) {
-        //uncomment below and update the code to test instagramPreview
-        //instance.instagramPreview(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('instagramRead', function() {
       it('should call instagramRead successfully', function(done) {
         //uncomment below and update the code to test instagramRead

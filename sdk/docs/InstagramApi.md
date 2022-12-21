@@ -5,7 +5,6 @@ All URIs are relative to *https://raw.githubusercontent.com/should-be-overriden*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**instagramCreate**](InstagramApi.md#instagramCreate) | **POST** /instagram/ | 
-[**instagramPreview**](InstagramApi.md#instagramPreview) | **GET** /instagram-preview/ | 
 [**instagramRead**](InstagramApi.md#instagramRead) | **GET** /instagram/{id}/ | 
 [**instagramToss**](InstagramApi.md#instagramToss) | **POST** /instagram/{id}/toss/ | 
 
@@ -50,48 +49,6 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## instagramPreview
-
-> InstagramPreviewResponse instagramPreview(postUrl)
-
-
-
-### Example
-
-```javascript
-import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
-
-let apiInstance = new EchaloasuerteJsSdk.InstagramApi();
-let postUrl = "postUrl_example"; // String | 
-apiInstance.instagramPreview(postUrl).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **postUrl** | **String**|  | 
-
-### Return type
-
-[**InstagramPreviewResponse**](InstagramPreviewResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
 - **Accept**: application/json
 
 

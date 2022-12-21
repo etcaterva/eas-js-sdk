@@ -15,7 +15,6 @@
 import ApiClient from "../ApiClient";
 import DrawTossPayload from '../model/DrawTossPayload';
 import Instagram from '../model/Instagram';
-import InstagramPreviewResponse from '../model/InstagramPreviewResponse';
 import InstagramResult from '../model/InstagramResult';
 
 /**
@@ -75,50 +74,6 @@ export default class InstagramApi {
      */
     instagramCreate(instagram) {
       return this.instagramCreateWithHttpInfo(instagram)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * @param {String} postUrl 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InstagramPreviewResponse} and HTTP response
-     */
-    instagramPreviewWithHttpInfo(postUrl) {
-      let postBody = null;
-      // verify the required parameter 'postUrl' is set
-      if (postUrl === undefined || postUrl === null) {
-        throw new Error("Missing the required parameter 'postUrl' when calling instagramPreview");
-      }
-
-      let pathParams = {
-      };
-      let queryParams = {
-        'post_url': postUrl
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = [];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = InstagramPreviewResponse;
-      return this.apiClient.callApi(
-        '/instagram-preview/', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * @param {String} postUrl 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InstagramPreviewResponse}
-     */
-    instagramPreview(postUrl) {
-      return this.instagramPreviewWithHttpInfo(postUrl)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

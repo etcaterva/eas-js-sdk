@@ -54,6 +54,12 @@
       //expect(instance).to.be.a(EchaloasuerteJsSdk.InstagramResultAllOfComment);
     });
 
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instance = new EchaloasuerteJsSdk.InstagramResultAllOfComment();
+      //expect(instance).to.be();
+    });
+
     it('should have the property username (base name: "username")', function() {
       // uncomment below and update the code to test the property username
       //var instance = new EchaloasuerteJsSdk.InstagramResultAllOfComment();

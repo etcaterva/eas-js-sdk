@@ -126,7 +126,6 @@ Class | Method | HTTP request | Description
 *EchaloasuerteJsSdk.GroupsApi* | [**groupsRead**](docs/GroupsApi.md#groupsRead) | **GET** /groups/{id}/ | 
 *EchaloasuerteJsSdk.GroupsApi* | [**groupsToss**](docs/GroupsApi.md#groupsToss) | **POST** /groups/{id}/toss/ | 
 *EchaloasuerteJsSdk.InstagramApi* | [**instagramCreate**](docs/InstagramApi.md#instagramCreate) | **POST** /instagram/ | 
-*EchaloasuerteJsSdk.InstagramApi* | [**instagramPreview**](docs/InstagramApi.md#instagramPreview) | **GET** /instagram-preview/ | 
 *EchaloasuerteJsSdk.InstagramApi* | [**instagramRead**](docs/InstagramApi.md#instagramRead) | **GET** /instagram/{id}/ | 
 *EchaloasuerteJsSdk.InstagramApi* | [**instagramToss**](docs/InstagramApi.md#instagramToss) | **POST** /instagram/{id}/toss/ | 
 *EchaloasuerteJsSdk.LetterApi* | [**letterCreate**](docs/LetterApi.md#letterCreate) | **POST** /letter/ | 
@@ -176,7 +175,6 @@ Class | Method | HTTP request | Description
  - [EchaloasuerteJsSdk.GroupsResult](docs/GroupsResult.md)
  - [EchaloasuerteJsSdk.Instagram](docs/Instagram.md)
  - [EchaloasuerteJsSdk.InstagramAllOf](docs/InstagramAllOf.md)
- - [EchaloasuerteJsSdk.InstagramPreviewResponse](docs/InstagramPreviewResponse.md)
  - [EchaloasuerteJsSdk.InstagramResult](docs/InstagramResult.md)
  - [EchaloasuerteJsSdk.InstagramResultAllOf](docs/InstagramResultAllOf.md)
  - [EchaloasuerteJsSdk.InstagramResultAllOfComment](docs/InstagramResultAllOfComment.md)

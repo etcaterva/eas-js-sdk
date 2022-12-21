@@ -22,7 +22,6 @@ docs/GroupsResult.md
 docs/Instagram.md
 docs/InstagramAllOf.md
 docs/InstagramApi.md
-docs/InstagramPreviewResponse.md
 docs/InstagramResult.md
 docs/InstagramResultAllOf.md
 docs/InstagramResultAllOfComment.md
@@ -108,7 +107,6 @@ src/model/GroupsAllOf.js
 src/model/GroupsResult.js
 src/model/Instagram.js
 src/model/InstagramAllOf.js
-src/model/InstagramPreviewResponse.js
 src/model/InstagramResult.js
 src/model/InstagramResultAllOf.js
 src/model/InstagramResultAllOfComment.js
@@ -180,7 +178,6 @@ test/model/GroupsAllOf.spec.js
 test/model/GroupsResult.spec.js
 test/model/Instagram.spec.js
 test/model/InstagramAllOf.spec.js
-test/model/InstagramPreviewResponse.spec.js
 test/model/InstagramResult.spec.js
 test/model/InstagramResultAllOf.spec.js
 test/model/InstagramResultAllOfComment.spec.js

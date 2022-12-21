@@ -29,7 +29,6 @@ import GroupsAllOf from './model/GroupsAllOf';
 import GroupsResult from './model/GroupsResult';
 import Instagram from './model/Instagram';
 import InstagramAllOf from './model/InstagramAllOf';
-import InstagramPreviewResponse from './model/InstagramPreviewResponse';
 import InstagramResult from './model/InstagramResult';
 import InstagramResultAllOf from './model/InstagramResultAllOf';
 import InstagramResultAllOfComment from './model/InstagramResultAllOfComment';
@@ -220,12 +219,6 @@ export {
      * @property {module:model/InstagramAllOf}
      */
     InstagramAllOf,
-
-    /**
-     * The InstagramPreviewResponse model constructor.
-     * @property {module:model/InstagramPreviewResponse}
-     */
-    InstagramPreviewResponse,
 
     /**
      * The InstagramResult model constructor.

@@ -47,6 +47,9 @@ class InstagramResultAllOfComment {
         if (data) {
             obj = obj || new InstagramResultAllOfComment();
 
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
             if (data.hasOwnProperty('username')) {
                 obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
@@ -59,6 +62,11 @@ class InstagramResultAllOfComment {
 
 
 }
+
+/**
+ * @member {String} id
+ */
+InstagramResultAllOfComment.prototype['id'] = undefined;
 
 /**
  * @member {String} username
