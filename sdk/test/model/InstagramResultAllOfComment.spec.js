@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property userpic (base name: "userpic")', function() {
+      // uncomment below and update the code to test the property userpic
+      //var instance = new EchaloasuerteJsSdk.InstagramResultAllOfComment();
+      //expect(instance).to.be();
+    });
+
     it('should have the property text (base name: "text")', function() {
       // uncomment below and update the code to test the property text
       //var instance = new EchaloasuerteJsSdk.InstagramResultAllOfComment();
