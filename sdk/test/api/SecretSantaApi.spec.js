@@ -58,6 +58,26 @@
         done();
       });
     });
+    describe('secretSantaResultAdminGet', function() {
+      it('should call secretSantaResultAdminGet successfully', function(done) {
+        //uncomment below and update the code to test secretSantaResultAdminGet
+        //instance.secretSantaResultAdminGet(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('secretSantaResultAdminPatch', function() {
+      it('should call secretSantaResultAdminPatch successfully', function(done) {
+        //uncomment below and update the code to test secretSantaResultAdminPatch
+        //instance.secretSantaResultAdminPatch(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('secretSantaResultGet', function() {
       it('should call secretSantaResultGet successfully', function(done) {
         //uncomment below and update the code to test secretSantaResultGet

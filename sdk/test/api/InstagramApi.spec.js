@@ -68,6 +68,16 @@
         done();
       });
     });
+    describe('instagramRetoss', function() {
+      it('should call instagramRetoss successfully', function(done) {
+        //uncomment below and update the code to test instagramRetoss
+        //instance.instagramRetoss(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('instagramToss', function() {
       it('should call instagramToss successfully', function(done) {
         //uncomment below and update the code to test instagramToss

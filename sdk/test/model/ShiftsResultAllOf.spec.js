@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EchaloasuerteJsSdk.PaypalApi();
+    instance = new EchaloasuerteJsSdk.ShiftsResultAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,27 +47,19 @@
       object[property] = value;
   }
 
-  describe('PaypalApi', function() {
-    describe('paypalCreate', function() {
-      it('should call paypalCreate successfully', function(done) {
-        //uncomment below and update the code to test paypalCreate
-        //instance.paypalCreate(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('ShiftsResultAllOf', function() {
+    it('should create an instance of ShiftsResultAllOf', function() {
+      // uncomment below and update the code to test ShiftsResultAllOf
+      //var instance = new EchaloasuerteJsSdk.ShiftsResultAllOf();
+      //expect(instance).to.be.a(EchaloasuerteJsSdk.ShiftsResultAllOf);
     });
-    describe('redeemPromoCode', function() {
-      it('should call redeemPromoCode successfully', function(done) {
-        //uncomment below and update the code to test redeemPromoCode
-        //instance.redeemPromoCode(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property value (base name: "value")', function() {
+      // uncomment below and update the code to test the property value
+      //var instance = new EchaloasuerteJsSdk.ShiftsResultAllOf();
+      //expect(instance).to.be();
     });
+
   });
 
 }));

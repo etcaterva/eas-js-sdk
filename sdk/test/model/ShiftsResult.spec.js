@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EchaloasuerteJsSdk.PaypalApi();
+    instance = new EchaloasuerteJsSdk.ShiftsResult();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,27 +47,37 @@
       object[property] = value;
   }
 
-  describe('PaypalApi', function() {
-    describe('paypalCreate', function() {
-      it('should call paypalCreate successfully', function(done) {
-        //uncomment below and update the code to test paypalCreate
-        //instance.paypalCreate(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('ShiftsResult', function() {
+    it('should create an instance of ShiftsResult', function() {
+      // uncomment below and update the code to test ShiftsResult
+      //var instance = new EchaloasuerteJsSdk.ShiftsResult();
+      //expect(instance).to.be.a(EchaloasuerteJsSdk.ShiftsResult);
     });
-    describe('redeemPromoCode', function() {
-      it('should call redeemPromoCode successfully', function(done) {
-        //uncomment below and update the code to test redeemPromoCode
-        //instance.redeemPromoCode(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instance = new EchaloasuerteJsSdk.ShiftsResult();
+      //expect(instance).to.be();
     });
+
+    it('should have the property createdAt (base name: "created_at")', function() {
+      // uncomment below and update the code to test the property createdAt
+      //var instance = new EchaloasuerteJsSdk.ShiftsResult();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property scheduleDate (base name: "schedule_date")', function() {
+      // uncomment below and update the code to test the property scheduleDate
+      //var instance = new EchaloasuerteJsSdk.ShiftsResult();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property value (base name: "value")', function() {
+      // uncomment below and update the code to test the property value
+      //var instance = new EchaloasuerteJsSdk.ShiftsResult();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

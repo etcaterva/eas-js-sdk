@@ -14,6 +14,9 @@
 
 import ApiClient from "../ApiClient";
 import SecretSanta from '../model/SecretSanta';
+import SecretSantaAdminResponse from '../model/SecretSantaAdminResponse';
+import SecretSantaCreateResponse from '../model/SecretSantaCreateResponse';
+import SecretSantaResendEmail from '../model/SecretSantaResendEmail';
 import SecretSantaResult from '../model/SecretSantaResult';
 
 /**
@@ -38,7 +41,7 @@ export default class SecretSantaApi {
 
     /**
      * @param {module:model/SecretSanta} secretSanta 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SecretSantaCreateResponse} and HTTP response
      */
     secretSantaCreateWithHttpInfo(secretSanta) {
       let postBody = secretSanta;
@@ -58,8 +61,8 @@ export default class SecretSantaApi {
 
       let authNames = [];
       let contentTypes = ['application/json'];
-      let accepts = [];
-      let returnType = null;
+      let accepts = ['application/json'];
+      let returnType = SecretSantaCreateResponse;
       return this.apiClient.callApi(
         '/secret-santa/', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -69,10 +72,110 @@ export default class SecretSantaApi {
 
     /**
      * @param {module:model/SecretSanta} secretSanta 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SecretSantaCreateResponse}
      */
     secretSantaCreate(secretSanta) {
       return this.secretSantaCreateWithHttpInfo(secretSanta)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {String} id 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SecretSantaAdminResponse} and HTTP response
+     */
+    secretSantaResultAdminGetWithHttpInfo(id) {
+      let postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling secretSantaResultAdminGet");
+      }
+
+      let pathParams = {
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = SecretSantaAdminResponse;
+      return this.apiClient.callApi(
+        '/secret-santa-admin/{id}/', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {String} id 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SecretSantaAdminResponse}
+     */
+    secretSantaResultAdminGet(id) {
+      return this.secretSantaResultAdminGetWithHttpInfo(id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {String} drawId 
+     * @param {String} resultId 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/SecretSantaResendEmail} opts.secretSantaResendEmail 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    secretSantaResultAdminPatchWithHttpInfo(drawId, resultId, opts) {
+      opts = opts || {};
+      let postBody = opts['secretSantaResendEmail'];
+      // verify the required parameter 'drawId' is set
+      if (drawId === undefined || drawId === null) {
+        throw new Error("Missing the required parameter 'drawId' when calling secretSantaResultAdminPatch");
+      }
+      // verify the required parameter 'resultId' is set
+      if (resultId === undefined || resultId === null) {
+        throw new Error("Missing the required parameter 'resultId' when calling secretSantaResultAdminPatch");
+      }
+
+      let pathParams = {
+        'draw_id': drawId,
+        'result_id': resultId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/secret-santa-admin/{draw_id}/{result_id}/', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {String} drawId 
+     * @param {String} resultId 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/SecretSantaResendEmail} opts.secretSantaResendEmail 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    secretSantaResultAdminPatch(drawId, resultId, opts) {
+      return this.secretSantaResultAdminPatchWithHttpInfo(drawId, resultId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

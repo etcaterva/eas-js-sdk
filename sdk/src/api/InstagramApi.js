@@ -16,6 +16,7 @@ import ApiClient from "../ApiClient";
 import DrawTossPayload from '../model/DrawTossPayload';
 import Instagram from '../model/Instagram';
 import InstagramResult from '../model/InstagramResult';
+import InstagramRetossRequest from '../model/InstagramRetossRequest';
 
 /**
 * Instagram service.
@@ -118,6 +119,55 @@ export default class InstagramApi {
      */
     instagramRead(id) {
       return this.instagramReadWithHttpInfo(id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {String} id 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InstagramRetossRequest} opts.instagramRetossRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InstagramResult} and HTTP response
+     */
+    instagramRetossWithHttpInfo(id, opts) {
+      opts = opts || {};
+      let postBody = opts['instagramRetossRequest'];
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling instagramRetoss");
+      }
+
+      let pathParams = {
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = InstagramResult;
+      return this.apiClient.callApi(
+        '/instagram/{id}/retoss/', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {String} id 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InstagramRetossRequest} opts.instagramRetossRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InstagramResult}
+     */
+    instagramRetoss(id, opts) {
+      return this.instagramRetossWithHttpInfo(id, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**instagramCreate**](InstagramApi.md#instagramCreate) | **POST** /instagram/ | 
 [**instagramRead**](InstagramApi.md#instagramRead) | **GET** /instagram/{id}/ | 
+[**instagramRetoss**](InstagramApi.md#instagramRetoss) | **PATCH** /instagram/{id}/retoss/ | 
 [**instagramToss**](InstagramApi.md#instagramToss) | **POST** /instagram/{id}/toss/ | 
 
 
@@ -91,6 +92,52 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## instagramRetoss
+
+> InstagramResult instagramRetoss(id, opts)
+
+
+
+### Example
+
+```javascript
+import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
+
+let apiInstance = new EchaloasuerteJsSdk.InstagramApi();
+let id = "id_example"; // String | 
+let opts = {
+  'instagramRetossRequest': new EchaloasuerteJsSdk.InstagramRetossRequest() // InstagramRetossRequest | 
+};
+apiInstance.instagramRetoss(id, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+ **instagramRetossRequest** | [**InstagramRetossRequest**](InstagramRetossRequest.md)|  | [optional] 
+
+### Return type
+
+[**InstagramResult**](InstagramResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 

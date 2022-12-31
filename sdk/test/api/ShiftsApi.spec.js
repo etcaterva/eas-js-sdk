@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EchaloasuerteJsSdk.PaypalApi();
+    instance = new EchaloasuerteJsSdk.ShiftsApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,21 +47,31 @@
       object[property] = value;
   }
 
-  describe('PaypalApi', function() {
-    describe('paypalCreate', function() {
-      it('should call paypalCreate successfully', function(done) {
-        //uncomment below and update the code to test paypalCreate
-        //instance.paypalCreate(function(error) {
+  describe('ShiftsApi', function() {
+    describe('shiftsCreate', function() {
+      it('should call shiftsCreate successfully', function(done) {
+        //uncomment below and update the code to test shiftsCreate
+        //instance.shiftsCreate(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('redeemPromoCode', function() {
-      it('should call redeemPromoCode successfully', function(done) {
-        //uncomment below and update the code to test redeemPromoCode
-        //instance.redeemPromoCode(function(error) {
+    describe('shiftsRead', function() {
+      it('should call shiftsRead successfully', function(done) {
+        //uncomment below and update the code to test shiftsRead
+        //instance.shiftsRead(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('shiftsToss', function() {
+      it('should call shiftsToss successfully', function(done) {
+        //uncomment below and update the code to test shiftsToss
+        //instance.shiftsToss(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

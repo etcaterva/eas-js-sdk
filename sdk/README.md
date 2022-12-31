@@ -127,6 +127,7 @@ Class | Method | HTTP request | Description
 *EchaloasuerteJsSdk.GroupsApi* | [**groupsToss**](docs/GroupsApi.md#groupsToss) | **POST** /groups/{id}/toss/ | 
 *EchaloasuerteJsSdk.InstagramApi* | [**instagramCreate**](docs/InstagramApi.md#instagramCreate) | **POST** /instagram/ | 
 *EchaloasuerteJsSdk.InstagramApi* | [**instagramRead**](docs/InstagramApi.md#instagramRead) | **GET** /instagram/{id}/ | 
+*EchaloasuerteJsSdk.InstagramApi* | [**instagramRetoss**](docs/InstagramApi.md#instagramRetoss) | **PATCH** /instagram/{id}/retoss/ | 
 *EchaloasuerteJsSdk.InstagramApi* | [**instagramToss**](docs/InstagramApi.md#instagramToss) | **POST** /instagram/{id}/toss/ | 
 *EchaloasuerteJsSdk.LetterApi* | [**letterCreate**](docs/LetterApi.md#letterCreate) | **POST** /letter/ | 
 *EchaloasuerteJsSdk.LetterApi* | [**letterRead**](docs/LetterApi.md#letterRead) | **GET** /letter/{id}/ | 
@@ -139,6 +140,7 @@ Class | Method | HTTP request | Description
 *EchaloasuerteJsSdk.LotteryApi* | [**lotteryRead**](docs/LotteryApi.md#lotteryRead) | **GET** /lottery/{id}/ | 
 *EchaloasuerteJsSdk.LotteryApi* | [**lotteryToss**](docs/LotteryApi.md#lotteryToss) | **POST** /lottery/{id}/toss/ | 
 *EchaloasuerteJsSdk.PaypalApi* | [**paypalCreate**](docs/PaypalApi.md#paypalCreate) | **POST** /paypal/create/ | 
+*EchaloasuerteJsSdk.PaypalApi* | [**redeemPromoCode**](docs/PaypalApi.md#redeemPromoCode) | **POST** /promo-code/redeem/ | 
 *EchaloasuerteJsSdk.RaffleApi* | [**raffleCreate**](docs/RaffleApi.md#raffleCreate) | **POST** /raffle/ | 
 *EchaloasuerteJsSdk.RaffleApi* | [**raffleParticipantsAdd**](docs/RaffleApi.md#raffleParticipantsAdd) | **POST** /raffle/{id}/participants/ | 
 *EchaloasuerteJsSdk.RaffleApi* | [**raffleRead**](docs/RaffleApi.md#raffleRead) | **GET** /raffle/{id}/ | 
@@ -147,7 +149,12 @@ Class | Method | HTTP request | Description
 *EchaloasuerteJsSdk.RandomNumberApi* | [**randomNumberRead**](docs/RandomNumberApi.md#randomNumberRead) | **GET** /random_number/{id}/ | 
 *EchaloasuerteJsSdk.RandomNumberApi* | [**randomNumberToss**](docs/RandomNumberApi.md#randomNumberToss) | **POST** /random_number/{id}/toss/ | 
 *EchaloasuerteJsSdk.SecretSantaApi* | [**secretSantaCreate**](docs/SecretSantaApi.md#secretSantaCreate) | **POST** /secret-santa/ | 
+*EchaloasuerteJsSdk.SecretSantaApi* | [**secretSantaResultAdminGet**](docs/SecretSantaApi.md#secretSantaResultAdminGet) | **GET** /secret-santa-admin/{id}/ | 
+*EchaloasuerteJsSdk.SecretSantaApi* | [**secretSantaResultAdminPatch**](docs/SecretSantaApi.md#secretSantaResultAdminPatch) | **PATCH** /secret-santa-admin/{draw_id}/{result_id}/ | 
 *EchaloasuerteJsSdk.SecretSantaApi* | [**secretSantaResultGet**](docs/SecretSantaApi.md#secretSantaResultGet) | **GET** /secret-santa/{id}/ | 
+*EchaloasuerteJsSdk.ShiftsApi* | [**shiftsCreate**](docs/ShiftsApi.md#shiftsCreate) | **POST** /shifts/ | 
+*EchaloasuerteJsSdk.ShiftsApi* | [**shiftsRead**](docs/ShiftsApi.md#shiftsRead) | **GET** /shifts/{id}/ | 
+*EchaloasuerteJsSdk.ShiftsApi* | [**shiftsToss**](docs/ShiftsApi.md#shiftsToss) | **POST** /shifts/{id}/toss/ | 
 *EchaloasuerteJsSdk.SpinnerApi* | [**spinnerCreate**](docs/SpinnerApi.md#spinnerCreate) | **POST** /spinner/ | 
 *EchaloasuerteJsSdk.SpinnerApi* | [**spinnerRead**](docs/SpinnerApi.md#spinnerRead) | **GET** /spinner/{id}/ | 
 *EchaloasuerteJsSdk.SpinnerApi* | [**spinnerToss**](docs/SpinnerApi.md#spinnerToss) | **POST** /spinner/{id}/toss/ | 
@@ -179,6 +186,7 @@ Class | Method | HTTP request | Description
  - [EchaloasuerteJsSdk.InstagramResultAllOf](docs/InstagramResultAllOf.md)
  - [EchaloasuerteJsSdk.InstagramResultAllOfComment](docs/InstagramResultAllOfComment.md)
  - [EchaloasuerteJsSdk.InstagramResultAllOfValue](docs/InstagramResultAllOfValue.md)
+ - [EchaloasuerteJsSdk.InstagramRetossRequest](docs/InstagramRetossRequest.md)
  - [EchaloasuerteJsSdk.Letter](docs/Letter.md)
  - [EchaloasuerteJsSdk.LetterAllOf](docs/LetterAllOf.md)
  - [EchaloasuerteJsSdk.LetterResult](docs/LetterResult.md)
@@ -207,9 +215,21 @@ Class | Method | HTTP request | Description
  - [EchaloasuerteJsSdk.RandomNumberAllOf](docs/RandomNumberAllOf.md)
  - [EchaloasuerteJsSdk.RandomNumberResult](docs/RandomNumberResult.md)
  - [EchaloasuerteJsSdk.RandomNumberResultAllOf](docs/RandomNumberResultAllOf.md)
+ - [EchaloasuerteJsSdk.RedeemPromoCode](docs/RedeemPromoCode.md)
  - [EchaloasuerteJsSdk.SecretSanta](docs/SecretSanta.md)
+ - [EchaloasuerteJsSdk.SecretSantaAdminResponse](docs/SecretSantaAdminResponse.md)
+ - [EchaloasuerteJsSdk.SecretSantaAdminResponseParticipantsInner](docs/SecretSantaAdminResponseParticipantsInner.md)
+ - [EchaloasuerteJsSdk.SecretSantaCreateResponse](docs/SecretSantaCreateResponse.md)
  - [EchaloasuerteJsSdk.SecretSantaParticipantsInner](docs/SecretSantaParticipantsInner.md)
+ - [EchaloasuerteJsSdk.SecretSantaResendEmail](docs/SecretSantaResendEmail.md)
  - [EchaloasuerteJsSdk.SecretSantaResult](docs/SecretSantaResult.md)
+ - [EchaloasuerteJsSdk.Shifts](docs/Shifts.md)
+ - [EchaloasuerteJsSdk.ShiftsAllOf](docs/ShiftsAllOf.md)
+ - [EchaloasuerteJsSdk.ShiftsAllOfIntervals](docs/ShiftsAllOfIntervals.md)
+ - [EchaloasuerteJsSdk.ShiftsResult](docs/ShiftsResult.md)
+ - [EchaloasuerteJsSdk.ShiftsResultAllOf](docs/ShiftsResultAllOf.md)
+ - [EchaloasuerteJsSdk.ShiftsResultAllOfInterval](docs/ShiftsResultAllOfInterval.md)
+ - [EchaloasuerteJsSdk.ShiftsResultAllOfValue](docs/ShiftsResultAllOfValue.md)
  - [EchaloasuerteJsSdk.Spinner](docs/Spinner.md)
  - [EchaloasuerteJsSdk.SpinnerAllOf](docs/SpinnerAllOf.md)
  - [EchaloasuerteJsSdk.SpinnerResult](docs/SpinnerResult.md)

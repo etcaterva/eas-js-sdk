@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EchaloasuerteJsSdk.PaypalApi();
+    instance = new EchaloasuerteJsSdk.SecretSantaCreateResponse();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,27 +47,19 @@
       object[property] = value;
   }
 
-  describe('PaypalApi', function() {
-    describe('paypalCreate', function() {
-      it('should call paypalCreate successfully', function(done) {
-        //uncomment below and update the code to test paypalCreate
-        //instance.paypalCreate(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('SecretSantaCreateResponse', function() {
+    it('should create an instance of SecretSantaCreateResponse', function() {
+      // uncomment below and update the code to test SecretSantaCreateResponse
+      //var instance = new EchaloasuerteJsSdk.SecretSantaCreateResponse();
+      //expect(instance).to.be.a(EchaloasuerteJsSdk.SecretSantaCreateResponse);
     });
-    describe('redeemPromoCode', function() {
-      it('should call redeemPromoCode successfully', function(done) {
-        //uncomment below and update the code to test redeemPromoCode
-        //instance.redeemPromoCode(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instance = new EchaloasuerteJsSdk.SecretSantaCreateResponse();
+      //expect(instance).to.be();
     });
+
   });
 
 }));

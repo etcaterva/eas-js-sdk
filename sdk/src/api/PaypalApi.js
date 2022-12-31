@@ -15,6 +15,7 @@
 import ApiClient from "../ApiClient";
 import PaypalCreatePayload from '../model/PaypalCreatePayload';
 import PaypalResponse from '../model/PaypalResponse';
+import RedeemPromoCode from '../model/RedeemPromoCode';
 
 /**
 * Paypal service.
@@ -73,6 +74,49 @@ export default class PaypalApi {
      */
     paypalCreate(paypalCreatePayload) {
       return this.paypalCreateWithHttpInfo(paypalCreatePayload)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RedeemPromoCode} redeemPromoCode 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    redeemPromoCodeWithHttpInfo(redeemPromoCode) {
+      let postBody = redeemPromoCode;
+      // verify the required parameter 'redeemPromoCode' is set
+      if (redeemPromoCode === undefined || redeemPromoCode === null) {
+        throw new Error("Missing the required parameter 'redeemPromoCode' when calling redeemPromoCode");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/promo-code/redeem/', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RedeemPromoCode} redeemPromoCode 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    redeemPromoCode(redeemPromoCode) {
+      return this.redeemPromoCodeWithHttpInfo(redeemPromoCode)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

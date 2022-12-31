@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EchaloasuerteJsSdk.PaypalApi();
+    instance = new EchaloasuerteJsSdk.ShiftsResultAllOfInterval();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,27 +47,25 @@
       object[property] = value;
   }
 
-  describe('PaypalApi', function() {
-    describe('paypalCreate', function() {
-      it('should call paypalCreate successfully', function(done) {
-        //uncomment below and update the code to test paypalCreate
-        //instance.paypalCreate(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('ShiftsResultAllOfInterval', function() {
+    it('should create an instance of ShiftsResultAllOfInterval', function() {
+      // uncomment below and update the code to test ShiftsResultAllOfInterval
+      //var instance = new EchaloasuerteJsSdk.ShiftsResultAllOfInterval();
+      //expect(instance).to.be.a(EchaloasuerteJsSdk.ShiftsResultAllOfInterval);
     });
-    describe('redeemPromoCode', function() {
-      it('should call redeemPromoCode successfully', function(done) {
-        //uncomment below and update the code to test redeemPromoCode
-        //instance.redeemPromoCode(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property startTime (base name: "start_time")', function() {
+      // uncomment below and update the code to test the property startTime
+      //var instance = new EchaloasuerteJsSdk.ShiftsResultAllOfInterval();
+      //expect(instance).to.be();
     });
+
+    it('should have the property endTime (base name: "end_time")', function() {
+      // uncomment below and update the code to test the property endTime
+      //var instance = new EchaloasuerteJsSdk.ShiftsResultAllOfInterval();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

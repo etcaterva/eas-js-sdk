@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EchaloasuerteJsSdk.PaypalApi();
+    instance = new EchaloasuerteJsSdk.RedeemPromoCode();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,27 +47,25 @@
       object[property] = value;
   }
 
-  describe('PaypalApi', function() {
-    describe('paypalCreate', function() {
-      it('should call paypalCreate successfully', function(done) {
-        //uncomment below and update the code to test paypalCreate
-        //instance.paypalCreate(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('RedeemPromoCode', function() {
+    it('should create an instance of RedeemPromoCode', function() {
+      // uncomment below and update the code to test RedeemPromoCode
+      //var instance = new EchaloasuerteJsSdk.RedeemPromoCode();
+      //expect(instance).to.be.a(EchaloasuerteJsSdk.RedeemPromoCode);
     });
-    describe('redeemPromoCode', function() {
-      it('should call redeemPromoCode successfully', function(done) {
-        //uncomment below and update the code to test redeemPromoCode
-        //instance.redeemPromoCode(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property code (base name: "code")', function() {
+      // uncomment below and update the code to test the property code
+      //var instance = new EchaloasuerteJsSdk.RedeemPromoCode();
+      //expect(instance).to.be();
     });
+
+    it('should have the property drawId (base name: "draw_id")', function() {
+      // uncomment below and update the code to test the property drawId
+      //var instance = new EchaloasuerteJsSdk.RedeemPromoCode();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

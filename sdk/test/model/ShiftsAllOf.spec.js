@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EchaloasuerteJsSdk.PaypalApi();
+    instance = new EchaloasuerteJsSdk.ShiftsAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,27 +47,31 @@
       object[property] = value;
   }
 
-  describe('PaypalApi', function() {
-    describe('paypalCreate', function() {
-      it('should call paypalCreate successfully', function(done) {
-        //uncomment below and update the code to test paypalCreate
-        //instance.paypalCreate(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('ShiftsAllOf', function() {
+    it('should create an instance of ShiftsAllOf', function() {
+      // uncomment below and update the code to test ShiftsAllOf
+      //var instance = new EchaloasuerteJsSdk.ShiftsAllOf();
+      //expect(instance).to.be.a(EchaloasuerteJsSdk.ShiftsAllOf);
     });
-    describe('redeemPromoCode', function() {
-      it('should call redeemPromoCode successfully', function(done) {
-        //uncomment below and update the code to test redeemPromoCode
-        //instance.redeemPromoCode(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property intervals (base name: "intervals")', function() {
+      // uncomment below and update the code to test the property intervals
+      //var instance = new EchaloasuerteJsSdk.ShiftsAllOf();
+      //expect(instance).to.be();
     });
+
+    it('should have the property participants (base name: "participants")', function() {
+      // uncomment below and update the code to test the property participants
+      //var instance = new EchaloasuerteJsSdk.ShiftsAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property results (base name: "results")', function() {
+      // uncomment below and update the code to test the property results
+      //var instance = new EchaloasuerteJsSdk.ShiftsAllOf();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

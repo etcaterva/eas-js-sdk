@@ -612,6 +612,10 @@ paths:
       responses:
         "201":
           description: Create and Toss a secret santa
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SecretSantaCreateResponse"
       tags:
         - secret_santa
       requestBody:
@@ -639,6 +643,48 @@ paths:
         required: true
         schema:
           type: string
+  "/secret-santa-admin/{id}/":
+    get:
+      operationId: secret_santa_result_admin_get
+      responses:
+        "200":
+          description: Management info of a secret santa draw.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SecretSantaAdminResult"
+      tags:
+        - secret_santa
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  "/secret-santa-admin/{draw_id}/{result_id}/":
+    post:
+      operationId: secret_santa_result_admin_get
+      responses:
+        "200":
+          description: Resend the email of a secret santa result
+      tags:
+        - secret_santa
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SecretSantaResendEmail"
+    parameters:
+      - name: draw_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: result_id
+        in: path
+        required: true
+        schema:
+          type: string
   "/paypal/create/":
     post:
       operationId: paypal_create
@@ -657,24 +703,6 @@ paths:
                 $ref: "#/components/schemas/PaypalResponse"
       tags:
         - paypal
-  "/instagram-preview/":
-    get:
-      operationId: instagram_preview
-      responses:
-        "200":
-          description: Previews the information of an instagram post
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/InstagramPreviewResponse"
-      tags:
-        - instagram
-    parameters:
-      - name: post_url
-        in: query
-        required: true
-        schema:
-          type: string
   /instagram/:
     post:
       operationId: instagram_create
@@ -724,6 +752,90 @@ paths:
                 $ref: "#/components/schemas/InstagramResult"
       tags:
         - instagram
+      requestBody:
+        $ref: "#/components/requestBodies/DrawTossPayload"
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  "/instagram/{id}/retoss/":
+    patch:
+      operationId: instagram_retoss
+      responses:
+        "201":
+          description: A result of the draw
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InstagramResult"
+      tags:
+        - instagram
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                prize_id:
+                  type: string
+                  minLength: 1
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /shifts/:
+    post:
+      operationId: shifts_create
+      responses:
+        "201":
+          description: Shifts successfully created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Shifts"
+      tags:
+        - shifts
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Shifts"
+        required: true
+    parameters: []
+  "/shifts/{id}/":
+    get:
+      operationId: shifts_read
+      responses:
+        "200":
+          description: The details of the requested shifts
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Shifts"
+      tags:
+        - shifts
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  "/shifts/{id}/toss/":
+    post:
+      operationId: shifts_toss
+      responses:
+        "201":
+          description: A result of the shifts
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ShiftsResult"
+      tags:
+        - shifts
       requestBody:
         $ref: "#/components/requestBodies/DrawTossPayload"
     parameters:
@@ -884,7 +996,7 @@ components:
             - post_url
             - prizes
             - use_likes
-            - use_comments
+            - min_mentions
           properties:
             prizes:
               type: array
@@ -893,9 +1005,9 @@ components:
             use_likes:
               type: boolean
               default: false
-            use_comments:
-              type: boolean
-              default: false
+            min_mentions:
+              type: integer
+              default: 0
             post_url:
               type: string
             results:
@@ -922,6 +1034,37 @@ components:
               type: array
               items:
                 $ref: "#/components/schemas/LinkResult"
+              readOnly: true
+    Shifts:
+      allOf:
+        - $ref: "#/components/schemas/BaseDraw"
+        - type: object
+          required:
+            - interval
+            - participants
+          properties:
+            interval:
+              type: array
+              items:
+                type: object
+                required:
+                  - start_time
+                  - end_time
+                properties:
+                  start_time:
+                    type: string
+                    format: date-time
+                  end_time:
+                    type: string
+                    format: date-time
+            participants:
+              type: array
+              items:
+                $ref: "#/components/schemas/Participant"
+            results:
+              type: array
+              items:
+                $ref: "#/components/schemas/ShiftsResult"
               readOnly: true
     Tournament:
       allOf:
@@ -1051,10 +1194,40 @@ components:
               items:
                 type: object
                 properties:
-                  participant:
-                    $ref: "#/components/schemas/Participant"
+                  comment:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      username:
+                        type: string
+                      userpic:
+                        type: string
+                      text:
+                        type: string
                   prize:
                     $ref: "#/components/schemas/Prize"
+    ShiftsResult:
+      allOf:
+        - $ref: "#/components/schemas/BaseResult"
+        - type: object
+          properties:
+            value:
+              nullable: true
+              type: array
+              items:
+                type: object
+                properties:
+                  start_time:
+                    type: string
+                    format: date-time
+                  end_time:
+                    type: string
+                    format: date-time
+                  participants:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Participant"
     LinkResult:
       allOf:
         - $ref: "#/components/schemas/BaseResult"
@@ -1177,6 +1350,32 @@ components:
           type: string
         target:
           type: string
+    SecretSantaCreateResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          minLength: 1
+    SecretSantaAdminResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          minLength: 1
+        created_at:
+          type: string
+          format: date-time
+        participants:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              name:
+                type: string
+              revealed:
+                type: boolean
     PaypalCreatePayload:
       type: object
       required:
@@ -1202,12 +1401,13 @@ components:
       properties:
         redirect_url:
           type: string
-    InstagramPreviewResponse:
+    SecretSantaResendEmail:
       type: object
       properties:
-        thumbnail:
+        language:
           type: string
-        likes:
-          type: integer
-        comments:
-          type: integer
+          enum:
+            - es
+            - en
+        email:
+          type: string

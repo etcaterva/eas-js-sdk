@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EchaloasuerteJsSdk.PaypalApi();
+    instance = new EchaloasuerteJsSdk.SecretSantaResendEmail();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,27 +47,25 @@
       object[property] = value;
   }
 
-  describe('PaypalApi', function() {
-    describe('paypalCreate', function() {
-      it('should call paypalCreate successfully', function(done) {
-        //uncomment below and update the code to test paypalCreate
-        //instance.paypalCreate(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('SecretSantaResendEmail', function() {
+    it('should create an instance of SecretSantaResendEmail', function() {
+      // uncomment below and update the code to test SecretSantaResendEmail
+      //var instance = new EchaloasuerteJsSdk.SecretSantaResendEmail();
+      //expect(instance).to.be.a(EchaloasuerteJsSdk.SecretSantaResendEmail);
     });
-    describe('redeemPromoCode', function() {
-      it('should call redeemPromoCode successfully', function(done) {
-        //uncomment below and update the code to test redeemPromoCode
-        //instance.redeemPromoCode(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property language (base name: "language")', function() {
+      // uncomment below and update the code to test the property language
+      //var instance = new EchaloasuerteJsSdk.SecretSantaResendEmail();
+      //expect(instance).to.be();
     });
+
+    it('should have the property email (base name: "email")', function() {
+      // uncomment below and update the code to test the property email
+      //var instance = new EchaloasuerteJsSdk.SecretSantaResendEmail();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EchaloasuerteJsSdk.PaypalApi();
+    instance = new EchaloasuerteJsSdk.SecretSantaAdminResponse();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,27 +47,31 @@
       object[property] = value;
   }
 
-  describe('PaypalApi', function() {
-    describe('paypalCreate', function() {
-      it('should call paypalCreate successfully', function(done) {
-        //uncomment below and update the code to test paypalCreate
-        //instance.paypalCreate(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('SecretSantaAdminResponse', function() {
+    it('should create an instance of SecretSantaAdminResponse', function() {
+      // uncomment below and update the code to test SecretSantaAdminResponse
+      //var instance = new EchaloasuerteJsSdk.SecretSantaAdminResponse();
+      //expect(instance).to.be.a(EchaloasuerteJsSdk.SecretSantaAdminResponse);
     });
-    describe('redeemPromoCode', function() {
-      it('should call redeemPromoCode successfully', function(done) {
-        //uncomment below and update the code to test redeemPromoCode
-        //instance.redeemPromoCode(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instance = new EchaloasuerteJsSdk.SecretSantaAdminResponse();
+      //expect(instance).to.be();
     });
+
+    it('should have the property createdAt (base name: "created_at")', function() {
+      // uncomment below and update the code to test the property createdAt
+      //var instance = new EchaloasuerteJsSdk.SecretSantaAdminResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property participants (base name: "participants")', function() {
+      // uncomment below and update the code to test the property participants
+      //var instance = new EchaloasuerteJsSdk.SecretSantaAdminResponse();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

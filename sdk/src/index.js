@@ -33,6 +33,7 @@ import InstagramResult from './model/InstagramResult';
 import InstagramResultAllOf from './model/InstagramResultAllOf';
 import InstagramResultAllOfComment from './model/InstagramResultAllOfComment';
 import InstagramResultAllOfValue from './model/InstagramResultAllOfValue';
+import InstagramRetossRequest from './model/InstagramRetossRequest';
 import Letter from './model/Letter';
 import LetterAllOf from './model/LetterAllOf';
 import LetterResult from './model/LetterResult';
@@ -61,9 +62,21 @@ import RandomNumber from './model/RandomNumber';
 import RandomNumberAllOf from './model/RandomNumberAllOf';
 import RandomNumberResult from './model/RandomNumberResult';
 import RandomNumberResultAllOf from './model/RandomNumberResultAllOf';
+import RedeemPromoCode from './model/RedeemPromoCode';
 import SecretSanta from './model/SecretSanta';
+import SecretSantaAdminResponse from './model/SecretSantaAdminResponse';
+import SecretSantaAdminResponseParticipantsInner from './model/SecretSantaAdminResponseParticipantsInner';
+import SecretSantaCreateResponse from './model/SecretSantaCreateResponse';
 import SecretSantaParticipantsInner from './model/SecretSantaParticipantsInner';
+import SecretSantaResendEmail from './model/SecretSantaResendEmail';
 import SecretSantaResult from './model/SecretSantaResult';
+import Shifts from './model/Shifts';
+import ShiftsAllOf from './model/ShiftsAllOf';
+import ShiftsAllOfIntervals from './model/ShiftsAllOfIntervals';
+import ShiftsResult from './model/ShiftsResult';
+import ShiftsResultAllOf from './model/ShiftsResultAllOf';
+import ShiftsResultAllOfInterval from './model/ShiftsResultAllOfInterval';
+import ShiftsResultAllOfValue from './model/ShiftsResultAllOfValue';
 import Spinner from './model/Spinner';
 import SpinnerAllOf from './model/SpinnerAllOf';
 import SpinnerResult from './model/SpinnerResult';
@@ -82,6 +95,7 @@ import PaypalApi from './api/PaypalApi';
 import RaffleApi from './api/RaffleApi';
 import RandomNumberApi from './api/RandomNumberApi';
 import SecretSantaApi from './api/SecretSantaApi';
+import ShiftsApi from './api/ShiftsApi';
 import SpinnerApi from './api/SpinnerApi';
 import TournamentApi from './api/TournamentApi';
 
@@ -243,6 +257,12 @@ export {
      * @property {module:model/InstagramResultAllOfValue}
      */
     InstagramResultAllOfValue,
+
+    /**
+     * The InstagramRetossRequest model constructor.
+     * @property {module:model/InstagramRetossRequest}
+     */
+    InstagramRetossRequest,
 
     /**
      * The Letter model constructor.
@@ -413,10 +433,34 @@ export {
     RandomNumberResultAllOf,
 
     /**
+     * The RedeemPromoCode model constructor.
+     * @property {module:model/RedeemPromoCode}
+     */
+    RedeemPromoCode,
+
+    /**
      * The SecretSanta model constructor.
      * @property {module:model/SecretSanta}
      */
     SecretSanta,
+
+    /**
+     * The SecretSantaAdminResponse model constructor.
+     * @property {module:model/SecretSantaAdminResponse}
+     */
+    SecretSantaAdminResponse,
+
+    /**
+     * The SecretSantaAdminResponseParticipantsInner model constructor.
+     * @property {module:model/SecretSantaAdminResponseParticipantsInner}
+     */
+    SecretSantaAdminResponseParticipantsInner,
+
+    /**
+     * The SecretSantaCreateResponse model constructor.
+     * @property {module:model/SecretSantaCreateResponse}
+     */
+    SecretSantaCreateResponse,
 
     /**
      * The SecretSantaParticipantsInner model constructor.
@@ -425,10 +469,58 @@ export {
     SecretSantaParticipantsInner,
 
     /**
+     * The SecretSantaResendEmail model constructor.
+     * @property {module:model/SecretSantaResendEmail}
+     */
+    SecretSantaResendEmail,
+
+    /**
      * The SecretSantaResult model constructor.
      * @property {module:model/SecretSantaResult}
      */
     SecretSantaResult,
+
+    /**
+     * The Shifts model constructor.
+     * @property {module:model/Shifts}
+     */
+    Shifts,
+
+    /**
+     * The ShiftsAllOf model constructor.
+     * @property {module:model/ShiftsAllOf}
+     */
+    ShiftsAllOf,
+
+    /**
+     * The ShiftsAllOfIntervals model constructor.
+     * @property {module:model/ShiftsAllOfIntervals}
+     */
+    ShiftsAllOfIntervals,
+
+    /**
+     * The ShiftsResult model constructor.
+     * @property {module:model/ShiftsResult}
+     */
+    ShiftsResult,
+
+    /**
+     * The ShiftsResultAllOf model constructor.
+     * @property {module:model/ShiftsResultAllOf}
+     */
+    ShiftsResultAllOf,
+
+    /**
+     * The ShiftsResultAllOfInterval model constructor.
+     * @property {module:model/ShiftsResultAllOfInterval}
+     */
+    ShiftsResultAllOfInterval,
+
+    /**
+     * The ShiftsResultAllOfValue model constructor.
+     * @property {module:model/ShiftsResultAllOfValue}
+     */
+    ShiftsResultAllOfValue,
 
     /**
      * The Spinner model constructor.
@@ -537,6 +629,12 @@ export {
     * @property {module:api/SecretSantaApi}
     */
     SecretSantaApi,
+
+    /**
+    * The ShiftsApi service constructor.
+    * @property {module:api/ShiftsApi}
+    */
+    ShiftsApi,
 
     /**
     * The SpinnerApi service constructor.
