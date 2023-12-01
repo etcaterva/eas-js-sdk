@@ -66,8 +66,38 @@ class PaypalCreatePayload {
         return obj;
     }
 
+    /**
+     * Validates the JSON data with respect to <code>PaypalCreatePayload</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>PaypalCreatePayload</code>.
+     */
+    static validateJSON(data) {
+        // check to make sure all required properties are present in the JSON string
+        for (const property of PaypalCreatePayload.RequiredProperties) {
+            if (!data[property]) {
+                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
+            }
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['options'])) {
+            throw new Error("Expected the field `options` to be an array in the JSON data but got " + data['options']);
+        }
+        // ensure the json data is a string
+        if (data['draw_url'] && !(typeof data['draw_url'] === 'string' || data['draw_url'] instanceof String)) {
+            throw new Error("Expected the field `draw_url` to be a primitive type in the JSON string but got " + data['draw_url']);
+        }
+        // ensure the json data is a string
+        if (data['draw_id'] && !(typeof data['draw_id'] === 'string' || data['draw_id'] instanceof String)) {
+            throw new Error("Expected the field `draw_id` to be a primitive type in the JSON string but got " + data['draw_id']);
+        }
+
+        return true;
+    }
+
 
 }
+
+PaypalCreatePayload.RequiredProperties = ["options", "draw_url", "draw_id"];
 
 /**
  * @member {Array.<module:model/PaypalCreatePayload.OptionsEnum>} options

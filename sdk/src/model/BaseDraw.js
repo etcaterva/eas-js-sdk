@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import BaseDrawAllOf from './BaseDrawAllOf';
 import BaseObject from './BaseObject';
 import DrawMetadata from './DrawMetadata';
 
@@ -26,10 +25,9 @@ class BaseDraw {
      * Constructs a new <code>BaseDraw</code>.
      * @alias module:model/BaseDraw
      * @implements module:model/BaseObject
-     * @implements module:model/BaseDrawAllOf
      */
     constructor() { 
-        BaseObject.initialize(this);BaseDrawAllOf.initialize(this);
+        BaseObject.initialize(this);
         BaseDraw.initialize(this);
     }
 
@@ -52,7 +50,6 @@ class BaseDraw {
         if (data) {
             obj = obj || new BaseDraw();
             BaseObject.constructFromObject(data, obj);
-            BaseDrawAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -82,8 +79,50 @@ class BaseDraw {
         return obj;
     }
 
+    /**
+     * Validates the JSON data with respect to <code>BaseDraw</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>BaseDraw</code>.
+     */
+    static validateJSON(data) {
+        // ensure the json data is a string
+        if (data['id'] && !(typeof data['id'] === 'string' || data['id'] instanceof String)) {
+            throw new Error("Expected the field `id` to be a primitive type in the JSON string but got " + data['id']);
+        }
+        // ensure the json data is a string
+        if (data['title'] && !(typeof data['title'] === 'string' || data['title'] instanceof String)) {
+            throw new Error("Expected the field `title` to be a primitive type in the JSON string but got " + data['title']);
+        }
+        // ensure the json data is a string
+        if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
+            throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
+        }
+        // ensure the json data is a string
+        if (data['private_id'] && !(typeof data['private_id'] === 'string' || data['private_id'] instanceof String)) {
+            throw new Error("Expected the field `private_id` to be a primitive type in the JSON string but got " + data['private_id']);
+        }
+        if (data['metadata']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['metadata'])) {
+                throw new Error("Expected the field `metadata` to be an array in the JSON data but got " + data['metadata']);
+            }
+            // validate the optional field `metadata` (array)
+            for (const item of data['metadata']) {
+                DrawMetadata.validateJSON(item);
+            };
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['payments'])) {
+            throw new Error("Expected the field `payments` to be an array in the JSON data but got " + data['payments']);
+        }
+
+        return true;
+    }
+
 
 }
+
+
 
 /**
  * @member {String} id
@@ -135,31 +174,6 @@ BaseObject.prototype['id'] = undefined;
  * @member {Date} created_at
  */
 BaseObject.prototype['created_at'] = undefined;
-// Implement BaseDrawAllOf interface:
-/**
- * @member {Date} updated_at
- */
-BaseDrawAllOf.prototype['updated_at'] = undefined;
-/**
- * @member {String} title
- */
-BaseDrawAllOf.prototype['title'] = undefined;
-/**
- * @member {String} description
- */
-BaseDrawAllOf.prototype['description'] = undefined;
-/**
- * @member {String} private_id
- */
-BaseDrawAllOf.prototype['private_id'] = undefined;
-/**
- * @member {Array.<module:model/DrawMetadata>} metadata
- */
-BaseDrawAllOf.prototype['metadata'] = undefined;
-/**
- * @member {Array.<module:model/BaseDrawAllOf.PaymentsEnum>} payments
- */
-BaseDrawAllOf.prototype['payments'] = undefined;
 
 
 

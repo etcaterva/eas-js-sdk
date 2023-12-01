@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import BaseResult from './BaseResult';
-import SpinnerResultAllOf from './SpinnerResultAllOf';
 
 /**
  * The SpinnerResult model module.
@@ -25,10 +24,9 @@ class SpinnerResult {
      * Constructs a new <code>SpinnerResult</code>.
      * @alias module:model/SpinnerResult
      * @implements module:model/BaseResult
-     * @implements module:model/SpinnerResultAllOf
      */
     constructor() { 
-        BaseResult.initialize(this);SpinnerResultAllOf.initialize(this);
+        BaseResult.initialize(this);
         SpinnerResult.initialize(this);
     }
 
@@ -51,7 +49,6 @@ class SpinnerResult {
         if (data) {
             obj = obj || new SpinnerResult();
             BaseResult.constructFromObject(data, obj);
-            SpinnerResultAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -69,8 +66,24 @@ class SpinnerResult {
         return obj;
     }
 
+    /**
+     * Validates the JSON data with respect to <code>SpinnerResult</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>SpinnerResult</code>.
+     */
+    static validateJSON(data) {
+        // ensure the json data is a string
+        if (data['id'] && !(typeof data['id'] === 'string' || data['id'] instanceof String)) {
+            throw new Error("Expected the field `id` to be a primitive type in the JSON string but got " + data['id']);
+        }
+
+        return true;
+    }
+
 
 }
+
+
 
 /**
  * @member {String} id
@@ -106,11 +119,6 @@ BaseResult.prototype['created_at'] = undefined;
  * @member {Date} schedule_date
  */
 BaseResult.prototype['schedule_date'] = undefined;
-// Implement SpinnerResultAllOf interface:
-/**
- * @member {Number} value
- */
-SpinnerResultAllOf.prototype['value'] = undefined;
 
 
 

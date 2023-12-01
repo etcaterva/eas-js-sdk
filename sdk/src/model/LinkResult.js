@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import BaseResult from './BaseResult';
-import LinkResultAllOf from './LinkResultAllOf';
 import LinkResultAllOfValue from './LinkResultAllOfValue';
 
 /**
@@ -26,10 +25,9 @@ class LinkResult {
      * Constructs a new <code>LinkResult</code>.
      * @alias module:model/LinkResult
      * @implements module:model/BaseResult
-     * @implements module:model/LinkResultAllOf
      */
     constructor() { 
-        BaseResult.initialize(this);LinkResultAllOf.initialize(this);
+        BaseResult.initialize(this);
         LinkResult.initialize(this);
     }
 
@@ -52,7 +50,6 @@ class LinkResult {
         if (data) {
             obj = obj || new LinkResult();
             BaseResult.constructFromObject(data, obj);
-            LinkResultAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -70,8 +67,34 @@ class LinkResult {
         return obj;
     }
 
+    /**
+     * Validates the JSON data with respect to <code>LinkResult</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>LinkResult</code>.
+     */
+    static validateJSON(data) {
+        // ensure the json data is a string
+        if (data['id'] && !(typeof data['id'] === 'string' || data['id'] instanceof String)) {
+            throw new Error("Expected the field `id` to be a primitive type in the JSON string but got " + data['id']);
+        }
+        if (data['value']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['value'])) {
+                throw new Error("Expected the field `value` to be an array in the JSON data but got " + data['value']);
+            }
+            // validate the optional field `value` (array)
+            for (const item of data['value']) {
+                LinkResultAllOfValue.validateJSON(item);
+            };
+        }
+
+        return true;
+    }
+
 
 }
+
+
 
 /**
  * @member {String} id
@@ -107,11 +130,6 @@ BaseResult.prototype['created_at'] = undefined;
  * @member {Date} schedule_date
  */
 BaseResult.prototype['schedule_date'] = undefined;
-// Implement LinkResultAllOf interface:
-/**
- * @member {Array.<module:model/LinkResultAllOfValue>} value
- */
-LinkResultAllOf.prototype['value'] = undefined;
 
 
 

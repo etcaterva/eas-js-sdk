@@ -150,7 +150,7 @@ Class | Method | HTTP request | Description
 *EchaloasuerteJsSdk.RandomNumberApi* | [**randomNumberToss**](docs/RandomNumberApi.md#randomNumberToss) | **POST** /random_number/{id}/toss/ | 
 *EchaloasuerteJsSdk.SecretSantaApi* | [**secretSantaCreate**](docs/SecretSantaApi.md#secretSantaCreate) | **POST** /secret-santa/ | 
 *EchaloasuerteJsSdk.SecretSantaApi* | [**secretSantaResultAdminGet**](docs/SecretSantaApi.md#secretSantaResultAdminGet) | **GET** /secret-santa-admin/{id}/ | 
-*EchaloasuerteJsSdk.SecretSantaApi* | [**secretSantaResultAdminPatch**](docs/SecretSantaApi.md#secretSantaResultAdminPatch) | **PATCH** /secret-santa-admin/{draw_id}/{result_id}/ | 
+*EchaloasuerteJsSdk.SecretSantaApi* | [**secretSantaResultAdminPost**](docs/SecretSantaApi.md#secretSantaResultAdminPost) | **POST** /secret-santa-admin/{draw_id}/{result_id}/ | 
 *EchaloasuerteJsSdk.SecretSantaApi* | [**secretSantaResultGet**](docs/SecretSantaApi.md#secretSantaResultGet) | **GET** /secret-santa/{id}/ | 
 *EchaloasuerteJsSdk.ShiftsApi* | [**shiftsCreate**](docs/ShiftsApi.md#shiftsCreate) | **POST** /shifts/ | 
 *EchaloasuerteJsSdk.ShiftsApi* | [**shiftsRead**](docs/ShiftsApi.md#shiftsRead) | **GET** /shifts/{id}/ | 
@@ -167,54 +167,35 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [EchaloasuerteJsSdk.BaseDraw](docs/BaseDraw.md)
- - [EchaloasuerteJsSdk.BaseDrawAllOf](docs/BaseDrawAllOf.md)
  - [EchaloasuerteJsSdk.BaseObject](docs/BaseObject.md)
  - [EchaloasuerteJsSdk.BaseResult](docs/BaseResult.md)
- - [EchaloasuerteJsSdk.BaseResultAllOf](docs/BaseResultAllOf.md)
  - [EchaloasuerteJsSdk.Coin](docs/Coin.md)
- - [EchaloasuerteJsSdk.CoinAllOf](docs/CoinAllOf.md)
  - [EchaloasuerteJsSdk.CoinResult](docs/CoinResult.md)
- - [EchaloasuerteJsSdk.CoinResultAllOf](docs/CoinResultAllOf.md)
  - [EchaloasuerteJsSdk.DrawMetadata](docs/DrawMetadata.md)
  - [EchaloasuerteJsSdk.DrawTossPayload](docs/DrawTossPayload.md)
  - [EchaloasuerteJsSdk.Groups](docs/Groups.md)
- - [EchaloasuerteJsSdk.GroupsAllOf](docs/GroupsAllOf.md)
  - [EchaloasuerteJsSdk.GroupsResult](docs/GroupsResult.md)
  - [EchaloasuerteJsSdk.Instagram](docs/Instagram.md)
- - [EchaloasuerteJsSdk.InstagramAllOf](docs/InstagramAllOf.md)
  - [EchaloasuerteJsSdk.InstagramResult](docs/InstagramResult.md)
- - [EchaloasuerteJsSdk.InstagramResultAllOf](docs/InstagramResultAllOf.md)
  - [EchaloasuerteJsSdk.InstagramResultAllOfComment](docs/InstagramResultAllOfComment.md)
  - [EchaloasuerteJsSdk.InstagramResultAllOfValue](docs/InstagramResultAllOfValue.md)
  - [EchaloasuerteJsSdk.InstagramRetossRequest](docs/InstagramRetossRequest.md)
  - [EchaloasuerteJsSdk.Letter](docs/Letter.md)
- - [EchaloasuerteJsSdk.LetterAllOf](docs/LetterAllOf.md)
  - [EchaloasuerteJsSdk.LetterResult](docs/LetterResult.md)
- - [EchaloasuerteJsSdk.LetterResultAllOf](docs/LetterResultAllOf.md)
  - [EchaloasuerteJsSdk.Link](docs/Link.md)
- - [EchaloasuerteJsSdk.LinkAllOf](docs/LinkAllOf.md)
  - [EchaloasuerteJsSdk.LinkResult](docs/LinkResult.md)
- - [EchaloasuerteJsSdk.LinkResultAllOf](docs/LinkResultAllOf.md)
  - [EchaloasuerteJsSdk.LinkResultAllOfValue](docs/LinkResultAllOfValue.md)
  - [EchaloasuerteJsSdk.Lottery](docs/Lottery.md)
- - [EchaloasuerteJsSdk.LotteryAllOf](docs/LotteryAllOf.md)
  - [EchaloasuerteJsSdk.LotteryResult](docs/LotteryResult.md)
- - [EchaloasuerteJsSdk.LotteryResultAllOf](docs/LotteryResultAllOf.md)
  - [EchaloasuerteJsSdk.Participant](docs/Participant.md)
- - [EchaloasuerteJsSdk.ParticipantAllOf](docs/ParticipantAllOf.md)
  - [EchaloasuerteJsSdk.PaypalCreatePayload](docs/PaypalCreatePayload.md)
  - [EchaloasuerteJsSdk.PaypalResponse](docs/PaypalResponse.md)
  - [EchaloasuerteJsSdk.Prize](docs/Prize.md)
- - [EchaloasuerteJsSdk.PrizeAllOf](docs/PrizeAllOf.md)
  - [EchaloasuerteJsSdk.Raffle](docs/Raffle.md)
- - [EchaloasuerteJsSdk.RaffleAllOf](docs/RaffleAllOf.md)
  - [EchaloasuerteJsSdk.RaffleResult](docs/RaffleResult.md)
- - [EchaloasuerteJsSdk.RaffleResultAllOf](docs/RaffleResultAllOf.md)
  - [EchaloasuerteJsSdk.RaffleResultAllOfValue](docs/RaffleResultAllOfValue.md)
  - [EchaloasuerteJsSdk.RandomNumber](docs/RandomNumber.md)
- - [EchaloasuerteJsSdk.RandomNumberAllOf](docs/RandomNumberAllOf.md)
  - [EchaloasuerteJsSdk.RandomNumberResult](docs/RandomNumberResult.md)
- - [EchaloasuerteJsSdk.RandomNumberResultAllOf](docs/RandomNumberResultAllOf.md)
  - [EchaloasuerteJsSdk.RedeemPromoCode](docs/RedeemPromoCode.md)
  - [EchaloasuerteJsSdk.SecretSanta](docs/SecretSanta.md)
  - [EchaloasuerteJsSdk.SecretSantaAdminResponse](docs/SecretSantaAdminResponse.md)
@@ -222,24 +203,20 @@ Class | Method | HTTP request | Description
  - [EchaloasuerteJsSdk.SecretSantaCreateResponse](docs/SecretSantaCreateResponse.md)
  - [EchaloasuerteJsSdk.SecretSantaParticipantsInner](docs/SecretSantaParticipantsInner.md)
  - [EchaloasuerteJsSdk.SecretSantaResendEmail](docs/SecretSantaResendEmail.md)
+ - [EchaloasuerteJsSdk.SecretSantaResendEmailResponse](docs/SecretSantaResendEmailResponse.md)
  - [EchaloasuerteJsSdk.SecretSantaResult](docs/SecretSantaResult.md)
  - [EchaloasuerteJsSdk.Shifts](docs/Shifts.md)
- - [EchaloasuerteJsSdk.ShiftsAllOf](docs/ShiftsAllOf.md)
  - [EchaloasuerteJsSdk.ShiftsAllOfIntervals](docs/ShiftsAllOfIntervals.md)
  - [EchaloasuerteJsSdk.ShiftsResult](docs/ShiftsResult.md)
- - [EchaloasuerteJsSdk.ShiftsResultAllOf](docs/ShiftsResultAllOf.md)
  - [EchaloasuerteJsSdk.ShiftsResultAllOfInterval](docs/ShiftsResultAllOfInterval.md)
  - [EchaloasuerteJsSdk.ShiftsResultAllOfValue](docs/ShiftsResultAllOfValue.md)
  - [EchaloasuerteJsSdk.Spinner](docs/Spinner.md)
- - [EchaloasuerteJsSdk.SpinnerAllOf](docs/SpinnerAllOf.md)
  - [EchaloasuerteJsSdk.SpinnerResult](docs/SpinnerResult.md)
- - [EchaloasuerteJsSdk.SpinnerResultAllOf](docs/SpinnerResultAllOf.md)
  - [EchaloasuerteJsSdk.Tournament](docs/Tournament.md)
- - [EchaloasuerteJsSdk.TournamentAllOf](docs/TournamentAllOf.md)
  - [EchaloasuerteJsSdk.TournamentResult](docs/TournamentResult.md)
- - [EchaloasuerteJsSdk.TournamentResultAllOf](docs/TournamentResultAllOf.md)
 
 
 ## Documentation for Authorization
 
-All endpoints do not require authorization.
+Endpoints do not require authorization.
+

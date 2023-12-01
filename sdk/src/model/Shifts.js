@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 import BaseDraw from './BaseDraw';
 import DrawMetadata from './DrawMetadata';
 import Participant from './Participant';
-import ShiftsAllOf from './ShiftsAllOf';
 import ShiftsAllOfIntervals from './ShiftsAllOfIntervals';
 import ShiftsResult from './ShiftsResult';
 
@@ -29,12 +28,11 @@ class Shifts {
      * Constructs a new <code>Shifts</code>.
      * @alias module:model/Shifts
      * @implements module:model/BaseDraw
-     * @implements module:model/ShiftsAllOf
      * @param intervals {Array.<module:model/ShiftsAllOfIntervals>} 
      * @param participants {Array.<module:model/Participant>} 
      */
     constructor(intervals, participants) { 
-        BaseDraw.initialize(this);ShiftsAllOf.initialize(this, intervals, participants);
+        BaseDraw.initialize(this);
         Shifts.initialize(this, intervals, participants);
     }
 
@@ -59,7 +57,6 @@ class Shifts {
         if (data) {
             obj = obj || new Shifts();
             BaseDraw.constructFromObject(data, obj);
-            ShiftsAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -98,8 +95,86 @@ class Shifts {
         return obj;
     }
 
+    /**
+     * Validates the JSON data with respect to <code>Shifts</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>Shifts</code>.
+     */
+    static validateJSON(data) {
+        // check to make sure all required properties are present in the JSON string
+        for (const property of Shifts.RequiredProperties) {
+            if (!data[property]) {
+                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
+            }
+        }
+        // ensure the json data is a string
+        if (data['id'] && !(typeof data['id'] === 'string' || data['id'] instanceof String)) {
+            throw new Error("Expected the field `id` to be a primitive type in the JSON string but got " + data['id']);
+        }
+        // ensure the json data is a string
+        if (data['title'] && !(typeof data['title'] === 'string' || data['title'] instanceof String)) {
+            throw new Error("Expected the field `title` to be a primitive type in the JSON string but got " + data['title']);
+        }
+        // ensure the json data is a string
+        if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
+            throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
+        }
+        // ensure the json data is a string
+        if (data['private_id'] && !(typeof data['private_id'] === 'string' || data['private_id'] instanceof String)) {
+            throw new Error("Expected the field `private_id` to be a primitive type in the JSON string but got " + data['private_id']);
+        }
+        if (data['metadata']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['metadata'])) {
+                throw new Error("Expected the field `metadata` to be an array in the JSON data but got " + data['metadata']);
+            }
+            // validate the optional field `metadata` (array)
+            for (const item of data['metadata']) {
+                DrawMetadata.validateJSON(item);
+            };
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['payments'])) {
+            throw new Error("Expected the field `payments` to be an array in the JSON data but got " + data['payments']);
+        }
+        if (data['intervals']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['intervals'])) {
+                throw new Error("Expected the field `intervals` to be an array in the JSON data but got " + data['intervals']);
+            }
+            // validate the optional field `intervals` (array)
+            for (const item of data['intervals']) {
+                ShiftsAllOfIntervals.validateJSON(item);
+            };
+        }
+        if (data['participants']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['participants'])) {
+                throw new Error("Expected the field `participants` to be an array in the JSON data but got " + data['participants']);
+            }
+            // validate the optional field `participants` (array)
+            for (const item of data['participants']) {
+                Participant.validateJSON(item);
+            };
+        }
+        if (data['results']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['results'])) {
+                throw new Error("Expected the field `results` to be an array in the JSON data but got " + data['results']);
+            }
+            // validate the optional field `results` (array)
+            for (const item of data['results']) {
+                ShiftsResult.validateJSON(item);
+            };
+        }
+
+        return true;
+    }
+
 
 }
+
+Shifts.RequiredProperties = ["intervals", "participants"];
 
 /**
  * @member {String} id
@@ -190,19 +265,6 @@ BaseDraw.prototype['metadata'] = undefined;
  * @member {Array.<module:model/BaseDraw.PaymentsEnum>} payments
  */
 BaseDraw.prototype['payments'] = undefined;
-// Implement ShiftsAllOf interface:
-/**
- * @member {Array.<module:model/ShiftsAllOfIntervals>} intervals
- */
-ShiftsAllOf.prototype['intervals'] = undefined;
-/**
- * @member {Array.<module:model/Participant>} participants
- */
-ShiftsAllOf.prototype['participants'] = undefined;
-/**
- * @member {Array.<module:model/ShiftsResult>} results
- */
-ShiftsAllOf.prototype['results'] = undefined;
 
 
 

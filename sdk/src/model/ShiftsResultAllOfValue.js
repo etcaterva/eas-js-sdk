@@ -59,8 +59,34 @@ class ShiftsResultAllOfValue {
         return obj;
     }
 
+    /**
+     * Validates the JSON data with respect to <code>ShiftsResultAllOfValue</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>ShiftsResultAllOfValue</code>.
+     */
+    static validateJSON(data) {
+        // validate the optional field `interval`
+        if (data['interval']) { // data not null
+          ShiftsResultAllOfInterval.validateJSON(data['interval']);
+        }
+        if (data['participants']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['participants'])) {
+                throw new Error("Expected the field `participants` to be an array in the JSON data but got " + data['participants']);
+            }
+            // validate the optional field `participants` (array)
+            for (const item of data['participants']) {
+                Participant.validateJSON(item);
+            };
+        }
+
+        return true;
+    }
+
 
 }
+
+
 
 /**
  * @member {module:model/ShiftsResultAllOfInterval} interval

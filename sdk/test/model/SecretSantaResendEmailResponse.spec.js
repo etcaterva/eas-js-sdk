@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EchaloasuerteJsSdk.SpinnerAllOf();
+    instance = new EchaloasuerteJsSdk.SecretSantaResendEmailResponse();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,16 +47,16 @@
       object[property] = value;
   }
 
-  describe('SpinnerAllOf', function() {
-    it('should create an instance of SpinnerAllOf', function() {
-      // uncomment below and update the code to test SpinnerAllOf
-      //var instance = new EchaloasuerteJsSdk.SpinnerAllOf();
-      //expect(instance).to.be.a(EchaloasuerteJsSdk.SpinnerAllOf);
+  describe('SecretSantaResendEmailResponse', function() {
+    it('should create an instance of SecretSantaResendEmailResponse', function() {
+      // uncomment below and update the code to test SecretSantaResendEmailResponse
+      //var instance = new EchaloasuerteJsSdk.SecretSantaResendEmailResponse();
+      //expect(instance).to.be.a(EchaloasuerteJsSdk.SecretSantaResendEmailResponse);
     });
 
-    it('should have the property results (base name: "results")', function() {
-      // uncomment below and update the code to test the property results
-      //var instance = new EchaloasuerteJsSdk.SpinnerAllOf();
+    it('should have the property newResult (base name: "new_result")', function() {
+      // uncomment below and update the code to test the property newResult
+      //var instance = new EchaloasuerteJsSdk.SecretSantaResendEmailResponse();
       //expect(instance).to.be();
     });
 

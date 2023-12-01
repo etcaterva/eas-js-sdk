@@ -16,7 +16,6 @@ import BaseDraw from './BaseDraw';
 import DrawMetadata from './DrawMetadata';
 import Participant from './Participant';
 import Prize from './Prize';
-import RaffleAllOf from './RaffleAllOf';
 import RaffleResult from './RaffleResult';
 
 /**
@@ -29,12 +28,11 @@ class Raffle {
      * Constructs a new <code>Raffle</code>.
      * @alias module:model/Raffle
      * @implements module:model/BaseDraw
-     * @implements module:model/RaffleAllOf
      * @param prizes {Array.<module:model/Prize>} 
      * @param participants {Array.<module:model/Participant>} 
      */
     constructor(prizes, participants) { 
-        BaseDraw.initialize(this);RaffleAllOf.initialize(this, prizes, participants);
+        BaseDraw.initialize(this);
         Raffle.initialize(this, prizes, participants);
     }
 
@@ -59,7 +57,6 @@ class Raffle {
         if (data) {
             obj = obj || new Raffle();
             BaseDraw.constructFromObject(data, obj);
-            RaffleAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -98,8 +95,86 @@ class Raffle {
         return obj;
     }
 
+    /**
+     * Validates the JSON data with respect to <code>Raffle</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>Raffle</code>.
+     */
+    static validateJSON(data) {
+        // check to make sure all required properties are present in the JSON string
+        for (const property of Raffle.RequiredProperties) {
+            if (!data[property]) {
+                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
+            }
+        }
+        // ensure the json data is a string
+        if (data['id'] && !(typeof data['id'] === 'string' || data['id'] instanceof String)) {
+            throw new Error("Expected the field `id` to be a primitive type in the JSON string but got " + data['id']);
+        }
+        // ensure the json data is a string
+        if (data['title'] && !(typeof data['title'] === 'string' || data['title'] instanceof String)) {
+            throw new Error("Expected the field `title` to be a primitive type in the JSON string but got " + data['title']);
+        }
+        // ensure the json data is a string
+        if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
+            throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
+        }
+        // ensure the json data is a string
+        if (data['private_id'] && !(typeof data['private_id'] === 'string' || data['private_id'] instanceof String)) {
+            throw new Error("Expected the field `private_id` to be a primitive type in the JSON string but got " + data['private_id']);
+        }
+        if (data['metadata']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['metadata'])) {
+                throw new Error("Expected the field `metadata` to be an array in the JSON data but got " + data['metadata']);
+            }
+            // validate the optional field `metadata` (array)
+            for (const item of data['metadata']) {
+                DrawMetadata.validateJSON(item);
+            };
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['payments'])) {
+            throw new Error("Expected the field `payments` to be an array in the JSON data but got " + data['payments']);
+        }
+        if (data['prizes']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['prizes'])) {
+                throw new Error("Expected the field `prizes` to be an array in the JSON data but got " + data['prizes']);
+            }
+            // validate the optional field `prizes` (array)
+            for (const item of data['prizes']) {
+                Prize.validateJSON(item);
+            };
+        }
+        if (data['participants']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['participants'])) {
+                throw new Error("Expected the field `participants` to be an array in the JSON data but got " + data['participants']);
+            }
+            // validate the optional field `participants` (array)
+            for (const item of data['participants']) {
+                Participant.validateJSON(item);
+            };
+        }
+        if (data['results']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['results'])) {
+                throw new Error("Expected the field `results` to be an array in the JSON data but got " + data['results']);
+            }
+            // validate the optional field `results` (array)
+            for (const item of data['results']) {
+                RaffleResult.validateJSON(item);
+            };
+        }
+
+        return true;
+    }
+
 
 }
+
+Raffle.RequiredProperties = ["prizes", "participants"];
 
 /**
  * @member {String} id
@@ -190,19 +265,6 @@ BaseDraw.prototype['metadata'] = undefined;
  * @member {Array.<module:model/BaseDraw.PaymentsEnum>} payments
  */
 BaseDraw.prototype['payments'] = undefined;
-// Implement RaffleAllOf interface:
-/**
- * @member {Array.<module:model/Prize>} prizes
- */
-RaffleAllOf.prototype['prizes'] = undefined;
-/**
- * @member {Array.<module:model/Participant>} participants
- */
-RaffleAllOf.prototype['participants'] = undefined;
-/**
- * @member {Array.<module:model/RaffleResult>} results
- */
-RaffleAllOf.prototype['results'] = undefined;
 
 
 

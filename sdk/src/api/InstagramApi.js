@@ -128,7 +128,7 @@ export default class InstagramApi {
     /**
      * @param {String} id 
      * @param {Object} opts Optional parameters
-     * @param {module:model/InstagramRetossRequest} opts.instagramRetossRequest 
+     * @param {module:model/InstagramRetossRequest} [instagramRetossRequest] 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InstagramResult} and HTTP response
      */
     instagramRetossWithHttpInfo(id, opts) {

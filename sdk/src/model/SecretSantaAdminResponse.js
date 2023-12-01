@@ -61,8 +61,34 @@ class SecretSantaAdminResponse {
         return obj;
     }
 
+    /**
+     * Validates the JSON data with respect to <code>SecretSantaAdminResponse</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>SecretSantaAdminResponse</code>.
+     */
+    static validateJSON(data) {
+        // ensure the json data is a string
+        if (data['id'] && !(typeof data['id'] === 'string' || data['id'] instanceof String)) {
+            throw new Error("Expected the field `id` to be a primitive type in the JSON string but got " + data['id']);
+        }
+        if (data['participants']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['participants'])) {
+                throw new Error("Expected the field `participants` to be an array in the JSON data but got " + data['participants']);
+            }
+            // validate the optional field `participants` (array)
+            for (const item of data['participants']) {
+                SecretSantaAdminResponseParticipantsInner.validateJSON(item);
+            };
+        }
+
+        return true;
+    }
+
 
 }
+
+
 
 /**
  * @member {String} id

@@ -14,54 +14,35 @@
 
 import ApiClient from './ApiClient';
 import BaseDraw from './model/BaseDraw';
-import BaseDrawAllOf from './model/BaseDrawAllOf';
 import BaseObject from './model/BaseObject';
 import BaseResult from './model/BaseResult';
-import BaseResultAllOf from './model/BaseResultAllOf';
 import Coin from './model/Coin';
-import CoinAllOf from './model/CoinAllOf';
 import CoinResult from './model/CoinResult';
-import CoinResultAllOf from './model/CoinResultAllOf';
 import DrawMetadata from './model/DrawMetadata';
 import DrawTossPayload from './model/DrawTossPayload';
 import Groups from './model/Groups';
-import GroupsAllOf from './model/GroupsAllOf';
 import GroupsResult from './model/GroupsResult';
 import Instagram from './model/Instagram';
-import InstagramAllOf from './model/InstagramAllOf';
 import InstagramResult from './model/InstagramResult';
-import InstagramResultAllOf from './model/InstagramResultAllOf';
 import InstagramResultAllOfComment from './model/InstagramResultAllOfComment';
 import InstagramResultAllOfValue from './model/InstagramResultAllOfValue';
 import InstagramRetossRequest from './model/InstagramRetossRequest';
 import Letter from './model/Letter';
-import LetterAllOf from './model/LetterAllOf';
 import LetterResult from './model/LetterResult';
-import LetterResultAllOf from './model/LetterResultAllOf';
 import Link from './model/Link';
-import LinkAllOf from './model/LinkAllOf';
 import LinkResult from './model/LinkResult';
-import LinkResultAllOf from './model/LinkResultAllOf';
 import LinkResultAllOfValue from './model/LinkResultAllOfValue';
 import Lottery from './model/Lottery';
-import LotteryAllOf from './model/LotteryAllOf';
 import LotteryResult from './model/LotteryResult';
-import LotteryResultAllOf from './model/LotteryResultAllOf';
 import Participant from './model/Participant';
-import ParticipantAllOf from './model/ParticipantAllOf';
 import PaypalCreatePayload from './model/PaypalCreatePayload';
 import PaypalResponse from './model/PaypalResponse';
 import Prize from './model/Prize';
-import PrizeAllOf from './model/PrizeAllOf';
 import Raffle from './model/Raffle';
-import RaffleAllOf from './model/RaffleAllOf';
 import RaffleResult from './model/RaffleResult';
-import RaffleResultAllOf from './model/RaffleResultAllOf';
 import RaffleResultAllOfValue from './model/RaffleResultAllOfValue';
 import RandomNumber from './model/RandomNumber';
-import RandomNumberAllOf from './model/RandomNumberAllOf';
 import RandomNumberResult from './model/RandomNumberResult';
-import RandomNumberResultAllOf from './model/RandomNumberResultAllOf';
 import RedeemPromoCode from './model/RedeemPromoCode';
 import SecretSanta from './model/SecretSanta';
 import SecretSantaAdminResponse from './model/SecretSantaAdminResponse';
@@ -69,22 +50,17 @@ import SecretSantaAdminResponseParticipantsInner from './model/SecretSantaAdminR
 import SecretSantaCreateResponse from './model/SecretSantaCreateResponse';
 import SecretSantaParticipantsInner from './model/SecretSantaParticipantsInner';
 import SecretSantaResendEmail from './model/SecretSantaResendEmail';
+import SecretSantaResendEmailResponse from './model/SecretSantaResendEmailResponse';
 import SecretSantaResult from './model/SecretSantaResult';
 import Shifts from './model/Shifts';
-import ShiftsAllOf from './model/ShiftsAllOf';
 import ShiftsAllOfIntervals from './model/ShiftsAllOfIntervals';
 import ShiftsResult from './model/ShiftsResult';
-import ShiftsResultAllOf from './model/ShiftsResultAllOf';
 import ShiftsResultAllOfInterval from './model/ShiftsResultAllOfInterval';
 import ShiftsResultAllOfValue from './model/ShiftsResultAllOfValue';
 import Spinner from './model/Spinner';
-import SpinnerAllOf from './model/SpinnerAllOf';
 import SpinnerResult from './model/SpinnerResult';
-import SpinnerResultAllOf from './model/SpinnerResultAllOf';
 import Tournament from './model/Tournament';
-import TournamentAllOf from './model/TournamentAllOf';
 import TournamentResult from './model/TournamentResult';
-import TournamentResultAllOf from './model/TournamentResultAllOf';
 import CoinApi from './api/CoinApi';
 import GroupsApi from './api/GroupsApi';
 import InstagramApi from './api/InstagramApi';
@@ -145,12 +121,6 @@ export {
     BaseDraw,
 
     /**
-     * The BaseDrawAllOf model constructor.
-     * @property {module:model/BaseDrawAllOf}
-     */
-    BaseDrawAllOf,
-
-    /**
      * The BaseObject model constructor.
      * @property {module:model/BaseObject}
      */
@@ -163,34 +133,16 @@ export {
     BaseResult,
 
     /**
-     * The BaseResultAllOf model constructor.
-     * @property {module:model/BaseResultAllOf}
-     */
-    BaseResultAllOf,
-
-    /**
      * The Coin model constructor.
      * @property {module:model/Coin}
      */
     Coin,
 
     /**
-     * The CoinAllOf model constructor.
-     * @property {module:model/CoinAllOf}
-     */
-    CoinAllOf,
-
-    /**
      * The CoinResult model constructor.
      * @property {module:model/CoinResult}
      */
     CoinResult,
-
-    /**
-     * The CoinResultAllOf model constructor.
-     * @property {module:model/CoinResultAllOf}
-     */
-    CoinResultAllOf,
 
     /**
      * The DrawMetadata model constructor.
@@ -211,12 +163,6 @@ export {
     Groups,
 
     /**
-     * The GroupsAllOf model constructor.
-     * @property {module:model/GroupsAllOf}
-     */
-    GroupsAllOf,
-
-    /**
      * The GroupsResult model constructor.
      * @property {module:model/GroupsResult}
      */
@@ -229,22 +175,10 @@ export {
     Instagram,
 
     /**
-     * The InstagramAllOf model constructor.
-     * @property {module:model/InstagramAllOf}
-     */
-    InstagramAllOf,
-
-    /**
      * The InstagramResult model constructor.
      * @property {module:model/InstagramResult}
      */
     InstagramResult,
-
-    /**
-     * The InstagramResultAllOf model constructor.
-     * @property {module:model/InstagramResultAllOf}
-     */
-    InstagramResultAllOf,
 
     /**
      * The InstagramResultAllOfComment model constructor.
@@ -271,22 +205,10 @@ export {
     Letter,
 
     /**
-     * The LetterAllOf model constructor.
-     * @property {module:model/LetterAllOf}
-     */
-    LetterAllOf,
-
-    /**
      * The LetterResult model constructor.
      * @property {module:model/LetterResult}
      */
     LetterResult,
-
-    /**
-     * The LetterResultAllOf model constructor.
-     * @property {module:model/LetterResultAllOf}
-     */
-    LetterResultAllOf,
 
     /**
      * The Link model constructor.
@@ -295,22 +217,10 @@ export {
     Link,
 
     /**
-     * The LinkAllOf model constructor.
-     * @property {module:model/LinkAllOf}
-     */
-    LinkAllOf,
-
-    /**
      * The LinkResult model constructor.
      * @property {module:model/LinkResult}
      */
     LinkResult,
-
-    /**
-     * The LinkResultAllOf model constructor.
-     * @property {module:model/LinkResultAllOf}
-     */
-    LinkResultAllOf,
 
     /**
      * The LinkResultAllOfValue model constructor.
@@ -325,34 +235,16 @@ export {
     Lottery,
 
     /**
-     * The LotteryAllOf model constructor.
-     * @property {module:model/LotteryAllOf}
-     */
-    LotteryAllOf,
-
-    /**
      * The LotteryResult model constructor.
      * @property {module:model/LotteryResult}
      */
     LotteryResult,
 
     /**
-     * The LotteryResultAllOf model constructor.
-     * @property {module:model/LotteryResultAllOf}
-     */
-    LotteryResultAllOf,
-
-    /**
      * The Participant model constructor.
      * @property {module:model/Participant}
      */
     Participant,
-
-    /**
-     * The ParticipantAllOf model constructor.
-     * @property {module:model/ParticipantAllOf}
-     */
-    ParticipantAllOf,
 
     /**
      * The PaypalCreatePayload model constructor.
@@ -373,34 +265,16 @@ export {
     Prize,
 
     /**
-     * The PrizeAllOf model constructor.
-     * @property {module:model/PrizeAllOf}
-     */
-    PrizeAllOf,
-
-    /**
      * The Raffle model constructor.
      * @property {module:model/Raffle}
      */
     Raffle,
 
     /**
-     * The RaffleAllOf model constructor.
-     * @property {module:model/RaffleAllOf}
-     */
-    RaffleAllOf,
-
-    /**
      * The RaffleResult model constructor.
      * @property {module:model/RaffleResult}
      */
     RaffleResult,
-
-    /**
-     * The RaffleResultAllOf model constructor.
-     * @property {module:model/RaffleResultAllOf}
-     */
-    RaffleResultAllOf,
 
     /**
      * The RaffleResultAllOfValue model constructor.
@@ -415,22 +289,10 @@ export {
     RandomNumber,
 
     /**
-     * The RandomNumberAllOf model constructor.
-     * @property {module:model/RandomNumberAllOf}
-     */
-    RandomNumberAllOf,
-
-    /**
      * The RandomNumberResult model constructor.
      * @property {module:model/RandomNumberResult}
      */
     RandomNumberResult,
-
-    /**
-     * The RandomNumberResultAllOf model constructor.
-     * @property {module:model/RandomNumberResultAllOf}
-     */
-    RandomNumberResultAllOf,
 
     /**
      * The RedeemPromoCode model constructor.
@@ -475,6 +337,12 @@ export {
     SecretSantaResendEmail,
 
     /**
+     * The SecretSantaResendEmailResponse model constructor.
+     * @property {module:model/SecretSantaResendEmailResponse}
+     */
+    SecretSantaResendEmailResponse,
+
+    /**
      * The SecretSantaResult model constructor.
      * @property {module:model/SecretSantaResult}
      */
@@ -487,12 +355,6 @@ export {
     Shifts,
 
     /**
-     * The ShiftsAllOf model constructor.
-     * @property {module:model/ShiftsAllOf}
-     */
-    ShiftsAllOf,
-
-    /**
      * The ShiftsAllOfIntervals model constructor.
      * @property {module:model/ShiftsAllOfIntervals}
      */
@@ -503,12 +365,6 @@ export {
      * @property {module:model/ShiftsResult}
      */
     ShiftsResult,
-
-    /**
-     * The ShiftsResultAllOf model constructor.
-     * @property {module:model/ShiftsResultAllOf}
-     */
-    ShiftsResultAllOf,
 
     /**
      * The ShiftsResultAllOfInterval model constructor.
@@ -529,22 +385,10 @@ export {
     Spinner,
 
     /**
-     * The SpinnerAllOf model constructor.
-     * @property {module:model/SpinnerAllOf}
-     */
-    SpinnerAllOf,
-
-    /**
      * The SpinnerResult model constructor.
      * @property {module:model/SpinnerResult}
      */
     SpinnerResult,
-
-    /**
-     * The SpinnerResultAllOf model constructor.
-     * @property {module:model/SpinnerResultAllOf}
-     */
-    SpinnerResultAllOf,
 
     /**
      * The Tournament model constructor.
@@ -553,22 +397,10 @@ export {
     Tournament,
 
     /**
-     * The TournamentAllOf model constructor.
-     * @property {module:model/TournamentAllOf}
-     */
-    TournamentAllOf,
-
-    /**
      * The TournamentResult model constructor.
      * @property {module:model/TournamentResult}
      */
     TournamentResult,
-
-    /**
-     * The TournamentResultAllOf model constructor.
-     * @property {module:model/TournamentResultAllOf}
-     */
-    TournamentResultAllOf,
 
     /**
     * The CoinApi service constructor.

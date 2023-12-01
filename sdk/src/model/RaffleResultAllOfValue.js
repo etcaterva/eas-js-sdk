@@ -59,8 +59,28 @@ class RaffleResultAllOfValue {
         return obj;
     }
 
+    /**
+     * Validates the JSON data with respect to <code>RaffleResultAllOfValue</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>RaffleResultAllOfValue</code>.
+     */
+    static validateJSON(data) {
+        // validate the optional field `participant`
+        if (data['participant']) { // data not null
+          Participant.validateJSON(data['participant']);
+        }
+        // validate the optional field `prize`
+        if (data['prize']) { // data not null
+          Prize.validateJSON(data['prize']);
+        }
+
+        return true;
+    }
+
 
 }
+
+
 
 /**
  * @member {module:model/Participant} participant

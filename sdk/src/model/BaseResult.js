@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import BaseObject from './BaseObject';
-import BaseResultAllOf from './BaseResultAllOf';
 
 /**
  * The BaseResult model module.
@@ -25,10 +24,9 @@ class BaseResult {
      * Constructs a new <code>BaseResult</code>.
      * @alias module:model/BaseResult
      * @implements module:model/BaseObject
-     * @implements module:model/BaseResultAllOf
      */
     constructor() { 
-        BaseObject.initialize(this);BaseResultAllOf.initialize(this);
+        BaseObject.initialize(this);
         BaseResult.initialize(this);
     }
 
@@ -51,7 +49,6 @@ class BaseResult {
         if (data) {
             obj = obj || new BaseResult();
             BaseObject.constructFromObject(data, obj);
-            BaseResultAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -66,8 +63,24 @@ class BaseResult {
         return obj;
     }
 
+    /**
+     * Validates the JSON data with respect to <code>BaseResult</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>BaseResult</code>.
+     */
+    static validateJSON(data) {
+        // ensure the json data is a string
+        if (data['id'] && !(typeof data['id'] === 'string' || data['id'] instanceof String)) {
+            throw new Error("Expected the field `id` to be a primitive type in the JSON string but got " + data['id']);
+        }
+
+        return true;
+    }
+
 
 }
+
+
 
 /**
  * @member {String} id
@@ -94,11 +107,6 @@ BaseObject.prototype['id'] = undefined;
  * @member {Date} created_at
  */
 BaseObject.prototype['created_at'] = undefined;
-// Implement BaseResultAllOf interface:
-/**
- * @member {Date} schedule_date
- */
-BaseResultAllOf.prototype['schedule_date'] = undefined;
 
 
 

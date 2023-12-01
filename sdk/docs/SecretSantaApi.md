@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**secretSantaCreate**](SecretSantaApi.md#secretSantaCreate) | **POST** /secret-santa/ | 
 [**secretSantaResultAdminGet**](SecretSantaApi.md#secretSantaResultAdminGet) | **GET** /secret-santa-admin/{id}/ | 
-[**secretSantaResultAdminPatch**](SecretSantaApi.md#secretSantaResultAdminPatch) | **PATCH** /secret-santa-admin/{draw_id}/{result_id}/ | 
+[**secretSantaResultAdminPost**](SecretSantaApi.md#secretSantaResultAdminPost) | **POST** /secret-santa-admin/{draw_id}/{result_id}/ | 
 [**secretSantaResultGet**](SecretSantaApi.md#secretSantaResultGet) | **GET** /secret-santa/{id}/ | 
 
 
@@ -95,9 +95,9 @@ No authorization required
 - **Accept**: application/json
 
 
-## secretSantaResultAdminPatch
+## secretSantaResultAdminPost
 
-> secretSantaResultAdminPatch(drawId, resultId, opts)
+> SecretSantaResendEmailResponse secretSantaResultAdminPost(drawId, resultId, opts)
 
 
 
@@ -112,8 +112,8 @@ let resultId = "resultId_example"; // String |
 let opts = {
   'secretSantaResendEmail': new EchaloasuerteJsSdk.SecretSantaResendEmail() // SecretSantaResendEmail | 
 };
-apiInstance.secretSantaResultAdminPatch(drawId, resultId, opts).then(() => {
-  console.log('API called successfully.');
+apiInstance.secretSantaResultAdminPost(drawId, resultId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
 });
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**SecretSantaResendEmailResponse**](SecretSantaResendEmailResponse.md)
 
 ### Authorization
 
@@ -140,7 +140,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## secretSantaResultGet

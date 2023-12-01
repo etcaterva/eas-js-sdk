@@ -54,8 +54,24 @@ class PaypalResponse {
         return obj;
     }
 
+    /**
+     * Validates the JSON data with respect to <code>PaypalResponse</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>PaypalResponse</code>.
+     */
+    static validateJSON(data) {
+        // ensure the json data is a string
+        if (data['redirect_url'] && !(typeof data['redirect_url'] === 'string' || data['redirect_url'] instanceof String)) {
+            throw new Error("Expected the field `redirect_url` to be a primitive type in the JSON string but got " + data['redirect_url']);
+        }
+
+        return true;
+    }
+
 
 }
+
+
 
 /**
  * @member {String} redirect_url

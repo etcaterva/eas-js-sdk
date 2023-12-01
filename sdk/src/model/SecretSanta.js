@@ -58,8 +58,34 @@ class SecretSanta {
         return obj;
     }
 
+    /**
+     * Validates the JSON data with respect to <code>SecretSanta</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>SecretSanta</code>.
+     */
+    static validateJSON(data) {
+        // ensure the json data is a string
+        if (data['language'] && !(typeof data['language'] === 'string' || data['language'] instanceof String)) {
+            throw new Error("Expected the field `language` to be a primitive type in the JSON string but got " + data['language']);
+        }
+        if (data['participants']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['participants'])) {
+                throw new Error("Expected the field `participants` to be an array in the JSON data but got " + data['participants']);
+            }
+            // validate the optional field `participants` (array)
+            for (const item of data['participants']) {
+                SecretSantaParticipantsInner.validateJSON(item);
+            };
+        }
+
+        return true;
+    }
+
 
 }
+
+
 
 /**
  * @member {module:model/SecretSanta.LanguageEnum} language

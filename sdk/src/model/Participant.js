@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import BaseObject from './BaseObject';
-import ParticipantAllOf from './ParticipantAllOf';
 
 /**
  * The Participant model module.
@@ -25,11 +24,10 @@ class Participant {
      * Constructs a new <code>Participant</code>.
      * @alias module:model/Participant
      * @implements module:model/BaseObject
-     * @implements module:model/ParticipantAllOf
      * @param name {String} 
      */
     constructor(name) { 
-        BaseObject.initialize(this);ParticipantAllOf.initialize(this, name);
+        BaseObject.initialize(this);
         Participant.initialize(this, name);
     }
 
@@ -53,7 +51,6 @@ class Participant {
         if (data) {
             obj = obj || new Participant();
             BaseObject.constructFromObject(data, obj);
-            ParticipantAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -71,8 +68,38 @@ class Participant {
         return obj;
     }
 
+    /**
+     * Validates the JSON data with respect to <code>Participant</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>Participant</code>.
+     */
+    static validateJSON(data) {
+        // check to make sure all required properties are present in the JSON string
+        for (const property of Participant.RequiredProperties) {
+            if (!data[property]) {
+                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
+            }
+        }
+        // ensure the json data is a string
+        if (data['id'] && !(typeof data['id'] === 'string' || data['id'] instanceof String)) {
+            throw new Error("Expected the field `id` to be a primitive type in the JSON string but got " + data['id']);
+        }
+        // ensure the json data is a string
+        if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
+            throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
+        }
+        // ensure the json data is a string
+        if (data['facebook_id'] && !(typeof data['facebook_id'] === 'string' || data['facebook_id'] instanceof String)) {
+            throw new Error("Expected the field `facebook_id` to be a primitive type in the JSON string but got " + data['facebook_id']);
+        }
+
+        return true;
+    }
+
 
 }
+
+Participant.RequiredProperties = ["name"];
 
 /**
  * @member {String} id
@@ -104,15 +131,6 @@ BaseObject.prototype['id'] = undefined;
  * @member {Date} created_at
  */
 BaseObject.prototype['created_at'] = undefined;
-// Implement ParticipantAllOf interface:
-/**
- * @member {String} name
- */
-ParticipantAllOf.prototype['name'] = undefined;
-/**
- * @member {String} facebook_id
- */
-ParticipantAllOf.prototype['facebook_id'] = undefined;
 
 
 

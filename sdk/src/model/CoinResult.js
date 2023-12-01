@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import BaseResult from './BaseResult';
-import CoinResultAllOf from './CoinResultAllOf';
 
 /**
  * The CoinResult model module.
@@ -25,10 +24,9 @@ class CoinResult {
      * Constructs a new <code>CoinResult</code>.
      * @alias module:model/CoinResult
      * @implements module:model/BaseResult
-     * @implements module:model/CoinResultAllOf
      */
     constructor() { 
-        BaseResult.initialize(this);CoinResultAllOf.initialize(this);
+        BaseResult.initialize(this);
         CoinResult.initialize(this);
     }
 
@@ -51,7 +49,6 @@ class CoinResult {
         if (data) {
             obj = obj || new CoinResult();
             BaseResult.constructFromObject(data, obj);
-            CoinResultAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -69,8 +66,28 @@ class CoinResult {
         return obj;
     }
 
+    /**
+     * Validates the JSON data with respect to <code>CoinResult</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>CoinResult</code>.
+     */
+    static validateJSON(data) {
+        // ensure the json data is a string
+        if (data['id'] && !(typeof data['id'] === 'string' || data['id'] instanceof String)) {
+            throw new Error("Expected the field `id` to be a primitive type in the JSON string but got " + data['id']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['value'])) {
+            throw new Error("Expected the field `value` to be an array in the JSON data but got " + data['value']);
+        }
+
+        return true;
+    }
+
 
 }
+
+
 
 /**
  * @member {String} id
@@ -106,11 +123,6 @@ BaseResult.prototype['created_at'] = undefined;
  * @member {Date} schedule_date
  */
 BaseResult.prototype['schedule_date'] = undefined;
-// Implement CoinResultAllOf interface:
-/**
- * @member {Array.<module:model/CoinResultAllOf.ValueEnum>} value
- */
-CoinResultAllOf.prototype['value'] = undefined;
 
 
 

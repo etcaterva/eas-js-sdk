@@ -68,10 +68,10 @@
         done();
       });
     });
-    describe('secretSantaResultAdminPatch', function() {
-      it('should call secretSantaResultAdminPatch successfully', function(done) {
-        //uncomment below and update the code to test secretSantaResultAdminPatch
-        //instance.secretSantaResultAdminPatch(function(error) {
+    describe('secretSantaResultAdminPost', function() {
+      it('should call secretSantaResultAdminPost successfully', function(done) {
+        //uncomment below and update the code to test secretSantaResultAdminPost
+        //instance.secretSantaResultAdminPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

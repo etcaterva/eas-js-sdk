@@ -14,7 +14,6 @@
 import ApiClient from '../ApiClient';
 import BaseDraw from './BaseDraw';
 import DrawMetadata from './DrawMetadata';
-import SpinnerAllOf from './SpinnerAllOf';
 import SpinnerResult from './SpinnerResult';
 
 /**
@@ -27,10 +26,9 @@ class Spinner {
      * Constructs a new <code>Spinner</code>.
      * @alias module:model/Spinner
      * @implements module:model/BaseDraw
-     * @implements module:model/SpinnerAllOf
      */
     constructor() { 
-        BaseDraw.initialize(this);SpinnerAllOf.initialize(this);
+        BaseDraw.initialize(this);
         Spinner.initialize(this);
     }
 
@@ -53,7 +51,6 @@ class Spinner {
         if (data) {
             obj = obj || new Spinner();
             BaseDraw.constructFromObject(data, obj);
-            SpinnerAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -86,8 +83,60 @@ class Spinner {
         return obj;
     }
 
+    /**
+     * Validates the JSON data with respect to <code>Spinner</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>Spinner</code>.
+     */
+    static validateJSON(data) {
+        // ensure the json data is a string
+        if (data['id'] && !(typeof data['id'] === 'string' || data['id'] instanceof String)) {
+            throw new Error("Expected the field `id` to be a primitive type in the JSON string but got " + data['id']);
+        }
+        // ensure the json data is a string
+        if (data['title'] && !(typeof data['title'] === 'string' || data['title'] instanceof String)) {
+            throw new Error("Expected the field `title` to be a primitive type in the JSON string but got " + data['title']);
+        }
+        // ensure the json data is a string
+        if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
+            throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
+        }
+        // ensure the json data is a string
+        if (data['private_id'] && !(typeof data['private_id'] === 'string' || data['private_id'] instanceof String)) {
+            throw new Error("Expected the field `private_id` to be a primitive type in the JSON string but got " + data['private_id']);
+        }
+        if (data['metadata']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['metadata'])) {
+                throw new Error("Expected the field `metadata` to be an array in the JSON data but got " + data['metadata']);
+            }
+            // validate the optional field `metadata` (array)
+            for (const item of data['metadata']) {
+                DrawMetadata.validateJSON(item);
+            };
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['payments'])) {
+            throw new Error("Expected the field `payments` to be an array in the JSON data but got " + data['payments']);
+        }
+        if (data['results']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['results'])) {
+                throw new Error("Expected the field `results` to be an array in the JSON data but got " + data['results']);
+            }
+            // validate the optional field `results` (array)
+            for (const item of data['results']) {
+                SpinnerResult.validateJSON(item);
+            };
+        }
+
+        return true;
+    }
+
 
 }
+
+
 
 /**
  * @member {String} id
@@ -168,11 +217,6 @@ BaseDraw.prototype['metadata'] = undefined;
  * @member {Array.<module:model/BaseDraw.PaymentsEnum>} payments
  */
 BaseDraw.prototype['payments'] = undefined;
-// Implement SpinnerAllOf interface:
-/**
- * @member {Array.<module:model/SpinnerResult>} results
- */
-SpinnerAllOf.prototype['results'] = undefined;
 
 
 

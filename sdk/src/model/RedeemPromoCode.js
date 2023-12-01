@@ -61,8 +61,34 @@ class RedeemPromoCode {
         return obj;
     }
 
+    /**
+     * Validates the JSON data with respect to <code>RedeemPromoCode</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>RedeemPromoCode</code>.
+     */
+    static validateJSON(data) {
+        // check to make sure all required properties are present in the JSON string
+        for (const property of RedeemPromoCode.RequiredProperties) {
+            if (!data[property]) {
+                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
+            }
+        }
+        // ensure the json data is a string
+        if (data['code'] && !(typeof data['code'] === 'string' || data['code'] instanceof String)) {
+            throw new Error("Expected the field `code` to be a primitive type in the JSON string but got " + data['code']);
+        }
+        // ensure the json data is a string
+        if (data['draw_id'] && !(typeof data['draw_id'] === 'string' || data['draw_id'] instanceof String)) {
+            throw new Error("Expected the field `draw_id` to be a primitive type in the JSON string but got " + data['draw_id']);
+        }
+
+        return true;
+    }
+
 
 }
+
+RedeemPromoCode.RequiredProperties = ["code", "draw_id"];
 
 /**
  * @member {String} code

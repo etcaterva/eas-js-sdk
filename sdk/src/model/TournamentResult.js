@@ -14,7 +14,6 @@
 import ApiClient from '../ApiClient';
 import BaseResult from './BaseResult';
 import Participant from './Participant';
-import TournamentResultAllOf from './TournamentResultAllOf';
 
 /**
  * The TournamentResult model module.
@@ -26,10 +25,9 @@ class TournamentResult {
      * Constructs a new <code>TournamentResult</code>.
      * @alias module:model/TournamentResult
      * @implements module:model/BaseResult
-     * @implements module:model/TournamentResultAllOf
      */
     constructor() { 
-        BaseResult.initialize(this);TournamentResultAllOf.initialize(this);
+        BaseResult.initialize(this);
         TournamentResult.initialize(this);
     }
 
@@ -52,7 +50,6 @@ class TournamentResult {
         if (data) {
             obj = obj || new TournamentResult();
             BaseResult.constructFromObject(data, obj);
-            TournamentResultAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -70,8 +67,28 @@ class TournamentResult {
         return obj;
     }
 
+    /**
+     * Validates the JSON data with respect to <code>TournamentResult</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>TournamentResult</code>.
+     */
+    static validateJSON(data) {
+        // ensure the json data is a string
+        if (data['id'] && !(typeof data['id'] === 'string' || data['id'] instanceof String)) {
+            throw new Error("Expected the field `id` to be a primitive type in the JSON string but got " + data['id']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['value'])) {
+            throw new Error("Expected the field `value` to be an array in the JSON data but got " + data['value']);
+        }
+
+        return true;
+    }
+
 
 }
+
+
 
 /**
  * @member {String} id
@@ -107,11 +124,6 @@ BaseResult.prototype['created_at'] = undefined;
  * @member {Date} schedule_date
  */
 BaseResult.prototype['schedule_date'] = undefined;
-// Implement TournamentResultAllOf interface:
-/**
- * @member {Array.<Array.<module:model/Participant>>} value
- */
-TournamentResultAllOf.prototype['value'] = undefined;
 
 
 

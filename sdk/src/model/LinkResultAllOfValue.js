@@ -57,8 +57,28 @@ class LinkResultAllOfValue {
         return obj;
     }
 
+    /**
+     * Validates the JSON data with respect to <code>LinkResultAllOfValue</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>LinkResultAllOfValue</code>.
+     */
+    static validateJSON(data) {
+        // ensure the json data is a string
+        if (data['element1'] && !(typeof data['element1'] === 'string' || data['element1'] instanceof String)) {
+            throw new Error("Expected the field `element1` to be a primitive type in the JSON string but got " + data['element1']);
+        }
+        // ensure the json data is a string
+        if (data['element2'] && !(typeof data['element2'] === 'string' || data['element2'] instanceof String)) {
+            throw new Error("Expected the field `element2` to be a primitive type in the JSON string but got " + data['element2']);
+        }
+
+        return true;
+    }
+
 
 }
+
+
 
 /**
  * @member {String} element1

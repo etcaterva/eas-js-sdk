@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import BaseObject from './BaseObject';
-import PrizeAllOf from './PrizeAllOf';
 
 /**
  * The Prize model module.
@@ -25,11 +24,10 @@ class Prize {
      * Constructs a new <code>Prize</code>.
      * @alias module:model/Prize
      * @implements module:model/BaseObject
-     * @implements module:model/PrizeAllOf
      * @param name {String} 
      */
     constructor(name) { 
-        BaseObject.initialize(this);PrizeAllOf.initialize(this, name);
+        BaseObject.initialize(this);
         Prize.initialize(this, name);
     }
 
@@ -53,7 +51,6 @@ class Prize {
         if (data) {
             obj = obj || new Prize();
             BaseObject.constructFromObject(data, obj);
-            PrizeAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -71,8 +68,38 @@ class Prize {
         return obj;
     }
 
+    /**
+     * Validates the JSON data with respect to <code>Prize</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>Prize</code>.
+     */
+    static validateJSON(data) {
+        // check to make sure all required properties are present in the JSON string
+        for (const property of Prize.RequiredProperties) {
+            if (!data[property]) {
+                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
+            }
+        }
+        // ensure the json data is a string
+        if (data['id'] && !(typeof data['id'] === 'string' || data['id'] instanceof String)) {
+            throw new Error("Expected the field `id` to be a primitive type in the JSON string but got " + data['id']);
+        }
+        // ensure the json data is a string
+        if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
+            throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
+        }
+        // ensure the json data is a string
+        if (data['url'] && !(typeof data['url'] === 'string' || data['url'] instanceof String)) {
+            throw new Error("Expected the field `url` to be a primitive type in the JSON string but got " + data['url']);
+        }
+
+        return true;
+    }
+
 
 }
+
+Prize.RequiredProperties = ["name"];
 
 /**
  * @member {String} id
@@ -104,15 +131,6 @@ BaseObject.prototype['id'] = undefined;
  * @member {Date} created_at
  */
 BaseObject.prototype['created_at'] = undefined;
-// Implement PrizeAllOf interface:
-/**
- * @member {String} name
- */
-PrizeAllOf.prototype['name'] = undefined;
-/**
- * @member {String} url
- */
-PrizeAllOf.prototype['url'] = undefined;
 
 
 
