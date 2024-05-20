@@ -61,9 +61,15 @@ docs/ShiftsResultAllOfValue.md
 docs/Spinner.md
 docs/SpinnerApi.md
 docs/SpinnerResult.md
+docs/Tiktok.md
+docs/TiktokApi.md
+docs/TiktokResult.md
+docs/TiktokResultAllOfComment.md
+docs/TiktokResultAllOfValue.md
 docs/Tournament.md
 docs/TournamentApi.md
 docs/TournamentResult.md
+docs/TournamentResultAllOfValue.md
 git_push.sh
 mocha.opts
 package.json
@@ -80,6 +86,7 @@ src/api/RandomNumberApi.js
 src/api/SecretSantaApi.js
 src/api/ShiftsApi.js
 src/api/SpinnerApi.js
+src/api/TiktokApi.js
 src/api/TournamentApi.js
 src/index.js
 src/model/BaseDraw.js
@@ -128,8 +135,13 @@ src/model/ShiftsResultAllOfInterval.js
 src/model/ShiftsResultAllOfValue.js
 src/model/Spinner.js
 src/model/SpinnerResult.js
+src/model/Tiktok.js
+src/model/TiktokResult.js
+src/model/TiktokResultAllOfComment.js
+src/model/TiktokResultAllOfValue.js
 src/model/Tournament.js
 src/model/TournamentResult.js
+src/model/TournamentResultAllOfValue.js
 test/api/CoinApi.spec.js
 test/api/GroupsApi.spec.js
 test/api/InstagramApi.spec.js
@@ -142,6 +154,7 @@ test/api/RandomNumberApi.spec.js
 test/api/SecretSantaApi.spec.js
 test/api/ShiftsApi.spec.js
 test/api/SpinnerApi.spec.js
+test/api/TiktokApi.spec.js
 test/api/TournamentApi.spec.js
 test/model/BaseDraw.spec.js
 test/model/BaseObject.spec.js
@@ -189,5 +202,10 @@ test/model/ShiftsResultAllOfInterval.spec.js
 test/model/ShiftsResultAllOfValue.spec.js
 test/model/Spinner.spec.js
 test/model/SpinnerResult.spec.js
+test/model/Tiktok.spec.js
+test/model/TiktokResult.spec.js
+test/model/TiktokResultAllOfComment.spec.js
+test/model/TiktokResultAllOfValue.spec.js
 test/model/Tournament.spec.js
 test/model/TournamentResult.spec.js
+test/model/TournamentResultAllOfValue.spec.js
