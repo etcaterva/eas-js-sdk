@@ -62,6 +62,9 @@ class TiktokResultAllOfComment {
             if (data.hasOwnProperty('userid')) {
                 obj['userid'] = ApiClient.convertToType(data['userid'], 'String');
             }
+            if (data.hasOwnProperty('url')) {
+                obj['url'] = ApiClient.convertToType(data['url'], 'String');
+            }
         }
         return obj;
     }
@@ -91,6 +94,10 @@ class TiktokResultAllOfComment {
         // ensure the json data is a string
         if (data['userid'] && !(typeof data['userid'] === 'string' || data['userid'] instanceof String)) {
             throw new Error("Expected the field `userid` to be a primitive type in the JSON string but got " + data['userid']);
+        }
+        // ensure the json data is a string
+        if (data['url'] && !(typeof data['url'] === 'string' || data['url'] instanceof String)) {
+            throw new Error("Expected the field `url` to be a primitive type in the JSON string but got " + data['url']);
         }
 
         return true;
@@ -125,6 +132,11 @@ TiktokResultAllOfComment.prototype['userpic'] = undefined;
  * @member {String} userid
  */
 TiktokResultAllOfComment.prototype['userid'] = undefined;
+
+/**
+ * @member {String} url
+ */
+TiktokResultAllOfComment.prototype['url'] = undefined;
 
 
 

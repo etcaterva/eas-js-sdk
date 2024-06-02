@@ -84,6 +84,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property url (base name: "url")', function() {
+      // uncomment below and update the code to test the property url
+      //var instance = new EchaloasuerteJsSdk.TiktokResultAllOfComment();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

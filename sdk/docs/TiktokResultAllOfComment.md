@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **username** | **String** |  | [optional] 
 **userpic** | **String** |  | [optional] 
 **userid** | **String** |  | [optional] 
+**url** | **String** |  | [optional] 
 
 
