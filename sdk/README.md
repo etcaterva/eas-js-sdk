@@ -115,7 +115,7 @@ api.coinCreate(coin).then(function(data) {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://raw.githubusercontent.com/should-be-overriden*
+All URIs are relative to *http://localhost/should-be-overriden*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -177,6 +177,7 @@ Class | Method | HTTP request | Description
  - [EchaloasuerteJsSdk.Coin](docs/Coin.md)
  - [EchaloasuerteJsSdk.CoinResult](docs/CoinResult.md)
  - [EchaloasuerteJsSdk.DrawMetadata](docs/DrawMetadata.md)
+ - [EchaloasuerteJsSdk.DrawReTossPayload](docs/DrawReTossPayload.md)
  - [EchaloasuerteJsSdk.DrawTossPayload](docs/DrawTossPayload.md)
  - [EchaloasuerteJsSdk.Groups](docs/Groups.md)
  - [EchaloasuerteJsSdk.GroupsResult](docs/GroupsResult.md)
@@ -184,7 +185,6 @@ Class | Method | HTTP request | Description
  - [EchaloasuerteJsSdk.InstagramResult](docs/InstagramResult.md)
  - [EchaloasuerteJsSdk.InstagramResultAllOfComment](docs/InstagramResultAllOfComment.md)
  - [EchaloasuerteJsSdk.InstagramResultAllOfValue](docs/InstagramResultAllOfValue.md)
- - [EchaloasuerteJsSdk.InstagramRetossRequest](docs/InstagramRetossRequest.md)
  - [EchaloasuerteJsSdk.Letter](docs/Letter.md)
  - [EchaloasuerteJsSdk.LetterResult](docs/LetterResult.md)
  - [EchaloasuerteJsSdk.Link](docs/Link.md)

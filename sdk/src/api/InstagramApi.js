@@ -13,10 +13,10 @@
 
 
 import ApiClient from "../ApiClient";
+import DrawReTossPayload from '../model/DrawReTossPayload';
 import DrawTossPayload from '../model/DrawTossPayload';
 import Instagram from '../model/Instagram';
 import InstagramResult from '../model/InstagramResult';
-import InstagramRetossRequest from '../model/InstagramRetossRequest';
 
 /**
 * Instagram service.
@@ -128,12 +128,12 @@ export default class InstagramApi {
     /**
      * @param {String} id 
      * @param {Object} opts Optional parameters
-     * @param {module:model/InstagramRetossRequest} [instagramRetossRequest] 
+     * @param {module:model/DrawReTossPayload} [drawReTossPayload] 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InstagramResult} and HTTP response
      */
     instagramRetossWithHttpInfo(id, opts) {
       opts = opts || {};
-      let postBody = opts['instagramRetossRequest'];
+      let postBody = opts['drawReTossPayload'];
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling instagramRetoss");
@@ -163,7 +163,7 @@ export default class InstagramApi {
     /**
      * @param {String} id 
      * @param {Object} opts Optional parameters
-     * @param {module:model/InstagramRetossRequest} opts.instagramRetossRequest 
+     * @param {module:model/DrawReTossPayload} opts.drawReTossPayload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InstagramResult}
      */
     instagramRetoss(id, opts) {

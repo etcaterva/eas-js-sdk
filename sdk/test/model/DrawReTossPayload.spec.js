@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EchaloasuerteJsSdk.InstagramRetossRequest();
+    instance = new EchaloasuerteJsSdk.DrawReTossPayload();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,16 +47,16 @@
       object[property] = value;
   }
 
-  describe('InstagramRetossRequest', function() {
-    it('should create an instance of InstagramRetossRequest', function() {
-      // uncomment below and update the code to test InstagramRetossRequest
-      //var instance = new EchaloasuerteJsSdk.InstagramRetossRequest();
-      //expect(instance).to.be.a(EchaloasuerteJsSdk.InstagramRetossRequest);
+  describe('DrawReTossPayload', function() {
+    it('should create an instance of DrawReTossPayload', function() {
+      // uncomment below and update the code to test DrawReTossPayload
+      //var instance = new EchaloasuerteJsSdk.DrawReTossPayload();
+      //expect(instance).to.be.a(EchaloasuerteJsSdk.DrawReTossPayload);
     });
 
     it('should have the property prizeId (base name: "prize_id")', function() {
       // uncomment below and update the code to test the property prizeId
-      //var instance = new EchaloasuerteJsSdk.InstagramRetossRequest();
+      //var instance = new EchaloasuerteJsSdk.DrawReTossPayload();
       //expect(instance).to.be();
     });
 

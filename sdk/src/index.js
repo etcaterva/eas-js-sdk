@@ -19,6 +19,7 @@ import BaseResult from './model/BaseResult';
 import Coin from './model/Coin';
 import CoinResult from './model/CoinResult';
 import DrawMetadata from './model/DrawMetadata';
+import DrawReTossPayload from './model/DrawReTossPayload';
 import DrawTossPayload from './model/DrawTossPayload';
 import Groups from './model/Groups';
 import GroupsResult from './model/GroupsResult';
@@ -26,7 +27,6 @@ import Instagram from './model/Instagram';
 import InstagramResult from './model/InstagramResult';
 import InstagramResultAllOfComment from './model/InstagramResultAllOfComment';
 import InstagramResultAllOfValue from './model/InstagramResultAllOfValue';
-import InstagramRetossRequest from './model/InstagramRetossRequest';
 import Letter from './model/Letter';
 import LetterResult from './model/LetterResult';
 import Link from './model/Link';
@@ -157,6 +157,12 @@ export {
     DrawMetadata,
 
     /**
+     * The DrawReTossPayload model constructor.
+     * @property {module:model/DrawReTossPayload}
+     */
+    DrawReTossPayload,
+
+    /**
      * The DrawTossPayload model constructor.
      * @property {module:model/DrawTossPayload}
      */
@@ -197,12 +203,6 @@ export {
      * @property {module:model/InstagramResultAllOfValue}
      */
     InstagramResultAllOfValue,
-
-    /**
-     * The InstagramRetossRequest model constructor.
-     * @property {module:model/InstagramRetossRequest}
-     */
-    InstagramRetossRequest,
 
     /**
      * The Letter model constructor.

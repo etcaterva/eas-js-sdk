@@ -1,6 +1,6 @@
 # EchaloasuerteJsSdk.PaypalApi
 
-All URIs are relative to *https://raw.githubusercontent.com/should-be-overriden*
+All URIs are relative to *http://localhost/should-be-overriden*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The InstagramRetossRequest model module.
- * @module model/InstagramRetossRequest
+ * The DrawReTossPayload model module.
+ * @module model/DrawReTossPayload
  * @version 1.0.0
  */
-class InstagramRetossRequest {
+class DrawReTossPayload {
     /**
-     * Constructs a new <code>InstagramRetossRequest</code>.
-     * @alias module:model/InstagramRetossRequest
+     * Constructs a new <code>DrawReTossPayload</code>.
+     * @alias module:model/DrawReTossPayload
      */
     constructor() { 
         
-        InstagramRetossRequest.initialize(this);
+        DrawReTossPayload.initialize(this);
     }
 
     /**
@@ -37,15 +37,15 @@ class InstagramRetossRequest {
     }
 
     /**
-     * Constructs a <code>InstagramRetossRequest</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>DrawReTossPayload</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/InstagramRetossRequest} obj Optional instance to populate.
-     * @return {module:model/InstagramRetossRequest} The populated <code>InstagramRetossRequest</code> instance.
+     * @param {module:model/DrawReTossPayload} obj Optional instance to populate.
+     * @return {module:model/DrawReTossPayload} The populated <code>DrawReTossPayload</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new InstagramRetossRequest();
+            obj = obj || new DrawReTossPayload();
 
             if (data.hasOwnProperty('prize_id')) {
                 obj['prize_id'] = ApiClient.convertToType(data['prize_id'], 'String');
@@ -55,9 +55,9 @@ class InstagramRetossRequest {
     }
 
     /**
-     * Validates the JSON data with respect to <code>InstagramRetossRequest</code>.
+     * Validates the JSON data with respect to <code>DrawReTossPayload</code>.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>InstagramRetossRequest</code>.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>DrawReTossPayload</code>.
      */
     static validateJSON(data) {
         // ensure the json data is a string
@@ -76,12 +76,12 @@ class InstagramRetossRequest {
 /**
  * @member {String} prize_id
  */
-InstagramRetossRequest.prototype['prize_id'] = undefined;
+DrawReTossPayload.prototype['prize_id'] = undefined;
 
 
 
 
 
 
-export default InstagramRetossRequest;
+export default DrawReTossPayload;
 

@@ -1,4 +1,4 @@
-# EchaloasuerteJsSdk.InstagramRetossRequest
+# EchaloasuerteJsSdk.DrawReTossPayload
 
 ## Properties
 

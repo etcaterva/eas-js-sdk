@@ -10,6 +10,7 @@ docs/Coin.md
 docs/CoinApi.md
 docs/CoinResult.md
 docs/DrawMetadata.md
+docs/DrawReTossPayload.md
 docs/DrawTossPayload.md
 docs/Groups.md
 docs/GroupsApi.md
@@ -19,7 +20,6 @@ docs/InstagramApi.md
 docs/InstagramResult.md
 docs/InstagramResultAllOfComment.md
 docs/InstagramResultAllOfValue.md
-docs/InstagramRetossRequest.md
 docs/Letter.md
 docs/LetterApi.md
 docs/LetterResult.md
@@ -95,6 +95,7 @@ src/model/BaseResult.js
 src/model/Coin.js
 src/model/CoinResult.js
 src/model/DrawMetadata.js
+src/model/DrawReTossPayload.js
 src/model/DrawTossPayload.js
 src/model/Groups.js
 src/model/GroupsResult.js
@@ -102,7 +103,6 @@ src/model/Instagram.js
 src/model/InstagramResult.js
 src/model/InstagramResultAllOfComment.js
 src/model/InstagramResultAllOfValue.js
-src/model/InstagramRetossRequest.js
 src/model/Letter.js
 src/model/LetterResult.js
 src/model/Link.js
@@ -162,6 +162,7 @@ test/model/BaseResult.spec.js
 test/model/Coin.spec.js
 test/model/CoinResult.spec.js
 test/model/DrawMetadata.spec.js
+test/model/DrawReTossPayload.spec.js
 test/model/DrawTossPayload.spec.js
 test/model/Groups.spec.js
 test/model/GroupsResult.spec.js
@@ -169,7 +170,6 @@ test/model/Instagram.spec.js
 test/model/InstagramResult.spec.js
 test/model/InstagramResultAllOfComment.spec.js
 test/model/InstagramResultAllOfValue.spec.js
-test/model/InstagramRetossRequest.spec.js
 test/model/Letter.spec.js
 test/model/LetterResult.spec.js
 test/model/Link.spec.js

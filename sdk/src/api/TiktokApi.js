@@ -13,8 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
+import DrawReTossPayload from '../model/DrawReTossPayload';
 import DrawTossPayload from '../model/DrawTossPayload';
-import InstagramRetossRequest from '../model/InstagramRetossRequest';
 import Tiktok from '../model/Tiktok';
 import TiktokResult from '../model/TiktokResult';
 
@@ -128,12 +128,12 @@ export default class TiktokApi {
     /**
      * @param {String} id 
      * @param {Object} opts Optional parameters
-     * @param {module:model/InstagramRetossRequest} [instagramRetossRequest] 
+     * @param {module:model/DrawReTossPayload} [drawReTossPayload] 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TiktokResult} and HTTP response
      */
     tiktokRetossWithHttpInfo(id, opts) {
       opts = opts || {};
-      let postBody = opts['instagramRetossRequest'];
+      let postBody = opts['drawReTossPayload'];
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling tiktokRetoss");
@@ -163,7 +163,7 @@ export default class TiktokApi {
     /**
      * @param {String} id 
      * @param {Object} opts Optional parameters
-     * @param {module:model/InstagramRetossRequest} opts.instagramRetossRequest 
+     * @param {module:model/DrawReTossPayload} opts.drawReTossPayload 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TiktokResult}
      */
     tiktokRetoss(id, opts) {

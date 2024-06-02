@@ -1,6 +1,6 @@
 # EchaloasuerteJsSdk.TiktokApi
 
-All URIs are relative to *https://raw.githubusercontent.com/should-be-overriden*
+All URIs are relative to *http://localhost/should-be-overriden*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -109,7 +109,7 @@ import EchaloasuerteJsSdk from 'echaloasuerte-js-sdk';
 let apiInstance = new EchaloasuerteJsSdk.TiktokApi();
 let id = "id_example"; // String | 
 let opts = {
-  'instagramRetossRequest': new EchaloasuerteJsSdk.InstagramRetossRequest() // InstagramRetossRequest | 
+  'drawReTossPayload': new EchaloasuerteJsSdk.DrawReTossPayload() // DrawReTossPayload | 
 };
 apiInstance.tiktokRetoss(id, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -125,7 +125,7 @@ apiInstance.tiktokRetoss(id, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **instagramRetossRequest** | [**InstagramRetossRequest**](InstagramRetossRequest.md)|  | [optional] 
+ **drawReTossPayload** | [**DrawReTossPayload**](DrawReTossPayload.md)|  | [optional] 
 
 ### Return type
 

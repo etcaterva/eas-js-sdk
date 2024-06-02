@@ -1,39 +1,39 @@
 openapi: 3.0.0
 info:
   title: EAS API
-  version: 0.0.1
+  version: 1.0.0
 servers:
-  - url: "/should-be-overriden"
+  - url: '/should-be-overriden'
 paths:
   /tournament/:
     post:
       operationId: tournament_create
       responses:
-        "201":
+        '201':
           description: Tournament successfully created
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Tournament"
+                $ref: '#/components/schemas/Tournament'
       tags:
         - tournament
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Tournament"
+              $ref: '#/components/schemas/Tournament'
         required: true
     parameters: []
-  "/tournament/{id}/":
+  '/tournament/{id}/':
     get:
       operationId: tournament_read
       responses:
-        "200":
+        '200':
           description: The details of the requested tournament
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Tournament"
+                $ref: '#/components/schemas/Tournament'
       tags:
         - tournament
     parameters:
@@ -42,33 +42,33 @@ paths:
         required: true
         schema:
           type: string
-  "/tournament/{id}/toss/":
+  '/tournament/{id}/toss/':
     post:
       operationId: tournament_toss
       responses:
-        "201":
+        '201':
           description: A result of the tournament
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/TournamentResult"
+                $ref: '#/components/schemas/TournamentResult'
       tags:
         - tournament
       requestBody:
-        $ref: "#/components/requestBodies/DrawTossPayload"
+        $ref: '#/components/requestBodies/DrawTossPayload'
     parameters:
       - name: id
         in: path
         required: true
         schema:
           type: string
-  "/tournament/{id}/participants/":
+  '/tournament/{id}/participants/':
     post:
       operationId: tournament_participants_add
       responses:
-        "201":
+        '201':
           description: Object created
-        "304":
+        '304':
           description: Not Modified
       tags:
         - tournament
@@ -76,7 +76,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Participant"
+              $ref: '#/components/schemas/Participant'
         required: true
     parameters:
       - name: id
@@ -88,31 +88,31 @@ paths:
     post:
       operationId: groups_create
       responses:
-        "201":
+        '201':
           description: Groups successfully created
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Groups"
+                $ref: '#/components/schemas/Groups'
       tags:
         - groups
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Groups"
+              $ref: '#/components/schemas/Groups'
         required: true
     parameters: []
-  "/groups/{id}/":
+  '/groups/{id}/':
     get:
       operationId: groups_read
       responses:
-        "200":
+        '200':
           description: The details of the requested groups
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Groups"
+                $ref: '#/components/schemas/Groups'
       tags:
         - groups
     parameters:
@@ -121,33 +121,33 @@ paths:
         required: true
         schema:
           type: string
-  "/groups/{id}/toss/":
+  '/groups/{id}/toss/':
     post:
       operationId: groups_toss
       responses:
-        "201":
+        '201':
           description: A result of the groups
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/GroupsResult"
+                $ref: '#/components/schemas/GroupsResult'
       tags:
         - groups
       requestBody:
-        $ref: "#/components/requestBodies/DrawTossPayload"
+        $ref: '#/components/requestBodies/DrawTossPayload'
     parameters:
       - name: id
         in: path
         required: true
         schema:
           type: string
-  "/groups/{id}/participants/":
+  '/groups/{id}/participants/':
     post:
       operationId: groups_participants_add
       responses:
-        "201":
+        '201':
           description: Object created
-        "304":
+        '304':
           description: Not Modified
       tags:
         - groups
@@ -155,7 +155,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Participant"
+              $ref: '#/components/schemas/Participant'
         required: true
     parameters:
       - name: id
@@ -167,31 +167,31 @@ paths:
     post:
       operationId: lottery_create
       responses:
-        "201":
+        '201':
           description: Lottery successfully created
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Lottery"
+                $ref: '#/components/schemas/Lottery'
       tags:
         - lottery
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Lottery"
+              $ref: '#/components/schemas/Lottery'
         required: true
     parameters: []
-  "/lottery/{id}/":
+  '/lottery/{id}/':
     get:
       operationId: lottery_read
       responses:
-        "200":
+        '200':
           description: The details of the requested lottery
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Lottery"
+                $ref: '#/components/schemas/Lottery'
       tags:
         - lottery
     parameters:
@@ -200,33 +200,33 @@ paths:
         required: true
         schema:
           type: string
-  "/lottery/{id}/toss/":
+  '/lottery/{id}/toss/':
     post:
       operationId: lottery_toss
       responses:
-        "201":
+        '201':
           description: A result of the lottery
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/LotteryResult"
+                $ref: '#/components/schemas/LotteryResult'
       tags:
         - lottery
       requestBody:
-        $ref: "#/components/requestBodies/DrawTossPayload"
+        $ref: '#/components/requestBodies/DrawTossPayload'
     parameters:
       - name: id
         in: path
         required: true
         schema:
           type: string
-  "/lottery/{id}/participants/":
+  '/lottery/{id}/participants/':
     post:
       operationId: lottery_participants_add
       responses:
-        "201":
+        '201':
           description: Object created
-        "304":
+        '304':
           description: Not Modified
       tags:
         - lottery
@@ -234,7 +234,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Participant"
+              $ref: '#/components/schemas/Participant'
         required: true
     parameters:
       - name: id
@@ -246,31 +246,31 @@ paths:
     post:
       operationId: raffle_create
       responses:
-        "201":
+        '201':
           description: Raffle successfully created
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Raffle"
+                $ref: '#/components/schemas/Raffle'
       tags:
         - raffle
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Raffle"
+              $ref: '#/components/schemas/Raffle'
         required: true
     parameters: []
-  "/raffle/{id}/":
+  '/raffle/{id}/':
     get:
       operationId: raffle_read
       responses:
-        "200":
+        '200':
           description: The details of the requested raffle
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Raffle"
+                $ref: '#/components/schemas/Raffle'
       tags:
         - raffle
     parameters:
@@ -279,33 +279,33 @@ paths:
         required: true
         schema:
           type: string
-  "/raffle/{id}/toss/":
+  '/raffle/{id}/toss/':
     post:
       operationId: raffle_toss
       responses:
-        "201":
+        '201':
           description: A result of the draw
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/RaffleResult"
+                $ref: '#/components/schemas/RaffleResult'
       tags:
         - raffle
       requestBody:
-        $ref: "#/components/requestBodies/DrawTossPayload"
+        $ref: '#/components/requestBodies/DrawTossPayload'
     parameters:
       - name: id
         in: path
         required: true
         schema:
           type: string
-  "/raffle/{id}/participants/":
+  '/raffle/{id}/participants/':
     post:
       operationId: raffle_participants_add
       responses:
-        "201":
+        '201':
           description: Object created
-        "304":
+        '304':
           description: Not Modified
       tags:
         - raffle
@@ -313,7 +313,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Participant"
+              $ref: '#/components/schemas/Participant'
         required: true
     parameters:
       - name: id
@@ -325,31 +325,31 @@ paths:
     post:
       operationId: letter_create
       responses:
-        "201":
+        '201':
           description: The Letter draw was successfully created
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Letter"
+                $ref: '#/components/schemas/Letter'
       tags:
         - letter
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Letter"
+              $ref: '#/components/schemas/Letter'
         required: true
     parameters: []
-  "/letter/{id}/":
+  '/letter/{id}/':
     get:
       operationId: letter_read
       responses:
-        "200":
+        '200':
           description: The details of the requested draw
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Letter"
+                $ref: '#/components/schemas/Letter'
       tags:
         - letter
     parameters:
@@ -358,20 +358,20 @@ paths:
         required: true
         schema:
           type: string
-  "/letter/{id}/toss/":
+  '/letter/{id}/toss/':
     post:
       operationId: letter_toss
       responses:
-        "201":
+        '201':
           description: A result of the draw
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/LetterResult"
+                $ref: '#/components/schemas/LetterResult'
       tags:
         - letter
       requestBody:
-        $ref: "#/components/requestBodies/DrawTossPayload"
+        $ref: '#/components/requestBodies/DrawTossPayload'
     parameters:
       - name: id
         in: path
@@ -382,31 +382,31 @@ paths:
     post:
       operationId: random_number_create
       responses:
-        "201":
+        '201':
           description: The RandomNumber draw was successfully created
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/RandomNumber"
+                $ref: '#/components/schemas/RandomNumber'
       tags:
         - random_number
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/RandomNumber"
+              $ref: '#/components/schemas/RandomNumber'
         required: true
     parameters: []
-  "/random_number/{id}/":
+  '/random_number/{id}/':
     get:
       operationId: random_number_read
       responses:
-        "200":
+        '200':
           description: The details of the requested draw
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/RandomNumber"
+                $ref: '#/components/schemas/RandomNumber'
       tags:
         - random_number
     parameters:
@@ -415,20 +415,20 @@ paths:
         required: true
         schema:
           type: string
-  "/random_number/{id}/toss/":
+  '/random_number/{id}/toss/':
     post:
       operationId: random_number_toss
       responses:
-        "201":
+        '201':
           description: A result of the draw
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/RandomNumberResult"
+                $ref: '#/components/schemas/RandomNumberResult'
       tags:
         - random_number
       requestBody:
-        $ref: "#/components/requestBodies/DrawTossPayload"
+        $ref: '#/components/requestBodies/DrawTossPayload'
     parameters:
       - name: id
         in: path
@@ -439,31 +439,31 @@ paths:
     post:
       operationId: spinner_create
       responses:
-        "201":
+        '201':
           description: The Spinner draw was successfully created
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Spinner"
+                $ref: '#/components/schemas/Spinner'
       tags:
         - spinner
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Spinner"
+              $ref: '#/components/schemas/Spinner'
         required: true
     parameters: []
-  "/spinner/{id}/":
+  '/spinner/{id}/':
     get:
       operationId: spinner_read
       responses:
-        "200":
+        '200':
           description: The details of the requested draw
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Spinner"
+                $ref: '#/components/schemas/Spinner'
       tags:
         - spinner
     parameters:
@@ -472,20 +472,20 @@ paths:
         required: true
         schema:
           type: string
-  "/spinner/{id}/toss/":
+  '/spinner/{id}/toss/':
     post:
       operationId: spinner_toss
       responses:
-        "201":
+        '201':
           description: A result of the draw
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/SpinnerResult"
+                $ref: '#/components/schemas/SpinnerResult'
       tags:
         - spinner
       requestBody:
-        $ref: "#/components/requestBodies/DrawTossPayload"
+        $ref: '#/components/requestBodies/DrawTossPayload'
     parameters:
       - name: id
         in: path
@@ -496,31 +496,31 @@ paths:
     post:
       operationId: coin_create
       responses:
-        "201":
+        '201':
           description: The Coin draw was successfully created
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Coin"
+                $ref: '#/components/schemas/Coin'
       tags:
         - coin
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Coin"
+              $ref: '#/components/schemas/Coin'
         required: true
     parameters: []
-  "/coin/{id}/":
+  '/coin/{id}/':
     get:
       operationId: coin_read
       responses:
-        "200":
+        '200':
           description: The details of the requested draw
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Coin"
+                $ref: '#/components/schemas/Coin'
       tags:
         - coin
     parameters:
@@ -529,20 +529,20 @@ paths:
         required: true
         schema:
           type: string
-  "/coin/{id}/toss/":
+  '/coin/{id}/toss/':
     post:
       operationId: coin_toss
       responses:
-        "201":
+        '201':
           description: A result of the draw
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/CoinResult"
+                $ref: '#/components/schemas/CoinResult'
       tags:
         - coin
       requestBody:
-        $ref: "#/components/requestBodies/DrawTossPayload"
+        $ref: '#/components/requestBodies/DrawTossPayload'
     parameters:
       - name: id
         in: path
@@ -553,31 +553,31 @@ paths:
     post:
       operationId: link_create
       responses:
-        "201":
+        '201':
           description: Links successfully created
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Link"
+                $ref: '#/components/schemas/Link'
       tags:
         - link
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Link"
+              $ref: '#/components/schemas/Link'
         required: true
     parameters: []
-  "/link/{id}/":
+  '/link/{id}/':
     get:
       operationId: link_read
       responses:
-        "200":
+        '200':
           description: The details of the requested link
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Link"
+                $ref: '#/components/schemas/Link'
       tags:
         - link
     parameters:
@@ -586,20 +586,20 @@ paths:
         required: true
         schema:
           type: string
-  "/link/{id}/toss/":
+  '/link/{id}/toss/':
     post:
       operationId: link_toss
       responses:
-        "201":
+        '201':
           description: A result of the link
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/LinkResult"
+                $ref: '#/components/schemas/LinkResult'
       tags:
         - link
       requestBody:
-        $ref: "#/components/requestBodies/DrawTossPayload"
+        $ref: '#/components/requestBodies/DrawTossPayload'
     parameters:
       - name: id
         in: path
@@ -610,31 +610,31 @@ paths:
     post:
       operationId: secret_santa_create
       responses:
-        "201":
+        '201':
           description: Create and Toss a secret santa
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/SecretSantaCreateResponse"
+                $ref: '#/components/schemas/SecretSantaCreateResponse'
       tags:
         - secret_santa
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/SecretSanta"
+              $ref: '#/components/schemas/SecretSanta'
         required: true
     parameters: []
-  "/secret-santa/{id}/":
+  '/secret-santa/{id}/':
     get:
       operationId: secret_santa_result_get
       responses:
-        "200":
+        '200':
           description: Details of a Secret Santa Result
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/SecretSantaResult"
+                $ref: '#/components/schemas/SecretSantaResult'
       tags:
         - secret_santa
     parameters:
@@ -643,16 +643,16 @@ paths:
         required: true
         schema:
           type: string
-  "/secret-santa-admin/{id}/":
+  '/secret-santa-admin/{id}/':
     get:
       operationId: secret_santa_result_admin_get
       responses:
-        "200":
+        '200':
           description: Management info of a secret santa draw.
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/SecretSantaAdminResult"
+                $ref: '#/components/schemas/SecretSantaAdminResponse'
       tags:
         - secret_santa
     parameters:
@@ -661,19 +661,23 @@ paths:
         required: true
         schema:
           type: string
-  "/secret-santa-admin/{draw_id}/{result_id}/":
+  '/secret-santa-admin/{draw_id}/{result_id}/':
     post:
-      operationId: secret_santa_result_admin_get
+      operationId: secret_santa_result_admin_post
       responses:
-        "200":
+        '200':
           description: Resend the email of a secret santa result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SecretSantaResendEmailResponse'
       tags:
         - secret_santa
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/SecretSantaResendEmail"
+              $ref: '#/components/schemas/SecretSantaResendEmail'
     parameters:
       - name: draw_id
         in: path
@@ -685,53 +689,67 @@ paths:
         required: true
         schema:
           type: string
-  "/paypal/create/":
+  '/promo-code/redeem/':
+    post:
+      operationId: redeem_promo_code
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RedeemPromoCode'
+        required: true
+      responses:
+        '200':
+          description: Certifies a draw with a promo code
+      tags:
+        - paypal
+  '/paypal/create/':
     post:
       operationId: paypal_create
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/PaypalCreatePayload"
+              $ref: '#/components/schemas/PaypalCreatePayload'
         required: true
       responses:
-        "200":
+        '200':
           description: Initiates a new PayPal payment
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/PaypalResponse"
+                $ref: '#/components/schemas/PaypalResponse'
       tags:
         - paypal
   /instagram/:
     post:
       operationId: instagram_create
       responses:
-        "201":
+        '201':
           description: The Instagram draw was successfully created
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Instagram"
+                $ref: '#/components/schemas/Instagram'
       tags:
         - instagram
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Instagram"
+              $ref: '#/components/schemas/Instagram'
         required: true
     parameters: []
-  "/instagram/{id}/":
+  '/instagram/{id}/':
     get:
       operationId: instagram_read
       responses:
-        "200":
+        '200':
           description: The details of the requested draw
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Instagram"
+                $ref: '#/components/schemas/Instagram'
       tags:
         - instagram
     parameters:
@@ -740,47 +758,117 @@ paths:
         required: true
         schema:
           type: string
-  "/instagram/{id}/toss/":
+  '/instagram/{id}/toss/':
     post:
       operationId: instagram_toss
       responses:
-        "201":
+        '201':
           description: A result of the draw
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/InstagramResult"
+                $ref: '#/components/schemas/InstagramResult'
       tags:
         - instagram
       requestBody:
-        $ref: "#/components/requestBodies/DrawTossPayload"
+        $ref: '#/components/requestBodies/DrawTossPayload'
     parameters:
       - name: id
         in: path
         required: true
         schema:
           type: string
-  "/instagram/{id}/retoss/":
+  '/instagram/{id}/retoss/':
     patch:
       operationId: instagram_retoss
       responses:
-        "201":
+        '201':
           description: A result of the draw
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/InstagramResult"
+                $ref: '#/components/schemas/InstagramResult'
       tags:
         - instagram
+      requestBody:
+        $ref: '#/components/requestBodies/DrawReTossPayload'
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /tiktok/:
+    post:
+      operationId: tiktok_create
+      responses:
+        '201':
+          description: The tiktok draw was successfully created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tiktok'
+      tags:
+        - tiktok
       requestBody:
         content:
           application/json:
             schema:
-              type: "object"
-              properties:
-                prize_id:
-                  type: string
-                  minLength: 1
+              $ref: '#/components/schemas/Tiktok'
+        required: true
+    parameters: []
+  '/tiktok/{id}/':
+    get:
+      operationId: tiktok_read
+      responses:
+        '200':
+          description: The details of the requested draw
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tiktok'
+      tags:
+        - tiktok
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  '/tiktok/{id}/toss/':
+    post:
+      operationId: tiktok_toss
+      responses:
+        '201':
+          description: A result of the draw
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TiktokResult'
+      tags:
+        - tiktok
+      requestBody:
+        $ref: '#/components/requestBodies/DrawTossPayload'
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  '/tiktok/{id}/retoss/':
+    patch:
+      operationId: tiktok_retoss
+      responses:
+        '201':
+          description: A result of the draw
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TiktokResult'
+      tags:
+        - tiktok
+      requestBody:
+        $ref: '#/components/requestBodies/DrawReTossPayload'
     parameters:
       - name: id
         in: path
@@ -791,31 +879,31 @@ paths:
     post:
       operationId: shifts_create
       responses:
-        "201":
+        '201':
           description: Shifts successfully created
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Shifts"
+                $ref: '#/components/schemas/Shifts'
       tags:
         - shifts
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Shifts"
+              $ref: '#/components/schemas/Shifts'
         required: true
     parameters: []
-  "/shifts/{id}/":
+  '/shifts/{id}/':
     get:
       operationId: shifts_read
       responses:
-        "200":
+        '200':
           description: The details of the requested shifts
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Shifts"
+                $ref: '#/components/schemas/Shifts'
       tags:
         - shifts
     parameters:
@@ -824,20 +912,20 @@ paths:
         required: true
         schema:
           type: string
-  "/shifts/{id}/toss/":
+  '/shifts/{id}/toss/':
     post:
       operationId: shifts_toss
       responses:
-        "201":
+        '201':
           description: A result of the shifts
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ShiftsResult"
+                $ref: '#/components/schemas/ShiftsResult'
       tags:
         - shifts
       requestBody:
-        $ref: "#/components/requestBodies/DrawTossPayload"
+        $ref: '#/components/requestBodies/DrawTossPayload'
     parameters:
       - name: id
         in: path
@@ -850,8 +938,13 @@ components:
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/DrawTossPayload"
+            $ref: '#/components/schemas/DrawTossPayload'
       required: true
+    DrawReTossPayload:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/DrawReTossPayload'
   schemas:
     DrawMetadata:
       required:
@@ -884,7 +977,7 @@ components:
           readOnly: true
     Prize:
       allOf:
-        - $ref: "#/components/schemas/BaseObject"
+        - $ref: '#/components/schemas/BaseObject'
         - type: object
           required:
             - name
@@ -899,7 +992,7 @@ components:
               minLength: 1
     Participant:
       allOf:
-        - $ref: "#/components/schemas/BaseObject"
+        - $ref: '#/components/schemas/BaseObject'
         - type: object
           required:
             - name
@@ -917,9 +1010,15 @@ components:
         schedule_date:
           type: string
           format: date-time
+    DrawReTossPayload:
+      type: object
+      properties:
+        prize_id:
+          type: string
+          minLength: 1
     BaseDraw:
       allOf:
-        - $ref: "#/components/schemas/BaseObject"
+        - $ref: '#/components/schemas/BaseObject'
         - type: object
           properties:
             updated_at:
@@ -939,7 +1038,7 @@ components:
             metadata:
               type: array
               items:
-                $ref: "#/components/schemas/DrawMetadata"
+                $ref: '#/components/schemas/DrawMetadata'
             payments:
               type: array
               items:
@@ -950,7 +1049,7 @@ components:
                   - SUPPORT
     Raffle:
       allOf:
-        - $ref: "#/components/schemas/BaseDraw"
+        - $ref: '#/components/schemas/BaseDraw'
         - type: object
           required:
             - prizes
@@ -959,19 +1058,19 @@ components:
             prizes:
               type: array
               items:
-                $ref: "#/components/schemas/Prize"
+                $ref: '#/components/schemas/Prize'
             participants:
               type: array
               items:
-                $ref: "#/components/schemas/Participant"
+                $ref: '#/components/schemas/Participant'
             results:
               type: array
               items:
-                $ref: "#/components/schemas/RaffleResult"
+                $ref: '#/components/schemas/RaffleResult'
               readOnly: true
     Lottery:
       allOf:
-        - $ref: "#/components/schemas/BaseDraw"
+        - $ref: '#/components/schemas/BaseDraw'
         - type: object
           required:
             - participants
@@ -982,15 +1081,15 @@ components:
             participants:
               type: array
               items:
-                $ref: "#/components/schemas/Participant"
+                $ref: '#/components/schemas/Participant'
             results:
               type: array
               items:
-                $ref: "#/components/schemas/LotteryResult"
+                $ref: '#/components/schemas/LotteryResult'
               readOnly: true
     Instagram:
       allOf:
-        - $ref: "#/components/schemas/BaseDraw"
+        - $ref: '#/components/schemas/BaseDraw'
         - type: object
           required:
             - post_url
@@ -1001,7 +1100,7 @@ components:
             prizes:
               type: array
               items:
-                $ref: "#/components/schemas/Prize"
+                $ref: '#/components/schemas/Prize'
             use_likes:
               type: boolean
               default: false
@@ -1013,11 +1112,34 @@ components:
             results:
               type: array
               items:
-                $ref: "#/components/schemas/InstagramResult"
+                $ref: '#/components/schemas/InstagramResult'
+              readOnly: true
+    Tiktok:
+      allOf:
+        - $ref: '#/components/schemas/BaseDraw'
+        - type: object
+          required:
+            - post_url
+            - prizes
+            - min_mentions
+          properties:
+            prizes:
+              type: array
+              items:
+                $ref: '#/components/schemas/Prize'
+            min_mentions:
+              type: integer
+              default: 0
+            post_url:
+              type: string
+            results:
+              type: array
+              items:
+                $ref: '#/components/schemas/TiktokResult'
               readOnly: true
     Link:
       allOf:
-        - $ref: "#/components/schemas/BaseDraw"
+        - $ref: '#/components/schemas/BaseDraw'
         - type: object
           required:
             - items
@@ -1033,17 +1155,17 @@ components:
             results:
               type: array
               items:
-                $ref: "#/components/schemas/LinkResult"
+                $ref: '#/components/schemas/LinkResult'
               readOnly: true
     Shifts:
       allOf:
-        - $ref: "#/components/schemas/BaseDraw"
+        - $ref: '#/components/schemas/BaseDraw'
         - type: object
           required:
-            - interval
+            - intervals
             - participants
           properties:
-            interval:
+            intervals:
               type: array
               items:
                 type: object
@@ -1060,15 +1182,15 @@ components:
             participants:
               type: array
               items:
-                $ref: "#/components/schemas/Participant"
+                $ref: '#/components/schemas/Participant'
             results:
               type: array
               items:
-                $ref: "#/components/schemas/ShiftsResult"
+                $ref: '#/components/schemas/ShiftsResult'
               readOnly: true
     Tournament:
       allOf:
-        - $ref: "#/components/schemas/BaseDraw"
+        - $ref: '#/components/schemas/BaseDraw'
         - type: object
           required:
             - participants
@@ -1076,15 +1198,15 @@ components:
             participants:
               type: array
               items:
-                $ref: "#/components/schemas/Participant"
+                $ref: '#/components/schemas/Participant'
             results:
               type: array
               items:
-                $ref: "#/components/schemas/TournamentResult"
+                $ref: '#/components/schemas/TournamentResult'
               readOnly: true
     Groups:
       allOf:
-        - $ref: "#/components/schemas/BaseDraw"
+        - $ref: '#/components/schemas/BaseDraw'
         - type: object
           required:
             - participants
@@ -1093,17 +1215,17 @@ components:
             participants:
               type: array
               items:
-                $ref: "#/components/schemas/Participant"
+                $ref: '#/components/schemas/Participant'
             number_of_groups:
               type: integer
             results:
               type: array
               items:
-                $ref: "#/components/schemas/GroupsResult"
+                $ref: '#/components/schemas/GroupsResult'
               readOnly: true
     RandomNumber:
       allOf:
-        - $ref: "#/components/schemas/BaseDraw"
+        - $ref: '#/components/schemas/BaseDraw'
         - type: object
           required:
             - range_min
@@ -1122,11 +1244,11 @@ components:
             results:
               type: array
               items:
-                $ref: "#/components/schemas/RandomNumberResult"
+                $ref: '#/components/schemas/RandomNumberResult'
               readOnly: true
     Letter:
       allOf:
-        - $ref: "#/components/schemas/BaseDraw"
+        - $ref: '#/components/schemas/BaseDraw'
         - type: object
           properties:
             number_of_results:
@@ -1138,31 +1260,31 @@ components:
             results:
               type: array
               items:
-                $ref: "#/components/schemas/LetterResult"
+                $ref: '#/components/schemas/LetterResult'
               readOnly: true
     Coin:
       allOf:
-        - $ref: "#/components/schemas/BaseDraw"
+        - $ref: '#/components/schemas/BaseDraw'
         - type: object
           properties:
             results:
               type: array
               items:
-                $ref: "#/components/schemas/CoinResult"
+                $ref: '#/components/schemas/CoinResult'
               readOnly: true
     Spinner:
       allOf:
-        - $ref: "#/components/schemas/BaseDraw"
+        - $ref: '#/components/schemas/BaseDraw'
         - type: object
           properties:
             results:
               type: array
               items:
-                $ref: "#/components/schemas/SpinnerResult"
+                $ref: '#/components/schemas/SpinnerResult'
               readOnly: true
     BaseResult:
       allOf:
-        - $ref: "#/components/schemas/BaseObject"
+        - $ref: '#/components/schemas/BaseObject'
         - type: object
           properties:
             schedule_date:
@@ -1170,7 +1292,7 @@ components:
               format: date-time
     RaffleResult:
       allOf:
-        - $ref: "#/components/schemas/BaseResult"
+        - $ref: '#/components/schemas/BaseResult'
         - type: object
           properties:
             value:
@@ -1180,12 +1302,12 @@ components:
                 type: object
                 properties:
                   participant:
-                    $ref: "#/components/schemas/Participant"
+                    $ref: '#/components/schemas/Participant'
                   prize:
-                    $ref: "#/components/schemas/Prize"
+                    $ref: '#/components/schemas/Prize'
     InstagramResult:
       allOf:
-        - $ref: "#/components/schemas/BaseResult"
+        - $ref: '#/components/schemas/BaseResult'
         - type: object
           properties:
             value:
@@ -1206,10 +1328,10 @@ components:
                       text:
                         type: string
                   prize:
-                    $ref: "#/components/schemas/Prize"
-    ShiftsResult:
+                    $ref: '#/components/schemas/Prize'
+    TiktokResult:
       allOf:
-        - $ref: "#/components/schemas/BaseResult"
+        - $ref: '#/components/schemas/BaseResult'
         - type: object
           properties:
             value:
@@ -1218,19 +1340,48 @@ components:
               items:
                 type: object
                 properties:
-                  start_time:
-                    type: string
-                    format: date-time
-                  end_time:
-                    type: string
-                    format: date-time
+                  comment:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      text:
+                        type: string
+                      username:
+                        type: string
+                      userpic:
+                        type: string
+                      userid:
+                        type: string
+                  prize:
+                    $ref: '#/components/schemas/Prize'
+    ShiftsResult:
+      allOf:
+        - $ref: '#/components/schemas/BaseResult'
+        - type: object
+          properties:
+            value:
+              nullable: true
+              type: array
+              items:
+                type: object
+                properties:
+                  interval:
+                    type: object
+                    properties:
+                      start_time:
+                        type: string
+                        format: date-time
+                      end_time:
+                        type: string
+                        format: date-time
                   participants:
                     type: array
                     items:
-                      $ref: "#/components/schemas/Participant"
+                      $ref: '#/components/schemas/Participant'
     LinkResult:
       allOf:
-        - $ref: "#/components/schemas/BaseResult"
+        - $ref: '#/components/schemas/BaseResult'
         - type: object
           properties:
             value:
@@ -1245,29 +1396,40 @@ components:
                     type: string
     LotteryResult:
       allOf:
-        - $ref: "#/components/schemas/BaseResult"
+        - $ref: '#/components/schemas/BaseResult'
         - type: object
           properties:
             value:
               nullable: true
               type: array
               items:
-                $ref: "#/components/schemas/Participant"
+                $ref: '#/components/schemas/Participant'
     TournamentResult:
       allOf:
-        - $ref: "#/components/schemas/BaseResult"
+        - $ref: '#/components/schemas/BaseResult'
         - type: object
           properties:
             value:
               nullable: true
               type: array
               items:
-                type: array
-                items:
-                  $ref: "#/components/schemas/Participant"
+                type: object
+                properties:
+                  id:
+                    type: string
+                  participants:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Participant'
+                  score:
+                    type: string
+                  winner_id:
+                    type: string
+                  next_match_id:
+                    type: string
     GroupsResult:
       allOf:
-        - $ref: "#/components/schemas/BaseResult"
+        - $ref: '#/components/schemas/BaseResult'
         - type: object
           properties:
             value:
@@ -1276,10 +1438,10 @@ components:
               items:
                 type: array
                 items:
-                  $ref: "#/components/schemas/Participant"
+                  $ref: '#/components/schemas/Participant'
     RandomNumberResult:
       allOf:
-        - $ref: "#/components/schemas/BaseResult"
+        - $ref: '#/components/schemas/BaseResult'
         - type: object
           properties:
             value:
@@ -1289,7 +1451,7 @@ components:
                 type: integer
     LetterResult:
       allOf:
-        - $ref: "#/components/schemas/BaseResult"
+        - $ref: '#/components/schemas/BaseResult'
         - type: object
           properties:
             value:
@@ -1299,7 +1461,7 @@ components:
                 type: string
     SpinnerResult:
       allOf:
-        - $ref: "#/components/schemas/BaseResult"
+        - $ref: '#/components/schemas/BaseResult'
         - type: object
           properties:
             value:
@@ -1307,7 +1469,7 @@ components:
               type: integer
     CoinResult:
       allOf:
-        - $ref: "#/components/schemas/BaseResult"
+        - $ref: '#/components/schemas/BaseResult'
         - type: object
           properties:
             value:
@@ -1376,6 +1538,16 @@ components:
                 type: string
               revealed:
                 type: boolean
+    RedeemPromoCode:
+      type: object
+      required:
+        - draw_id
+        - code
+      properties:
+        code:
+          type: string
+        draw_id:
+          type: string
     PaypalCreatePayload:
       type: object
       required:
@@ -1410,4 +1582,9 @@ components:
             - es
             - en
         email:
+          type: string
+    SecretSantaResendEmailResponse:
+      type: object
+      properties:
+        new_result:
           type: string

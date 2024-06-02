@@ -33,11 +33,11 @@ class ApiClient {
      * Overrides the default value set in spec file if present
      * @param {String} basePath
      */
-    constructor(basePath = 'https://raw.githubusercontent.com/should-be-overriden') {
+    constructor(basePath = 'http://localhost/should-be-overriden') {
         /**
          * The base URL against which to resolve every API call's (relative) path.
          * @type {String}
-         * @default https://raw.githubusercontent.com/should-be-overriden
+         * @default http://localhost/should-be-overriden
          */
         this.basePath = basePath.replace(/\/+$/, '');
 
@@ -593,7 +593,7 @@ class ApiClient {
     hostSettings() {
         return [
             {
-              'url': "https://raw.githubusercontent.com/should-be-overriden",
+              'url': "/should-be-overriden",
               'description': "No description provided",
             }
       ];
