@@ -100,7 +100,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Groups'
+              $ref: '#/components/schemas/CreateGroupsPayload'
         required: true
     parameters: []
   '/groups/{id}/':
@@ -1016,24 +1016,15 @@ components:
         prize_id:
           type: string
           minLength: 1
-    BaseDraw:
+    BaseFields:
       allOf:
-        - $ref: '#/components/schemas/BaseObject'
         - type: object
           properties:
-            updated_at:
-              type: string
-              format: date-time
-              readOnly: true
             title:
               type: string
               minLength: 1
             description:
               type: string
-              minLength: 1
-            private_id:
-              type: string
-              readOnly: true
               minLength: 1
             metadata:
               type: array
@@ -1047,6 +1038,20 @@ components:
                   - CERTIFIED
                   - ADFREE
                   - SUPPORT
+    BaseDraw:
+      allOf:
+        - $ref: '#/components/schemas/BaseObject'
+        - $ref: '#/components/schemas/BaseFields'
+        - type: object
+          properties:
+            updated_at:
+              type: string
+              format: date-time
+              readOnly: true
+            private_id:
+              type: string
+              readOnly: true
+              minLength: 1
     Raffle:
       allOf:
         - $ref: '#/components/schemas/BaseDraw'
@@ -1204,6 +1209,20 @@ components:
               items:
                 $ref: '#/components/schemas/TournamentResult'
               readOnly: true
+    CreateGroupsPayload:
+      allOf:
+        - $ref: '#/components/schemas/BaseFields'
+        - type: object
+          required:
+            - participants
+            - number_of_groups
+          properties:
+            participants:
+              type: array
+              items:
+                $ref: '#/components/schemas/Participant'
+            number_of_groups:
+              type: integer
     Groups:
       allOf:
         - $ref: '#/components/schemas/BaseDraw'
