@@ -337,7 +337,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Letter'
+              $ref: '#/components/schemas/CreateLetterPayload'
         required: true
     parameters: []
   '/letter/{id}/':
@@ -1209,34 +1209,32 @@ components:
               items:
                 $ref: '#/components/schemas/TournamentResult'
               readOnly: true
+    GroupsFields:
+      allOf:
+        - type: object
+          required:
+            - participants
+            - number_of_groups
+          properties:
+            participants:
+              type: array
+              items:
+                $ref: '#/components/schemas/Participant'
+            number_of_groups:
+              type: integer
+
     CreateGroupsPayload:
       allOf:
         - $ref: '#/components/schemas/BaseFields'
-        - type: object
-          required:
-            - participants
-            - number_of_groups
-          properties:
-            participants:
-              type: array
-              items:
-                $ref: '#/components/schemas/Participant'
-            number_of_groups:
-              type: integer
+        - $ref: '#/components/schemas/GroupsFields'
     Groups:
       allOf:
         - $ref: '#/components/schemas/BaseDraw'
+        - $ref: '#/components/schemas/GroupsFields'
         - type: object
           required:
-            - participants
-            - number_of_groups
+            - resutls
           properties:
-            participants:
-              type: array
-              items:
-                $ref: '#/components/schemas/Participant'
-            number_of_groups:
-              type: integer
             results:
               type: array
               items:
@@ -1265,10 +1263,12 @@ components:
               items:
                 $ref: '#/components/schemas/RandomNumberResult'
               readOnly: true
-    Letter:
+    LetterFields:
       allOf:
-        - $ref: '#/components/schemas/BaseDraw'
         - type: object
+          required:
+            - number_of_results
+            - allow_repeated_results
           properties:
             number_of_results:
               type: integer
@@ -1276,6 +1276,18 @@ components:
             allow_repeated_results:
               type: boolean
               default: true
+    CreateLetterPayload:
+      allOf:
+        - $ref: '#/components/schemas/BaseFields'
+        - $ref: '#/components/schemas/LetterFields'
+    Letter:
+      allOf:
+        - $ref: '#/components/schemas/BaseDraw'
+        - $ref: '#/components/schemas/LetterFields'
+        - type: object
+          required:
+            - results
+          properties:
             results:
               type: array
               items:

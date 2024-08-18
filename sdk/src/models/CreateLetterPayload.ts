@@ -19,79 +19,65 @@ import {
     DrawMetadataFromJSONTyped,
     DrawMetadataToJSON,
 } from './DrawMetadata';
-import type { BaseDraw } from './BaseDraw';
+import type { BaseFields } from './BaseFields';
 import {
-    BaseDrawFromJSON,
-    BaseDrawFromJSONTyped,
-    BaseDrawToJSON,
-} from './BaseDraw';
-import type { LetterResult } from './LetterResult';
-import {
-    LetterResultFromJSON,
-    LetterResultFromJSONTyped,
-    LetterResultToJSON,
-} from './LetterResult';
+    BaseFieldsFromJSON,
+    BaseFieldsFromJSONTyped,
+    BaseFieldsToJSON,
+} from './BaseFields';
 
 /**
  * 
  * @export
- * @interface Letter
+ * @interface CreateLetterPayload
  */
-export interface Letter extends BaseDraw {
+export interface CreateLetterPayload extends BaseFields {
     /**
      * 
      * @type {number}
-     * @memberof Letter
+     * @memberof CreateLetterPayload
      */
     numberOfResults: number;
     /**
      * 
      * @type {boolean}
-     * @memberof Letter
+     * @memberof CreateLetterPayload
      */
     allowRepeatedResults: boolean;
-    /**
-     * 
-     * @type {Array<LetterResult>}
-     * @memberof Letter
-     */
-    readonly results: Array<LetterResult>;
 }
 
 
 
 /**
- * Check if a given object implements the Letter interface.
+ * Check if a given object implements the CreateLetterPayload interface.
  */
-export function instanceOfLetter(value: object): value is Letter {
+export function instanceOfCreateLetterPayload(value: object): value is CreateLetterPayload {
     if (!('numberOfResults' in value) || value['numberOfResults'] === undefined) return false;
     if (!('allowRepeatedResults' in value) || value['allowRepeatedResults'] === undefined) return false;
-    if (!('results' in value) || value['results'] === undefined) return false;
     return true;
 }
 
-export function LetterFromJSON(json: any): Letter {
-    return LetterFromJSONTyped(json, false);
+export function CreateLetterPayloadFromJSON(json: any): CreateLetterPayload {
+    return CreateLetterPayloadFromJSONTyped(json, false);
 }
 
-export function LetterFromJSONTyped(json: any, ignoreDiscriminator: boolean): Letter {
+export function CreateLetterPayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateLetterPayload {
     if (json == null) {
         return json;
     }
     return {
-        ...BaseDrawFromJSONTyped(json, ignoreDiscriminator),
+        ...BaseFieldsFromJSONTyped(json, ignoreDiscriminator),
         'numberOfResults': json['number_of_results'],
         'allowRepeatedResults': json['allow_repeated_results'],
-        'results': ((json['results'] as Array<any>).map(LetterResultFromJSON)),
     };
 }
 
-export function LetterToJSON(value?: Omit<Letter, 'results'|'id'|'created_at'|'updated_at'|'private_id'> | null): any {
+export function CreateLetterPayloadToJSON(value?: CreateLetterPayload | null): any {
     if (value == null) {
         return value;
     }
     return {
-        ...BaseDrawToJSON(value),
+        ...BaseFieldsToJSON(value),
         'number_of_results': value['numberOfResults'],
         'allow_repeated_results': value['allowRepeatedResults'],
     };

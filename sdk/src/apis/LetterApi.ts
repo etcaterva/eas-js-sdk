@@ -15,11 +15,14 @@
 
 import * as runtime from '../runtime';
 import type {
+  CreateLetterPayload,
   DrawTossPayload,
   Letter,
   LetterResult,
 } from '../models/index';
 import {
+    CreateLetterPayloadFromJSON,
+    CreateLetterPayloadToJSON,
     DrawTossPayloadFromJSON,
     DrawTossPayloadToJSON,
     LetterFromJSON,
@@ -29,7 +32,7 @@ import {
 } from '../models/index';
 
 export interface LetterCreateRequest {
-    letter: Letter;
+    createLetterPayload: CreateLetterPayload;
 }
 
 export interface LetterReadRequest {
@@ -50,7 +53,7 @@ export interface LetterTossRequest {
 export interface LetterApiInterface {
     /**
      * 
-     * @param {Letter} letter 
+     * @param {CreateLetterPayload} createLetterPayload 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof LetterApiInterface
@@ -98,10 +101,10 @@ export class LetterApi extends runtime.BaseAPI implements LetterApiInterface {
     /**
      */
     async letterCreateRaw(requestParameters: LetterCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Letter>> {
-        if (requestParameters['letter'] == null) {
+        if (requestParameters['createLetterPayload'] == null) {
             throw new runtime.RequiredError(
-                'letter',
-                'Required parameter "letter" was null or undefined when calling letterCreate().'
+                'createLetterPayload',
+                'Required parameter "createLetterPayload" was null or undefined when calling letterCreate().'
             );
         }
 
@@ -116,7 +119,7 @@ export class LetterApi extends runtime.BaseAPI implements LetterApiInterface {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: LetterToJSON(requestParameters['letter']),
+            body: CreateLetterPayloadToJSON(requestParameters['createLetterPayload']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => LetterFromJSON(jsonValue));
