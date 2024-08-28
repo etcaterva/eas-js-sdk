@@ -27,6 +27,7 @@ src/models/Coin.ts
 src/models/CoinResult.ts
 src/models/CreateGroupsPayload.ts
 src/models/CreateLetterPayload.ts
+src/models/CreateRandomNumberPayload.ts
 src/models/DrawMetadata.ts
 src/models/DrawReTossPayload.ts
 src/models/DrawTossPayload.ts
@@ -53,6 +54,7 @@ src/models/Raffle.ts
 src/models/RaffleResult.ts
 src/models/RaffleResultAllOfValue.ts
 src/models/RandomNumber.ts
+src/models/RandomNumberFields.ts
 src/models/RandomNumberResult.ts
 src/models/RedeemPromoCode.ts
 src/models/SecretSanta.ts

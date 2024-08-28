@@ -15,11 +15,14 @@
 
 import * as runtime from '../runtime';
 import type {
+  CreateRandomNumberPayload,
   DrawTossPayload,
   RandomNumber,
   RandomNumberResult,
 } from '../models/index';
 import {
+    CreateRandomNumberPayloadFromJSON,
+    CreateRandomNumberPayloadToJSON,
     DrawTossPayloadFromJSON,
     DrawTossPayloadToJSON,
     RandomNumberFromJSON,
@@ -29,7 +32,7 @@ import {
 } from '../models/index';
 
 export interface RandomNumberCreateRequest {
-    randomNumber: RandomNumber;
+    createRandomNumberPayload: CreateRandomNumberPayload;
 }
 
 export interface RandomNumberReadRequest {
@@ -50,7 +53,7 @@ export interface RandomNumberTossRequest {
 export interface RandomNumberApiInterface {
     /**
      * 
-     * @param {RandomNumber} randomNumber 
+     * @param {CreateRandomNumberPayload} createRandomNumberPayload 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof RandomNumberApiInterface
@@ -98,10 +101,10 @@ export class RandomNumberApi extends runtime.BaseAPI implements RandomNumberApiI
     /**
      */
     async randomNumberCreateRaw(requestParameters: RandomNumberCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RandomNumber>> {
-        if (requestParameters['randomNumber'] == null) {
+        if (requestParameters['createRandomNumberPayload'] == null) {
             throw new runtime.RequiredError(
-                'randomNumber',
-                'Required parameter "randomNumber" was null or undefined when calling randomNumberCreate().'
+                'createRandomNumberPayload',
+                'Required parameter "createRandomNumberPayload" was null or undefined when calling randomNumberCreate().'
             );
         }
 
@@ -116,7 +119,7 @@ export class RandomNumberApi extends runtime.BaseAPI implements RandomNumberApiI
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: RandomNumberToJSON(requestParameters['randomNumber']),
+            body: CreateRandomNumberPayloadToJSON(requestParameters['createRandomNumberPayload']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => RandomNumberFromJSON(jsonValue));

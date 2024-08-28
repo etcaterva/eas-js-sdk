@@ -19,95 +19,81 @@ import {
     DrawMetadataFromJSONTyped,
     DrawMetadataToJSON,
 } from './DrawMetadata';
-import type { BaseDraw } from './BaseDraw';
+import type { BaseFields } from './BaseFields';
 import {
-    BaseDrawFromJSON,
-    BaseDrawFromJSONTyped,
-    BaseDrawToJSON,
-} from './BaseDraw';
-import type { RandomNumberResult } from './RandomNumberResult';
-import {
-    RandomNumberResultFromJSON,
-    RandomNumberResultFromJSONTyped,
-    RandomNumberResultToJSON,
-} from './RandomNumberResult';
+    BaseFieldsFromJSON,
+    BaseFieldsFromJSONTyped,
+    BaseFieldsToJSON,
+} from './BaseFields';
 
 /**
  * 
  * @export
- * @interface RandomNumber
+ * @interface CreateRandomNumberPayload
  */
-export interface RandomNumber extends BaseDraw {
+export interface CreateRandomNumberPayload extends BaseFields {
     /**
      * 
      * @type {number}
-     * @memberof RandomNumber
+     * @memberof CreateRandomNumberPayload
      */
     rangeMin: number;
     /**
      * 
      * @type {number}
-     * @memberof RandomNumber
+     * @memberof CreateRandomNumberPayload
      */
     rangeMax: number;
     /**
      * 
      * @type {number}
-     * @memberof RandomNumber
+     * @memberof CreateRandomNumberPayload
      */
     numberOfResults: number;
     /**
      * 
      * @type {boolean}
-     * @memberof RandomNumber
+     * @memberof CreateRandomNumberPayload
      */
     allowRepeatedResults: boolean;
-    /**
-     * 
-     * @type {Array<RandomNumberResult>}
-     * @memberof RandomNumber
-     */
-    readonly results: Array<RandomNumberResult>;
 }
 
 
 
 /**
- * Check if a given object implements the RandomNumber interface.
+ * Check if a given object implements the CreateRandomNumberPayload interface.
  */
-export function instanceOfRandomNumber(value: object): value is RandomNumber {
+export function instanceOfCreateRandomNumberPayload(value: object): value is CreateRandomNumberPayload {
     if (!('rangeMin' in value) || value['rangeMin'] === undefined) return false;
     if (!('rangeMax' in value) || value['rangeMax'] === undefined) return false;
     if (!('numberOfResults' in value) || value['numberOfResults'] === undefined) return false;
     if (!('allowRepeatedResults' in value) || value['allowRepeatedResults'] === undefined) return false;
-    if (!('results' in value) || value['results'] === undefined) return false;
     return true;
 }
 
-export function RandomNumberFromJSON(json: any): RandomNumber {
-    return RandomNumberFromJSONTyped(json, false);
+export function CreateRandomNumberPayloadFromJSON(json: any): CreateRandomNumberPayload {
+    return CreateRandomNumberPayloadFromJSONTyped(json, false);
 }
 
-export function RandomNumberFromJSONTyped(json: any, ignoreDiscriminator: boolean): RandomNumber {
+export function CreateRandomNumberPayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateRandomNumberPayload {
     if (json == null) {
         return json;
     }
     return {
-        ...BaseDrawFromJSONTyped(json, ignoreDiscriminator),
+        ...BaseFieldsFromJSONTyped(json, ignoreDiscriminator),
         'rangeMin': json['range_min'],
         'rangeMax': json['range_max'],
         'numberOfResults': json['number_of_results'],
         'allowRepeatedResults': json['allow_repeated_results'],
-        'results': ((json['results'] as Array<any>).map(RandomNumberResultFromJSON)),
     };
 }
 
-export function RandomNumberToJSON(value?: Omit<RandomNumber, 'results'|'id'|'created_at'|'updated_at'|'private_id'> | null): any {
+export function CreateRandomNumberPayloadToJSON(value?: CreateRandomNumberPayload | null): any {
     if (value == null) {
         return value;
     }
     return {
-        ...BaseDrawToJSON(value),
+        ...BaseFieldsToJSON(value),
         'range_min': value['rangeMin'],
         'range_max': value['rangeMax'],
         'number_of_results': value['numberOfResults'],

@@ -394,7 +394,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RandomNumber'
+              $ref: '#/components/schemas/CreateRandomNumberPayload'
         required: true
     parameters: []
   '/random_number/{id}/':
@@ -1243,21 +1243,11 @@ components:
     RandomNumber:
       allOf:
         - $ref: '#/components/schemas/BaseDraw'
+        - $ref: '#/components/schemas/RandomNumberFields'
         - type: object
           required:
-            - range_min
-            - range_max
+            - results
           properties:
-            range_min:
-              type: integer
-            range_max:
-              type: integer
-            number_of_results:
-              type: integer
-              default: 1
-            allow_repeated_results:
-              type: boolean
-              default: true
             results:
               type: array
               items:
@@ -1276,10 +1266,33 @@ components:
             allow_repeated_results:
               type: boolean
               default: true
+    RandomNumberFields:
+      allOf:
+        - type: object
+          required:
+            - range_min
+            - range_max
+            - number_of_results
+            - allow_repeated_results
+          properties:
+            range_min:
+              type: integer
+            range_max:
+              type: integer
+            number_of_results:
+              type: integer
+              default: 1
+            allow_repeated_results:
+              type: boolean
+              default: true
     CreateLetterPayload:
       allOf:
         - $ref: '#/components/schemas/BaseFields'
         - $ref: '#/components/schemas/LetterFields'
+    CreateRandomNumberPayload:
+      allOf:
+        - $ref: '#/components/schemas/BaseFields'
+        - $ref: '#/components/schemas/RandomNumberFields'
     Letter:
       allOf:
         - $ref: '#/components/schemas/BaseDraw'
