@@ -21,7 +21,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Tournament'
+              $ref: '#/components/schemas/CreateTournamentPayload'
         required: true
     parameters: []
   '/tournament/{id}/':
@@ -565,7 +565,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Link'
+              $ref: '#/components/schemas/CreateLinkPayload'
         required: true
     parameters: []
   '/link/{id}/':
@@ -1142,26 +1142,6 @@ components:
               items:
                 $ref: '#/components/schemas/TiktokResult'
               readOnly: true
-    Link:
-      allOf:
-        - $ref: '#/components/schemas/BaseDraw'
-        - type: object
-          required:
-            - items
-          properties:
-            items_set1:
-              type: array
-              items:
-                type: string
-            items_set2:
-              type: array
-              items:
-                type: string
-            results:
-              type: array
-              items:
-                $ref: '#/components/schemas/LinkResult'
-              readOnly: true
     Shifts:
       allOf:
         - $ref: '#/components/schemas/BaseDraw'
@@ -1193,40 +1173,28 @@ components:
               items:
                 $ref: '#/components/schemas/ShiftsResult'
               readOnly: true
-    Tournament:
-      allOf:
-        - $ref: '#/components/schemas/BaseDraw'
-        - type: object
-          required:
-            - participants
-          properties:
-            participants:
-              type: array
-              items:
-                $ref: '#/components/schemas/Participant'
-            results:
-              type: array
-              items:
-                $ref: '#/components/schemas/TournamentResult'
-              readOnly: true
-    GroupsFields:
-      allOf:
-        - type: object
-          required:
-            - participants
-            - number_of_groups
-          properties:
-            participants:
-              type: array
-              items:
-                $ref: '#/components/schemas/Participant'
-            number_of_groups:
-              type: integer
 
     CreateGroupsPayload:
       allOf:
         - $ref: '#/components/schemas/BaseFields'
         - $ref: '#/components/schemas/GroupsFields'
+    CreateLetterPayload:
+      allOf:
+        - $ref: '#/components/schemas/BaseFields'
+        - $ref: '#/components/schemas/LetterFields'
+    CreateRandomNumberPayload:
+      allOf:
+        - $ref: '#/components/schemas/BaseFields'
+        - $ref: '#/components/schemas/RandomNumberFields'
+    CreateTournamentPayload:
+      allOf:
+        - $ref: '#/components/schemas/BaseFields'
+        - $ref: '#/components/schemas/TournamentFields'
+    CreateLinkPayload:
+      allOf:
+        - $ref: '#/components/schemas/BaseFields'
+        - $ref: '#/components/schemas/LinkFields'
+
     Groups:
       allOf:
         - $ref: '#/components/schemas/BaseDraw'
@@ -1253,6 +1221,46 @@ components:
               items:
                 $ref: '#/components/schemas/RandomNumberResult'
               readOnly: true
+    Letter:
+      allOf:
+        - $ref: '#/components/schemas/BaseDraw'
+        - $ref: '#/components/schemas/LetterFields'
+        - type: object
+          required:
+            - results
+          properties:
+            results:
+              type: array
+              items:
+                $ref: '#/components/schemas/LetterResult'
+              readOnly: true
+    Tournament:
+      allOf:
+        - $ref: '#/components/schemas/BaseDraw'
+        - $ref: '#/components/schemas/TournamentFields'
+        - type: object
+          required:
+            - results
+          properties:
+            results:
+              type: array
+              items:
+                $ref: '#/components/schemas/TournamentResult'
+              readOnly: true
+    Link:
+      allOf:
+        - $ref: '#/components/schemas/BaseDraw'
+        - $ref: '#/components/schemas/LinkFields'
+        - type: object
+          required:
+            - results
+          properties:
+            results:
+              type: array
+              items:
+                $ref: '#/components/schemas/LinkResult'
+              readOnly: true
+
     LetterFields:
       allOf:
         - type: object
@@ -1285,27 +1293,116 @@ components:
             allow_repeated_results:
               type: boolean
               default: true
-    CreateLetterPayload:
+    GroupsFields:
       allOf:
-        - $ref: '#/components/schemas/BaseFields'
-        - $ref: '#/components/schemas/LetterFields'
-    CreateRandomNumberPayload:
-      allOf:
-        - $ref: '#/components/schemas/BaseFields'
-        - $ref: '#/components/schemas/RandomNumberFields'
-    Letter:
-      allOf:
-        - $ref: '#/components/schemas/BaseDraw'
-        - $ref: '#/components/schemas/LetterFields'
         - type: object
           required:
-            - results
+            - participants
+            - number_of_groups
           properties:
-            results:
+            participants:
               type: array
               items:
-                $ref: '#/components/schemas/LetterResult'
-              readOnly: true
+                $ref: '#/components/schemas/Participant'
+            number_of_groups:
+              type: integer
+    TournamentFields:
+      allOf:
+        - type: object
+          required:
+            - participants
+          properties:
+            participants:
+              type: array
+              items:
+                $ref: '#/components/schemas/Participant'
+    LinkFields:
+      allOf:
+        - type: object
+          required:
+            - items_set1
+            - items_set2
+          properties:
+            items_set1:
+              type: array
+              items:
+                type: string
+            items_set2:
+              type: array
+              items:
+                type: string
+
+    GroupsResult:
+      allOf:
+        - $ref: '#/components/schemas/BaseResult'
+        - type: object
+          properties:
+            value:
+              nullable: true
+              type: array
+              items:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Participant'
+    RandomNumberResult:
+      allOf:
+        - $ref: '#/components/schemas/BaseResult'
+        - type: object
+          properties:
+            value:
+              nullable: true
+              type: array
+              items:
+                type: integer
+    LetterResult:
+      allOf:
+        - $ref: '#/components/schemas/BaseResult'
+        - type: object
+          properties:
+            value:
+              nullable: true
+              type: array
+              items:
+                type: string
+    TournamentResult:
+      allOf:
+        - $ref: '#/components/schemas/BaseResult'
+        - type: object
+          properties:
+            value:
+              nullable: true
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  participants:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Participant'
+                  score:
+                    type: string
+                  winner_id:
+                    type: string
+                  next_match_id:
+                    type: string
+    LinkResult:
+      allOf:
+        - $ref: '#/components/schemas/BaseResult'
+        - type: object
+          properties:
+            value:
+              nullable: true
+              type: array
+              items:
+                type: object
+                properties:
+                  element1:
+                    type: string
+                  element2:
+                    type: string
+
     Coin:
       allOf:
         - $ref: '#/components/schemas/BaseDraw'
@@ -1425,21 +1522,6 @@ components:
                     type: array
                     items:
                       $ref: '#/components/schemas/Participant'
-    LinkResult:
-      allOf:
-        - $ref: '#/components/schemas/BaseResult'
-        - type: object
-          properties:
-            value:
-              nullable: true
-              type: array
-              items:
-                type: object
-                properties:
-                  element1:
-                    type: string
-                  element2:
-                    type: string
     LotteryResult:
       allOf:
         - $ref: '#/components/schemas/BaseResult'
@@ -1450,61 +1532,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/Participant'
-    TournamentResult:
-      allOf:
-        - $ref: '#/components/schemas/BaseResult'
-        - type: object
-          properties:
-            value:
-              nullable: true
-              type: array
-              items:
-                type: object
-                properties:
-                  id:
-                    type: string
-                  participants:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Participant'
-                  score:
-                    type: string
-                  winner_id:
-                    type: string
-                  next_match_id:
-                    type: string
-    GroupsResult:
-      allOf:
-        - $ref: '#/components/schemas/BaseResult'
-        - type: object
-          properties:
-            value:
-              nullable: true
-              type: array
-              items:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Participant'
-    RandomNumberResult:
-      allOf:
-        - $ref: '#/components/schemas/BaseResult'
-        - type: object
-          properties:
-            value:
-              nullable: true
-              type: array
-              items:
-                type: integer
-    LetterResult:
-      allOf:
-        - $ref: '#/components/schemas/BaseResult'
-        - type: object
-          properties:
-            value:
-              nullable: true
-              type: array
-              items:
-                type: string
     SpinnerResult:
       allOf:
         - $ref: '#/components/schemas/BaseResult'

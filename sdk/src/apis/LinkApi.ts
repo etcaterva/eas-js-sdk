@@ -15,11 +15,14 @@
 
 import * as runtime from '../runtime';
 import type {
+  CreateLinkPayload,
   DrawTossPayload,
   Link,
   LinkResult,
 } from '../models/index';
 import {
+    CreateLinkPayloadFromJSON,
+    CreateLinkPayloadToJSON,
     DrawTossPayloadFromJSON,
     DrawTossPayloadToJSON,
     LinkFromJSON,
@@ -29,7 +32,7 @@ import {
 } from '../models/index';
 
 export interface LinkCreateRequest {
-    link: Link;
+    createLinkPayload: CreateLinkPayload;
 }
 
 export interface LinkReadRequest {
@@ -50,7 +53,7 @@ export interface LinkTossRequest {
 export interface LinkApiInterface {
     /**
      * 
-     * @param {Link} link 
+     * @param {CreateLinkPayload} createLinkPayload 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof LinkApiInterface
@@ -98,10 +101,10 @@ export class LinkApi extends runtime.BaseAPI implements LinkApiInterface {
     /**
      */
     async linkCreateRaw(requestParameters: LinkCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Link>> {
-        if (requestParameters['link'] == null) {
+        if (requestParameters['createLinkPayload'] == null) {
             throw new runtime.RequiredError(
-                'link',
-                'Required parameter "link" was null or undefined when calling linkCreate().'
+                'createLinkPayload',
+                'Required parameter "createLinkPayload" was null or undefined when calling linkCreate().'
             );
         }
 
@@ -116,7 +119,7 @@ export class LinkApi extends runtime.BaseAPI implements LinkApiInterface {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: LinkToJSON(requestParameters['link']),
+            body: CreateLinkPayloadToJSON(requestParameters['createLinkPayload']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => LinkFromJSON(jsonValue));

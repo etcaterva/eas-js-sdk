@@ -19,77 +19,63 @@ import {
     DrawMetadataFromJSONTyped,
     DrawMetadataToJSON,
 } from './DrawMetadata';
-import type { BaseDraw } from './BaseDraw';
-import {
-    BaseDrawFromJSON,
-    BaseDrawFromJSONTyped,
-    BaseDrawToJSON,
-} from './BaseDraw';
 import type { Participant } from './Participant';
 import {
     ParticipantFromJSON,
     ParticipantFromJSONTyped,
     ParticipantToJSON,
 } from './Participant';
-import type { TournamentResult } from './TournamentResult';
+import type { BaseFields } from './BaseFields';
 import {
-    TournamentResultFromJSON,
-    TournamentResultFromJSONTyped,
-    TournamentResultToJSON,
-} from './TournamentResult';
+    BaseFieldsFromJSON,
+    BaseFieldsFromJSONTyped,
+    BaseFieldsToJSON,
+} from './BaseFields';
 
 /**
  * 
  * @export
- * @interface Tournament
+ * @interface CreateTournamentPayload
  */
-export interface Tournament extends BaseDraw {
+export interface CreateTournamentPayload extends BaseFields {
     /**
      * 
      * @type {Array<Participant>}
-     * @memberof Tournament
+     * @memberof CreateTournamentPayload
      */
     participants: Array<Participant>;
-    /**
-     * 
-     * @type {Array<TournamentResult>}
-     * @memberof Tournament
-     */
-    readonly results: Array<TournamentResult>;
 }
 
 
 
 /**
- * Check if a given object implements the Tournament interface.
+ * Check if a given object implements the CreateTournamentPayload interface.
  */
-export function instanceOfTournament(value: object): value is Tournament {
+export function instanceOfCreateTournamentPayload(value: object): value is CreateTournamentPayload {
     if (!('participants' in value) || value['participants'] === undefined) return false;
-    if (!('results' in value) || value['results'] === undefined) return false;
     return true;
 }
 
-export function TournamentFromJSON(json: any): Tournament {
-    return TournamentFromJSONTyped(json, false);
+export function CreateTournamentPayloadFromJSON(json: any): CreateTournamentPayload {
+    return CreateTournamentPayloadFromJSONTyped(json, false);
 }
 
-export function TournamentFromJSONTyped(json: any, ignoreDiscriminator: boolean): Tournament {
+export function CreateTournamentPayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateTournamentPayload {
     if (json == null) {
         return json;
     }
     return {
-        ...BaseDrawFromJSONTyped(json, ignoreDiscriminator),
+        ...BaseFieldsFromJSONTyped(json, ignoreDiscriminator),
         'participants': ((json['participants'] as Array<any>).map(ParticipantFromJSON)),
-        'results': ((json['results'] as Array<any>).map(TournamentResultFromJSON)),
     };
 }
 
-export function TournamentToJSON(value?: Omit<Tournament, 'results'|'id'|'created_at'|'updated_at'|'private_id'> | null): any {
+export function CreateTournamentPayloadToJSON(value?: CreateTournamentPayload | null): any {
     if (value == null) {
         return value;
     }
     return {
-        ...BaseDrawToJSON(value),
+        ...BaseFieldsToJSON(value),
         'participants': ((value['participants'] as Array<any>).map(ParticipantToJSON)),
     };
 }

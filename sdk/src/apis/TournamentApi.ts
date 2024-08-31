@@ -15,12 +15,15 @@
 
 import * as runtime from '../runtime';
 import type {
+  CreateTournamentPayload,
   DrawTossPayload,
   Participant,
   Tournament,
   TournamentResult,
 } from '../models/index';
 import {
+    CreateTournamentPayloadFromJSON,
+    CreateTournamentPayloadToJSON,
     DrawTossPayloadFromJSON,
     DrawTossPayloadToJSON,
     ParticipantFromJSON,
@@ -32,7 +35,7 @@ import {
 } from '../models/index';
 
 export interface TournamentCreateRequest {
-    tournament: Tournament;
+    createTournamentPayload: CreateTournamentPayload;
 }
 
 export interface TournamentParticipantsAddRequest {
@@ -58,7 +61,7 @@ export interface TournamentTossRequest {
 export interface TournamentApiInterface {
     /**
      * 
-     * @param {Tournament} tournament 
+     * @param {CreateTournamentPayload} createTournamentPayload 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TournamentApiInterface
@@ -120,10 +123,10 @@ export class TournamentApi extends runtime.BaseAPI implements TournamentApiInter
     /**
      */
     async tournamentCreateRaw(requestParameters: TournamentCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Tournament>> {
-        if (requestParameters['tournament'] == null) {
+        if (requestParameters['createTournamentPayload'] == null) {
             throw new runtime.RequiredError(
-                'tournament',
-                'Required parameter "tournament" was null or undefined when calling tournamentCreate().'
+                'createTournamentPayload',
+                'Required parameter "createTournamentPayload" was null or undefined when calling tournamentCreate().'
             );
         }
 
@@ -138,7 +141,7 @@ export class TournamentApi extends runtime.BaseAPI implements TournamentApiInter
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: TournamentToJSON(requestParameters['tournament']),
+            body: CreateTournamentPayloadToJSON(requestParameters['createTournamentPayload']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => TournamentFromJSON(jsonValue));

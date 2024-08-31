@@ -27,7 +27,9 @@ src/models/Coin.ts
 src/models/CoinResult.ts
 src/models/CreateGroupsPayload.ts
 src/models/CreateLetterPayload.ts
+src/models/CreateLinkPayload.ts
 src/models/CreateRandomNumberPayload.ts
+src/models/CreateTournamentPayload.ts
 src/models/DrawMetadata.ts
 src/models/DrawReTossPayload.ts
 src/models/DrawTossPayload.ts
@@ -42,6 +44,7 @@ src/models/Letter.ts
 src/models/LetterFields.ts
 src/models/LetterResult.ts
 src/models/Link.ts
+src/models/LinkFields.ts
 src/models/LinkResult.ts
 src/models/LinkResultAllOfValue.ts
 src/models/Lottery.ts
@@ -77,6 +80,7 @@ src/models/TiktokResult.ts
 src/models/TiktokResultAllOfComment.ts
 src/models/TiktokResultAllOfValue.ts
 src/models/Tournament.ts
+src/models/TournamentFields.ts
 src/models/TournamentResult.ts
 src/models/TournamentResultAllOfValue.ts
 src/models/index.ts

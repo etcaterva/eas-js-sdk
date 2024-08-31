@@ -19,79 +19,65 @@ import {
     DrawMetadataFromJSONTyped,
     DrawMetadataToJSON,
 } from './DrawMetadata';
-import type { BaseDraw } from './BaseDraw';
+import type { BaseFields } from './BaseFields';
 import {
-    BaseDrawFromJSON,
-    BaseDrawFromJSONTyped,
-    BaseDrawToJSON,
-} from './BaseDraw';
-import type { LinkResult } from './LinkResult';
-import {
-    LinkResultFromJSON,
-    LinkResultFromJSONTyped,
-    LinkResultToJSON,
-} from './LinkResult';
+    BaseFieldsFromJSON,
+    BaseFieldsFromJSONTyped,
+    BaseFieldsToJSON,
+} from './BaseFields';
 
 /**
  * 
  * @export
- * @interface Link
+ * @interface CreateLinkPayload
  */
-export interface Link extends BaseDraw {
+export interface CreateLinkPayload extends BaseFields {
     /**
      * 
      * @type {Array<string>}
-     * @memberof Link
+     * @memberof CreateLinkPayload
      */
     itemsSet1: Array<string>;
     /**
      * 
      * @type {Array<string>}
-     * @memberof Link
+     * @memberof CreateLinkPayload
      */
     itemsSet2: Array<string>;
-    /**
-     * 
-     * @type {Array<LinkResult>}
-     * @memberof Link
-     */
-    readonly results: Array<LinkResult>;
 }
 
 
 
 /**
- * Check if a given object implements the Link interface.
+ * Check if a given object implements the CreateLinkPayload interface.
  */
-export function instanceOfLink(value: object): value is Link {
+export function instanceOfCreateLinkPayload(value: object): value is CreateLinkPayload {
     if (!('itemsSet1' in value) || value['itemsSet1'] === undefined) return false;
     if (!('itemsSet2' in value) || value['itemsSet2'] === undefined) return false;
-    if (!('results' in value) || value['results'] === undefined) return false;
     return true;
 }
 
-export function LinkFromJSON(json: any): Link {
-    return LinkFromJSONTyped(json, false);
+export function CreateLinkPayloadFromJSON(json: any): CreateLinkPayload {
+    return CreateLinkPayloadFromJSONTyped(json, false);
 }
 
-export function LinkFromJSONTyped(json: any, ignoreDiscriminator: boolean): Link {
+export function CreateLinkPayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateLinkPayload {
     if (json == null) {
         return json;
     }
     return {
-        ...BaseDrawFromJSONTyped(json, ignoreDiscriminator),
+        ...BaseFieldsFromJSONTyped(json, ignoreDiscriminator),
         'itemsSet1': json['items_set1'],
         'itemsSet2': json['items_set2'],
-        'results': ((json['results'] as Array<any>).map(LinkResultFromJSON)),
     };
 }
 
-export function LinkToJSON(value?: Omit<Link, 'results'|'id'|'created_at'|'updated_at'|'private_id'> | null): any {
+export function CreateLinkPayloadToJSON(value?: CreateLinkPayload | null): any {
     if (value == null) {
         return value;
     }
     return {
-        ...BaseDrawToJSON(value),
+        ...BaseFieldsToJSON(value),
         'items_set1': value['itemsSet1'],
         'items_set2': value['itemsSet2'],
     };
