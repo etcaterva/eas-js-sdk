@@ -55,7 +55,7 @@ export function RandomNumberResultFromJSONTyped(json: any, ignoreDiscriminator: 
     };
 }
 
-export function RandomNumberResultToJSON(value?: Omit<RandomNumberResult, 'id'|'created_at'> | null): any {
+export function RandomNumberResultToJSON(value?: Omit<RandomNumberResult, 'created_at'> | null): any {
     if (value == null) {
         return value;
     }

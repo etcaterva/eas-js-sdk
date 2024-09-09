@@ -37,12 +37,12 @@ import {
     ParticipantFromJSONTyped,
     ParticipantToJSON,
 } from './Participant';
-import type { ShiftsAllOfIntervals } from './ShiftsAllOfIntervals';
+import type { ShiftsInterval } from './ShiftsInterval';
 import {
-    ShiftsAllOfIntervalsFromJSON,
-    ShiftsAllOfIntervalsFromJSONTyped,
-    ShiftsAllOfIntervalsToJSON,
-} from './ShiftsAllOfIntervals';
+    ShiftsIntervalFromJSON,
+    ShiftsIntervalFromJSONTyped,
+    ShiftsIntervalToJSON,
+} from './ShiftsInterval';
 
 /**
  * 
@@ -52,10 +52,10 @@ import {
 export interface Shifts extends BaseDraw {
     /**
      * 
-     * @type {Array<ShiftsAllOfIntervals>}
+     * @type {Array<ShiftsInterval>}
      * @memberof Shifts
      */
-    intervals: Array<ShiftsAllOfIntervals>;
+    intervals: Array<ShiftsInterval>;
     /**
      * 
      * @type {Array<Participant>}
@@ -91,7 +91,7 @@ export function ShiftsFromJSONTyped(json: any, ignoreDiscriminator: boolean): Sh
     }
     return {
         ...BaseDrawFromJSONTyped(json, ignoreDiscriminator),
-        'intervals': ((json['intervals'] as Array<any>).map(ShiftsAllOfIntervalsFromJSON)),
+        'intervals': ((json['intervals'] as Array<any>).map(ShiftsIntervalFromJSON)),
         'participants': ((json['participants'] as Array<any>).map(ParticipantFromJSON)),
         'results': json['results'] == null ? undefined : ((json['results'] as Array<any>).map(ShiftsResultFromJSON)),
     };
@@ -103,7 +103,7 @@ export function ShiftsToJSON(value?: Omit<Shifts, 'results'|'id'|'created_at'|'u
     }
     return {
         ...BaseDrawToJSON(value),
-        'intervals': ((value['intervals'] as Array<any>).map(ShiftsAllOfIntervalsToJSON)),
+        'intervals': ((value['intervals'] as Array<any>).map(ShiftsIntervalToJSON)),
         'participants': ((value['participants'] as Array<any>).map(ParticipantToJSON)),
     };
 }

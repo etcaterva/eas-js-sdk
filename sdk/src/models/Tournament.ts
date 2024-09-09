@@ -19,18 +19,18 @@ import {
     DrawMetadataFromJSONTyped,
     DrawMetadataToJSON,
 } from './DrawMetadata';
+import type { ParticipantField } from './ParticipantField';
+import {
+    ParticipantFieldFromJSON,
+    ParticipantFieldFromJSONTyped,
+    ParticipantFieldToJSON,
+} from './ParticipantField';
 import type { BaseDraw } from './BaseDraw';
 import {
     BaseDrawFromJSON,
     BaseDrawFromJSONTyped,
     BaseDrawToJSON,
 } from './BaseDraw';
-import type { Participant } from './Participant';
-import {
-    ParticipantFromJSON,
-    ParticipantFromJSONTyped,
-    ParticipantToJSON,
-} from './Participant';
 import type { TournamentResult } from './TournamentResult';
 import {
     TournamentResultFromJSON,
@@ -46,10 +46,10 @@ import {
 export interface Tournament extends BaseDraw {
     /**
      * 
-     * @type {Array<Participant>}
+     * @type {Array<ParticipantField>}
      * @memberof Tournament
      */
-    participants: Array<Participant>;
+    participants: Array<ParticipantField>;
     /**
      * 
      * @type {Array<TournamentResult>}
@@ -79,7 +79,7 @@ export function TournamentFromJSONTyped(json: any, ignoreDiscriminator: boolean)
     }
     return {
         ...BaseDrawFromJSONTyped(json, ignoreDiscriminator),
-        'participants': ((json['participants'] as Array<any>).map(ParticipantFromJSON)),
+        'participants': ((json['participants'] as Array<any>).map(ParticipantFieldFromJSON)),
         'results': ((json['results'] as Array<any>).map(TournamentResultFromJSON)),
     };
 }
@@ -90,7 +90,7 @@ export function TournamentToJSON(value?: Omit<Tournament, 'results'|'id'|'create
     }
     return {
         ...BaseDrawToJSON(value),
-        'participants': ((value['participants'] as Array<any>).map(ParticipantToJSON)),
+        'participants': ((value['participants'] as Array<any>).map(ParticipantFieldToJSON)),
     };
 }
 

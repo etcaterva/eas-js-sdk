@@ -61,7 +61,7 @@ export function TiktokResultFromJSONTyped(json: any, ignoreDiscriminator: boolea
     };
 }
 
-export function TiktokResultToJSON(value?: Omit<TiktokResult, 'id'|'created_at'> | null): any {
+export function TiktokResultToJSON(value?: Omit<TiktokResult, 'created_at'> | null): any {
     if (value == null) {
         return value;
     }

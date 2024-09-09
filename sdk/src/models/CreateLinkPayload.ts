@@ -13,25 +13,25 @@
  */
 
 import { mapValues } from '../runtime';
+import type { BaseFieldsCreate } from './BaseFieldsCreate';
+import {
+    BaseFieldsCreateFromJSON,
+    BaseFieldsCreateFromJSONTyped,
+    BaseFieldsCreateToJSON,
+} from './BaseFieldsCreate';
 import type { DrawMetadata } from './DrawMetadata';
 import {
     DrawMetadataFromJSON,
     DrawMetadataFromJSONTyped,
     DrawMetadataToJSON,
 } from './DrawMetadata';
-import type { BaseFields } from './BaseFields';
-import {
-    BaseFieldsFromJSON,
-    BaseFieldsFromJSONTyped,
-    BaseFieldsToJSON,
-} from './BaseFields';
 
 /**
  * 
  * @export
  * @interface CreateLinkPayload
  */
-export interface CreateLinkPayload extends BaseFields {
+export interface CreateLinkPayload extends BaseFieldsCreate {
     /**
      * 
      * @type {Array<string>}
@@ -45,8 +45,6 @@ export interface CreateLinkPayload extends BaseFields {
      */
     itemsSet2: Array<string>;
 }
-
-
 
 /**
  * Check if a given object implements the CreateLinkPayload interface.
@@ -66,7 +64,7 @@ export function CreateLinkPayloadFromJSONTyped(json: any, ignoreDiscriminator: b
         return json;
     }
     return {
-        ...BaseFieldsFromJSONTyped(json, ignoreDiscriminator),
+        ...BaseFieldsCreateFromJSONTyped(json, ignoreDiscriminator),
         'itemsSet1': json['items_set1'],
         'itemsSet2': json['items_set2'],
     };
@@ -77,7 +75,7 @@ export function CreateLinkPayloadToJSON(value?: CreateLinkPayload | null): any {
         return value;
     }
     return {
-        ...BaseFieldsToJSON(value),
+        ...BaseFieldsCreateToJSON(value),
         'items_set1': value['itemsSet1'],
         'items_set2': value['itemsSet2'],
     };

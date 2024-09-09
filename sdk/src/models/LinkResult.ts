@@ -61,7 +61,7 @@ export function LinkResultFromJSONTyped(json: any, ignoreDiscriminator: boolean)
     };
 }
 
-export function LinkResultToJSON(value?: Omit<LinkResult, 'id'|'created_at'> | null): any {
+export function LinkResultToJSON(value?: Omit<LinkResult, 'created_at'> | null): any {
     if (value == null) {
         return value;
     }

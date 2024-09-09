@@ -19,59 +19,65 @@ import {
     ParticipantFieldFromJSONTyped,
     ParticipantFieldToJSON,
 } from './ParticipantField';
+import type { ShiftsInterval } from './ShiftsInterval';
+import {
+    ShiftsIntervalFromJSON,
+    ShiftsIntervalFromJSONTyped,
+    ShiftsIntervalToJSON,
+} from './ShiftsInterval';
 
 /**
  * 
  * @export
- * @interface GroupsFields
+ * @interface ShiftsFields
  */
-export interface GroupsFields {
+export interface ShiftsFields {
+    /**
+     * 
+     * @type {Array<ShiftsInterval>}
+     * @memberof ShiftsFields
+     */
+    intervals: Array<ShiftsInterval>;
     /**
      * 
      * @type {Array<ParticipantField>}
-     * @memberof GroupsFields
+     * @memberof ShiftsFields
      */
     participants: Array<ParticipantField>;
-    /**
-     * 
-     * @type {number}
-     * @memberof GroupsFields
-     */
-    numberOfGroups: number;
 }
 
 /**
- * Check if a given object implements the GroupsFields interface.
+ * Check if a given object implements the ShiftsFields interface.
  */
-export function instanceOfGroupsFields(value: object): value is GroupsFields {
+export function instanceOfShiftsFields(value: object): value is ShiftsFields {
+    if (!('intervals' in value) || value['intervals'] === undefined) return false;
     if (!('participants' in value) || value['participants'] === undefined) return false;
-    if (!('numberOfGroups' in value) || value['numberOfGroups'] === undefined) return false;
     return true;
 }
 
-export function GroupsFieldsFromJSON(json: any): GroupsFields {
-    return GroupsFieldsFromJSONTyped(json, false);
+export function ShiftsFieldsFromJSON(json: any): ShiftsFields {
+    return ShiftsFieldsFromJSONTyped(json, false);
 }
 
-export function GroupsFieldsFromJSONTyped(json: any, ignoreDiscriminator: boolean): GroupsFields {
+export function ShiftsFieldsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ShiftsFields {
     if (json == null) {
         return json;
     }
     return {
         
+        'intervals': ((json['intervals'] as Array<any>).map(ShiftsIntervalFromJSON)),
         'participants': ((json['participants'] as Array<any>).map(ParticipantFieldFromJSON)),
-        'numberOfGroups': json['number_of_groups'],
     };
 }
 
-export function GroupsFieldsToJSON(value?: GroupsFields | null): any {
+export function ShiftsFieldsToJSON(value?: ShiftsFields | null): any {
     if (value == null) {
         return value;
     }
     return {
         
+        'intervals': ((value['intervals'] as Array<any>).map(ShiftsIntervalToJSON)),
         'participants': ((value['participants'] as Array<any>).map(ParticipantFieldToJSON)),
-        'number_of_groups': value['numberOfGroups'],
     };
 }
 

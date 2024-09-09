@@ -19,59 +19,65 @@ import {
     ParticipantFieldFromJSONTyped,
     ParticipantFieldToJSON,
 } from './ParticipantField';
+import type { PrizeField } from './PrizeField';
+import {
+    PrizeFieldFromJSON,
+    PrizeFieldFromJSONTyped,
+    PrizeFieldToJSON,
+} from './PrizeField';
 
 /**
  * 
  * @export
- * @interface GroupsFields
+ * @interface RaffleFields
  */
-export interface GroupsFields {
+export interface RaffleFields {
+    /**
+     * 
+     * @type {Array<PrizeField>}
+     * @memberof RaffleFields
+     */
+    prizes: Array<PrizeField>;
     /**
      * 
      * @type {Array<ParticipantField>}
-     * @memberof GroupsFields
+     * @memberof RaffleFields
      */
     participants: Array<ParticipantField>;
-    /**
-     * 
-     * @type {number}
-     * @memberof GroupsFields
-     */
-    numberOfGroups: number;
 }
 
 /**
- * Check if a given object implements the GroupsFields interface.
+ * Check if a given object implements the RaffleFields interface.
  */
-export function instanceOfGroupsFields(value: object): value is GroupsFields {
+export function instanceOfRaffleFields(value: object): value is RaffleFields {
+    if (!('prizes' in value) || value['prizes'] === undefined) return false;
     if (!('participants' in value) || value['participants'] === undefined) return false;
-    if (!('numberOfGroups' in value) || value['numberOfGroups'] === undefined) return false;
     return true;
 }
 
-export function GroupsFieldsFromJSON(json: any): GroupsFields {
-    return GroupsFieldsFromJSONTyped(json, false);
+export function RaffleFieldsFromJSON(json: any): RaffleFields {
+    return RaffleFieldsFromJSONTyped(json, false);
 }
 
-export function GroupsFieldsFromJSONTyped(json: any, ignoreDiscriminator: boolean): GroupsFields {
+export function RaffleFieldsFromJSONTyped(json: any, ignoreDiscriminator: boolean): RaffleFields {
     if (json == null) {
         return json;
     }
     return {
         
+        'prizes': ((json['prizes'] as Array<any>).map(PrizeFieldFromJSON)),
         'participants': ((json['participants'] as Array<any>).map(ParticipantFieldFromJSON)),
-        'numberOfGroups': json['number_of_groups'],
     };
 }
 
-export function GroupsFieldsToJSON(value?: GroupsFields | null): any {
+export function RaffleFieldsToJSON(value?: RaffleFields | null): any {
     if (value == null) {
         return value;
     }
     return {
         
+        'prizes': ((value['prizes'] as Array<any>).map(PrizeFieldToJSON)),
         'participants': ((value['participants'] as Array<any>).map(ParticipantFieldToJSON)),
-        'number_of_groups': value['numberOfGroups'],
     };
 }
 

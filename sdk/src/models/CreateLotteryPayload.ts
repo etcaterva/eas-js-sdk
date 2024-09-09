@@ -35,46 +35,54 @@ import {
 /**
  * 
  * @export
- * @interface CreateTournamentPayload
+ * @interface CreateLotteryPayload
  */
-export interface CreateTournamentPayload extends BaseFieldsCreate {
+export interface CreateLotteryPayload extends BaseFieldsCreate {
     /**
      * 
      * @type {Array<ParticipantField>}
-     * @memberof CreateTournamentPayload
+     * @memberof CreateLotteryPayload
      */
     participants: Array<ParticipantField>;
+    /**
+     * 
+     * @type {number}
+     * @memberof CreateLotteryPayload
+     */
+    numberOfResults?: number;
 }
 
 /**
- * Check if a given object implements the CreateTournamentPayload interface.
+ * Check if a given object implements the CreateLotteryPayload interface.
  */
-export function instanceOfCreateTournamentPayload(value: object): value is CreateTournamentPayload {
+export function instanceOfCreateLotteryPayload(value: object): value is CreateLotteryPayload {
     if (!('participants' in value) || value['participants'] === undefined) return false;
     return true;
 }
 
-export function CreateTournamentPayloadFromJSON(json: any): CreateTournamentPayload {
-    return CreateTournamentPayloadFromJSONTyped(json, false);
+export function CreateLotteryPayloadFromJSON(json: any): CreateLotteryPayload {
+    return CreateLotteryPayloadFromJSONTyped(json, false);
 }
 
-export function CreateTournamentPayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateTournamentPayload {
+export function CreateLotteryPayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateLotteryPayload {
     if (json == null) {
         return json;
     }
     return {
         ...BaseFieldsCreateFromJSONTyped(json, ignoreDiscriminator),
         'participants': ((json['participants'] as Array<any>).map(ParticipantFieldFromJSON)),
+        'numberOfResults': json['number_of_results'] == null ? undefined : json['number_of_results'],
     };
 }
 
-export function CreateTournamentPayloadToJSON(value?: CreateTournamentPayload | null): any {
+export function CreateLotteryPayloadToJSON(value?: CreateLotteryPayload | null): any {
     if (value == null) {
         return value;
     }
     return {
         ...BaseFieldsCreateToJSON(value),
         'participants': ((value['participants'] as Array<any>).map(ParticipantFieldToJSON)),
+        'number_of_results': value['numberOfResults'],
     };
 }
 

@@ -15,12 +15,15 @@
 
 import * as runtime from '../runtime';
 import type {
+  CreateLotteryPayload,
   DrawTossPayload,
   Lottery,
   LotteryResult,
   Participant,
 } from '../models/index';
 import {
+    CreateLotteryPayloadFromJSON,
+    CreateLotteryPayloadToJSON,
     DrawTossPayloadFromJSON,
     DrawTossPayloadToJSON,
     LotteryFromJSON,
@@ -32,7 +35,7 @@ import {
 } from '../models/index';
 
 export interface LotteryCreateRequest {
-    lottery: Lottery;
+    createLotteryPayload: CreateLotteryPayload;
 }
 
 export interface LotteryParticipantsAddRequest {
@@ -58,7 +61,7 @@ export interface LotteryTossRequest {
 export interface LotteryApiInterface {
     /**
      * 
-     * @param {Lottery} lottery 
+     * @param {CreateLotteryPayload} createLotteryPayload 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof LotteryApiInterface
@@ -120,10 +123,10 @@ export class LotteryApi extends runtime.BaseAPI implements LotteryApiInterface {
     /**
      */
     async lotteryCreateRaw(requestParameters: LotteryCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Lottery>> {
-        if (requestParameters['lottery'] == null) {
+        if (requestParameters['createLotteryPayload'] == null) {
             throw new runtime.RequiredError(
-                'lottery',
-                'Required parameter "lottery" was null or undefined when calling lotteryCreate().'
+                'createLotteryPayload',
+                'Required parameter "createLotteryPayload" was null or undefined when calling lotteryCreate().'
             );
         }
 
@@ -138,7 +141,7 @@ export class LotteryApi extends runtime.BaseAPI implements LotteryApiInterface {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: LotteryToJSON(requestParameters['lottery']),
+            body: CreateLotteryPayloadToJSON(requestParameters['createLotteryPayload']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => LotteryFromJSON(jsonValue));

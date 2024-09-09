@@ -66,7 +66,7 @@ export function CoinResultFromJSONTyped(json: any, ignoreDiscriminator: boolean)
     };
 }
 
-export function CoinResultToJSON(value?: Omit<CoinResult, 'id'|'created_at'> | null): any {
+export function CoinResultToJSON(value?: Omit<CoinResult, 'created_at'> | null): any {
     if (value == null) {
         return value;
     }

@@ -21,6 +21,7 @@ src/apis/index.ts
 src/index.ts
 src/models/BaseDraw.ts
 src/models/BaseFields.ts
+src/models/BaseFieldsCreate.ts
 src/models/BaseObject.ts
 src/models/BaseResult.ts
 src/models/Coin.ts
@@ -28,7 +29,10 @@ src/models/CoinResult.ts
 src/models/CreateGroupsPayload.ts
 src/models/CreateLetterPayload.ts
 src/models/CreateLinkPayload.ts
+src/models/CreateLotteryPayload.ts
+src/models/CreateRafflePayload.ts
 src/models/CreateRandomNumberPayload.ts
+src/models/CreateShiftsPayload.ts
 src/models/CreateTournamentPayload.ts
 src/models/DrawMetadata.ts
 src/models/DrawReTossPayload.ts
@@ -48,12 +52,16 @@ src/models/LinkFields.ts
 src/models/LinkResult.ts
 src/models/LinkResultAllOfValue.ts
 src/models/Lottery.ts
+src/models/LotteryFields.ts
 src/models/LotteryResult.ts
 src/models/Participant.ts
+src/models/ParticipantField.ts
 src/models/PaypalCreatePayload.ts
 src/models/PaypalResponse.ts
 src/models/Prize.ts
+src/models/PrizeField.ts
 src/models/Raffle.ts
+src/models/RaffleFields.ts
 src/models/RaffleResult.ts
 src/models/RaffleResultAllOfValue.ts
 src/models/RandomNumber.ts
@@ -69,7 +77,8 @@ src/models/SecretSantaResendEmail.ts
 src/models/SecretSantaResendEmailResponse.ts
 src/models/SecretSantaResult.ts
 src/models/Shifts.ts
-src/models/ShiftsAllOfIntervals.ts
+src/models/ShiftsFields.ts
+src/models/ShiftsInterval.ts
 src/models/ShiftsResult.ts
 src/models/ShiftsResultAllOfInterval.ts
 src/models/ShiftsResultAllOfValue.ts

@@ -19,18 +19,18 @@ import {
     DrawMetadataFromJSONTyped,
     DrawMetadataToJSON,
 } from './DrawMetadata';
+import type { ParticipantField } from './ParticipantField';
+import {
+    ParticipantFieldFromJSON,
+    ParticipantFieldFromJSONTyped,
+    ParticipantFieldToJSON,
+} from './ParticipantField';
 import type { BaseDraw } from './BaseDraw';
 import {
     BaseDrawFromJSON,
     BaseDrawFromJSONTyped,
     BaseDrawToJSON,
 } from './BaseDraw';
-import type { Participant } from './Participant';
-import {
-    ParticipantFromJSON,
-    ParticipantFromJSONTyped,
-    ParticipantToJSON,
-} from './Participant';
 import type { GroupsResult } from './GroupsResult';
 import {
     GroupsResultFromJSON,
@@ -46,10 +46,10 @@ import {
 export interface Groups extends BaseDraw {
     /**
      * 
-     * @type {Array<Participant>}
+     * @type {Array<ParticipantField>}
      * @memberof Groups
      */
-    participants: Array<Participant>;
+    participants: Array<ParticipantField>;
     /**
      * 
      * @type {number}
@@ -61,7 +61,7 @@ export interface Groups extends BaseDraw {
      * @type {Array<GroupsResult>}
      * @memberof Groups
      */
-    readonly results?: Array<GroupsResult>;
+    readonly results: Array<GroupsResult>;
 }
 
 
@@ -72,6 +72,7 @@ export interface Groups extends BaseDraw {
 export function instanceOfGroups(value: object): value is Groups {
     if (!('participants' in value) || value['participants'] === undefined) return false;
     if (!('numberOfGroups' in value) || value['numberOfGroups'] === undefined) return false;
+    if (!('results' in value) || value['results'] === undefined) return false;
     return true;
 }
 
@@ -85,9 +86,9 @@ export function GroupsFromJSONTyped(json: any, ignoreDiscriminator: boolean): Gr
     }
     return {
         ...BaseDrawFromJSONTyped(json, ignoreDiscriminator),
-        'participants': ((json['participants'] as Array<any>).map(ParticipantFromJSON)),
+        'participants': ((json['participants'] as Array<any>).map(ParticipantFieldFromJSON)),
         'numberOfGroups': json['number_of_groups'],
-        'results': json['results'] == null ? undefined : ((json['results'] as Array<any>).map(GroupsResultFromJSON)),
+        'results': ((json['results'] as Array<any>).map(GroupsResultFromJSON)),
     };
 }
 
@@ -97,7 +98,7 @@ export function GroupsToJSON(value?: Omit<Groups, 'results'|'id'|'created_at'|'u
     }
     return {
         ...BaseDrawToJSON(value),
-        'participants': ((value['participants'] as Array<any>).map(ParticipantToJSON)),
+        'participants': ((value['participants'] as Array<any>).map(ParticipantFieldToJSON)),
         'number_of_groups': value['numberOfGroups'],
     };
 }

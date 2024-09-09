@@ -31,49 +31,64 @@ import {
     ParticipantFieldFromJSONTyped,
     ParticipantFieldToJSON,
 } from './ParticipantField';
+import type { ShiftsInterval } from './ShiftsInterval';
+import {
+    ShiftsIntervalFromJSON,
+    ShiftsIntervalFromJSONTyped,
+    ShiftsIntervalToJSON,
+} from './ShiftsInterval';
 
 /**
  * 
  * @export
- * @interface CreateTournamentPayload
+ * @interface CreateShiftsPayload
  */
-export interface CreateTournamentPayload extends BaseFieldsCreate {
+export interface CreateShiftsPayload extends BaseFieldsCreate {
+    /**
+     * 
+     * @type {Array<ShiftsInterval>}
+     * @memberof CreateShiftsPayload
+     */
+    intervals: Array<ShiftsInterval>;
     /**
      * 
      * @type {Array<ParticipantField>}
-     * @memberof CreateTournamentPayload
+     * @memberof CreateShiftsPayload
      */
     participants: Array<ParticipantField>;
 }
 
 /**
- * Check if a given object implements the CreateTournamentPayload interface.
+ * Check if a given object implements the CreateShiftsPayload interface.
  */
-export function instanceOfCreateTournamentPayload(value: object): value is CreateTournamentPayload {
+export function instanceOfCreateShiftsPayload(value: object): value is CreateShiftsPayload {
+    if (!('intervals' in value) || value['intervals'] === undefined) return false;
     if (!('participants' in value) || value['participants'] === undefined) return false;
     return true;
 }
 
-export function CreateTournamentPayloadFromJSON(json: any): CreateTournamentPayload {
-    return CreateTournamentPayloadFromJSONTyped(json, false);
+export function CreateShiftsPayloadFromJSON(json: any): CreateShiftsPayload {
+    return CreateShiftsPayloadFromJSONTyped(json, false);
 }
 
-export function CreateTournamentPayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateTournamentPayload {
+export function CreateShiftsPayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateShiftsPayload {
     if (json == null) {
         return json;
     }
     return {
         ...BaseFieldsCreateFromJSONTyped(json, ignoreDiscriminator),
+        'intervals': ((json['intervals'] as Array<any>).map(ShiftsIntervalFromJSON)),
         'participants': ((json['participants'] as Array<any>).map(ParticipantFieldFromJSON)),
     };
 }
 
-export function CreateTournamentPayloadToJSON(value?: CreateTournamentPayload | null): any {
+export function CreateShiftsPayloadToJSON(value?: CreateShiftsPayload | null): any {
     if (value == null) {
         return value;
     }
     return {
         ...BaseFieldsCreateToJSON(value),
+        'intervals': ((value['intervals'] as Array<any>).map(ShiftsIntervalToJSON)),
         'participants': ((value['participants'] as Array<any>).map(ParticipantFieldToJSON)),
     };
 }

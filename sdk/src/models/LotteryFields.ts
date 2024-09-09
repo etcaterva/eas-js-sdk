@@ -23,55 +23,54 @@ import {
 /**
  * 
  * @export
- * @interface GroupsFields
+ * @interface LotteryFields
  */
-export interface GroupsFields {
+export interface LotteryFields {
     /**
      * 
      * @type {Array<ParticipantField>}
-     * @memberof GroupsFields
+     * @memberof LotteryFields
      */
     participants: Array<ParticipantField>;
     /**
      * 
      * @type {number}
-     * @memberof GroupsFields
+     * @memberof LotteryFields
      */
-    numberOfGroups: number;
+    numberOfResults?: number;
 }
 
 /**
- * Check if a given object implements the GroupsFields interface.
+ * Check if a given object implements the LotteryFields interface.
  */
-export function instanceOfGroupsFields(value: object): value is GroupsFields {
+export function instanceOfLotteryFields(value: object): value is LotteryFields {
     if (!('participants' in value) || value['participants'] === undefined) return false;
-    if (!('numberOfGroups' in value) || value['numberOfGroups'] === undefined) return false;
     return true;
 }
 
-export function GroupsFieldsFromJSON(json: any): GroupsFields {
-    return GroupsFieldsFromJSONTyped(json, false);
+export function LotteryFieldsFromJSON(json: any): LotteryFields {
+    return LotteryFieldsFromJSONTyped(json, false);
 }
 
-export function GroupsFieldsFromJSONTyped(json: any, ignoreDiscriminator: boolean): GroupsFields {
+export function LotteryFieldsFromJSONTyped(json: any, ignoreDiscriminator: boolean): LotteryFields {
     if (json == null) {
         return json;
     }
     return {
         
         'participants': ((json['participants'] as Array<any>).map(ParticipantFieldFromJSON)),
-        'numberOfGroups': json['number_of_groups'],
+        'numberOfResults': json['number_of_results'] == null ? undefined : json['number_of_results'],
     };
 }
 
-export function GroupsFieldsToJSON(value?: GroupsFields | null): any {
+export function LotteryFieldsToJSON(value?: LotteryFields | null): any {
     if (value == null) {
         return value;
     }
     return {
         
         'participants': ((value['participants'] as Array<any>).map(ParticipantFieldToJSON)),
-        'number_of_groups': value['numberOfGroups'],
+        'number_of_results': value['numberOfResults'],
     };
 }
 

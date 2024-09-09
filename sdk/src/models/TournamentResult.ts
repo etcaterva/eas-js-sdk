@@ -61,7 +61,7 @@ export function TournamentResultFromJSONTyped(json: any, ignoreDiscriminator: bo
     };
 }
 
-export function TournamentResultToJSON(value?: Omit<TournamentResult, 'id'|'created_at'> | null): any {
+export function TournamentResultToJSON(value?: Omit<TournamentResult, 'created_at'> | null): any {
     if (value == null) {
         return value;
     }

@@ -13,12 +13,12 @@
  */
 
 import { mapValues } from '../runtime';
-import type { Participant } from './Participant';
+import type { ParticipantField } from './ParticipantField';
 import {
-    ParticipantFromJSON,
-    ParticipantFromJSONTyped,
-    ParticipantToJSON,
-} from './Participant';
+    ParticipantFieldFromJSON,
+    ParticipantFieldFromJSONTyped,
+    ParticipantFieldToJSON,
+} from './ParticipantField';
 
 /**
  * 
@@ -28,10 +28,10 @@ import {
 export interface TournamentFields {
     /**
      * 
-     * @type {Array<Participant>}
+     * @type {Array<ParticipantField>}
      * @memberof TournamentFields
      */
-    participants: Array<Participant>;
+    participants: Array<ParticipantField>;
 }
 
 /**
@@ -52,7 +52,7 @@ export function TournamentFieldsFromJSONTyped(json: any, ignoreDiscriminator: bo
     }
     return {
         
-        'participants': ((json['participants'] as Array<any>).map(ParticipantFromJSON)),
+        'participants': ((json['participants'] as Array<any>).map(ParticipantFieldFromJSON)),
     };
 }
 
@@ -62,7 +62,7 @@ export function TournamentFieldsToJSON(value?: TournamentFields | null): any {
     }
     return {
         
-        'participants': ((value['participants'] as Array<any>).map(ParticipantToJSON)),
+        'participants': ((value['participants'] as Array<any>).map(ParticipantFieldToJSON)),
     };
 }
 

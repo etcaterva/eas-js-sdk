@@ -16,37 +16,37 @@ import { mapValues } from '../runtime';
 /**
  * 
  * @export
- * @interface ShiftsAllOfIntervals
+ * @interface ShiftsInterval
  */
-export interface ShiftsAllOfIntervals {
+export interface ShiftsInterval {
     /**
      * 
      * @type {Date}
-     * @memberof ShiftsAllOfIntervals
+     * @memberof ShiftsInterval
      */
     startTime: Date;
     /**
      * 
      * @type {Date}
-     * @memberof ShiftsAllOfIntervals
+     * @memberof ShiftsInterval
      */
     endTime: Date;
 }
 
 /**
- * Check if a given object implements the ShiftsAllOfIntervals interface.
+ * Check if a given object implements the ShiftsInterval interface.
  */
-export function instanceOfShiftsAllOfIntervals(value: object): value is ShiftsAllOfIntervals {
+export function instanceOfShiftsInterval(value: object): value is ShiftsInterval {
     if (!('startTime' in value) || value['startTime'] === undefined) return false;
     if (!('endTime' in value) || value['endTime'] === undefined) return false;
     return true;
 }
 
-export function ShiftsAllOfIntervalsFromJSON(json: any): ShiftsAllOfIntervals {
-    return ShiftsAllOfIntervalsFromJSONTyped(json, false);
+export function ShiftsIntervalFromJSON(json: any): ShiftsInterval {
+    return ShiftsIntervalFromJSONTyped(json, false);
 }
 
-export function ShiftsAllOfIntervalsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ShiftsAllOfIntervals {
+export function ShiftsIntervalFromJSONTyped(json: any, ignoreDiscriminator: boolean): ShiftsInterval {
     if (json == null) {
         return json;
     }
@@ -57,7 +57,7 @@ export function ShiftsAllOfIntervalsFromJSONTyped(json: any, ignoreDiscriminator
     };
 }
 
-export function ShiftsAllOfIntervalsToJSON(value?: ShiftsAllOfIntervals | null): any {
+export function ShiftsIntervalToJSON(value?: ShiftsInterval | null): any {
     if (value == null) {
         return value;
     }

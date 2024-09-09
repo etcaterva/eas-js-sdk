@@ -31,49 +31,64 @@ import {
     ParticipantFieldFromJSONTyped,
     ParticipantFieldToJSON,
 } from './ParticipantField';
+import type { PrizeField } from './PrizeField';
+import {
+    PrizeFieldFromJSON,
+    PrizeFieldFromJSONTyped,
+    PrizeFieldToJSON,
+} from './PrizeField';
 
 /**
  * 
  * @export
- * @interface CreateTournamentPayload
+ * @interface CreateRafflePayload
  */
-export interface CreateTournamentPayload extends BaseFieldsCreate {
+export interface CreateRafflePayload extends BaseFieldsCreate {
+    /**
+     * 
+     * @type {Array<PrizeField>}
+     * @memberof CreateRafflePayload
+     */
+    prizes: Array<PrizeField>;
     /**
      * 
      * @type {Array<ParticipantField>}
-     * @memberof CreateTournamentPayload
+     * @memberof CreateRafflePayload
      */
     participants: Array<ParticipantField>;
 }
 
 /**
- * Check if a given object implements the CreateTournamentPayload interface.
+ * Check if a given object implements the CreateRafflePayload interface.
  */
-export function instanceOfCreateTournamentPayload(value: object): value is CreateTournamentPayload {
+export function instanceOfCreateRafflePayload(value: object): value is CreateRafflePayload {
+    if (!('prizes' in value) || value['prizes'] === undefined) return false;
     if (!('participants' in value) || value['participants'] === undefined) return false;
     return true;
 }
 
-export function CreateTournamentPayloadFromJSON(json: any): CreateTournamentPayload {
-    return CreateTournamentPayloadFromJSONTyped(json, false);
+export function CreateRafflePayloadFromJSON(json: any): CreateRafflePayload {
+    return CreateRafflePayloadFromJSONTyped(json, false);
 }
 
-export function CreateTournamentPayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateTournamentPayload {
+export function CreateRafflePayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateRafflePayload {
     if (json == null) {
         return json;
     }
     return {
         ...BaseFieldsCreateFromJSONTyped(json, ignoreDiscriminator),
+        'prizes': ((json['prizes'] as Array<any>).map(PrizeFieldFromJSON)),
         'participants': ((json['participants'] as Array<any>).map(ParticipantFieldFromJSON)),
     };
 }
 
-export function CreateTournamentPayloadToJSON(value?: CreateTournamentPayload | null): any {
+export function CreateRafflePayloadToJSON(value?: CreateRafflePayload | null): any {
     if (value == null) {
         return value;
     }
     return {
         ...BaseFieldsCreateToJSON(value),
+        'prizes': ((value['prizes'] as Array<any>).map(PrizeFieldToJSON)),
         'participants': ((value['participants'] as Array<any>).map(ParticipantFieldToJSON)),
     };
 }

@@ -61,7 +61,7 @@ export function ShiftsResultFromJSONTyped(json: any, ignoreDiscriminator: boolea
     };
 }
 
-export function ShiftsResultToJSON(value?: Omit<ShiftsResult, 'id'|'created_at'> | null): any {
+export function ShiftsResultToJSON(value?: Omit<ShiftsResult, 'created_at'> | null): any {
     if (value == null) {
         return value;
     }

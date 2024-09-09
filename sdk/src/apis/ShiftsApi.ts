@@ -15,11 +15,14 @@
 
 import * as runtime from '../runtime';
 import type {
+  CreateShiftsPayload,
   DrawTossPayload,
   Shifts,
   ShiftsResult,
 } from '../models/index';
 import {
+    CreateShiftsPayloadFromJSON,
+    CreateShiftsPayloadToJSON,
     DrawTossPayloadFromJSON,
     DrawTossPayloadToJSON,
     ShiftsFromJSON,
@@ -29,7 +32,7 @@ import {
 } from '../models/index';
 
 export interface ShiftsCreateRequest {
-    shifts: Shifts;
+    createShiftsPayload: CreateShiftsPayload;
 }
 
 export interface ShiftsReadRequest {
@@ -50,7 +53,7 @@ export interface ShiftsTossRequest {
 export interface ShiftsApiInterface {
     /**
      * 
-     * @param {Shifts} shifts 
+     * @param {CreateShiftsPayload} createShiftsPayload 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ShiftsApiInterface
@@ -98,10 +101,10 @@ export class ShiftsApi extends runtime.BaseAPI implements ShiftsApiInterface {
     /**
      */
     async shiftsCreateRaw(requestParameters: ShiftsCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Shifts>> {
-        if (requestParameters['shifts'] == null) {
+        if (requestParameters['createShiftsPayload'] == null) {
             throw new runtime.RequiredError(
-                'shifts',
-                'Required parameter "shifts" was null or undefined when calling shiftsCreate().'
+                'createShiftsPayload',
+                'Required parameter "createShiftsPayload" was null or undefined when calling shiftsCreate().'
             );
         }
 
@@ -116,7 +119,7 @@ export class ShiftsApi extends runtime.BaseAPI implements ShiftsApiInterface {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: ShiftsToJSON(requestParameters['shifts']),
+            body: CreateShiftsPayloadToJSON(requestParameters['createShiftsPayload']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => ShiftsFromJSON(jsonValue));

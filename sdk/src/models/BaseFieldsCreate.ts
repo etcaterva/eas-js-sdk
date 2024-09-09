@@ -23,60 +23,41 @@ import {
 /**
  * 
  * @export
- * @interface BaseFields
+ * @interface BaseFieldsCreate
  */
-export interface BaseFields {
+export interface BaseFieldsCreate {
     /**
      * 
      * @type {string}
-     * @memberof BaseFields
+     * @memberof BaseFieldsCreate
      */
     title?: string;
     /**
      * 
      * @type {string}
-     * @memberof BaseFields
+     * @memberof BaseFieldsCreate
      */
     description?: string;
     /**
      * 
      * @type {Array<DrawMetadata>}
-     * @memberof BaseFields
+     * @memberof BaseFieldsCreate
      */
     metadata?: Array<DrawMetadata>;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof BaseFields
-     */
-    payments: Array<BaseFieldsPaymentsEnum>;
 }
 
-
 /**
- * @export
+ * Check if a given object implements the BaseFieldsCreate interface.
  */
-export const BaseFieldsPaymentsEnum = {
-    Certified: 'CERTIFIED',
-    Adfree: 'ADFREE',
-    Support: 'SUPPORT'
-} as const;
-export type BaseFieldsPaymentsEnum = typeof BaseFieldsPaymentsEnum[keyof typeof BaseFieldsPaymentsEnum];
-
-
-/**
- * Check if a given object implements the BaseFields interface.
- */
-export function instanceOfBaseFields(value: object): value is BaseFields {
-    if (!('payments' in value) || value['payments'] === undefined) return false;
+export function instanceOfBaseFieldsCreate(value: object): value is BaseFieldsCreate {
     return true;
 }
 
-export function BaseFieldsFromJSON(json: any): BaseFields {
-    return BaseFieldsFromJSONTyped(json, false);
+export function BaseFieldsCreateFromJSON(json: any): BaseFieldsCreate {
+    return BaseFieldsCreateFromJSONTyped(json, false);
 }
 
-export function BaseFieldsFromJSONTyped(json: any, ignoreDiscriminator: boolean): BaseFields {
+export function BaseFieldsCreateFromJSONTyped(json: any, ignoreDiscriminator: boolean): BaseFieldsCreate {
     if (json == null) {
         return json;
     }
@@ -85,11 +66,10 @@ export function BaseFieldsFromJSONTyped(json: any, ignoreDiscriminator: boolean)
         'title': json['title'] == null ? undefined : json['title'],
         'description': json['description'] == null ? undefined : json['description'],
         'metadata': json['metadata'] == null ? undefined : ((json['metadata'] as Array<any>).map(DrawMetadataFromJSON)),
-        'payments': json['payments'],
     };
 }
 
-export function BaseFieldsToJSON(value?: BaseFields | null): any {
+export function BaseFieldsCreateToJSON(value?: BaseFieldsCreate | null): any {
     if (value == null) {
         return value;
     }
@@ -98,7 +78,6 @@ export function BaseFieldsToJSON(value?: BaseFields | null): any {
         'title': value['title'],
         'description': value['description'],
         'metadata': value['metadata'] == null ? undefined : ((value['metadata'] as Array<any>).map(DrawMetadataToJSON)),
-        'payments': value['payments'],
     };
 }
 

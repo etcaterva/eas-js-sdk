@@ -55,7 +55,7 @@ export function SpinnerResultFromJSONTyped(json: any, ignoreDiscriminator: boole
     };
 }
 
-export function SpinnerResultToJSON(value?: Omit<SpinnerResult, 'id'|'created_at'> | null): any {
+export function SpinnerResultToJSON(value?: Omit<SpinnerResult, 'created_at'> | null): any {
     if (value == null) {
         return value;
     }

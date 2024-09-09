@@ -55,7 +55,7 @@ export function LetterResultFromJSONTyped(json: any, ignoreDiscriminator: boolea
     };
 }
 
-export function LetterResultToJSON(value?: Omit<LetterResult, 'id'|'created_at'> | null): any {
+export function LetterResultToJSON(value?: Omit<LetterResult, 'created_at'> | null): any {
     if (value == null) {
         return value;
     }

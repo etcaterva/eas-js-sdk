@@ -15,12 +15,15 @@
 
 import * as runtime from '../runtime';
 import type {
+  CreateRafflePayload,
   DrawTossPayload,
   Participant,
   Raffle,
   RaffleResult,
 } from '../models/index';
 import {
+    CreateRafflePayloadFromJSON,
+    CreateRafflePayloadToJSON,
     DrawTossPayloadFromJSON,
     DrawTossPayloadToJSON,
     ParticipantFromJSON,
@@ -32,7 +35,7 @@ import {
 } from '../models/index';
 
 export interface RaffleCreateRequest {
-    raffle: Raffle;
+    createRafflePayload: CreateRafflePayload;
 }
 
 export interface RaffleParticipantsAddRequest {
@@ -58,7 +61,7 @@ export interface RaffleTossRequest {
 export interface RaffleApiInterface {
     /**
      * 
-     * @param {Raffle} raffle 
+     * @param {CreateRafflePayload} createRafflePayload 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof RaffleApiInterface
@@ -120,10 +123,10 @@ export class RaffleApi extends runtime.BaseAPI implements RaffleApiInterface {
     /**
      */
     async raffleCreateRaw(requestParameters: RaffleCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Raffle>> {
-        if (requestParameters['raffle'] == null) {
+        if (requestParameters['createRafflePayload'] == null) {
             throw new runtime.RequiredError(
-                'raffle',
-                'Required parameter "raffle" was null or undefined when calling raffleCreate().'
+                'createRafflePayload',
+                'Required parameter "createRafflePayload" was null or undefined when calling raffleCreate().'
             );
         }
 
@@ -138,7 +141,7 @@ export class RaffleApi extends runtime.BaseAPI implements RaffleApiInterface {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: RaffleToJSON(requestParameters['raffle']),
+            body: CreateRafflePayloadToJSON(requestParameters['createRafflePayload']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => RaffleFromJSON(jsonValue));

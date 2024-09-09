@@ -13,25 +13,25 @@
  */
 
 import { mapValues } from '../runtime';
+import type { BaseFieldsCreate } from './BaseFieldsCreate';
+import {
+    BaseFieldsCreateFromJSON,
+    BaseFieldsCreateFromJSONTyped,
+    BaseFieldsCreateToJSON,
+} from './BaseFieldsCreate';
 import type { DrawMetadata } from './DrawMetadata';
 import {
     DrawMetadataFromJSON,
     DrawMetadataFromJSONTyped,
     DrawMetadataToJSON,
 } from './DrawMetadata';
-import type { BaseFields } from './BaseFields';
-import {
-    BaseFieldsFromJSON,
-    BaseFieldsFromJSONTyped,
-    BaseFieldsToJSON,
-} from './BaseFields';
 
 /**
  * 
  * @export
  * @interface CreateRandomNumberPayload
  */
-export interface CreateRandomNumberPayload extends BaseFields {
+export interface CreateRandomNumberPayload extends BaseFieldsCreate {
     /**
      * 
      * @type {number}
@@ -58,8 +58,6 @@ export interface CreateRandomNumberPayload extends BaseFields {
     allowRepeatedResults: boolean;
 }
 
-
-
 /**
  * Check if a given object implements the CreateRandomNumberPayload interface.
  */
@@ -80,7 +78,7 @@ export function CreateRandomNumberPayloadFromJSONTyped(json: any, ignoreDiscrimi
         return json;
     }
     return {
-        ...BaseFieldsFromJSONTyped(json, ignoreDiscriminator),
+        ...BaseFieldsCreateFromJSONTyped(json, ignoreDiscriminator),
         'rangeMin': json['range_min'],
         'rangeMax': json['range_max'],
         'numberOfResults': json['number_of_results'],
@@ -93,7 +91,7 @@ export function CreateRandomNumberPayloadToJSON(value?: CreateRandomNumberPayloa
         return value;
     }
     return {
-        ...BaseFieldsToJSON(value),
+        ...BaseFieldsCreateToJSON(value),
         'range_min': value['rangeMin'],
         'range_max': value['rangeMax'],
         'number_of_results': value['numberOfResults'],

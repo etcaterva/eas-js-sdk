@@ -61,7 +61,7 @@ export function RaffleResultFromJSONTyped(json: any, ignoreDiscriminator: boolea
     };
 }
 
-export function RaffleResultToJSON(value?: Omit<RaffleResult, 'id'|'created_at'> | null): any {
+export function RaffleResultToJSON(value?: Omit<RaffleResult, 'created_at'> | null): any {
     if (value == null) {
         return value;
     }

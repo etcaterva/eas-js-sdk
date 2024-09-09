@@ -61,7 +61,7 @@ export function GroupsResultFromJSONTyped(json: any, ignoreDiscriminator: boolea
     };
 }
 
-export function GroupsResultToJSON(value?: Omit<GroupsResult, 'id'|'created_at'> | null): any {
+export function GroupsResultToJSON(value?: Omit<GroupsResult, 'created_at'> | null): any {
     if (value == null) {
         return value;
     }

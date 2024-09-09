@@ -13,31 +13,32 @@
  */
 
 import { mapValues } from '../runtime';
-import type { BaseObject } from './BaseObject';
-import {
-    BaseObjectFromJSON,
-    BaseObjectFromJSONTyped,
-    BaseObjectToJSON,
-} from './BaseObject';
-
 /**
  * 
  * @export
  * @interface BaseResult
  */
-export interface BaseResult extends BaseObject {
+export interface BaseResult {
     /**
      * 
      * @type {Date}
      * @memberof BaseResult
      */
-    scheduleDate?: Date;
+    scheduleDate: Date | null;
+    /**
+     * 
+     * @type {Date}
+     * @memberof BaseResult
+     */
+    readonly createdAt: Date;
 }
 
 /**
  * Check if a given object implements the BaseResult interface.
  */
 export function instanceOfBaseResult(value: object): value is BaseResult {
+    if (!('scheduleDate' in value) || value['scheduleDate'] === undefined) return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
     return true;
 }
 
@@ -50,18 +51,19 @@ export function BaseResultFromJSONTyped(json: any, ignoreDiscriminator: boolean)
         return json;
     }
     return {
-        ...BaseObjectFromJSONTyped(json, ignoreDiscriminator),
-        'scheduleDate': json['schedule_date'] == null ? undefined : (new Date(json['schedule_date'])),
+        
+        'scheduleDate': (json['schedule_date'] == null ? null : new Date(json['schedule_date'])),
+        'createdAt': (new Date(json['created_at'])),
     };
 }
 
-export function BaseResultToJSON(value?: Omit<BaseResult, 'id'|'created_at'> | null): any {
+export function BaseResultToJSON(value?: Omit<BaseResult, 'created_at'> | null): any {
     if (value == null) {
         return value;
     }
     return {
-        ...BaseObjectToJSON(value),
-        'schedule_date': value['scheduleDate'] == null ? undefined : ((value['scheduleDate']).toISOString()),
+        
+        'schedule_date': (value['scheduleDate'] == null ? null : (value['scheduleDate'] as any).toISOString()),
     };
 }
 

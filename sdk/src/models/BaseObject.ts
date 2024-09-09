@@ -24,19 +24,21 @@ export interface BaseObject {
      * @type {string}
      * @memberof BaseObject
      */
-    readonly id?: string;
+    readonly id: string;
     /**
      * 
      * @type {Date}
      * @memberof BaseObject
      */
-    readonly createdAt?: Date;
+    readonly createdAt: Date;
 }
 
 /**
  * Check if a given object implements the BaseObject interface.
  */
 export function instanceOfBaseObject(value: object): value is BaseObject {
+    if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
     return true;
 }
 
@@ -50,8 +52,8 @@ export function BaseObjectFromJSONTyped(json: any, ignoreDiscriminator: boolean)
     }
     return {
         
-        'id': json['id'] == null ? undefined : json['id'],
-        'createdAt': json['created_at'] == null ? undefined : (new Date(json['created_at'])),
+        'id': json['id'],
+        'createdAt': (new Date(json['created_at'])),
     };
 }
 

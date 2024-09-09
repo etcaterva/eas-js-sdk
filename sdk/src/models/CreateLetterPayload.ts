@@ -13,25 +13,25 @@
  */
 
 import { mapValues } from '../runtime';
+import type { BaseFieldsCreate } from './BaseFieldsCreate';
+import {
+    BaseFieldsCreateFromJSON,
+    BaseFieldsCreateFromJSONTyped,
+    BaseFieldsCreateToJSON,
+} from './BaseFieldsCreate';
 import type { DrawMetadata } from './DrawMetadata';
 import {
     DrawMetadataFromJSON,
     DrawMetadataFromJSONTyped,
     DrawMetadataToJSON,
 } from './DrawMetadata';
-import type { BaseFields } from './BaseFields';
-import {
-    BaseFieldsFromJSON,
-    BaseFieldsFromJSONTyped,
-    BaseFieldsToJSON,
-} from './BaseFields';
 
 /**
  * 
  * @export
  * @interface CreateLetterPayload
  */
-export interface CreateLetterPayload extends BaseFields {
+export interface CreateLetterPayload extends BaseFieldsCreate {
     /**
      * 
      * @type {number}
@@ -45,8 +45,6 @@ export interface CreateLetterPayload extends BaseFields {
      */
     allowRepeatedResults: boolean;
 }
-
-
 
 /**
  * Check if a given object implements the CreateLetterPayload interface.
@@ -66,7 +64,7 @@ export function CreateLetterPayloadFromJSONTyped(json: any, ignoreDiscriminator:
         return json;
     }
     return {
-        ...BaseFieldsFromJSONTyped(json, ignoreDiscriminator),
+        ...BaseFieldsCreateFromJSONTyped(json, ignoreDiscriminator),
         'numberOfResults': json['number_of_results'],
         'allowRepeatedResults': json['allow_repeated_results'],
     };
@@ -77,7 +75,7 @@ export function CreateLetterPayloadToJSON(value?: CreateLetterPayload | null): a
         return value;
     }
     return {
-        ...BaseFieldsToJSON(value),
+        ...BaseFieldsCreateToJSON(value),
         'number_of_results': value['numberOfResults'],
         'allow_repeated_results': value['allowRepeatedResults'],
     };

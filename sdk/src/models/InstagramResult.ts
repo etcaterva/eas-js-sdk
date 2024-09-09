@@ -61,7 +61,7 @@ export function InstagramResultFromJSONTyped(json: any, ignoreDiscriminator: boo
     };
 }
 
-export function InstagramResultToJSON(value?: Omit<InstagramResult, 'id'|'created_at'> | null): any {
+export function InstagramResultToJSON(value?: Omit<InstagramResult, 'created_at'> | null): any {
     if (value == null) {
         return value;
     }

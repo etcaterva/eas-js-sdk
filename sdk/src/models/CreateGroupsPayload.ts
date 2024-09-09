@@ -13,37 +13,37 @@
  */
 
 import { mapValues } from '../runtime';
+import type { BaseFieldsCreate } from './BaseFieldsCreate';
+import {
+    BaseFieldsCreateFromJSON,
+    BaseFieldsCreateFromJSONTyped,
+    BaseFieldsCreateToJSON,
+} from './BaseFieldsCreate';
 import type { DrawMetadata } from './DrawMetadata';
 import {
     DrawMetadataFromJSON,
     DrawMetadataFromJSONTyped,
     DrawMetadataToJSON,
 } from './DrawMetadata';
-import type { Participant } from './Participant';
+import type { ParticipantField } from './ParticipantField';
 import {
-    ParticipantFromJSON,
-    ParticipantFromJSONTyped,
-    ParticipantToJSON,
-} from './Participant';
-import type { BaseFields } from './BaseFields';
-import {
-    BaseFieldsFromJSON,
-    BaseFieldsFromJSONTyped,
-    BaseFieldsToJSON,
-} from './BaseFields';
+    ParticipantFieldFromJSON,
+    ParticipantFieldFromJSONTyped,
+    ParticipantFieldToJSON,
+} from './ParticipantField';
 
 /**
  * 
  * @export
  * @interface CreateGroupsPayload
  */
-export interface CreateGroupsPayload extends BaseFields {
+export interface CreateGroupsPayload extends BaseFieldsCreate {
     /**
      * 
-     * @type {Array<Participant>}
+     * @type {Array<ParticipantField>}
      * @memberof CreateGroupsPayload
      */
-    participants: Array<Participant>;
+    participants: Array<ParticipantField>;
     /**
      * 
      * @type {number}
@@ -51,8 +51,6 @@ export interface CreateGroupsPayload extends BaseFields {
      */
     numberOfGroups: number;
 }
-
-
 
 /**
  * Check if a given object implements the CreateGroupsPayload interface.
@@ -72,8 +70,8 @@ export function CreateGroupsPayloadFromJSONTyped(json: any, ignoreDiscriminator:
         return json;
     }
     return {
-        ...BaseFieldsFromJSONTyped(json, ignoreDiscriminator),
-        'participants': ((json['participants'] as Array<any>).map(ParticipantFromJSON)),
+        ...BaseFieldsCreateFromJSONTyped(json, ignoreDiscriminator),
+        'participants': ((json['participants'] as Array<any>).map(ParticipantFieldFromJSON)),
         'numberOfGroups': json['number_of_groups'],
     };
 }
@@ -83,8 +81,8 @@ export function CreateGroupsPayloadToJSON(value?: CreateGroupsPayload | null): a
         return value;
     }
     return {
-        ...BaseFieldsToJSON(value),
-        'participants': ((value['participants'] as Array<any>).map(ParticipantToJSON)),
+        ...BaseFieldsCreateToJSON(value),
+        'participants': ((value['participants'] as Array<any>).map(ParticipantFieldToJSON)),
         'number_of_groups': value['numberOfGroups'],
     };
 }
