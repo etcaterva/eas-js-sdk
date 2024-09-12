@@ -13,24 +13,6 @@
  */
 
 import { mapValues } from '../runtime';
-import type { DrawMetadata } from './DrawMetadata';
-import {
-    DrawMetadataFromJSON,
-    DrawMetadataFromJSONTyped,
-    DrawMetadataToJSON,
-} from './DrawMetadata';
-import type { BaseDraw } from './BaseDraw';
-import {
-    BaseDrawFromJSON,
-    BaseDrawFromJSONTyped,
-    BaseDrawToJSON,
-} from './BaseDraw';
-import type { TiktokResult } from './TiktokResult';
-import {
-    TiktokResultFromJSON,
-    TiktokResultFromJSONTyped,
-    TiktokResultToJSON,
-} from './TiktokResult';
 import type { PrizeField } from './PrizeField';
 import {
     PrizeFieldFromJSON,
@@ -41,71 +23,61 @@ import {
 /**
  * 
  * @export
- * @interface Tiktok
+ * @interface TiktokFields
  */
-export interface Tiktok extends BaseDraw {
+export interface TiktokFields {
     /**
      * 
      * @type {Array<PrizeField>}
-     * @memberof Tiktok
+     * @memberof TiktokFields
      */
     prizes: Array<PrizeField>;
     /**
      * 
      * @type {number}
-     * @memberof Tiktok
+     * @memberof TiktokFields
      */
     minMentions: number;
     /**
      * 
      * @type {string}
-     * @memberof Tiktok
+     * @memberof TiktokFields
      */
     postUrl: string;
-    /**
-     * 
-     * @type {Array<TiktokResult>}
-     * @memberof Tiktok
-     */
-    readonly results: Array<TiktokResult>;
 }
 
-
-
 /**
- * Check if a given object implements the Tiktok interface.
+ * Check if a given object implements the TiktokFields interface.
  */
-export function instanceOfTiktok(value: object): value is Tiktok {
+export function instanceOfTiktokFields(value: object): value is TiktokFields {
     if (!('prizes' in value) || value['prizes'] === undefined) return false;
     if (!('minMentions' in value) || value['minMentions'] === undefined) return false;
     if (!('postUrl' in value) || value['postUrl'] === undefined) return false;
-    if (!('results' in value) || value['results'] === undefined) return false;
     return true;
 }
 
-export function TiktokFromJSON(json: any): Tiktok {
-    return TiktokFromJSONTyped(json, false);
+export function TiktokFieldsFromJSON(json: any): TiktokFields {
+    return TiktokFieldsFromJSONTyped(json, false);
 }
 
-export function TiktokFromJSONTyped(json: any, ignoreDiscriminator: boolean): Tiktok {
+export function TiktokFieldsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TiktokFields {
     if (json == null) {
         return json;
     }
     return {
-        ...BaseDrawFromJSONTyped(json, ignoreDiscriminator),
+        
         'prizes': ((json['prizes'] as Array<any>).map(PrizeFieldFromJSON)),
         'minMentions': json['min_mentions'],
         'postUrl': json['post_url'],
-        'results': ((json['results'] as Array<any>).map(TiktokResultFromJSON)),
     };
 }
 
-export function TiktokToJSON(value?: Omit<Tiktok, 'results'|'id'|'created_at'|'updated_at'|'private_id'> | null): any {
+export function TiktokFieldsToJSON(value?: TiktokFields | null): any {
     if (value == null) {
         return value;
     }
     return {
-        ...BaseDrawToJSON(value),
+        
         'prizes': ((value['prizes'] as Array<any>).map(PrizeFieldToJSON)),
         'min_mentions': value['minMentions'],
         'post_url': value['postUrl'],

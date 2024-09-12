@@ -15,20 +15,23 @@
 
 import * as runtime from '../runtime';
 import type {
-  SecretSanta,
+  CreateSecretSantaPayload,
   SecretSantaAdminResponse,
   SecretSantaCreateResponse,
+  SecretSantaErrorResponse,
   SecretSantaResendEmail,
   SecretSantaResendEmailResponse,
   SecretSantaResult,
 } from '../models/index';
 import {
-    SecretSantaFromJSON,
-    SecretSantaToJSON,
+    CreateSecretSantaPayloadFromJSON,
+    CreateSecretSantaPayloadToJSON,
     SecretSantaAdminResponseFromJSON,
     SecretSantaAdminResponseToJSON,
     SecretSantaCreateResponseFromJSON,
     SecretSantaCreateResponseToJSON,
+    SecretSantaErrorResponseFromJSON,
+    SecretSantaErrorResponseToJSON,
     SecretSantaResendEmailFromJSON,
     SecretSantaResendEmailToJSON,
     SecretSantaResendEmailResponseFromJSON,
@@ -38,7 +41,7 @@ import {
 } from '../models/index';
 
 export interface SecretSantaCreateRequest {
-    secretSanta: SecretSanta;
+    createSecretSantaPayload: CreateSecretSantaPayload;
 }
 
 export interface SecretSantaResultAdminGetRequest {
@@ -64,7 +67,7 @@ export interface SecretSantaResultGetRequest {
 export interface SecretSantaApiInterface {
     /**
      * 
-     * @param {SecretSanta} secretSanta 
+     * @param {CreateSecretSantaPayload} createSecretSantaPayload 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SecretSantaApiInterface
@@ -126,10 +129,10 @@ export class SecretSantaApi extends runtime.BaseAPI implements SecretSantaApiInt
     /**
      */
     async secretSantaCreateRaw(requestParameters: SecretSantaCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SecretSantaCreateResponse>> {
-        if (requestParameters['secretSanta'] == null) {
+        if (requestParameters['createSecretSantaPayload'] == null) {
             throw new runtime.RequiredError(
-                'secretSanta',
-                'Required parameter "secretSanta" was null or undefined when calling secretSantaCreate().'
+                'createSecretSantaPayload',
+                'Required parameter "createSecretSantaPayload" was null or undefined when calling secretSantaCreate().'
             );
         }
 
@@ -144,7 +147,7 @@ export class SecretSantaApi extends runtime.BaseAPI implements SecretSantaApiInt
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SecretSantaToJSON(requestParameters['secretSanta']),
+            body: CreateSecretSantaPayloadToJSON(requestParameters['createSecretSantaPayload']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => SecretSantaCreateResponseFromJSON(jsonValue));

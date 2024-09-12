@@ -27,12 +27,16 @@ src/models/BaseResult.ts
 src/models/Coin.ts
 src/models/CoinResult.ts
 src/models/CreateGroupsPayload.ts
+src/models/CreateInstagramPayload.ts
 src/models/CreateLetterPayload.ts
 src/models/CreateLinkPayload.ts
 src/models/CreateLotteryPayload.ts
 src/models/CreateRafflePayload.ts
 src/models/CreateRandomNumberPayload.ts
+src/models/CreateSecretSantaPayload.ts
+src/models/CreateSecretSantaPayloadParticipantsInner.ts
 src/models/CreateShiftsPayload.ts
+src/models/CreateTiktokPayload.ts
 src/models/CreateTournamentPayload.ts
 src/models/DrawMetadata.ts
 src/models/DrawReTossPayload.ts
@@ -41,6 +45,7 @@ src/models/Groups.ts
 src/models/GroupsFields.ts
 src/models/GroupsResult.ts
 src/models/Instagram.ts
+src/models/InstagramFields.ts
 src/models/InstagramResult.ts
 src/models/InstagramResultAllOfComment.ts
 src/models/InstagramResultAllOfValue.ts
@@ -68,11 +73,12 @@ src/models/RandomNumber.ts
 src/models/RandomNumberFields.ts
 src/models/RandomNumberResult.ts
 src/models/RedeemPromoCode.ts
-src/models/SecretSanta.ts
 src/models/SecretSantaAdminResponse.ts
 src/models/SecretSantaAdminResponseParticipantsInner.ts
 src/models/SecretSantaCreateResponse.ts
-src/models/SecretSantaParticipantsInner.ts
+src/models/SecretSantaErrorResponse.ts
+src/models/SecretSantaErrorResponseBody.ts
+src/models/SecretSantaErrorResponseBodyGeneralInner.ts
 src/models/SecretSantaResendEmail.ts
 src/models/SecretSantaResendEmailResponse.ts
 src/models/SecretSantaResult.ts
@@ -85,6 +91,7 @@ src/models/ShiftsResultAllOfValue.ts
 src/models/Spinner.ts
 src/models/SpinnerResult.ts
 src/models/Tiktok.ts
+src/models/TiktokFields.ts
 src/models/TiktokResult.ts
 src/models/TiktokResultAllOfComment.ts
 src/models/TiktokResultAllOfValue.ts

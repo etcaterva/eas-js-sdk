@@ -19,18 +19,18 @@ import {
     DrawMetadataFromJSONTyped,
     DrawMetadataToJSON,
 } from './DrawMetadata';
+import type { ParticipantField } from './ParticipantField';
+import {
+    ParticipantFieldFromJSON,
+    ParticipantFieldFromJSONTyped,
+    ParticipantFieldToJSON,
+} from './ParticipantField';
 import type { BaseDraw } from './BaseDraw';
 import {
     BaseDrawFromJSON,
     BaseDrawFromJSONTyped,
     BaseDrawToJSON,
 } from './BaseDraw';
-import type { Participant } from './Participant';
-import {
-    ParticipantFromJSON,
-    ParticipantFromJSONTyped,
-    ParticipantToJSON,
-} from './Participant';
 import type { LotteryResult } from './LotteryResult';
 import {
     LotteryResultFromJSON,
@@ -46,22 +46,22 @@ import {
 export interface Lottery extends BaseDraw {
     /**
      * 
+     * @type {Array<ParticipantField>}
+     * @memberof Lottery
+     */
+    participants: Array<ParticipantField>;
+    /**
+     * 
      * @type {number}
      * @memberof Lottery
      */
     numberOfResults?: number;
     /**
      * 
-     * @type {Array<Participant>}
-     * @memberof Lottery
-     */
-    participants: Array<Participant>;
-    /**
-     * 
      * @type {Array<LotteryResult>}
      * @memberof Lottery
      */
-    readonly results?: Array<LotteryResult>;
+    readonly results: Array<LotteryResult>;
 }
 
 
@@ -71,6 +71,7 @@ export interface Lottery extends BaseDraw {
  */
 export function instanceOfLottery(value: object): value is Lottery {
     if (!('participants' in value) || value['participants'] === undefined) return false;
+    if (!('results' in value) || value['results'] === undefined) return false;
     return true;
 }
 
@@ -84,9 +85,9 @@ export function LotteryFromJSONTyped(json: any, ignoreDiscriminator: boolean): L
     }
     return {
         ...BaseDrawFromJSONTyped(json, ignoreDiscriminator),
+        'participants': ((json['participants'] as Array<any>).map(ParticipantFieldFromJSON)),
         'numberOfResults': json['number_of_results'] == null ? undefined : json['number_of_results'],
-        'participants': ((json['participants'] as Array<any>).map(ParticipantFromJSON)),
-        'results': json['results'] == null ? undefined : ((json['results'] as Array<any>).map(LotteryResultFromJSON)),
+        'results': ((json['results'] as Array<any>).map(LotteryResultFromJSON)),
     };
 }
 
@@ -96,8 +97,8 @@ export function LotteryToJSON(value?: Omit<Lottery, 'results'|'id'|'created_at'|
     }
     return {
         ...BaseDrawToJSON(value),
+        'participants': ((value['participants'] as Array<any>).map(ParticipantFieldToJSON)),
         'number_of_results': value['numberOfResults'],
-        'participants': ((value['participants'] as Array<any>).map(ParticipantToJSON)),
     };
 }
 

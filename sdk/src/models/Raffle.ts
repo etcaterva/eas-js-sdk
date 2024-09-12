@@ -19,30 +19,30 @@ import {
     DrawMetadataFromJSONTyped,
     DrawMetadataToJSON,
 } from './DrawMetadata';
+import type { ParticipantField } from './ParticipantField';
+import {
+    ParticipantFieldFromJSON,
+    ParticipantFieldFromJSONTyped,
+    ParticipantFieldToJSON,
+} from './ParticipantField';
 import type { BaseDraw } from './BaseDraw';
 import {
     BaseDrawFromJSON,
     BaseDrawFromJSONTyped,
     BaseDrawToJSON,
 } from './BaseDraw';
-import type { Participant } from './Participant';
-import {
-    ParticipantFromJSON,
-    ParticipantFromJSONTyped,
-    ParticipantToJSON,
-} from './Participant';
 import type { RaffleResult } from './RaffleResult';
 import {
     RaffleResultFromJSON,
     RaffleResultFromJSONTyped,
     RaffleResultToJSON,
 } from './RaffleResult';
-import type { Prize } from './Prize';
+import type { PrizeField } from './PrizeField';
 import {
-    PrizeFromJSON,
-    PrizeFromJSONTyped,
-    PrizeToJSON,
-} from './Prize';
+    PrizeFieldFromJSON,
+    PrizeFieldFromJSONTyped,
+    PrizeFieldToJSON,
+} from './PrizeField';
 
 /**
  * 
@@ -52,22 +52,22 @@ import {
 export interface Raffle extends BaseDraw {
     /**
      * 
-     * @type {Array<Prize>}
+     * @type {Array<PrizeField>}
      * @memberof Raffle
      */
-    prizes: Array<Prize>;
+    prizes: Array<PrizeField>;
     /**
      * 
-     * @type {Array<Participant>}
+     * @type {Array<ParticipantField>}
      * @memberof Raffle
      */
-    participants: Array<Participant>;
+    participants: Array<ParticipantField>;
     /**
      * 
      * @type {Array<RaffleResult>}
      * @memberof Raffle
      */
-    readonly results?: Array<RaffleResult>;
+    readonly results: Array<RaffleResult>;
 }
 
 
@@ -78,6 +78,7 @@ export interface Raffle extends BaseDraw {
 export function instanceOfRaffle(value: object): value is Raffle {
     if (!('prizes' in value) || value['prizes'] === undefined) return false;
     if (!('participants' in value) || value['participants'] === undefined) return false;
+    if (!('results' in value) || value['results'] === undefined) return false;
     return true;
 }
 
@@ -91,9 +92,9 @@ export function RaffleFromJSONTyped(json: any, ignoreDiscriminator: boolean): Ra
     }
     return {
         ...BaseDrawFromJSONTyped(json, ignoreDiscriminator),
-        'prizes': ((json['prizes'] as Array<any>).map(PrizeFromJSON)),
-        'participants': ((json['participants'] as Array<any>).map(ParticipantFromJSON)),
-        'results': json['results'] == null ? undefined : ((json['results'] as Array<any>).map(RaffleResultFromJSON)),
+        'prizes': ((json['prizes'] as Array<any>).map(PrizeFieldFromJSON)),
+        'participants': ((json['participants'] as Array<any>).map(ParticipantFieldFromJSON)),
+        'results': ((json['results'] as Array<any>).map(RaffleResultFromJSON)),
     };
 }
 
@@ -103,8 +104,8 @@ export function RaffleToJSON(value?: Omit<Raffle, 'results'|'id'|'created_at'|'u
     }
     return {
         ...BaseDrawToJSON(value),
-        'prizes': ((value['prizes'] as Array<any>).map(PrizeToJSON)),
-        'participants': ((value['participants'] as Array<any>).map(ParticipantToJSON)),
+        'prizes': ((value['prizes'] as Array<any>).map(PrizeFieldToJSON)),
+        'participants': ((value['participants'] as Array<any>).map(ParticipantFieldToJSON)),
     };
 }
 

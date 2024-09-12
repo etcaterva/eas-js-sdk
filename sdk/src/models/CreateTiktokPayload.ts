@@ -13,24 +13,18 @@
  */
 
 import { mapValues } from '../runtime';
+import type { BaseFieldsCreate } from './BaseFieldsCreate';
+import {
+    BaseFieldsCreateFromJSON,
+    BaseFieldsCreateFromJSONTyped,
+    BaseFieldsCreateToJSON,
+} from './BaseFieldsCreate';
 import type { DrawMetadata } from './DrawMetadata';
 import {
     DrawMetadataFromJSON,
     DrawMetadataFromJSONTyped,
     DrawMetadataToJSON,
 } from './DrawMetadata';
-import type { BaseDraw } from './BaseDraw';
-import {
-    BaseDrawFromJSON,
-    BaseDrawFromJSONTyped,
-    BaseDrawToJSON,
-} from './BaseDraw';
-import type { InstagramResult } from './InstagramResult';
-import {
-    InstagramResultFromJSON,
-    InstagramResultFromJSONTyped,
-    InstagramResultToJSON,
-} from './InstagramResult';
 import type { PrizeField } from './PrizeField';
 import {
     PrizeFieldFromJSON,
@@ -41,81 +35,62 @@ import {
 /**
  * 
  * @export
- * @interface Instagram
+ * @interface CreateTiktokPayload
  */
-export interface Instagram extends BaseDraw {
+export interface CreateTiktokPayload extends BaseFieldsCreate {
     /**
      * 
      * @type {Array<PrizeField>}
-     * @memberof Instagram
+     * @memberof CreateTiktokPayload
      */
     prizes: Array<PrizeField>;
     /**
      * 
-     * @type {boolean}
-     * @memberof Instagram
-     */
-    useLikes: boolean;
-    /**
-     * 
      * @type {number}
-     * @memberof Instagram
+     * @memberof CreateTiktokPayload
      */
     minMentions: number;
     /**
      * 
      * @type {string}
-     * @memberof Instagram
+     * @memberof CreateTiktokPayload
      */
     postUrl: string;
-    /**
-     * 
-     * @type {Array<InstagramResult>}
-     * @memberof Instagram
-     */
-    readonly results: Array<InstagramResult>;
 }
 
-
-
 /**
- * Check if a given object implements the Instagram interface.
+ * Check if a given object implements the CreateTiktokPayload interface.
  */
-export function instanceOfInstagram(value: object): value is Instagram {
+export function instanceOfCreateTiktokPayload(value: object): value is CreateTiktokPayload {
     if (!('prizes' in value) || value['prizes'] === undefined) return false;
-    if (!('useLikes' in value) || value['useLikes'] === undefined) return false;
     if (!('minMentions' in value) || value['minMentions'] === undefined) return false;
     if (!('postUrl' in value) || value['postUrl'] === undefined) return false;
-    if (!('results' in value) || value['results'] === undefined) return false;
     return true;
 }
 
-export function InstagramFromJSON(json: any): Instagram {
-    return InstagramFromJSONTyped(json, false);
+export function CreateTiktokPayloadFromJSON(json: any): CreateTiktokPayload {
+    return CreateTiktokPayloadFromJSONTyped(json, false);
 }
 
-export function InstagramFromJSONTyped(json: any, ignoreDiscriminator: boolean): Instagram {
+export function CreateTiktokPayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateTiktokPayload {
     if (json == null) {
         return json;
     }
     return {
-        ...BaseDrawFromJSONTyped(json, ignoreDiscriminator),
+        ...BaseFieldsCreateFromJSONTyped(json, ignoreDiscriminator),
         'prizes': ((json['prizes'] as Array<any>).map(PrizeFieldFromJSON)),
-        'useLikes': json['use_likes'],
         'minMentions': json['min_mentions'],
         'postUrl': json['post_url'],
-        'results': ((json['results'] as Array<any>).map(InstagramResultFromJSON)),
     };
 }
 
-export function InstagramToJSON(value?: Omit<Instagram, 'results'|'id'|'created_at'|'updated_at'|'private_id'> | null): any {
+export function CreateTiktokPayloadToJSON(value?: CreateTiktokPayload | null): any {
     if (value == null) {
         return value;
     }
     return {
-        ...BaseDrawToJSON(value),
+        ...BaseFieldsCreateToJSON(value),
         'prizes': ((value['prizes'] as Array<any>).map(PrizeFieldToJSON)),
-        'use_likes': value['useLikes'],
         'min_mentions': value['minMentions'],
         'post_url': value['postUrl'],
     };

@@ -24,13 +24,14 @@ export interface DrawReTossPayload {
      * @type {string}
      * @memberof DrawReTossPayload
      */
-    prizeId?: string;
+    prizeId: string;
 }
 
 /**
  * Check if a given object implements the DrawReTossPayload interface.
  */
 export function instanceOfDrawReTossPayload(value: object): value is DrawReTossPayload {
+    if (!('prizeId' in value) || value['prizeId'] === undefined) return false;
     return true;
 }
 
@@ -44,7 +45,7 @@ export function DrawReTossPayloadFromJSONTyped(json: any, ignoreDiscriminator: b
     }
     return {
         
-        'prizeId': json['prize_id'] == null ? undefined : json['prize_id'],
+        'prizeId': json['prize_id'],
     };
 }
 

@@ -24,25 +24,28 @@ export interface SecretSantaAdminResponseParticipantsInner {
      * @type {string}
      * @memberof SecretSantaAdminResponseParticipantsInner
      */
-    id?: string;
+    id: string;
     /**
      * 
      * @type {string}
      * @memberof SecretSantaAdminResponseParticipantsInner
      */
-    name?: string;
+    name: string;
     /**
      * 
      * @type {boolean}
      * @memberof SecretSantaAdminResponseParticipantsInner
      */
-    revealed?: boolean;
+    revealed: boolean;
 }
 
 /**
  * Check if a given object implements the SecretSantaAdminResponseParticipantsInner interface.
  */
 export function instanceOfSecretSantaAdminResponseParticipantsInner(value: object): value is SecretSantaAdminResponseParticipantsInner {
+    if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('name' in value) || value['name'] === undefined) return false;
+    if (!('revealed' in value) || value['revealed'] === undefined) return false;
     return true;
 }
 
@@ -56,9 +59,9 @@ export function SecretSantaAdminResponseParticipantsInnerFromJSONTyped(json: any
     }
     return {
         
-        'id': json['id'] == null ? undefined : json['id'],
-        'name': json['name'] == null ? undefined : json['name'],
-        'revealed': json['revealed'] == null ? undefined : json['revealed'],
+        'id': json['id'],
+        'name': json['name'],
+        'revealed': json['revealed'],
     };
 }
 

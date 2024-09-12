@@ -19,6 +19,12 @@ import {
     DrawMetadataFromJSONTyped,
     DrawMetadataToJSON,
 } from './DrawMetadata';
+import type { ParticipantField } from './ParticipantField';
+import {
+    ParticipantFieldFromJSON,
+    ParticipantFieldFromJSONTyped,
+    ParticipantFieldToJSON,
+} from './ParticipantField';
 import type { BaseDraw } from './BaseDraw';
 import {
     BaseDrawFromJSON,
@@ -31,12 +37,6 @@ import {
     ShiftsResultFromJSONTyped,
     ShiftsResultToJSON,
 } from './ShiftsResult';
-import type { Participant } from './Participant';
-import {
-    ParticipantFromJSON,
-    ParticipantFromJSONTyped,
-    ParticipantToJSON,
-} from './Participant';
 import type { ShiftsInterval } from './ShiftsInterval';
 import {
     ShiftsIntervalFromJSON,
@@ -58,16 +58,16 @@ export interface Shifts extends BaseDraw {
     intervals: Array<ShiftsInterval>;
     /**
      * 
-     * @type {Array<Participant>}
+     * @type {Array<ParticipantField>}
      * @memberof Shifts
      */
-    participants: Array<Participant>;
+    participants: Array<ParticipantField>;
     /**
      * 
      * @type {Array<ShiftsResult>}
      * @memberof Shifts
      */
-    readonly results?: Array<ShiftsResult>;
+    readonly results: Array<ShiftsResult>;
 }
 
 
@@ -78,6 +78,7 @@ export interface Shifts extends BaseDraw {
 export function instanceOfShifts(value: object): value is Shifts {
     if (!('intervals' in value) || value['intervals'] === undefined) return false;
     if (!('participants' in value) || value['participants'] === undefined) return false;
+    if (!('results' in value) || value['results'] === undefined) return false;
     return true;
 }
 
@@ -92,8 +93,8 @@ export function ShiftsFromJSONTyped(json: any, ignoreDiscriminator: boolean): Sh
     return {
         ...BaseDrawFromJSONTyped(json, ignoreDiscriminator),
         'intervals': ((json['intervals'] as Array<any>).map(ShiftsIntervalFromJSON)),
-        'participants': ((json['participants'] as Array<any>).map(ParticipantFromJSON)),
-        'results': json['results'] == null ? undefined : ((json['results'] as Array<any>).map(ShiftsResultFromJSON)),
+        'participants': ((json['participants'] as Array<any>).map(ParticipantFieldFromJSON)),
+        'results': ((json['results'] as Array<any>).map(ShiftsResultFromJSON)),
     };
 }
 
@@ -104,7 +105,7 @@ export function ShiftsToJSON(value?: Omit<Shifts, 'results'|'id'|'created_at'|'u
     return {
         ...BaseDrawToJSON(value),
         'intervals': ((value['intervals'] as Array<any>).map(ShiftsIntervalToJSON)),
-        'participants': ((value['participants'] as Array<any>).map(ParticipantToJSON)),
+        'participants': ((value['participants'] as Array<any>).map(ParticipantFieldToJSON)),
     };
 }
 

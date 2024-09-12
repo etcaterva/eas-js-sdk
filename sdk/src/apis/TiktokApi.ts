@@ -15,12 +15,15 @@
 
 import * as runtime from '../runtime';
 import type {
+  CreateTiktokPayload,
   DrawReTossPayload,
   DrawTossPayload,
   Tiktok,
   TiktokResult,
 } from '../models/index';
 import {
+    CreateTiktokPayloadFromJSON,
+    CreateTiktokPayloadToJSON,
     DrawReTossPayloadFromJSON,
     DrawReTossPayloadToJSON,
     DrawTossPayloadFromJSON,
@@ -32,7 +35,7 @@ import {
 } from '../models/index';
 
 export interface TiktokCreateRequest {
-    tiktok: Tiktok;
+    createTiktokPayload: CreateTiktokPayload;
 }
 
 export interface TiktokReadRequest {
@@ -58,7 +61,7 @@ export interface TiktokTossRequest {
 export interface TiktokApiInterface {
     /**
      * 
-     * @param {Tiktok} tiktok 
+     * @param {CreateTiktokPayload} createTiktokPayload 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TiktokApiInterface
@@ -120,10 +123,10 @@ export class TiktokApi extends runtime.BaseAPI implements TiktokApiInterface {
     /**
      */
     async tiktokCreateRaw(requestParameters: TiktokCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Tiktok>> {
-        if (requestParameters['tiktok'] == null) {
+        if (requestParameters['createTiktokPayload'] == null) {
             throw new runtime.RequiredError(
-                'tiktok',
-                'Required parameter "tiktok" was null or undefined when calling tiktokCreate().'
+                'createTiktokPayload',
+                'Required parameter "createTiktokPayload" was null or undefined when calling tiktokCreate().'
             );
         }
 
@@ -138,7 +141,7 @@ export class TiktokApi extends runtime.BaseAPI implements TiktokApiInterface {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: TiktokToJSON(requestParameters['tiktok']),
+            body: CreateTiktokPayloadToJSON(requestParameters['createTiktokPayload']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => TiktokFromJSON(jsonValue));

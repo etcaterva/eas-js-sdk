@@ -31,25 +31,28 @@ export interface SecretSantaAdminResponse {
      * @type {string}
      * @memberof SecretSantaAdminResponse
      */
-    id?: string;
+    id: string;
     /**
      * 
      * @type {Date}
      * @memberof SecretSantaAdminResponse
      */
-    createdAt?: Date;
+    createdAt: Date;
     /**
      * 
      * @type {Array<SecretSantaAdminResponseParticipantsInner>}
      * @memberof SecretSantaAdminResponse
      */
-    participants?: Array<SecretSantaAdminResponseParticipantsInner>;
+    participants: Array<SecretSantaAdminResponseParticipantsInner>;
 }
 
 /**
  * Check if a given object implements the SecretSantaAdminResponse interface.
  */
 export function instanceOfSecretSantaAdminResponse(value: object): value is SecretSantaAdminResponse {
+    if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    if (!('participants' in value) || value['participants'] === undefined) return false;
     return true;
 }
 
@@ -63,9 +66,9 @@ export function SecretSantaAdminResponseFromJSONTyped(json: any, ignoreDiscrimin
     }
     return {
         
-        'id': json['id'] == null ? undefined : json['id'],
-        'createdAt': json['created_at'] == null ? undefined : (new Date(json['created_at'])),
-        'participants': json['participants'] == null ? undefined : ((json['participants'] as Array<any>).map(SecretSantaAdminResponseParticipantsInnerFromJSON)),
+        'id': json['id'],
+        'createdAt': (new Date(json['created_at'])),
+        'participants': ((json['participants'] as Array<any>).map(SecretSantaAdminResponseParticipantsInnerFromJSON)),
     };
 }
 
@@ -76,8 +79,8 @@ export function SecretSantaAdminResponseToJSON(value?: SecretSantaAdminResponse 
     return {
         
         'id': value['id'],
-        'created_at': value['createdAt'] == null ? undefined : ((value['createdAt']).toISOString()),
-        'participants': value['participants'] == null ? undefined : ((value['participants'] as Array<any>).map(SecretSantaAdminResponseParticipantsInnerToJSON)),
+        'created_at': ((value['createdAt']).toISOString()),
+        'participants': ((value['participants'] as Array<any>).map(SecretSantaAdminResponseParticipantsInnerToJSON)),
     };
 }
 

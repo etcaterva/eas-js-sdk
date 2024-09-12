@@ -24,13 +24,14 @@ export interface SecretSantaCreateResponse {
      * @type {string}
      * @memberof SecretSantaCreateResponse
      */
-    id?: string;
+    id: string;
 }
 
 /**
  * Check if a given object implements the SecretSantaCreateResponse interface.
  */
 export function instanceOfSecretSantaCreateResponse(value: object): value is SecretSantaCreateResponse {
+    if (!('id' in value) || value['id'] === undefined) return false;
     return true;
 }
 
@@ -44,7 +45,7 @@ export function SecretSantaCreateResponseFromJSONTyped(json: any, ignoreDiscrimi
     }
     return {
         
-        'id': json['id'] == null ? undefined : json['id'],
+        'id': json['id'],
     };
 }
 

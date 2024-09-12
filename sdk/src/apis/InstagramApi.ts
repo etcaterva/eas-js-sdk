@@ -15,12 +15,15 @@
 
 import * as runtime from '../runtime';
 import type {
+  CreateInstagramPayload,
   DrawReTossPayload,
   DrawTossPayload,
   Instagram,
   InstagramResult,
 } from '../models/index';
 import {
+    CreateInstagramPayloadFromJSON,
+    CreateInstagramPayloadToJSON,
     DrawReTossPayloadFromJSON,
     DrawReTossPayloadToJSON,
     DrawTossPayloadFromJSON,
@@ -32,7 +35,7 @@ import {
 } from '../models/index';
 
 export interface InstagramCreateRequest {
-    instagram: Instagram;
+    createInstagramPayload: CreateInstagramPayload;
 }
 
 export interface InstagramReadRequest {
@@ -58,7 +61,7 @@ export interface InstagramTossRequest {
 export interface InstagramApiInterface {
     /**
      * 
-     * @param {Instagram} instagram 
+     * @param {CreateInstagramPayload} createInstagramPayload 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof InstagramApiInterface
@@ -120,10 +123,10 @@ export class InstagramApi extends runtime.BaseAPI implements InstagramApiInterfa
     /**
      */
     async instagramCreateRaw(requestParameters: InstagramCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Instagram>> {
-        if (requestParameters['instagram'] == null) {
+        if (requestParameters['createInstagramPayload'] == null) {
             throw new runtime.RequiredError(
-                'instagram',
-                'Required parameter "instagram" was null or undefined when calling instagramCreate().'
+                'createInstagramPayload',
+                'Required parameter "createInstagramPayload" was null or undefined when calling instagramCreate().'
             );
         }
 
@@ -138,7 +141,7 @@ export class InstagramApi extends runtime.BaseAPI implements InstagramApiInterfa
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: InstagramToJSON(requestParameters['instagram']),
+            body: CreateInstagramPayloadToJSON(requestParameters['createInstagramPayload']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => InstagramFromJSON(jsonValue));
