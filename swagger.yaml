@@ -1654,7 +1654,6 @@ components:
                   code:
                     type: string
 
-
     RedeemPromoCode:
       type: object
       required:
@@ -1785,13 +1784,17 @@ components:
         - type: object
           required:
             - payments
+            - description
+            - title
           properties:
             title:
               type: string
               minLength: 1
+              nullable: true
             description:
               type: string
               minLength: 1
+              nullable: true
             metadata:
               type: array
               items:

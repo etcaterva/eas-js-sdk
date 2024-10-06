@@ -37,13 +37,13 @@ export interface BaseDraw extends BaseObject {
      * @type {string}
      * @memberof BaseDraw
      */
-    title?: string;
+    title: string | null;
     /**
      * 
      * @type {string}
      * @memberof BaseDraw
      */
-    description?: string;
+    description: string | null;
     /**
      * 
      * @type {Array<DrawMetadata>}
@@ -86,6 +86,8 @@ export type BaseDrawPaymentsEnum = typeof BaseDrawPaymentsEnum[keyof typeof Base
  * Check if a given object implements the BaseDraw interface.
  */
 export function instanceOfBaseDraw(value: object): value is BaseDraw {
+    if (!('title' in value) || value['title'] === undefined) return false;
+    if (!('description' in value) || value['description'] === undefined) return false;
     if (!('payments' in value) || value['payments'] === undefined) return false;
     return true;
 }
@@ -100,8 +102,8 @@ export function BaseDrawFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     }
     return {
         ...BaseObjectFromJSONTyped(json, ignoreDiscriminator),
-        'title': json['title'] == null ? undefined : json['title'],
-        'description': json['description'] == null ? undefined : json['description'],
+        'title': json['title'],
+        'description': json['description'],
         'metadata': json['metadata'] == null ? undefined : ((json['metadata'] as Array<any>).map(DrawMetadataFromJSON)),
         'payments': json['payments'],
         'updatedAt': json['updated_at'] == null ? undefined : (new Date(json['updated_at'])),

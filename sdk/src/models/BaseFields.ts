@@ -31,13 +31,13 @@ export interface BaseFields {
      * @type {string}
      * @memberof BaseFields
      */
-    title?: string;
+    title: string | null;
     /**
      * 
      * @type {string}
      * @memberof BaseFields
      */
-    description?: string;
+    description: string | null;
     /**
      * 
      * @type {Array<DrawMetadata>}
@@ -68,6 +68,8 @@ export type BaseFieldsPaymentsEnum = typeof BaseFieldsPaymentsEnum[keyof typeof 
  * Check if a given object implements the BaseFields interface.
  */
 export function instanceOfBaseFields(value: object): value is BaseFields {
+    if (!('title' in value) || value['title'] === undefined) return false;
+    if (!('description' in value) || value['description'] === undefined) return false;
     if (!('payments' in value) || value['payments'] === undefined) return false;
     return true;
 }
@@ -82,8 +84,8 @@ export function BaseFieldsFromJSONTyped(json: any, ignoreDiscriminator: boolean)
     }
     return {
         
-        'title': json['title'] == null ? undefined : json['title'],
-        'description': json['description'] == null ? undefined : json['description'],
+        'title': json['title'],
+        'description': json['description'],
         'metadata': json['metadata'] == null ? undefined : ((json['metadata'] as Array<any>).map(DrawMetadataFromJSON)),
         'payments': json['payments'],
     };
