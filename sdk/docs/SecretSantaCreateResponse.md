@@ -1,0 +1,9 @@
+# EchaloasuerteJsSdk.SecretSantaCreateResponse
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **String** |  | 
+
+

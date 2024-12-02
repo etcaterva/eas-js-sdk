@@ -1577,6 +1577,8 @@ components:
                 type: array
                 items:
                   type: string
+        admin_email:
+          type: string
     SecretSantaResult:
       type: object
       properties:
