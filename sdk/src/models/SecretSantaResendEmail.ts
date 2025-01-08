@@ -30,7 +30,13 @@ export interface SecretSantaResendEmail {
      * @type {string}
      * @memberof SecretSantaResendEmail
      */
-    email: string;
+    email?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SecretSantaResendEmail
+     */
+    phoneNumber?: string;
 }
 
 
@@ -49,7 +55,6 @@ export type SecretSantaResendEmailLanguageEnum = typeof SecretSantaResendEmailLa
  */
 export function instanceOfSecretSantaResendEmail(value: object): value is SecretSantaResendEmail {
     if (!('language' in value) || value['language'] === undefined) return false;
-    if (!('email' in value) || value['email'] === undefined) return false;
     return true;
 }
 
@@ -64,7 +69,8 @@ export function SecretSantaResendEmailFromJSONTyped(json: any, ignoreDiscriminat
     return {
         
         'language': json['language'],
-        'email': json['email'],
+        'email': json['email'] == null ? undefined : json['email'],
+        'phoneNumber': json['phone_number'] == null ? undefined : json['phone_number'],
     };
 }
 
@@ -76,6 +82,7 @@ export function SecretSantaResendEmailToJSON(value?: SecretSantaResendEmail | nu
         
         'language': value['language'],
         'email': value['email'],
+        'phone_number': value['phoneNumber'],
     };
 }
 

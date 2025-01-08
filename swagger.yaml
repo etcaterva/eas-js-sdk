@@ -1566,17 +1566,21 @@ components:
             type: object
             required:
               - name
-              - email
               - exclusions
             properties:
               name:
                 type: string
               email:
                 type: string
+              phone_number:
+                type: string
               exclusions:
                 type: array
                 items:
                   type: string
+            oneOf:
+              - required: ["email"]
+              - required: ["phone_number"]
         admin_email:
           type: string
     SecretSantaResult:
@@ -1626,7 +1630,6 @@ components:
       type: object
       required:
         - language
-        - email
       properties:
         language:
           type: string
@@ -1634,6 +1637,8 @@ components:
             - es
             - en
         email:
+          type: string
+        phone_number:
           type: string
     SecretSantaResendEmailResponse:
       type: object

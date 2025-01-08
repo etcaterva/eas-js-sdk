@@ -30,7 +30,13 @@ export interface CreateSecretSantaPayloadParticipantsInner {
      * @type {string}
      * @memberof CreateSecretSantaPayloadParticipantsInner
      */
-    email: string;
+    email?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateSecretSantaPayloadParticipantsInner
+     */
+    phoneNumber?: string;
     /**
      * 
      * @type {Array<string>}
@@ -44,7 +50,6 @@ export interface CreateSecretSantaPayloadParticipantsInner {
  */
 export function instanceOfCreateSecretSantaPayloadParticipantsInner(value: object): value is CreateSecretSantaPayloadParticipantsInner {
     if (!('name' in value) || value['name'] === undefined) return false;
-    if (!('email' in value) || value['email'] === undefined) return false;
     if (!('exclusions' in value) || value['exclusions'] === undefined) return false;
     return true;
 }
@@ -60,7 +65,8 @@ export function CreateSecretSantaPayloadParticipantsInnerFromJSONTyped(json: any
     return {
         
         'name': json['name'],
-        'email': json['email'],
+        'email': json['email'] == null ? undefined : json['email'],
+        'phoneNumber': json['phone_number'] == null ? undefined : json['phone_number'],
         'exclusions': json['exclusions'],
     };
 }
@@ -73,6 +79,7 @@ export function CreateSecretSantaPayloadParticipantsInnerToJSON(value?: CreateSe
         
         'name': value['name'],
         'email': value['email'],
+        'phone_number': value['phoneNumber'],
         'exclusions': value['exclusions'],
     };
 }
