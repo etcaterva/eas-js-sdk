@@ -3,7 +3,8 @@
     "@openapitools/openapi-generator-cli": "^2.13.4"
   },
   "scripts": {
-    "codegen": "rm -rf sdk; openapi-generator-cli generate -i ./swagger.yaml -g typescript-fetch -o sdk -c codegen_options.json --openapi-normalizer REF_AS_PARENT_IN_ALLOF=true && cd sdk && npm install",
+    "build-from-local": "rm -rf sdk; openapi-generator-cli generate -i ./swagger.yaml -g typescript-fetch -o sdk -c codegen_options.json --openapi-normalizer REF_AS_PARENT_IN_ALLOF=true && cd sdk && npm install",
+    "build": "rm -rf sdk; openapi-generator-cli generate -i https://raw.githubusercontent.com/etcaterva/eas-backend/master/swagger.yaml -g typescript-fetch -o sdk -c codegen_options.json --openapi-normalizer REF_AS_PARENT_IN_ALLOF=true && cd sdk && npm install",
     "ver": "openapi-generator-cli version-manager list"
   }
 }
