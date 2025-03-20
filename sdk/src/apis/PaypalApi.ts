@@ -17,23 +17,16 @@ import * as runtime from '../runtime';
 import type {
   PaypalCreatePayload,
   PaypalResponse,
-  RedeemPromoCode,
 } from '../models/index';
 import {
     PaypalCreatePayloadFromJSON,
     PaypalCreatePayloadToJSON,
     PaypalResponseFromJSON,
     PaypalResponseToJSON,
-    RedeemPromoCodeFromJSON,
-    RedeemPromoCodeToJSON,
 } from '../models/index';
 
 export interface PaypalCreateRequest {
     paypalCreatePayload: PaypalCreatePayload;
-}
-
-export interface RedeemPromoCodeRequest {
-    redeemPromoCode: RedeemPromoCode;
 }
 
 /**
@@ -55,19 +48,6 @@ export interface PaypalApiInterface {
     /**
      */
     paypalCreate(requestParameters: PaypalCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PaypalResponse>;
-
-    /**
-     * 
-     * @param {RedeemPromoCode} redeemPromoCode 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof PaypalApiInterface
-     */
-    redeemPromoCodeRaw(requestParameters: RedeemPromoCodeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
-
-    /**
-     */
-    redeemPromoCode(requestParameters: RedeemPromoCodeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
 
 }
 
@@ -108,39 +88,6 @@ export class PaypalApi extends runtime.BaseAPI implements PaypalApiInterface {
     async paypalCreate(requestParameters: PaypalCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PaypalResponse> {
         const response = await this.paypalCreateRaw(requestParameters, initOverrides);
         return await response.value();
-    }
-
-    /**
-     */
-    async redeemPromoCodeRaw(requestParameters: RedeemPromoCodeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        if (requestParameters['redeemPromoCode'] == null) {
-            throw new runtime.RequiredError(
-                'redeemPromoCode',
-                'Required parameter "redeemPromoCode" was null or undefined when calling redeemPromoCode().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        const response = await this.request({
-            path: `/promo-code/redeem/`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: RedeemPromoCodeToJSON(requestParameters['redeemPromoCode']),
-        }, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     */
-    async redeemPromoCode(requestParameters: RedeemPromoCodeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.redeemPromoCodeRaw(requestParameters, initOverrides);
     }
 
 }

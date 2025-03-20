@@ -40,11 +40,29 @@ export interface SecretSantaAdminResponse {
     createdAt: Date;
     /**
      * 
+     * @type {Array<string>}
+     * @memberof SecretSantaAdminResponse
+     */
+    payments: Array<SecretSantaAdminResponsePaymentsEnum>;
+    /**
+     * 
      * @type {Array<SecretSantaAdminResponseParticipantsInner>}
      * @memberof SecretSantaAdminResponse
      */
     participants: Array<SecretSantaAdminResponseParticipantsInner>;
 }
+
+
+/**
+ * @export
+ */
+export const SecretSantaAdminResponsePaymentsEnum = {
+    Certified: 'CERTIFIED',
+    Adfree: 'ADFREE',
+    Support: 'SUPPORT'
+} as const;
+export type SecretSantaAdminResponsePaymentsEnum = typeof SecretSantaAdminResponsePaymentsEnum[keyof typeof SecretSantaAdminResponsePaymentsEnum];
+
 
 /**
  * Check if a given object implements the SecretSantaAdminResponse interface.
@@ -52,6 +70,7 @@ export interface SecretSantaAdminResponse {
 export function instanceOfSecretSantaAdminResponse(value: object): value is SecretSantaAdminResponse {
     if (!('id' in value) || value['id'] === undefined) return false;
     if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    if (!('payments' in value) || value['payments'] === undefined) return false;
     if (!('participants' in value) || value['participants'] === undefined) return false;
     return true;
 }
@@ -68,6 +87,7 @@ export function SecretSantaAdminResponseFromJSONTyped(json: any, ignoreDiscrimin
         
         'id': json['id'],
         'createdAt': (new Date(json['created_at'])),
+        'payments': json['payments'],
         'participants': ((json['participants'] as Array<any>).map(SecretSantaAdminResponseParticipantsInnerFromJSON)),
     };
 }
@@ -80,6 +100,7 @@ export function SecretSantaAdminResponseToJSON(value?: SecretSantaAdminResponse 
         
         'id': value['id'],
         'created_at': ((value['createdAt']).toISOString()),
+        'payments': value['payments'],
         'participants': ((value['participants'] as Array<any>).map(SecretSantaAdminResponseParticipantsInnerToJSON)),
     };
 }

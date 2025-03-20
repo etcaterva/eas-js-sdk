@@ -54,6 +54,8 @@ export * from './RandomNumber';
 export * from './RandomNumberFields';
 export * from './RandomNumberResult';
 export * from './RedeemPromoCode';
+export * from './RevolutCreatePayload';
+export * from './RevolutResponse';
 export * from './SecretSantaAdminResponse';
 export * from './SecretSantaAdminResponseParticipantsInner';
 export * from './SecretSantaCreateResponse';

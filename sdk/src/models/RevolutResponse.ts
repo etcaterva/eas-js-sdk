@@ -16,30 +16,30 @@ import { mapValues } from '../runtime';
 /**
  * 
  * @export
- * @interface PaypalResponse
+ * @interface RevolutResponse
  */
-export interface PaypalResponse {
+export interface RevolutResponse {
     /**
      * 
      * @type {string}
-     * @memberof PaypalResponse
+     * @memberof RevolutResponse
      */
     redirectUrl: string;
 }
 
 /**
- * Check if a given object implements the PaypalResponse interface.
+ * Check if a given object implements the RevolutResponse interface.
  */
-export function instanceOfPaypalResponse(value: object): value is PaypalResponse {
+export function instanceOfRevolutResponse(value: object): value is RevolutResponse {
     if (!('redirectUrl' in value) || value['redirectUrl'] === undefined) return false;
     return true;
 }
 
-export function PaypalResponseFromJSON(json: any): PaypalResponse {
-    return PaypalResponseFromJSONTyped(json, false);
+export function RevolutResponseFromJSON(json: any): RevolutResponse {
+    return RevolutResponseFromJSONTyped(json, false);
 }
 
-export function PaypalResponseFromJSONTyped(json: any, ignoreDiscriminator: boolean): PaypalResponse {
+export function RevolutResponseFromJSONTyped(json: any, ignoreDiscriminator: boolean): RevolutResponse {
     if (json == null) {
         return json;
     }
@@ -49,7 +49,7 @@ export function PaypalResponseFromJSONTyped(json: any, ignoreDiscriminator: bool
     };
 }
 
-export function PaypalResponseToJSON(value?: PaypalResponse | null): any {
+export function RevolutResponseToJSON(value?: RevolutResponse | null): any {
     if (value == null) {
         return value;
     }

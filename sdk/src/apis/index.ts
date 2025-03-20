@@ -9,6 +9,7 @@ export * from './LotteryApi';
 export * from './PaypalApi';
 export * from './RaffleApi';
 export * from './RandomNumberApi';
+export * from './RevolutApi';
 export * from './SecretSantaApi';
 export * from './ShiftsApi';
 export * from './SpinnerApi';

@@ -12,6 +12,7 @@ src/apis/LotteryApi.ts
 src/apis/PaypalApi.ts
 src/apis/RaffleApi.ts
 src/apis/RandomNumberApi.ts
+src/apis/RevolutApi.ts
 src/apis/SecretSantaApi.ts
 src/apis/ShiftsApi.ts
 src/apis/SpinnerApi.ts
@@ -73,6 +74,8 @@ src/models/RandomNumber.ts
 src/models/RandomNumberFields.ts
 src/models/RandomNumberResult.ts
 src/models/RedeemPromoCode.ts
+src/models/RevolutCreatePayload.ts
+src/models/RevolutResponse.ts
 src/models/SecretSantaAdminResponse.ts
 src/models/SecretSantaAdminResponseParticipantsInner.ts
 src/models/SecretSantaCreateResponse.ts
