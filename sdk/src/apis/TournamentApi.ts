@@ -17,7 +17,7 @@ import * as runtime from '../runtime';
 import type {
   CreateTournamentPayload,
   DrawTossPayload,
-  Participant,
+  ParticipantField,
   Tournament,
   TournamentResult,
 } from '../models/index';
@@ -26,8 +26,8 @@ import {
     CreateTournamentPayloadToJSON,
     DrawTossPayloadFromJSON,
     DrawTossPayloadToJSON,
-    ParticipantFromJSON,
-    ParticipantToJSON,
+    ParticipantFieldFromJSON,
+    ParticipantFieldToJSON,
     TournamentFromJSON,
     TournamentToJSON,
     TournamentResultFromJSON,
@@ -40,7 +40,7 @@ export interface TournamentCreateRequest {
 
 export interface TournamentParticipantsAddRequest {
     id: string;
-    participant: Participant;
+    participantField: ParticipantField;
 }
 
 export interface TournamentReadRequest {
@@ -75,7 +75,7 @@ export interface TournamentApiInterface {
     /**
      * 
      * @param {string} id 
-     * @param {Participant} participant 
+     * @param {ParticipantField} participantField 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TournamentApiInterface
@@ -164,10 +164,10 @@ export class TournamentApi extends runtime.BaseAPI implements TournamentApiInter
             );
         }
 
-        if (requestParameters['participant'] == null) {
+        if (requestParameters['participantField'] == null) {
             throw new runtime.RequiredError(
-                'participant',
-                'Required parameter "participant" was null or undefined when calling tournamentParticipantsAdd().'
+                'participantField',
+                'Required parameter "participantField" was null or undefined when calling tournamentParticipantsAdd().'
             );
         }
 
@@ -182,7 +182,7 @@ export class TournamentApi extends runtime.BaseAPI implements TournamentApiInter
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: ParticipantToJSON(requestParameters['participant']),
+            body: ParticipantFieldToJSON(requestParameters['participantField']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);

@@ -19,7 +19,7 @@ import type {
   DrawTossPayload,
   Groups,
   GroupsResult,
-  Participant,
+  ParticipantField,
 } from '../models/index';
 import {
     CreateGroupsPayloadFromJSON,
@@ -30,8 +30,8 @@ import {
     GroupsToJSON,
     GroupsResultFromJSON,
     GroupsResultToJSON,
-    ParticipantFromJSON,
-    ParticipantToJSON,
+    ParticipantFieldFromJSON,
+    ParticipantFieldToJSON,
 } from '../models/index';
 
 export interface GroupsCreateRequest {
@@ -40,7 +40,7 @@ export interface GroupsCreateRequest {
 
 export interface GroupsParticipantsAddRequest {
     id: string;
-    participant: Participant;
+    participantField: ParticipantField;
 }
 
 export interface GroupsReadRequest {
@@ -75,7 +75,7 @@ export interface GroupsApiInterface {
     /**
      * 
      * @param {string} id 
-     * @param {Participant} participant 
+     * @param {ParticipantField} participantField 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof GroupsApiInterface
@@ -164,10 +164,10 @@ export class GroupsApi extends runtime.BaseAPI implements GroupsApiInterface {
             );
         }
 
-        if (requestParameters['participant'] == null) {
+        if (requestParameters['participantField'] == null) {
             throw new runtime.RequiredError(
-                'participant',
-                'Required parameter "participant" was null or undefined when calling groupsParticipantsAdd().'
+                'participantField',
+                'Required parameter "participantField" was null or undefined when calling groupsParticipantsAdd().'
             );
         }
 
@@ -182,7 +182,7 @@ export class GroupsApi extends runtime.BaseAPI implements GroupsApiInterface {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: ParticipantToJSON(requestParameters['participant']),
+            body: ParticipantFieldToJSON(requestParameters['participantField']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);

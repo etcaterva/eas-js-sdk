@@ -19,7 +19,7 @@ import type {
   DrawTossPayload,
   Lottery,
   LotteryResult,
-  Participant,
+  ParticipantField,
 } from '../models/index';
 import {
     CreateLotteryPayloadFromJSON,
@@ -30,8 +30,8 @@ import {
     LotteryToJSON,
     LotteryResultFromJSON,
     LotteryResultToJSON,
-    ParticipantFromJSON,
-    ParticipantToJSON,
+    ParticipantFieldFromJSON,
+    ParticipantFieldToJSON,
 } from '../models/index';
 
 export interface LotteryCreateRequest {
@@ -40,7 +40,7 @@ export interface LotteryCreateRequest {
 
 export interface LotteryParticipantsAddRequest {
     id: string;
-    participant: Participant;
+    participantField: ParticipantField;
 }
 
 export interface LotteryReadRequest {
@@ -75,7 +75,7 @@ export interface LotteryApiInterface {
     /**
      * 
      * @param {string} id 
-     * @param {Participant} participant 
+     * @param {ParticipantField} participantField 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof LotteryApiInterface
@@ -164,10 +164,10 @@ export class LotteryApi extends runtime.BaseAPI implements LotteryApiInterface {
             );
         }
 
-        if (requestParameters['participant'] == null) {
+        if (requestParameters['participantField'] == null) {
             throw new runtime.RequiredError(
-                'participant',
-                'Required parameter "participant" was null or undefined when calling lotteryParticipantsAdd().'
+                'participantField',
+                'Required parameter "participantField" was null or undefined when calling lotteryParticipantsAdd().'
             );
         }
 
@@ -182,7 +182,7 @@ export class LotteryApi extends runtime.BaseAPI implements LotteryApiInterface {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: ParticipantToJSON(requestParameters['participant']),
+            body: ParticipantFieldToJSON(requestParameters['participantField']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);

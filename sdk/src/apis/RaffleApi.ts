@@ -17,7 +17,7 @@ import * as runtime from '../runtime';
 import type {
   CreateRafflePayload,
   DrawTossPayload,
-  Participant,
+  ParticipantField,
   Raffle,
   RaffleResult,
 } from '../models/index';
@@ -26,8 +26,8 @@ import {
     CreateRafflePayloadToJSON,
     DrawTossPayloadFromJSON,
     DrawTossPayloadToJSON,
-    ParticipantFromJSON,
-    ParticipantToJSON,
+    ParticipantFieldFromJSON,
+    ParticipantFieldToJSON,
     RaffleFromJSON,
     RaffleToJSON,
     RaffleResultFromJSON,
@@ -40,7 +40,7 @@ export interface RaffleCreateRequest {
 
 export interface RaffleParticipantsAddRequest {
     id: string;
-    participant: Participant;
+    participantField: ParticipantField;
 }
 
 export interface RaffleReadRequest {
@@ -75,7 +75,7 @@ export interface RaffleApiInterface {
     /**
      * 
      * @param {string} id 
-     * @param {Participant} participant 
+     * @param {ParticipantField} participantField 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof RaffleApiInterface
@@ -164,10 +164,10 @@ export class RaffleApi extends runtime.BaseAPI implements RaffleApiInterface {
             );
         }
 
-        if (requestParameters['participant'] == null) {
+        if (requestParameters['participantField'] == null) {
             throw new runtime.RequiredError(
-                'participant',
-                'Required parameter "participant" was null or undefined when calling raffleParticipantsAdd().'
+                'participantField',
+                'Required parameter "participantField" was null or undefined when calling raffleParticipantsAdd().'
             );
         }
 
@@ -182,7 +182,7 @@ export class RaffleApi extends runtime.BaseAPI implements RaffleApiInterface {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: ParticipantToJSON(requestParameters['participant']),
+            body: ParticipantFieldToJSON(requestParameters['participantField']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
