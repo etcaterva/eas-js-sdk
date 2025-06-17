@@ -27,6 +27,8 @@ export * from './GroupsFields';
 export * from './GroupsResult';
 export * from './Instagram';
 export * from './InstagramFields';
+export * from './InstagramPreview';
+export * from './InstagramPreviewRequest';
 export * from './InstagramResult';
 export * from './InstagramResultAllOfComment';
 export * from './InstagramResultAllOfValue';

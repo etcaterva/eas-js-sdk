@@ -19,6 +19,8 @@ import type {
   DrawReTossPayload,
   DrawTossPayload,
   Instagram,
+  InstagramPreview,
+  InstagramPreviewRequest,
   InstagramResult,
 } from '../models/index';
 import {
@@ -30,12 +32,20 @@ import {
     DrawTossPayloadToJSON,
     InstagramFromJSON,
     InstagramToJSON,
+    InstagramPreviewFromJSON,
+    InstagramPreviewToJSON,
+    InstagramPreviewRequestFromJSON,
+    InstagramPreviewRequestToJSON,
     InstagramResultFromJSON,
     InstagramResultToJSON,
 } from '../models/index';
 
 export interface InstagramCreateRequest {
     createInstagramPayload: CreateInstagramPayload;
+}
+
+export interface InstagramPreviewOperationRequest {
+    instagramPreviewRequest: InstagramPreviewRequest;
 }
 
 export interface InstagramReadRequest {
@@ -71,6 +81,21 @@ export interface InstagramApiInterface {
     /**
      */
     instagramCreate(requestParameters: InstagramCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Instagram>;
+
+    /**
+     * 
+     * @summary Get Instagram post preview
+     * @param {InstagramPreviewRequest} instagramPreviewRequest 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof InstagramApiInterface
+     */
+    instagramPreviewRaw(requestParameters: InstagramPreviewOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InstagramPreview>>;
+
+    /**
+     * Get Instagram post preview
+     */
+    instagramPreview(requestParameters: InstagramPreviewOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InstagramPreview>;
 
     /**
      * 
@@ -151,6 +176,42 @@ export class InstagramApi extends runtime.BaseAPI implements InstagramApiInterfa
      */
     async instagramCreate(requestParameters: InstagramCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Instagram> {
         const response = await this.instagramCreateRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get Instagram post preview
+     */
+    async instagramPreviewRaw(requestParameters: InstagramPreviewOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InstagramPreview>> {
+        if (requestParameters['instagramPreviewRequest'] == null) {
+            throw new runtime.RequiredError(
+                'instagramPreviewRequest',
+                'Required parameter "instagramPreviewRequest" was null or undefined when calling instagramPreview().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const response = await this.request({
+            path: `/instagram-preview/`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: InstagramPreviewRequestToJSON(requestParameters['instagramPreviewRequest']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => InstagramPreviewFromJSON(jsonValue));
+    }
+
+    /**
+     * Get Instagram post preview
+     */
+    async instagramPreview(requestParameters: InstagramPreviewOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InstagramPreview> {
+        const response = await this.instagramPreviewRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

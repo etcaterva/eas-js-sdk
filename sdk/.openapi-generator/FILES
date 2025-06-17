@@ -47,6 +47,8 @@ src/models/GroupsFields.ts
 src/models/GroupsResult.ts
 src/models/Instagram.ts
 src/models/InstagramFields.ts
+src/models/InstagramPreview.ts
+src/models/InstagramPreviewRequest.ts
 src/models/InstagramResult.ts
 src/models/InstagramResultAllOfComment.ts
 src/models/InstagramResultAllOfValue.ts

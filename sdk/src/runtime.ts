@@ -13,7 +13,7 @@
  */
 
 
-export const BASE_PATH = "http://localhost/should-be-overriden".replace(/\/+$/, "");
+export const BASE_PATH = "https://raw.githubusercontent.com/should-be-overriden".replace(/\/+$/, "");
 
 export interface ConfigurationParameters {
     basePath?: string; // override base path
