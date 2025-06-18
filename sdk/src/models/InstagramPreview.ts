@@ -43,6 +43,12 @@ export interface InstagramPreview {
      * @memberof InstagramPreview
      */
     userPic: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof InstagramPreview
+     */
+    captionText: string;
 }
 
 /**
@@ -53,6 +59,7 @@ export function instanceOfInstagramPreview(value: object): value is InstagramPre
     if (!('commentCount' in value) || value['commentCount'] === undefined) return false;
     if (!('userName' in value) || value['userName'] === undefined) return false;
     if (!('userPic' in value) || value['userPic'] === undefined) return false;
+    if (!('captionText' in value) || value['captionText'] === undefined) return false;
     return true;
 }
 
@@ -70,6 +77,7 @@ export function InstagramPreviewFromJSONTyped(json: any, ignoreDiscriminator: bo
         'commentCount': json['comment_count'],
         'userName': json['user_name'],
         'userPic': json['user_pic'],
+        'captionText': json['caption_text'],
     };
 }
 
@@ -83,6 +91,7 @@ export function InstagramPreviewToJSON(value?: InstagramPreview | null): any {
         'comment_count': value['commentCount'],
         'user_name': value['userName'],
         'user_pic': value['userPic'],
+        'caption_text': value['captionText'],
     };
 }
 
