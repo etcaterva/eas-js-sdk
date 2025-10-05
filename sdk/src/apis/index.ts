@@ -1,5 +1,6 @@
 /* tslint:disable */
 /* eslint-disable */
+export * from './AuthApi';
 export * from './CoinApi';
 export * from './GroupsApi';
 export * from './InstagramApi';

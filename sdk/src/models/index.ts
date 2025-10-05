@@ -1,5 +1,21 @@
 /* tslint:disable */
 /* eslint-disable */
+export * from './AuthAcceptSubscription200Response';
+export * from './AuthAcceptSubscription400Response';
+export * from './AuthCreateSubscription200Response';
+export * from './AuthCreateSubscription400Response';
+export * from './AuthCreateSubscription500Response';
+export * from './AuthCreateSubscriptionRequest';
+export * from './AuthCurrentUser200Response';
+export * from './AuthCurrentUser200ResponseUser';
+export * from './AuthCurrentUser401Response';
+export * from './AuthRequestMagicLink200Response';
+export * from './AuthRequestMagicLink400Response';
+export * from './AuthRequestMagicLink500Response';
+export * from './AuthRequestMagicLinkRequest';
+export * from './AuthSubscriptionTiers200Response';
+export * from './AuthSubscriptionTiers200ResponseTiers';
+export * from './AuthVerifyMagicLink400Response';
 export * from './BaseDraw';
 export * from './BaseFields';
 export * from './BaseFieldsCreate';
@@ -75,6 +91,7 @@ export * from './ShiftsResultAllOfInterval';
 export * from './ShiftsResultAllOfValue';
 export * from './Spinner';
 export * from './SpinnerResult';
+export * from './SubscriptionTier';
 export * from './Tiktok';
 export * from './TiktokFields';
 export * from './TiktokResult';
